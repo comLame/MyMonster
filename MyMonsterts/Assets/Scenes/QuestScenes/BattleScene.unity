@@ -266,7 +266,6 @@ GameObject:
   m_Component:
   - component: {fileID: 90120735}
   - component: {fileID: 90120737}
-  - component: {fileID: 90120736}
   m_Layer: 0
   m_Name: 002
   m_TagString: Untagged
@@ -287,21 +286,6 @@ Transform:
   m_Father: {fileID: 1021300037}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &90120736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 90120734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f4c51d5b240346dfb0e0afd8f680f8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monsterData: {fileID: 11400000, guid: abe5e38adb01f4ed5b77fb60ce17deca, type: 2}
-  expData: {fileID: 11400000, guid: 98131a474a803413c835f740bffe0668, type: 2}
-  monsterId: 2
-  isEnemy: 1
 --- !u!212 &90120737
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -357,7 +341,6 @@ GameObject:
   m_Component:
   - component: {fileID: 120058368}
   - component: {fileID: 120058369}
-  - component: {fileID: 120058370}
   m_Layer: 0
   m_Name: 008
   m_TagString: Untagged
@@ -424,21 +407,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &120058370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 120058367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f4c51d5b240346dfb0e0afd8f680f8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monsterData: {fileID: 11400000, guid: abe5e38adb01f4ed5b77fb60ce17deca, type: 2}
-  expData: {fileID: 11400000, guid: 98131a474a803413c835f740bffe0668, type: 2}
-  monsterId: 8
-  isEnemy: 0
 --- !u!1 &156110750
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,7 +702,6 @@ GameObject:
   m_Component:
   - component: {fileID: 239707142}
   - component: {fileID: 239707143}
-  - component: {fileID: 239707144}
   m_Layer: 0
   m_Name: 006
   m_TagString: Untagged
@@ -801,21 +768,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &239707144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 239707141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f4c51d5b240346dfb0e0afd8f680f8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monsterData: {fileID: 11400000, guid: abe5e38adb01f4ed5b77fb60ce17deca, type: 2}
-  expData: {fileID: 11400000, guid: 98131a474a803413c835f740bffe0668, type: 2}
-  monsterId: 6
-  isEnemy: 0
 --- !u!1 &246976108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,6 +1052,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 402243566}
+  - component: {fileID: 402243567}
   m_Layer: 5
   m_Name: mymonster1
   m_TagString: Untagged
@@ -1128,6 +1081,21 @@ RectTransform:
   m_AnchoredPosition: {x: 400, y: -100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &402243567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 402243565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f4c51d5b240346dfb0e0afd8f680f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterData: {fileID: 11400000, guid: abe5e38adb01f4ed5b77fb60ce17deca, type: 2}
+  expData: {fileID: 11400000, guid: 98131a474a803413c835f740bffe0668, type: 2}
+  monsterId: 2
+  isEnemy: 0
 --- !u!1 &404108576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,7 +1105,6 @@ GameObject:
   m_Component:
   - component: {fileID: 404108577}
   - component: {fileID: 404108579}
-  - component: {fileID: 404108578}
   m_Layer: 0
   m_Name: 002
   m_TagString: Untagged
@@ -1158,21 +1125,6 @@ Transform:
   m_Father: {fileID: 554104991}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &404108578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 404108576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f4c51d5b240346dfb0e0afd8f680f8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monsterData: {fileID: 11400000, guid: abe5e38adb01f4ed5b77fb60ce17deca, type: 2}
-  expData: {fileID: 11400000, guid: 98131a474a803413c835f740bffe0668, type: 2}
-  monsterId: 2
-  isEnemy: 1
 --- !u!212 &404108579
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1228,7 +1180,6 @@ GameObject:
   m_Component:
   - component: {fileID: 415128463}
   - component: {fileID: 415128464}
-  - component: {fileID: 415128465}
   m_Layer: 0
   m_Name: 002
   m_TagString: Untagged
@@ -1295,21 +1246,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &415128465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 415128462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f4c51d5b240346dfb0e0afd8f680f8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monsterData: {fileID: 11400000, guid: abe5e38adb01f4ed5b77fb60ce17deca, type: 2}
-  expData: {fileID: 11400000, guid: 98131a474a803413c835f740bffe0668, type: 2}
-  monsterId: 2
-  isEnemy: 0
 --- !u!1 &488607010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1318,6 +1254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 488607011}
+  - component: {fileID: 488607012}
   m_Layer: 5
   m_Name: mymonster3
   m_TagString: Untagged
@@ -1346,6 +1283,21 @@ RectTransform:
   m_AnchoredPosition: {x: 400, y: -600}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &488607012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 488607010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f4c51d5b240346dfb0e0afd8f680f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterData: {fileID: 11400000, guid: abe5e38adb01f4ed5b77fb60ce17deca, type: 2}
+  expData: {fileID: 11400000, guid: 98131a474a803413c835f740bffe0668, type: 2}
+  monsterId: 8
+  isEnemy: 0
 --- !u!1 &506772934
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,6 +1375,7 @@ GameObject:
   m_Component:
   - component: {fileID: 554104991}
   - component: {fileID: 554104993}
+  - component: {fileID: 554104992}
   m_Layer: 5
   m_Name: enemymonster1
   m_TagString: Untagged
@@ -1452,6 +1405,21 @@ RectTransform:
   m_AnchoredPosition: {x: -400, y: 400}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &554104992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554104990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f4c51d5b240346dfb0e0afd8f680f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterData: {fileID: 11400000, guid: abe5e38adb01f4ed5b77fb60ce17deca, type: 2}
+  expData: {fileID: 11400000, guid: 98131a474a803413c835f740bffe0668, type: 2}
+  monsterId: 2
+  isEnemy: 1
 --- !u!58 &554104993
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1995,6 +1963,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1021300037}
   - component: {fileID: 1021300038}
+  - component: {fileID: 1021300039}
   m_Layer: 5
   m_Name: enemymonster3
   m_TagString: Untagged
@@ -2039,6 +2008,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 150
+--- !u!114 &1021300039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1021300036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f4c51d5b240346dfb0e0afd8f680f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterData: {fileID: 11400000, guid: abe5e38adb01f4ed5b77fb60ce17deca, type: 2}
+  expData: {fileID: 11400000, guid: 98131a474a803413c835f740bffe0668, type: 2}
+  monsterId: 2
+  isEnemy: 1
 --- !u!1 &1028901299
 GameObject:
   m_ObjectHideFlags: 0
@@ -2277,7 +2261,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1148141200}
   - component: {fileID: 1148141202}
-  - component: {fileID: 1148141201}
   m_Layer: 0
   m_Name: 002
   m_TagString: Untagged
@@ -2298,21 +2281,6 @@ Transform:
   m_Father: {fileID: 1373109553}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &1148141201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1148141199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f4c51d5b240346dfb0e0afd8f680f8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monsterData: {fileID: 11400000, guid: abe5e38adb01f4ed5b77fb60ce17deca, type: 2}
-  expData: {fileID: 11400000, guid: 98131a474a803413c835f740bffe0668, type: 2}
-  monsterId: 2
-  isEnemy: 1
 --- !u!212 &1148141202
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2824,6 +2792,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1373109553}
   - component: {fileID: 1373109554}
+  - component: {fileID: 1373109555}
   m_Layer: 5
   m_Name: enemymonster2
   m_TagString: Untagged
@@ -2868,6 +2837,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 150
+--- !u!114 &1373109555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1373109552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f4c51d5b240346dfb0e0afd8f680f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterData: {fileID: 11400000, guid: abe5e38adb01f4ed5b77fb60ce17deca, type: 2}
+  expData: {fileID: 11400000, guid: 98131a474a803413c835f740bffe0668, type: 2}
+  monsterId: 2
+  isEnemy: 1
 --- !u!1 &1377939644
 GameObject:
   m_ObjectHideFlags: 0
@@ -3061,6 +3045,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1602768000}
+  - component: {fileID: 1602768001}
   m_Layer: 5
   m_Name: mymonster2
   m_TagString: Untagged
@@ -3089,6 +3074,21 @@ RectTransform:
   m_AnchoredPosition: {x: 400, y: 400}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1602768001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1602767999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f4c51d5b240346dfb0e0afd8f680f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterData: {fileID: 11400000, guid: abe5e38adb01f4ed5b77fb60ce17deca, type: 2}
+  expData: {fileID: 11400000, guid: 98131a474a803413c835f740bffe0668, type: 2}
+  monsterId: 6
+  isEnemy: 0
 --- !u!1 &1650971697
 GameObject:
   m_ObjectHideFlags: 0
