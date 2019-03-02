@@ -1,0 +1,723 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18eac722b76d743b89815cc48e160c05, type: 3}
+  m_Name: ExpData
+  m_EditorClassIdentifier: 
+  sheets:
+  - name: ExpData
+    list:
+    - Lv: 1
+      Group60: 0
+      Group80: 0
+      Group100: 0
+      Group105: 0
+      Group125: 0
+      Group160: 0
+    - Lv: 2
+      Group60: 15
+      Group80: 6
+      Group100: 8
+      Group105: 9
+      Group125: 10
+      Group160: 4
+    - Lv: 3
+      Group60: 52
+      Group80: 21
+      Group100: 27
+      Group105: 57
+      Group125: 33
+      Group160: 13
+    - Lv: 4
+      Group60: 122
+      Group80: 51
+      Group100: 64
+      Group105: 96
+      Group125: 80
+      Group160: 32
+    - Lv: 5
+      Group60: 237
+      Group80: 100
+      Group100: 125
+      Group105: 135
+      Group125: 156
+      Group160: 65
+    - Lv: 6
+      Group60: 406
+      Group80: 172
+      Group100: 216
+      Group105: 179
+      Group125: 270
+      Group160: 112
+    - Lv: 7
+      Group60: 637
+      Group80: 274
+      Group100: 343
+      Group105: 236
+      Group125: 428
+      Group160: 178
+    - Lv: 8
+      Group60: 942
+      Group80: 409
+      Group100: 512
+      Group105: 314
+      Group125: 640
+      Group160: 276
+    - Lv: 9
+      Group60: 1326
+      Group80: 583
+      Group100: 729
+      Group105: 419
+      Group125: 911
+      Group160: 393
+    - Lv: 10
+      Group60: 1800
+      Group80: 800
+      Group100: 1000
+      Group105: 560
+      Group125: 1250
+      Group160: 540
+    - Lv: 11
+      Group60: 2369
+      Group80: 1064
+      Group100: 1331
+      Group105: 742
+      Group125: 1663
+      Group160: 745
+    - Lv: 12
+      Group60: 3041
+      Group80: 1382
+      Group100: 1728
+      Group105: 973
+      Group125: 2160
+      Group160: 967
+    - Lv: 13
+      Group60: 3822
+      Group80: 1757
+      Group100: 2197
+      Group105: 1261
+      Group125: 2746
+      Group160: 1230
+    - Lv: 14
+      Group60: 4719
+      Group80: 2195
+      Group100: 2744
+      Group105: 1612
+      Group125: 3430
+      Group160: 1591
+    - Lv: 15
+      Group60: 5737
+      Group80: 2700
+      Group100: 3375
+      Group105: 2035
+      Group125: 4218
+      Group160: 1957
+    - Lv: 16
+      Group60: 6881
+      Group80: 3276
+      Group100: 4096
+      Group105: 2535
+      Group125: 5120
+      Group160: 2457
+    - Lv: 17
+      Group60: 8155
+      Group80: 3930
+      Group100: 4913
+      Group105: 3120
+      Group125: 6141
+      Group160: 3046
+    - Lv: 18
+      Group60: 9564
+      Group80: 4665
+      Group100: 5832
+      Group105: 3798
+      Group125: 7290
+      Group160: 3732
+    - Lv: 19
+      Group60: 11111
+      Group80: 5487
+      Group100: 6859
+      Group105: 4575
+      Group125: 8573
+      Group160: 4526
+    - Lv: 20
+      Group60: 12800
+      Group80: 6400
+      Group100: 8000
+      Group105: 5460
+      Group125: 10000
+      Group160: 5440
+    - Lv: 21
+      Group60: 14632
+      Group80: 7408
+      Group100: 9261
+      Group105: 6458
+      Group125: 11576
+      Group160: 6482
+    - Lv: 22
+      Group60: 16610
+      Group80: 8518
+      Group100: 10648
+      Group105: 7577
+      Group125: 13310
+      Group160: 7666
+    - Lv: 23
+      Group60: 18737
+      Group80: 9733
+      Group100: 12167
+      Group105: 8825
+      Group125: 15208
+      Group160: 9003
+    - Lv: 24
+      Group60: 21012
+      Group80: 11059
+      Group100: 13824
+      Group105: 10208
+      Group125: 17280
+      Group160: 10506
+    - Lv: 25
+      Group60: 23437
+      Group80: 12500
+      Group100: 15625
+      Group105: 11735
+      Group125: 19531
+      Group160: 12187
+    - Lv: 26
+      Group60: 26012
+      Group80: 14060
+      Group100: 17576
+      Group105: 13411
+      Group125: 21970
+      Group160: 14060
+    - Lv: 27
+      Group60: 28737
+      Group80: 15746
+      Group100: 19683
+      Group105: 15244
+      Group125: 24603
+      Group160: 16140
+    - Lv: 28
+      Group60: 31610
+      Group80: 17561
+      Group100: 21952
+      Group105: 17242
+      Group125: 27440
+      Group160: 18439
+    - Lv: 29
+      Group60: 34632
+      Group80: 19511
+      Group100: 24389
+      Group105: 19411
+      Group125: 30486
+      Group160: 20974
+    - Lv: 30
+      Group60: 37800
+      Group80: 21600
+      Group100: 27000
+      Group105: 21760
+      Group125: 33750
+      Group160: 23760
+    - Lv: 31
+      Group60: 41111
+      Group80: 23832
+      Group100: 29791
+      Group105: 24294
+      Group125: 37238
+      Group160: 26811
+    - Lv: 32
+      Group60: 44564
+      Group80: 26214
+      Group100: 32768
+      Group105: 27021
+      Group125: 40960
+      Group160: 30146
+    - Lv: 33
+      Group60: 48155
+      Group80: 38749
+      Group100: 35937
+      Group105: 29949
+      Group125: 44921
+      Group160: 33780
+    - Lv: 34
+      Group60: 51881
+      Group80: 31443
+      Group100: 39304
+      Group105: 33084
+      Group125: 49130
+      Group160: 37731
+    - Lv: 35
+      Group60: 55737
+      Group80: 34300
+      Group100: 42875
+      Group105: 36435
+      Group125: 53593
+      Group160: 42017
+    - Lv: 36
+      Group60: 59719
+      Group80: 37324
+      Group100: 46656
+      Group105: 40007
+      Group125: 58320
+      Group160: 46656
+    - Lv: 37
+      Group60: 63822
+      Group80: 40522
+      Group100: 50653
+      Group105: 43808
+      Group125: 63316
+      Group160: 50653
+    - Lv: 38
+      Group60: 68041
+      Group80: 43897
+      Group100: 54872
+      Group105: 47846
+      Group125: 68590
+      Group160: 55969
+    - Lv: 39
+      Group60: 72369
+      Group80: 47455
+      Group100: 59319
+      Group105: 52127
+      Group125: 74148
+      Group160: 60505
+    - Lv: 40
+      Group60: 76800
+      Group80: 51200
+      Group100: 64000
+      Group105: 56660
+      Group125: 80000
+      Group160: 66560
+    - Lv: 41
+      Group60: 81362
+      Group80: 55136
+      Group100: 68921
+      Group105: 61450
+      Group125: 86151
+      Group160: 71677
+    - Lv: 42
+      Group60: 85942
+      Group80: 59270
+      Group100: 74088
+      Group105: 66505
+      Group125: 92610
+      Group160: 78533
+    - Lv: 43
+      Group60: 90637
+      Group80: 63605
+      Group100: 79507
+      Group105: 71833
+      Group125: 99383
+      Group160: 84277
+    - Lv: 44
+      Group60: 95406
+      Group80: 68147
+      Group100: 85184
+      Group105: 77440
+      Group125: 106480
+      Group160: 91998
+    - Lv: 45
+      Group60: 100237
+      Group80: 72900
+      Group100: 91125
+      Group105: 83335
+      Group125: 113906
+      Group160: 98415
+    - Lv: 46
+      Group60: 105122
+      Group80: 77868
+      Group100: 97336
+      Group105: 89523
+      Group125: 121670
+      Group160: 107069
+    - Lv: 47
+      Group60: 110052
+      Group80: 83058
+      Group100: 103823
+      Group105: 96012
+      Group125: 129778
+      Group160: 114205
+    - Lv: 48
+      Group60: 115015
+      Group80: 88473
+      Group100: 110592
+      Group105: 102810
+      Group125: 138240
+      Group160: 123863
+    - Lv: 49
+      Group60: 120001
+      Group80: 94119
+      Group100: 117649
+      Group105: 109923
+      Group125: 147061
+      Group160: 131766
+    - Lv: 50
+      Group60: 125000
+      Group80: 100000
+      Group100: 125000
+      Group105: 117360
+      Group125: 156250
+      Group160: 142500
+    - Lv: 51
+      Group60: 131324
+      Group80: 106120
+      Group100: 132651
+      Group105: 125126
+      Group125: 165813
+      Group160: 151222
+    - Lv: 52
+      Group60: 137795
+      Group80: 112486
+      Group100: 140608
+      Group105: 133229
+      Group125: 175760
+      Group160: 163105
+    - Lv: 53
+      Group60: 144410
+      Group80: 119101
+      Group100: 148877
+      Group105: 141677
+      Group125: 186096
+      Group160: 172697
+    - Lv: 54
+      Group60: 151165
+      Group80: 125971
+      Group100: 157464
+      Group105: 150476
+      Group125: 196830
+      Group160: 185807
+    - Lv: 55
+      Group60: 158056
+      Group80: 133100
+      Group100: 166375
+      Group105: 159635
+      Group125: 207968
+      Group160: 196322
+    - Lv: 56
+      Group60: 165079
+      Group80: 140492
+      Group100: 175616
+      Group105: 169159
+      Group125: 219520
+      Group160: 210739
+    - Lv: 57
+      Group60: 172229
+      Group80: 148154
+      Group100: 185193
+      Group105: 179056
+      Group125: 231491
+      Group160: 222231
+    - Lv: 58
+      Group60: 179503
+      Group80: 156089
+      Group100: 195112
+      Group105: 189334
+      Group125: 243890
+      Group160: 238036
+    - Lv: 59
+      Group60: 186894
+      Group80: 164303
+      Group100: 205379
+      Group105: 199999
+      Group125: 256723
+      Group160: 250562
+    - Lv: 60
+      Group60: 194400
+      Group80: 172800
+      Group100: 216000
+      Group105: 211060
+      Group125: 270000
+      Group160: 267840
+    - Lv: 61
+      Group60: 202013
+      Group80: 181584
+      Group100: 226981
+      Group105: 222522
+      Group125: 283726
+      Group160: 281456
+    - Lv: 62
+      Group60: 209728
+      Group80: 190662
+      Group100: 238328
+      Group105: 234393
+      Group125: 297910
+      Group160: 300293
+    - Lv: 63
+      Group60: 217540
+      Group80: 200037
+      Group100: 250047
+      Group105: 246681
+      Group125: 312558
+      Group160: 315059
+    - Lv: 64
+      Group60: 225443
+      Group80: 209715
+      Group100: 262144
+      Group105: 259392
+      Group125: 327680
+      Group160: 335544
+    - Lv: 65
+      Group60: 233431
+      Group80: 219700
+      Group100: 274625
+      Group105: 272535
+      Group125: 343281
+      Group160: 351520
+    - Lv: 66
+      Group60: 241496
+      Group80: 229996
+      Group100: 287496
+      Group105: 286115
+      Group125: 359370
+      Group160: 373744
+    - Lv: 67
+      Group60: 249633
+      Group80: 240610
+      Group100: 300763
+      Group105: 300140
+      Group125: 375953
+      Group160: 390991
+    - Lv: 68
+      Group60: 257834
+      Group80: 251545
+      Group100: 314432
+      Group105: 314618
+      Group125: 393040
+      Group160: 415050
+    - Lv: 69
+      Group60: 267406
+      Group80: 262807
+      Group100: 328509
+      Group105: 329555
+      Group125: 410636
+      Group160: 433631
+    - Lv: 70
+      Group60: 276458
+      Group80: 274400
+      Group100: 343000
+      Group105: 344960
+      Group125: 428750
+      Group160: 459620
+    - Lv: 71
+      Group60: 286328
+      Group80: 286328
+      Group100: 357911
+      Group105: 360838
+      Group125: 447388
+      Group160: 479600
+    - Lv: 72
+      Group60: 296358
+      Group80: 298598
+      Group100: 373248
+      Group105: 377197
+      Group125: 466560
+      Group160: 507617
+    - Lv: 73
+      Group60: 305767
+      Group80: 311213
+      Group100: 389017
+      Group105: 394045
+      Group125: 486271
+      Group160: 529063
+    - Lv: 74
+      Group60: 316074
+      Group80: 324179
+      Group100: 405224
+      Group105: 411388
+      Group125: 506530
+      Group160: 559209
+    - Lv: 75
+      Group60: 326531
+      Group80: 337500
+      Group100: 421875
+      Group105: 429235
+      Group125: 527343
+      Group160: 582187
+    - Lv: 76
+      Group60: 336255
+      Group80: 351180
+      Group100: 438976
+      Group105: 447591
+      Group125: 548720
+      Group160: 614566
+    - Lv: 77
+      Group60: 346965
+      Group80: 365226
+      Group100: 456533
+      Group105: 466464
+      Group125: 570666
+      Group160: 639146
+    - Lv: 78
+      Group60: 357812
+      Group80: 379641
+      Group100: 474552
+      Group105: 485862
+      Group125: 593190
+      Group160: 673863
+    - Lv: 79
+      Group60: 367807
+      Group80: 394431
+      Group100: 493039
+      Group105: 505791
+      Group125: 616298
+      Group160: 700115
+    - Lv: 80
+      Group60: 378880
+      Group80: 409600
+      Group100: 512000
+      Group105: 526260
+      Group125: 640000
+      Group160: 737280
+    - Lv: 81
+      Group60: 390077
+      Group80: 425152
+      Group100: 531441
+      Group105: 547274
+      Group125: 664301
+      Group160: 765275
+    - Lv: 82
+      Group60: 400293
+      Group80: 441094
+      Group100: 551368
+      Group105: 568841
+      Group125: 689210
+      Group160: 804997
+    - Lv: 83
+      Group60: 411686
+      Group80: 457429
+      Group100: 571787
+      Group105: 590969
+      Group125: 714733
+      Group160: 834809
+    - Lv: 84
+      Group60: 423190
+      Group80: 474163
+      Group100: 592704
+      Group105: 613664
+      Group125: 740880
+      Group160: 877201
+    - Lv: 85
+      Group60: 433572
+      Group80: 491300
+      Group100: 614125
+      Group105: 636935
+      Group125: 767656
+      Group160: 908905
+    - Lv: 86
+      Group60: 445239
+      Group80: 508844
+      Group100: 636056
+      Group105: 660787
+      Group125: 795070
+      Group160: 954084
+    - Lv: 87
+      Group60: 457001
+      Group80: 526802
+      Group100: 658503
+      Group105: 685228
+      Group125: 823128
+      Group160: 987754
+    - Lv: 88
+      Group60: 467489
+      Group80: 545177
+      Group100: 681472
+      Group105: 710266
+      Group125: 851840
+      Group160: 1035837
+    - Lv: 89
+      Group60: 479378
+      Group80: 563975
+      Group100: 704969
+      Group105: 735907
+      Group125: 881211
+      Group160: 1071552
+    - Lv: 90
+      Group60: 491346
+      Group80: 583200
+      Group100: 729000
+      Group105: 762160
+      Group125: 911250
+      Group160: 1122660
+    - Lv: 91
+      Group60: 501878
+      Group80: 602856
+      Group100: 753571
+      Group105: 789030
+      Group125: 941963
+      Group160: 1160499
+    - Lv: 92
+      Group60: 513934
+      Group80: 622950
+      Group100: 778688
+      Group105: 816525
+      Group125: 973360
+      Group160: 1214753
+    - Lv: 93
+      Group60: 526049
+      Group80: 643485
+      Group100: 804357
+      Group105: 844653
+      Group125: 1005446
+      Group160: 1254796
+    - Lv: 94
+      Group60: 536557
+      Group80: 664467
+      Group100: 830584
+      Group105: 873420
+      Group125: 1038230
+      Group160: 1312322
+    - Lv: 95
+      Group60: 548720
+      Group80: 685900
+      Group100: 857375
+      Group105: 902835
+      Group125: 1071718
+      Group160: 1354652
+    - Lv: 96
+      Group60: 560922
+      Group80: 707788
+      Group100: 884736
+      Group105: 932903
+      Group125: 1105920
+      Group160: 1415577
+    - Lv: 97
+      Group60: 571333
+      Group80: 730138
+      Group100: 912673
+      Group105: 963632
+      Group125: 1140841
+      Group160: 1460276
+    - Lv: 98
+      Group60: 583539
+      Group80: 752953
+      Group100: 941192
+      Group105: 995030
+      Group125: 1176490
+      Group160: 1524731
+    - Lv: 99
+      Group60: 591882
+      Group80: 776239
+      Group100: 970299
+      Group105: 1027103
+      Group125: 1212873
+      Group160: 1571884
+    - Lv: 100
+      Group60: 600000
+      Group80: 800000
+      Group100: 1000000
+      Group105: 1059860
+      Group125: 1250000
+      Group160: 1640000
+    - Lv: 0
+      Group60: 0
+      Group80: 0
+      Group100: 0
+      Group105: 0
+      Group125: 0
+      Group160: 0
