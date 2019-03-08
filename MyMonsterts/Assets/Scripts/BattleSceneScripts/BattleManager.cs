@@ -141,6 +141,7 @@ public class BattleManager : MonoBehaviour {
                 player.RemoveAt(i);
             }
         }
+        
         Debug.Log("playerCount:"+player.Count);
         if(player.Count==0){
             battleGameState = GameState.Lose;
@@ -204,7 +205,7 @@ public class BattleManager : MonoBehaviour {
         }else{
             attackNum++;
         }
-        
+
         if(playerAttackNum == player.Count-1){
             playerAttackNum = 0;
         }else{
