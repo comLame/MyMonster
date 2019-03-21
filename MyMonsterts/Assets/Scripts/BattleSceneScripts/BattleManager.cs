@@ -23,6 +23,8 @@ public class BattleManager : MonoBehaviour {
     [SerializeField] private GameObject WinCanvas;
     [SerializeField] private GameObject LoseCanvas;
 
+    public Text CommandText;
+
     public GameObject enemyImage;
     public GameObject myImage;
 
@@ -76,7 +78,7 @@ public class BattleManager : MonoBehaviour {
                     color.a = 0;
                     enemy[i].transform.GetChild(3).GetComponent<SpriteRenderer>().color = color;
                     if(hitObject.collider==enemy[i].GetComponent<Collider2D>()){
-                        selectedEnemyNum = i;
+                        selectedEnemyNum = i+1;
                         Debug.Log("selectedEnemyNum:"+selectedEnemyNum);
                     }
                 }
@@ -105,19 +107,15 @@ public class BattleManager : MonoBehaviour {
 
     //[{(攻撃側のレベル × 2 ÷ 5 + 2) × (威力 × 攻撃側の攻撃or特攻 ÷ 防御側の防御or特防) ÷ 50 + 2} × 乱数幅(0.85,0.86,...0.99,1.00)] × 一致補正など
     private IEnumerator EnemyAttack(int order) {  
+        CommandText.text ="敵の攻撃！";
         yield return new WaitForSeconds (1f);  
-        Debug.Log("敵の攻撃！");
 
         //ダメージ計算
         int rand = Random.Range(1, player.Count+1)-1;
         int damage = (int)(((sortedMonsters[order].GetComponent<Monster>().Level*2/5)+2)*
         ((skillPower*sortedMonsters[order].GetComponent<Monster>().Atk/player[rand].GetComponent<Monster>().Def/50)+2));
-        Debug.Log("プレイヤーに"+damage+"ダメージ！");
+        CommandText.text = player[rand].name+"に"+damage+"ダメージ！";
         player[rand].transform.GetChild(1).GetComponent<Slider>().value -= damage;
-
-        //コマンド表示
-        commandButton.SetActive(true);
-        enemyImage.SetActive(false);
 
         //攻撃ターン管理
         if(attackNum == player.Count+enemy.Count-1){
@@ -147,6 +145,11 @@ public class BattleManager : MonoBehaviour {
             battleGameState = GameState.Lose;
             LoseCanvas.SetActive(true);
         }
+        yield return new WaitForSeconds (1f);  
+        //コマンド表示
+        commandButton.SetActive(true);
+        enemyImage.SetActive(false);
+        CommandText.text  = "";
     }
 
     public void Attack(){
@@ -154,23 +157,27 @@ public class BattleManager : MonoBehaviour {
     }
 
     private IEnumerator PlayerAttack(int order) {  
+        CommandText.text = "プレイヤーの攻撃！";
+        commandButton.SetActive(false);
+
         yield return new WaitForSeconds (1f);
-        Debug.Log("プレイヤーの攻撃！");
 
         int rand = Random.Range(1, enemy.Count+1)-1;
 
         //ダメージ計算
         if(selectedEnemyNum != 0){
             int damage = (int)(((sortedMonsters[order].GetComponent<Monster>().Level*2/5)+2)*
-                ((skillPower*sortedMonsters[order].GetComponent<Monster>().Atk/enemy[selectedEnemyNum].GetComponent<Monster>().Def/50)+2));
-            Debug.Log("敵に"+damage+"ダメージ！");
-            enemy[selectedEnemyNum].transform.GetChild(1).GetComponent<Slider>().value -= damage;
+                ((skillPower*sortedMonsters[order].GetComponent<Monster>().Atk/enemy[selectedEnemyNum-1].GetComponent<Monster>().Def/50)+2));
+            CommandText.text = enemy[selectedEnemyNum-1].name+"に"+damage+"ダメージ！";
+            enemy[selectedEnemyNum-1].transform.GetChild(1).GetComponent<Slider>().value -= damage;
         }else{
             int damage = (int)(((sortedMonsters[order].GetComponent<Monster>().Level*2/5)+2)*
               ((skillPower*sortedMonsters[order].GetComponent<Monster>().Atk/enemy[rand].GetComponent<Monster>().Def/50)+2));
-            Debug.Log("敵に"+damage+"ダメージ！");
+            CommandText.text =enemy[rand].name+"に"+damage+"ダメージ！";
             enemy[rand].transform.GetChild(1).GetComponent<Slider>().value -= damage;
         }
+
+        yield return new WaitForSeconds (1f);
 
         selectedEnemyNum = 0;
     
@@ -180,8 +187,7 @@ public class BattleManager : MonoBehaviour {
             enemy[i].transform.GetChild(3).GetComponent<SpriteRenderer>().color = col;
         }
 
-        //コマンド表示
-        commandButton.SetActive(false);
+        
         battleGameState = GameState.EnemyAttack;
 
         //勝利判定
@@ -194,6 +200,7 @@ public class BattleManager : MonoBehaviour {
                 enemy.RemoveAt(i);
             }
         }
+
         Debug.Log("enemyCount"+ enemy.Count);
         if(enemy.Count == 0){
             battleGameState = GameState.Win;
@@ -211,6 +218,8 @@ public class BattleManager : MonoBehaviour {
         }else{
             playerAttackNum++;
         }
+
+        CommandText.text  = "";
     }
 }
 
