@@ -1494,7 +1494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterData: {fileID: 11400000, guid: abe5e38adb01f4ed5b77fb60ce17deca, type: 2}
   expData: {fileID: 11400000, guid: 98131a474a803413c835f740bffe0668, type: 2}
-  monsterId: 2
+  monsterId: 0
   isEnemy: 1
 --- !u!58 &554104993
 CircleCollider2D:
@@ -2097,7 +2097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterData: {fileID: 11400000, guid: abe5e38adb01f4ed5b77fb60ce17deca, type: 2}
   expData: {fileID: 11400000, guid: 98131a474a803413c835f740bffe0668, type: 2}
-  monsterId: 2
+  monsterId: 0
   isEnemy: 1
 --- !u!1 &1028901299
 GameObject:
@@ -3278,7 +3278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterData: {fileID: 11400000, guid: abe5e38adb01f4ed5b77fb60ce17deca, type: 2}
   expData: {fileID: 11400000, guid: 98131a474a803413c835f740bffe0668, type: 2}
-  monsterId: 2
+  monsterId: 0
   isEnemy: 1
 --- !u!1 &1377939644
 GameObject:
@@ -3492,7 +3492,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 500}
   m_SizeDelta: {x: 500, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1542328186
@@ -3665,7 +3665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterData: {fileID: 11400000, guid: abe5e38adb01f4ed5b77fb60ce17deca, type: 2}
   expData: {fileID: 11400000, guid: 98131a474a803413c835f740bffe0668, type: 2}
-  monsterId: 6
+  monsterId: 5
   isEnemy: 0
 --- !u!1 &1650971697
 GameObject:
