@@ -24,6 +24,7 @@ public class BattleManager : MonoBehaviour {
     [SerializeField] private GameObject LoseCanvas;
 
     public Text CommandText;
+    public Text GetItemText;
 
     public GameObject enemyImage;
     public GameObject myImage;
@@ -33,6 +34,8 @@ public class BattleManager : MonoBehaviour {
     private GameState battleGameState = GameState.TurnStart;
     //public Slider playerSlider;
     //public Slider enemySlider;
+
+    private int firstEnemyNum;
 
     private int skillPower = 80; 
     private int attackNum = 0;
@@ -44,6 +47,9 @@ public class BattleManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
+        firstEnemyNum = enemy.Count;
+        Debug.Log("firstEnemyNum:"+firstEnemyNum);
 
         Sort();
 
@@ -205,7 +211,14 @@ public class BattleManager : MonoBehaviour {
         if(enemy.Count == 0){
             battleGameState = GameState.Win;
             WinCanvas.SetActive(true);
+            GetItemText.text = "経験値のかけら:"+firstEnemyNum+"個";
+            int experienceItem = SaveData.GetInt("ExperienceItem",0);
+            Debug.Log("experienceItem:"+experienceItem);
+            experienceItem += firstEnemyNum;
+            SaveData.SetInt("ExperienceItem",experienceItem);
+            SaveData.Save();
         }
+
         //攻撃ターン管理
         if(attackNum == player.Count+enemy.Count-1){
             attackNum = 0;

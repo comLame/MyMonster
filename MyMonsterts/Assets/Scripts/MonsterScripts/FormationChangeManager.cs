@@ -23,11 +23,10 @@ public class FormationChangeManager : MonoBehaviour {
 
 			List<int> formation = new List<int>(); 
 			formation = SaveData.GetList<int>("Formation",new List<int>(){0,0,0,0,0});
-
-			formation[GameObject.Find("FormationManager").GetComponent<FormationData>().selectedFormationNumber] 
+			Debug.Log("selectedFormationNum:"+GameObject.Find("FormationManager").GetComponent<FormationData>().selectedFormationNumber);
+			formation[GameObject.Find("FormationManager").GetComponent<FormationData>().selectedFormationNumber-1] 
 			= int.Parse(this.gameObject.transform.GetChild(0).GetComponent<Text>().text);
 			SaveData.SetList("Formation",formation);
-			Debug.Log(formation);
 			SaveData.Save();
 		}
 		GameObject.Find("FormationManager").GetComponent<FormationData>().selected = false;
