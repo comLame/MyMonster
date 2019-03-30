@@ -9,4 +9,5 @@ public class PowerUpComfirmText : MonoBehaviour {
 	void Start () {
 		this.gameObject.GetComponent<Text>().text = "";
 	}
+	
 }

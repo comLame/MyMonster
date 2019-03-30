@@ -59,6 +59,11 @@ public class BattleManager : MonoBehaviour {
             //コマンド表示
             battleGameState = GameState.PlayerAttack;
             commandButton.SetActive(true);
+
+            Color col1 = sortedMonsters[attackNum].transform.GetChild(3).GetComponent<SpriteRenderer>().color;
+            col1.a = 255;
+            sortedMonsters[attackNum].transform.GetChild(3).GetComponent<SpriteRenderer>().color = col1;
+
             enemyImage.SetActive(false);
         }
     }
@@ -85,7 +90,7 @@ public class BattleManager : MonoBehaviour {
                     enemy[i].transform.GetChild(3).GetComponent<SpriteRenderer>().color = color;
                     if(hitObject.collider==enemy[i].GetComponent<Collider2D>()){
                         selectedEnemyNum = i+1;
-                        Debug.Log("selectedEnemyNum:"+selectedEnemyNum);
+                        //Debug.Log("selectedEnemyNum:"+selectedEnemyNum);
                     }
                 }
                 Color col = hitObject.collider.gameObject.transform.GetChild(3).GetComponent<SpriteRenderer>().color;
@@ -113,7 +118,7 @@ public class BattleManager : MonoBehaviour {
 
     //[{(攻撃側のレベル × 2 ÷ 5 + 2) × (威力 × 攻撃側の攻撃or特攻 ÷ 防御側の防御or特防) ÷ 50 + 2} × 乱数幅(0.85,0.86,...0.99,1.00)] × 一致補正など
     private IEnumerator EnemyAttack(int order) {  
-        CommandText.text ="敵の攻撃！";
+        CommandText.text =sortedMonsters[order].transform.name+"の攻撃！";
         yield return new WaitForSeconds (1f);  
 
         //ダメージ計算
@@ -135,6 +140,9 @@ public class BattleManager : MonoBehaviour {
             enemyAttackNum++;
         }
 
+        Color col1 = sortedMonsters[attackNum].transform.GetChild(3).GetComponent<SpriteRenderer>().color;
+        col1.a = 255;
+        sortedMonsters[attackNum].transform.GetChild(3).GetComponent<SpriteRenderer>().color = col1;
 
         //敗北判定
         for(int i = 0; i<player.Count;i++){
@@ -154,6 +162,7 @@ public class BattleManager : MonoBehaviour {
         yield return new WaitForSeconds (1f);  
         //コマンド表示
         commandButton.SetActive(true);
+
         enemyImage.SetActive(false);
         CommandText.text  = "";
     }
@@ -163,7 +172,7 @@ public class BattleManager : MonoBehaviour {
     }
 
     private IEnumerator PlayerAttack(int order) {  
-        CommandText.text = "プレイヤーの攻撃！";
+        CommandText.text = sortedMonsters[order].transform.name+"の攻撃！";
         commandButton.SetActive(false);
 
         yield return new WaitForSeconds (1f);
@@ -195,6 +204,9 @@ public class BattleManager : MonoBehaviour {
 
         
         battleGameState = GameState.EnemyAttack;
+        Color col2 = sortedMonsters[order].transform.GetChild(3).GetComponent<SpriteRenderer>().color;
+        col2.a = 0;
+        sortedMonsters[order].transform.GetChild(3).GetComponent<SpriteRenderer>().color = col2;
 
         //勝利判定
         for(int i = 0; i<enemy.Count;i++){
@@ -234,5 +246,6 @@ public class BattleManager : MonoBehaviour {
 
         CommandText.text  = "";
     }
+
 }
 
