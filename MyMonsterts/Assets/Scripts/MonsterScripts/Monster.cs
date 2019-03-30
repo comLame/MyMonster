@@ -22,6 +22,7 @@ public class Monster : MonoBehaviour {
     void Start () {
         if(!isEnemy){
             int nowExp = SaveData.GetInt("Exp",0);
+
             int expGroup = monsterData.sheets[0].list[monsterId].ExpGroup;
             
             switch(expGroup){
@@ -79,14 +80,16 @@ public class Monster : MonoBehaviour {
         }
 
 
-            Hp = monsterData.sheets[0].list[monsterId].HP;
+            Hp = monsterData.sheets[0].list[monsterId].HP;
             Atk = monsterData.sheets[0].list[monsterId].ATK;
             Def = monsterData.sheets[0].list[monsterId].DEF;
             Spd =monsterData.sheets[0].list[monsterId].SPD;
             Exp = monsterData.sheets[0].list[monsterId].EXP;
 
-            Debug.Log(this.gameObject.name);
-            Debug.Log("LV:"+Level);
+            Debug.Log("NAME:"+this.gameObject.name);
+            int ExpNow = SaveData.GetInt("Exp",0);
+            Debug.Log("EXP:"+ExpNow);
+            Debug.Log("LEVEL:"+Level);
 
             transform.GetChild(2).GetComponent<Text>().text = "Lv."+Level;
             transform.GetChild(1).GetComponent<Slider>().maxValue = Hp;

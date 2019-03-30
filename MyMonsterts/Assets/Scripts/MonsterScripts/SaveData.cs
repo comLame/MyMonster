@@ -22,7 +22,7 @@ public class SaveData
 		get {
 			if (savedatabase == null) {
 				string path = Application.persistentDataPath + "/";
-				Debug.Log("ApplicationpersistentDataPath"+path);
+				//Debug.Log("ApplicationpersistentDataPath"+path);
 				string fileName = "SaveData.json";
 				savedatabase = new SaveDataBase (path, fileName);
 			}
