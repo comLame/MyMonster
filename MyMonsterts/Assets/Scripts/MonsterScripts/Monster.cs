@@ -9,6 +9,7 @@ public class Monster : MonoBehaviour {
     public Entity_ExpData expData;
 
     public int monsterId;
+    public int monsterPosi;
     public bool isEnemy;
 
     [System.NonSerialized] public int Hp;
@@ -16,15 +17,21 @@ public class Monster : MonoBehaviour {
     [System.NonSerialized] public int Def;
     [System.NonSerialized] public int Spd;
     [System.NonSerialized] public int Exp;
-    [System.NonSerialized] public int Level;
+    public int Level;
 
     // Use this for initialization
     void Start () {
         if(!isEnemy){
             int nowExp = SaveData.GetInt("Exp",0);
+            
+            List<int> formation = new List<int>();
+            formation = SaveData.GetList("Formation", new List<int>());
 
+            monsterId = formation[monsterPosi-1];
+            
             int expGroup = monsterData.sheets[0].list[monsterId].ExpGroup;
             
+            /*
             switch(expGroup){
             case 60:
                 for(int i=0;i<100;i++){
@@ -74,26 +81,27 @@ public class Monster : MonoBehaviour {
                     }
                 }
                 break;
-            }
+            }*/
         }else{
-            Level = 1;
+            //Level = 1;
         }
 
+        Hp = monsterData.sheets[0].list[monsterId].HP * 2 * Level/100 + 10 + Level;
 
-            Hp = monsterData.sheets[0].list[monsterId].HP;
-            Atk = monsterData.sheets[0].list[monsterId].ATK;
-            Def = monsterData.sheets[0].list[monsterId].DEF;
-            Spd =monsterData.sheets[0].list[monsterId].SPD;
-            Exp = monsterData.sheets[0].list[monsterId].EXP;
+        Atk = monsterData.sheets[0].list[monsterId].ATK;
+        Def = monsterData.sheets[0].list[monsterId].DEF;
 
-            Debug.Log("NAME:"+this.gameObject.name);
-            int ExpNow = SaveData.GetInt("Exp",0);
-            Debug.Log("EXP:"+ExpNow);
-            Debug.Log("LEVEL:"+Level);
+        Spd = monsterData.sheets[0].list[monsterId].SPD * 2 * Level/100 + 5;
+        Exp = monsterData.sheets[0].list[monsterId].EXP;
 
-            transform.GetChild(2).GetComponent<Text>().text = "Lv."+Level;
-            transform.GetChild(1).GetComponent<Slider>().maxValue = Hp;
-            transform.GetChild(1).GetComponent<Slider>().value = Hp;
+        Debug.Log("NAME:"+this.gameObject.name);
+        int ExpNow = SaveData.GetInt("Exp",0);
+        Debug.Log("EXP:"+ExpNow);
+        Debug.Log("LEVEL:"+Level);
+
+        transform.GetChild(2).GetComponent<Text>().text = "Lv."+Level;
+        transform.GetChild(1).GetComponent<Slider>().maxValue = Hp;
+        transform.GetChild(1).GetComponent<Slider>().value = Hp;
     }
 }
 
