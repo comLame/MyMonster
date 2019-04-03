@@ -35,7 +35,7 @@ public class BattleManager : MonoBehaviour {
     public Text GetItemText;
 
     //コマンドボタン（はたく）
-    public GameObject commandButton;
+    public GameObject[] commandButton;
 
     //ステート管理用
     private GameState battleGameState = GameState.TurnStart;
@@ -54,6 +54,8 @@ public class BattleManager : MonoBehaviour {
 
     //攻撃のコルーチン中であるかどうか
     private bool Attacking = false;
+
+    private string SkillName;
 
     //速度順に並べ替えられたモンスターのリスト
     List<GameObject> sortedMonsters = new List<GameObject>();
@@ -157,9 +159,10 @@ public class BattleManager : MonoBehaviour {
     }
 
     //[{(攻撃側のレベル × 2 ÷ 5 + 2) × (威力 × 攻撃側の攻撃or特攻 ÷ 防御側の防御or特防) ÷ 50 + 2} × 乱数幅(0.85,0.86,...0.99,1.00)] × 一致補正など
-    private IEnumerator EnemyAttack() {  
-        CommandText.text =sortedMonsters[attackNum].transform.name+"の攻撃！";
+    private IEnumerator EnemyAttack() {
+        CommandText.text = sortedMonsters[attackNum].transform.name+"の攻撃！";
         yield return new WaitForSeconds (1f);  
+
         Debug.Log(sortedMonsters[attackNum].transform.name+"の攻撃！");
 
         //ダメージ計算
@@ -211,7 +214,9 @@ public class BattleManager : MonoBehaviour {
         if(sortedMonsters[attackNum].GetComponent<Monster>().isEnemy){
             StartCoroutine("EnemyAttack");
         }else{
-            commandButton.SetActive(true);
+            for(int i = 0;i<commandButton.Length;i++){
+                commandButton[i].SetActive(true);
+            }
 
             //攻撃しているモンスターの可視化
             for(int i = 0;i<sortedMonsters.Count;i++){
@@ -224,14 +229,18 @@ public class BattleManager : MonoBehaviour {
         }
     }
 
-    public void Attack(){
+    public void Attack(string skillName){
+        SkillName = skillName;
         StartCoroutine ("PlayerAttack",attackNum);
         Debug.Log("PlayerAttack");
     }
 
-    private IEnumerator PlayerAttack() {  
-        CommandText.text = sortedMonsters[attackNum].transform.name+"の攻撃！";
-        commandButton.SetActive(false);
+    private IEnumerator PlayerAttack() { 
+        
+        CommandText.text = sortedMonsters[attackNum].transform.name+"の"+SkillName+"!";
+        for(int i = 0;i<commandButton.Length;i++){
+            commandButton[i].SetActive(false);
+        }
 
         yield return new WaitForSeconds (1f);
 

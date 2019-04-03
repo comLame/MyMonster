@@ -95,3 +95,30 @@ MonoBehaviour:
       EvoLv: 101
       EXP: 236
       ExpGroup: 105
+    - ID: 10
+      Name: "\u30D8\u30EB\u30AC\u30FC"
+      HP: 75
+      ATK: 90
+      DEF: 50
+      SPD: 95
+      EvoLv: 101
+      EXP: 175
+      ExpGroup: 125
+    - ID: 11
+      Name: "\u30E0\u30A6\u30DE\u30FC\u30B8"
+      HP: 60
+      ATK: 60
+      DEF: 60
+      SPD: 105
+      EvoLv: 101
+      EXP: 173
+      ExpGroup: 80
+    - ID: 12
+      Name: "\u30D9\u30C8\u30D9\u30C8\u30F3"
+      HP: 105
+      ATK: 105
+      DEF: 75
+      SPD: 50
+      EvoLv: 101
+      EXP: 175
+      ExpGroup: 100
