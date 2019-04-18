@@ -21,6 +21,7 @@ public class BattleManager : MonoBehaviour {
 	private List<GameObject> monsterOrderList = new List<GameObject>();
 	private List<GameObject> myPartyList = new List<GameObject>();
 	private List<GameObject> enemyPartyList = new List<GameObject>();
+	private Slider animateSlider; //アニメーションするスライダー
 
 	// Use this for initialization
 	void Start () {
@@ -125,6 +126,49 @@ public class BattleManager : MonoBehaviour {
 		*/
 	}
 
+	//攻撃モーション
+	private void AttackMotion(GameObject monster){
+		float diff = 150;
+		Vector3 originalPos = monster.GetComponent<RectTransform>().localPosition;
+		//移動
+		if(monster.GetComponent<CharacterStatus>().battleId <= 5){
+			//味方モンスター
+			monster.GetComponent<RectTransform>().localPosition
+				= new Vector3(originalPos.x - diff,originalPos.y,originalPos.z);
+		}else{
+			monster.GetComponent<RectTransform>().localPosition
+				= new Vector3(originalPos.x + diff,originalPos.y,originalPos.z);
+		}
+		//戻る
+		StartCoroutine(DelayMethod(0.8f,() => {
+			monster.GetComponent<RectTransform>().localPosition
+		 = new Vector3(originalPos.x,originalPos.y,originalPos.z);
+		}));
+	}
+
+	//被弾モーション
+	private void AmmunitionMotion(GameObject monster){
+		StartCoroutine("Blink",monster);
+	}
+
+	//点滅
+	IEnumerator Blink(GameObject monster) {
+		int count = 0;
+        while ( count <= 3 ) {
+			count++;
+            //renderer.enabled = !renderer.enabled;
+			Color c = monster.GetComponent<Image>().color;
+			if(c.a == 1){
+				//透明じゃない
+				monster.GetComponent<Image>().color = new Color(1,1,1,0);
+			}else{
+				//透明
+				monster.GetComponent<Image>().color = new Color(1,1,1,1);
+			}
+            yield return new WaitForSeconds(0.2f);
+            }
+    }
+
 	//攻撃
 	private void Attack(GameObject attackMonster,GameObject attackedMonster){
 		float skillDamage = 100; //技のダメージ
@@ -136,23 +180,59 @@ public class BattleManager : MonoBehaviour {
 		float damage = 22 * skillDamage * attack / defence / 50 * attributeMatch * attributeAffinity;
 
 		//攻撃
+		int originalHp = attackedMonster.GetComponent<CharacterStatus>().hp;
 		attackedMonster.GetComponent<CharacterStatus>().hp -= (int)damage;
 		int hp = attackedMonster.GetComponent<CharacterStatus>().hp;
+		//攻撃モーション
+		AttackMotion(attackMonster);
 
 		//スライダー
-		attackedMonster.transform.Find("Slider").gameObject.GetComponent<Slider>().value = hp;
+		//attackedMonster.transform.Find("Slider").gameObject.GetComponent<Slider>().value = hp;
+		AnimationSlider(attackedMonster.transform.Find("Slider").gameObject.GetComponent<Slider>(),originalHp,hp);
+
+		//被弾モーション
+		AmmunitionMotion(attackedMonster);
 
 		//死亡判定
 		if(hp <= 0){
 			//死亡
 			attackedMonster.GetComponent<CharacterStatus>().deathFlag = true;
-			attackedMonster.SetActive(false);
+			StartCoroutine(DelayMethod(1.0f,() => {
+				attackedMonster.SetActive(false);
+			}));
+
+			//ターゲットマーカー
+			int battleId = attackedMonster.GetComponent<CharacterStatus>().battleId;
+			if(battleId <= 5 && battleId == targetMonsterId_ally){
+				//味方が死んだ　かつ　ターゲットになってた
+				targetMonsterId_ally = 0;
+				StartCoroutine(DelayMethod(1.0f,() => {
+					targetMarker_ally.SetActive(false);
+				}));
+			}else if(battleId > 5 && battleId == targetMonsterId_enemy){
+				//敵が死んだ　かつ　ターゲットになってた
+				targetMonsterId_enemy = 0;
+				StartCoroutine(DelayMethod(1.0f,() => {
+					targetMarker_enemy.SetActive(false);
+				}));
+			}
 		}
 
 		StartCoroutine(DelayMethod(1.0f,() => {
 			CheckNextAction();
 		}));
 
+	}
+
+	//スライダーアニメーション
+	private void AnimationSlider(Slider slider,int originalHp,int currentHp){
+		animateSlider = slider;
+		iTween.ValueTo(gameObject,iTween.Hash("from",originalHp,"to",currentHp,"onupdatetarget",gameObject,
+			"onupdate","UpdateSlider"));
+	}
+
+	private void UpdateSlider(float hp){
+		animateSlider.value = hp;
 	}
 
 	private void SetSelectMarker(GameObject monster){
