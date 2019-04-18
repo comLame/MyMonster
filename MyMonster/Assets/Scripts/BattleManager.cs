@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using System.Linq;
 using UnityEngine.UI;
+using TMPro;
 
 public class BattleManager : MonoBehaviour {
 
@@ -14,7 +15,9 @@ public class BattleManager : MonoBehaviour {
 	public GameObject canvas;
 	public GameObject targetMarker_ally;
 	public GameObject targetMarker_enemy;
+	public GameObject bg_VOD;
 
+	private int vod = 0; //勝敗 1->勝ち -1->敗け
 	private int targetMonsterId_ally = 0;
 	private int targetMonsterId_enemy = 0;
 	private int actionCount = 0; //1だったら1体目の行動 10が終わったら次のターン
@@ -171,6 +174,7 @@ public class BattleManager : MonoBehaviour {
 
 	//攻撃
 	private void Attack(GameObject attackMonster,GameObject attackedMonster){
+		if(vod != 0)return; //もし勝敗がついてたらreturn
 		float skillDamage = 100; //技のダメージ
 		float attack = attackMonster.GetComponent<CharacterStatus>().attack; //攻撃するモンスターの攻撃力
 		float defence = attackedMonster.GetComponent<CharacterStatus>().defense; //攻撃されるモンスターの防御力
@@ -216,12 +220,65 @@ public class BattleManager : MonoBehaviour {
 					targetMarker_enemy.SetActive(false);
 				}));
 			}
+
+			//勝敗判定
+			JudgeVOD();
 		}
 
 		StartCoroutine(DelayMethod(1.0f,() => {
 			CheckNextAction();
 		}));
 
+	}
+
+	//勝敗判定
+	private void JudgeVOD(){
+		int count = 0;
+		for(int i=0;i<enemyPartyList.Count;i++){
+			if(!enemyPartyList[i].GetComponent<CharacterStatus>().deathFlag)count++;//いきてたらカウントアップ
+		}
+		if(count == 0){
+			vod = 1;
+			GameSet(); //バトル終了
+			return;
+		}
+		count = 0;
+		for(int i=0;i<myPartyList.Count;i++){
+			if(!myPartyList[i].GetComponent<CharacterStatus>().deathFlag)count++;//いきてたらカウントアップ
+		}
+		if(count == 0){
+			vod = -1;
+			GameSet();
+		}
+	}
+
+	//ゲーム終了
+	private void GameSet(){
+		StartCoroutine(DelayMethod(1.0f,()=> {
+			commandArea.SetActive(false);
+			bg_VOD.SetActive(true);
+			iTween.MoveFrom(bg_VOD,iTween.Hash("x",-10,"easytype",iTween.EaseType.easeInQuint,"time",0.8f,
+				"oncompletetarget",gameObject,"oncomplete","DisplayVOD"));
+		}));
+	}
+
+	private void DisplayVOD(){
+		if(vod == 1){
+			//勝利
+			GameObject txt = bg_VOD.transform.Find("txt_VOD").gameObject;
+			txt.SetActive(true);
+			txt.GetComponent<TextMeshProUGUI>().text = "WIN!!!";
+			txt.GetComponent<TextMeshProUGUI>().color = new Color(0.976f,1,0.1647f);
+			//アニメーション
+
+		}else{
+			//敗北
+			GameObject txt = bg_VOD.transform.Find("txt_VOD").gameObject;
+			txt.SetActive(true);
+			txt.GetComponent<TextMeshProUGUI>().text = "LOSE...";
+			txt.GetComponent<TextMeshProUGUI>().color = new Color(0.49f,0.1f,0.86f);
+			//アニメーション
+		}
 	}
 
 	//スライダーアニメーション
