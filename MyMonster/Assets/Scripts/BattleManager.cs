@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
+using UnityEngine.UI;
 
 public class BattleManager : MonoBehaviour {
 
@@ -17,24 +19,41 @@ public class BattleManager : MonoBehaviour {
 	private int targetMonsterId_enemy = 0;
 	private int actionCount = 0; //1だったら1体目の行動 10が終わったら次のターン
 	private List<GameObject> monsterOrderList = new List<GameObject>();
+	private List<GameObject> myPartyList = new List<GameObject>();
+	private List<GameObject> enemyPartyList = new List<GameObject>();
 
 	// Use this for initialization
 	void Start () {
 		InputDate();
+		InitializeSlider(myPartyList);
+		InitializeSlider(enemyPartyList);
 		SortMonsterOrder();
 		DebugMonsterOrderList();
 		CheckNextAction();
 	}
 	
-	//monsterOrderリストにオブジェクトを代入
+	//monsterOrderList,myPartyList,enemyPartyListにオブジェクトを代入
 	private void InputDate(){
 		for(int i=0;i<5;i++){
 			GameObject monsterObj = myParty.transform.GetChild(i).gameObject;
 			monsterOrderList.Add(monsterObj);
+			myPartyList.Add(monsterObj);
 		}
 		for(int i=0;i<5;i++){
 			GameObject monsterObj = enemyParty.transform.GetChild(i).gameObject;
 			monsterOrderList.Add(monsterObj);
+			enemyPartyList.Add(monsterObj);
+		}
+	}
+
+	//Sliderの初期化
+	private void InitializeSlider(List<GameObject> monsterList){
+		for(int i=0;i<monsterList.Count;i++){
+			GameObject monster =monsterList[i];
+			GameObject slider = monster.transform.Find("Slider").gameObject;
+			int hp = monster.GetComponent<CharacterStatus>().hp;
+			slider.GetComponent<Slider>().maxValue = hp;
+			slider.GetComponent<Slider>().value = hp;
 		}
 	}
 
@@ -58,23 +77,82 @@ public class BattleManager : MonoBehaviour {
 			actionCount = 1;
 			SortMonsterOrder();
 		}
-		int btlId = monsterOrderList[actionCount-1].GetComponent<CharacterStatus>().battleId;
-		if(btlId <= 5)AllyAction();
-		else EnemyAction();
+		//次行動するモンスター
+		GameObject monster = monsterOrderList[actionCount-1];
+		if(!monster.GetComponent<CharacterStatus>().deathFlag){
+			//生きていたら
+			int btlId = monsterOrderList[actionCount-1].GetComponent<CharacterStatus>().battleId;
+			if(btlId <= 5)AllyAction();
+			else EnemyAction();
+		}else{
+			//死んでいたら
+			CheckNextAction();
+		}
 	}
 
+	//味方の行動
 	private void AllyAction(){
 		commandArea.SetActive(true);
 		GameObject monster = monsterOrderList[actionCount-1].gameObject;
 		SetSelectMarker(monster);
 	}
 
+	//敵の行動
 	private void EnemyAction(){
+		//動くモンスターの特定
 		GameObject monster = monsterOrderList[actionCount-1].gameObject;
 		SetSelectMarker(monster);
+
+		//攻撃する相手の決定
+		List<GameObject> remainMyPartyList = new List<GameObject>(); //生きている味方のリスト
+		for(int i=0;i<myPartyList.Count;i++){
+			if(!myPartyList[i].GetComponent<CharacterStatus>().deathFlag){
+				//生きていればListに追加
+				remainMyPartyList.Add(myPartyList[i]);
+			}
+		}
+		remainMyPartyList = remainMyPartyList.OrderBy(a => Guid.NewGuid()).ToList(); //シャッフル
+		
+		GameObject targetMonster = remainMyPartyList[0];
+
+		//攻撃
+		Attack(monster,targetMonster);
+
+		/*
 		StartCoroutine(DelayMethod(1.0f,() => {
 			CheckNextAction();
 		}));
+		*/
+	}
+
+	//攻撃
+	private void Attack(GameObject attackMonster,GameObject attackedMonster){
+		float skillDamage = 100; //技のダメージ
+		float attack = attackMonster.GetComponent<CharacterStatus>().attack; //攻撃するモンスターの攻撃力
+		float defence = attackedMonster.GetComponent<CharacterStatus>().defense; //攻撃されるモンスターの防御力
+		float attributeMatch = 1.0f; //タイプ一致
+		float attributeAffinity = 1.0f; //タイプ相性
+
+		float damage = 22 * skillDamage * attack / defence / 50 * attributeMatch * attributeAffinity;
+
+		//攻撃
+		attackedMonster.GetComponent<CharacterStatus>().hp -= (int)damage;
+		int hp = attackedMonster.GetComponent<CharacterStatus>().hp;
+
+		//スライダー
+		attackedMonster.transform.Find("Slider").gameObject.GetComponent<Slider>().value = hp;
+
+		//死亡判定
+		if(hp <= 0){
+			//死亡
+			attackedMonster.GetComponent<CharacterStatus>().deathFlag = true;
+			attackedMonster.SetActive(false);
+		}
+
+		StartCoroutine(DelayMethod(1.0f,() => {
+			CheckNextAction();
+		}));
+
 	}
 
 	private void SetSelectMarker(GameObject monster){
@@ -120,9 +198,36 @@ public class BattleManager : MonoBehaviour {
 	//味方の攻撃
 	public void AllyAttack(){
 		commandArea.SetActive(false);
+		//動くモンスターの特定
+		GameObject monster = monsterOrderList[actionCount-1].gameObject;
+		SetSelectMarker(monster);
+
+		//攻撃する相手の決定
+		GameObject targetMonster;
+		if(targetMonsterId_enemy == 0){
+			//ターゲットしていない
+			List<GameObject> remainEnemyPartyList = new List<GameObject>(); //生きている味方のリスト
+			for(int i=0;i<enemyPartyList.Count;i++){
+				if(!enemyPartyList[i].GetComponent<CharacterStatus>().deathFlag){
+					//生きていればListに追加
+					remainEnemyPartyList.Add(enemyPartyList[i]);
+				}
+			}
+			remainEnemyPartyList = remainEnemyPartyList.OrderBy(a => Guid.NewGuid()).ToList(); //シャッフル
+			
+			targetMonster = remainEnemyPartyList[0];
+		}else{
+			//ターゲットしている
+			targetMonster = enemyPartyList[targetMonsterId_enemy - 6];
+		}
+
+		//攻撃
+		Attack(monster,targetMonster);
+		/*
 		StartCoroutine(DelayMethod(1.0f,() => {
 			CheckNextAction();
 		}));
+		*/
 	}
 
 	//ディレイメソッド
