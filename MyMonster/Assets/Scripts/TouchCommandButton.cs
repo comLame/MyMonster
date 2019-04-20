@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TouchCommandButton : MonoBehaviour {
 
-	public void OnClick(){
+	public void OnClick(int num){
 		GameObject battleManager = GameObject.Find("BattleManager");
-		battleManager.GetComponent<BattleManager>().AllyAttack();
+		battleManager.GetComponent<BattleManager>().AllyAttack(num);
 	}
 }

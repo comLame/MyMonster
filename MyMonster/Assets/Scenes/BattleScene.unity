@@ -5115,6 +5115,11 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114347160643573228, guid: 6c9cf40b46f91412c97cf249dd985aab,
+        type: 2}
+      propertyPath: num_selectedSkill
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c9cf40b46f91412c97cf249dd985aab, type: 2}
   m_IsPrefabAsset: 0
@@ -6174,7 +6179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.21176468, g: 0.36789826, b: 0.9254902, a: 1}
+  m_Color: {r: 0.33830646, g: 0.8679245, b: 0.16785331, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6214,11 +6219,11 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1224206454}
           m_MethodName: OnClick
-          m_Mode: 1
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 2
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -6850,6 +6855,11 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114347160643573228, guid: 6c9cf40b46f91412c97cf249dd985aab,
+        type: 2}
+      propertyPath: num_selectedSkill
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c9cf40b46f91412c97cf249dd985aab, type: 2}
   m_IsPrefabAsset: 0
@@ -7078,11 +7088,11 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1527221710}
           m_MethodName: OnClick
-          m_Mode: 1
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 3
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -7191,11 +7201,11 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1535494083}
           m_MethodName: OnClick
-          m_Mode: 1
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 4
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -7405,11 +7415,11 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1623182049}
           m_MethodName: OnClick
-          m_Mode: 1
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 1
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -7599,6 +7609,11 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114347160643573228, guid: 6c9cf40b46f91412c97cf249dd985aab,
+        type: 2}
+      propertyPath: num_selectedSkill
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c9cf40b46f91412c97cf249dd985aab, type: 2}
   m_IsPrefabAsset: 0
@@ -7685,6 +7700,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc0490e54dee347af949bf6c2933ea98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseStatsData: {fileID: 11400000, guid: 4fbbc6ebd43e74610985949b969f1eb6, type: 2}
+  enemyPartyData: {fileID: 11400000, guid: 924a2b82de02a4c8a820b6e6fdc1a979, type: 2}
+  myPartyData: {fileID: 11400000, guid: d636f2a35cc484c12874bf49ff7302bc, type: 2}
+  skillData: {fileID: 11400000, guid: 54af38109becb437b89ef75b6aa3ef48, type: 2}
   myParty: {fileID: 901432722}
   enemyParty: {fileID: 1837274135}
   commandArea: {fileID: 1457468653}
@@ -7871,6 +7890,11 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114347160643573228, guid: 6c9cf40b46f91412c97cf249dd985aab,
+        type: 2}
+      propertyPath: num_selectedSkill
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c9cf40b46f91412c97cf249dd985aab, type: 2}
@@ -8131,6 +8155,11 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114347160643573228, guid: 6c9cf40b46f91412c97cf249dd985aab,
+        type: 2}
+      propertyPath: num_selectedSkill
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c9cf40b46f91412c97cf249dd985aab, type: 2}

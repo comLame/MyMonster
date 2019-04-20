@@ -8,6 +8,12 @@ using TMPro;
 
 public class BattleManager : MonoBehaviour {
 
+	//エクセルデータ関係
+	public BaseStatsData baseStatsData;
+	public EnemyPartyData enemyPartyData;
+	public MyPartyData myPartyData;
+	public SkillData skillData;
+	//ここまで
 	public GameObject myParty;
 	public GameObject enemyParty;
 	public GameObject commandArea;
@@ -41,16 +47,18 @@ public class BattleManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		InputDate();
+		InputMonsterList();
+		GetMyPartyData();
+		GetEnemyPartyData();
 		InitializeSlider(myPartyList);
 		InitializeSlider(enemyPartyList);
 		SortMonsterOrder();
-		//DebugMonsterOrderList();
+		DebugMonsterOrderList();
 		CheckNextAction();
 	}
 	
 	//monsterOrderList,myPartyList,enemyPartyListにオブジェクトを代入
-	private void InputDate(){
+	private void InputMonsterList(){
 		for(int i=0;i<5;i++){
 			GameObject monsterObj = myParty.transform.GetChild(i).gameObject;
 			monsterOrderList.Add(monsterObj);
@@ -83,7 +91,103 @@ public class BattleManager : MonoBehaviour {
 	private void DebugMonsterOrderList(){
 		Debug.Log("start");
 		for(int i=0;i<monsterOrderList.Count;i++){
-			Debug.Log(monsterOrderList[i].GetComponent<CharacterStatus>().battleId);
+			string name = monsterOrderList[i].GetComponent<CharacterStatus>().name;
+			int battleId = monsterOrderList[i].GetComponent<CharacterStatus>().battleId;
+			int level = monsterOrderList[i].GetComponent<CharacterStatus>().level;
+			int hp = monsterOrderList[i].GetComponent<CharacterStatus>().hp;
+			int attack = monsterOrderList[i].GetComponent<CharacterStatus>().attack;
+			int defence = monsterOrderList[i].GetComponent<CharacterStatus>().defense;
+			int speed = monsterOrderList[i].GetComponent<CharacterStatus>().speed;
+			//Debug.Log("B_ID:" + battleId + " Lv."+ level + " " + name + " " + hp + " "+ attack + " "+ defence + " " + speed + " ");
+		}
+	}
+
+	/*=====================================
+	 *
+	 * データ入力
+	 *
+	 ======================================*/
+
+	//マイパーティデータを読み込む
+	private void GetMyPartyData(){
+		int num_total = myPartyData.sheets[0].list.Count; //総数取得
+		
+		for(int i=0;i<num_total;i++){
+			GameObject monster = myPartyList[i];
+			int num_pb = myPartyData.sheets[0].list[i].No; //図鑑番号
+			GetStatus(monster,num_pb,50); //ステータス代入
+			GetSkill(monster,i);
+		}
+	}
+
+	//エネミーパーティデータを読み込む
+	private void GetEnemyPartyData(){
+		int num_total = enemyPartyData.sheets[0].list.Count; //総数取得
+		
+		for(int i=0;i<num_total;i++){
+			GameObject monster = enemyPartyList[i];	
+			int num_pb = enemyPartyData.sheets[0].list[i].No; //図鑑番号
+			GetStatus(monster,num_pb,50); 
+			GetSkill(monster,i,true);
+		}
+	}
+
+	//技を読み込む
+	private void GetSkill(GameObject monster,int num,bool isEnemy = false){
+		int no_skill1;
+		int no_skill2;
+		int no_skill3;
+		int no_skill4;
+		if(!isEnemy){
+			//味方
+			no_skill1 = myPartyData.sheets[0].list[num].No_Skill1;
+			no_skill2 = myPartyData.sheets[0].list[num].No_Skill2;
+			no_skill3 = myPartyData.sheets[0].list[num].No_Skill3;
+			no_skill4 = myPartyData.sheets[0].list[num].No_Skill4;
+		}else{
+			//敵
+			no_skill1 = enemyPartyData.sheets[0].list[num].No_Skill1;
+			no_skill2 = enemyPartyData.sheets[0].list[num].No_Skill2;
+			no_skill3 = enemyPartyData.sheets[0].list[num].No_Skill3;
+			no_skill4 = enemyPartyData.sheets[0].list[num].No_Skill4;
+		}
+
+		monster.GetComponent<CharacterStatus>().skills[0] = no_skill1;
+		monster.GetComponent<CharacterStatus>().skills[1] = no_skill2;
+		monster.GetComponent<CharacterStatus>().skills[2]= no_skill3;
+		monster.GetComponent<CharacterStatus>().skills[3] = no_skill4;
+	}
+	
+	//ステータス
+	private void GetStatus(GameObject monster,int num_pictureBook,int level){
+		//種族値
+		int bs_hp = baseStatsData.sheets[0].list[num_pictureBook-1].Hp;
+		int bs_attack = baseStatsData.sheets[0].list[num_pictureBook-1].Attack;
+		int bs_defence = baseStatsData.sheets[0].list[num_pictureBook-1].Defence;
+		int bs_speed = baseStatsData.sheets[0].list[num_pictureBook-1].Speed;
+		//Debug.Log(bs_hp + " " + bs_attack + " "+ bs_defence + " "+ bs_speed);
+		//データ代入
+		monster.GetComponent<CharacterStatus>().level = level;
+		monster.GetComponent<CharacterStatus>().hp = GetActualValue(bs_hp,level,true);
+		monster.GetComponent<CharacterStatus>().attack = GetActualValue(bs_attack,level);
+		monster.GetComponent<CharacterStatus>().defense= GetActualValue(bs_defence,level);
+		monster.GetComponent<CharacterStatus>().speed = GetActualValue(bs_speed,level);
+		//Debug.Log(GetActualValue(bs_hp,level,true) + " " + GetActualValue(bs_attack,level) + " "+ 
+		//	GetActualValue(bs_defence,level) + " "+ GetActualValue(bs_speed,level));
+	}
+
+	//実数値取得 かつ 返す
+	private int GetActualValue(int bs,int level,bool isHp = false){
+
+		int iv = 31; //個体値(Indivisual Value)
+		int ev = 252; //努力値(Effort Value)
+
+		if(isHp){
+			int av = (int)((bs*2 + iv + (ev/4)) * level/100 + 10 + level);
+			return av;
+		}else{
+			int av = (int)((bs*2 + iv + (ev/4)) * level/100 + 5);
+			return av;
 		}
 	}
 
@@ -117,15 +221,56 @@ public class BattleManager : MonoBehaviour {
 	private void AllyAction(){
 		commandArea.SetActive(true);
 		GameObject monster = monsterOrderList[actionCount-1].gameObject;
+		SetCommandArea(monster);
 		SetSelectMarker(monster);
+	}
+
+	//コマンドエリアの設定
+	private void SetCommandArea(GameObject monster){
+		for(int i=0;i<4;i++){
+			//変数代入
+			GameObject btn_command = commandArea.transform.GetChild(i).gameObject;
+			int no_skill = monster.GetComponent<CharacterStatus>().skills[i];
+			string name_skill = skillData.sheets[0].list[no_skill-1].Name;
+			string type = skillData.sheets[0].list[no_skill-1].Type;
+			Debug.Log(type);
+			//名前変更
+			btn_command.transform.GetChild(0).gameObject.GetComponent<Text>().text = name_skill;
+			//色変更
+			Image img = btn_command.GetComponent<Image>();
+			switch(type){
+				case "Normal":
+					img.color = new Color(0.736f,0.736f,0.736f);
+				break;
+				case "Fire":
+					img.color = new Color(0.925f,0.280f,0.214f);
+				break;
+				case "Water":
+					img.color = new Color(0.212f,0.368f,0.925f);
+				break;
+				case "Grass":
+					img.color = new Color(0.338f,0.868f,0.168f);
+				break;
+				case "Lightning":
+					img.color = new Color(0.900f,0.915f,0.324f);
+				break;
+				case "Darkness":
+					img.color = new Color(0.858f,0.150f,0.722f);
+				break;
+				default:
+				break;
+			}
+		}
 	}
 
 	//技の選択待ち......
 	//味方の攻撃
-	public void AllyAttack(){
+	public void AllyAttack(int num_skill){
 		commandArea.SetActive(false);
 		//動くモンスターの特定
 		GameObject monster = monsterOrderList[actionCount-1].gameObject;
+		//技を設定
+		monster.GetComponent<CharacterStatus>().num_selectedSkill = num_skill;
 		SetSelectMarker(monster);
 
 		//攻撃する相手の決定
@@ -222,7 +367,10 @@ public class BattleManager : MonoBehaviour {
 
 	//被弾アニメーション
 	private void HitAnimation(GameObject attackMonster,GameObject attackedMonster){
-		float skillDamage = 100; //技のダメージ
+		//変数代入
+		int num_selectedSkill = attackMonster.GetComponent<CharacterStatus>().num_selectedSkill;
+		int no_skill = attackMonster.GetComponent<CharacterStatus>().skills[num_selectedSkill - 1];
+		float skillDamage = skillData.sheets[0].list[no_skill-1].Damage; //技のダメージ
 		float attack = attackMonster.GetComponent<CharacterStatus>().attack; //攻撃するモンスターの攻撃力
 		float defence = attackedMonster.GetComponent<CharacterStatus>().defense; //攻撃されるモンスターの防御力
 		float attributeMatch = 1.0f; //タイプ一致
