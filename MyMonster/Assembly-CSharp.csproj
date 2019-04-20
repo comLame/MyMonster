@@ -55,8 +55,14 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BattleManager.cs" />
      <Compile Include="Assets\Scripts\CharacterStatus.cs" />
+     <Compile Include="Assets\Scripts\SkillEffectData.cs" />
      <Compile Include="Assets\Scripts\TouchCommandButton.cs" />
      <Compile Include="Assets\Scripts\TouchMonster.cs" />
+     <Compile Include="Assets\Terasurware\Classes\BaseStatsData.cs" />
+     <Compile Include="Assets\Terasurware\Classes\EnemyPartyData.cs" />
+     <Compile Include="Assets\Terasurware\Classes\MonsterData.cs" />
+     <Compile Include="Assets\Terasurware\Classes\MyPartyData.cs" />
+     <Compile Include="Assets\Terasurware\Classes\SkillData.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />

@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da57992c7933b4e93bd8ccf3226d1976, type: 3}
+  m_Name: SkillData
+  m_EditorClassIdentifier: 
+  sheets:
+  - name: SkillData
+    list:
+    - No: 1
+      Name: "\u304B\u3048\u3093\u307B\u3046\u3057\u3083"
+      Species: Damage
+      Type: Fire
+      Damage: 100
+    - No: 2
+      Name: "\u30CF\u30A4\u30C9\u30ED\u30DD\u30F3\u30D7"
+      Species: Damage
+      Type: Water
+      Damage: 100
+    - No: 3
+      Name: "\u3068\u304A\u307C\u3048"
+      Species: Change
+      Type: Normal
+      Damage: 0
+    - No: 4
+      Name: "\u3058\u3053\u3055\u3044\u305B\u3044"
+      Species: Change
+      Type: Normal
+      Damage: 0
+    - No: 5
+      Name: "\u306A\u307F\u306E\u308A"
+      Species: Damage
+      Type: Water
+      Damage: 80
+    - No: 6
+      Name: "\u304B\u3089\u306B\u3053\u3082\u308B"
+      Species: Change
+      Type: Water
+      Damage: 0
+    - No: 7
+      Name: "\u30EA\u30FC\u30D5\u30D6\u30EC\u30FC\u30C9"
+      Species: Damage
+      Type: Grass
+      Damage: 100
+    - No: 8
+      Name: "\u3044\u3084\u3057\u306E\u306D\u304C\u3044"
+      Species: Change
+      Type: Normal
+      Damage: 0
+    - No: 9
+      Name: "\u306A\u304D\u3054\u3048"
+      Species: Change
+      Type: Normal
+      Damage: 0
