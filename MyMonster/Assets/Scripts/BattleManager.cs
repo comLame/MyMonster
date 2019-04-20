@@ -22,7 +22,9 @@ public class BattleManager : MonoBehaviour {
 	public GameObject targetMarker_ally;
 	public GameObject targetMarker_enemy;
 	public GameObject bg_VOD;
-	public GameObject attackEffect;
+	public GameObject atkFX_x8;
+	public GameObject atkFX_x10;
+	public GameObject skillEffectData;
 
 	private int vod = 0; //勝敗 1->勝ち -1->敗け
 	private int targetMonsterId_ally = 0;
@@ -350,13 +352,36 @@ public class BattleManager : MonoBehaviour {
 	//攻撃アニメーション
 	private void AttackAnimation(GameObject attackMonster,GameObject attackedMonster){
 
+		//技の取得
+		int num_selectedSkill = attackMonster.GetComponent<CharacterStatus>().num_selectedSkill;
+		int no_skill = attackMonster.GetComponent<CharacterStatus>().skills[num_selectedSkill-1]; //１~>
+
 		//ParticleSystemの設定
-		ParticleSystem ps = attackEffect.GetComponent<ParticleSystem>();
+		GameObject atkFX;
+		//ParticleSystem ps = attackEffect.GetComponent<ParticleSystem>();
+		Material m = skillEffectData.GetComponent<SkillEffectData>().material;
+		Texture texture = skillEffectData.GetComponent<SkillEffectData>()._valueListList[no_skill-1].texture;
+		int x = skillEffectData.GetComponent<SkillEffectData>()._valueListList[no_skill-1].x;
+		int y = skillEffectData.GetComponent<SkillEffectData>()._valueListList[no_skill-1].y;
+		float scale = skillEffectData.GetComponent<SkillEffectData>()._valueListList[no_skill-1].scale;
+		float speed = skillEffectData.GetComponent<SkillEffectData>()._valueListList[no_skill-1].speed;
+		//マテリアルの画像
+		m.mainTexture = texture;
+		//atkFXの決定
+		if(x == 8){
+			atkFX = atkFX_x8;
+		}else if(x == 10){
+			atkFX = atkFX_x10;
+		}else{
+			atkFX = atkFX_x10;
+		}
+		//particlesystemの決定
+		ParticleSystem ps = atkFX.GetComponent<ParticleSystem>();
 		//ps.duration
 
 		Vector3 mPos = attackedMonster.GetComponent<RectTransform>().position;
 		//位置
-		attackEffect.GetComponent<Transform>().position 
+		atkFX.GetComponent<Transform>().position 
 			= new Vector3(mPos.x,mPos.y,zPos_attackEffect);
 		ps.Play();
 
