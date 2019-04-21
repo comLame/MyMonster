@@ -25,6 +25,8 @@ public class BattleManager : MonoBehaviour {
 	public GameObject atkFX_x8;
 	public GameObject atkFX_x10;
 	public GameObject skillEffectData;
+	public GameObject txt_skillNamePrefab;
+	public GameObject txt_damagePrefab;
 
 	private int vod = 0; //勝敗 1->勝ち -1->敗け
 	private int targetMonsterId_ally = 0;
@@ -39,7 +41,7 @@ public class BattleManager : MonoBehaviour {
 	private float time_frame = 0.2f; //エフェクトの１枚ずつの表示時間
 	private int num_frame = 5; //１エフェクトのフレーム数
 	private float speed_attackAnimation = 1f; //攻撃アニメーションのスピード
-	private float diff_step = 0.3f; //ステップの距離
+	private float diff_step = 0.2f; //ステップの距離
 	private float zPos_attackEffect = -3f; //攻撃エフェクトのz座標
 	private List<GameObject> monsterOrderList = new List<GameObject>();
 	private List<GameObject> myPartyList = new List<GameObject>();
@@ -333,6 +335,11 @@ public class BattleManager : MonoBehaviour {
 	private void Attack(GameObject attackMonster,GameObject attackedMonster){
 		if(vod != 0)return; //もし勝敗がついてたらreturn
 
+		//スキル名表示
+		int num_selectedSkill = attackMonster.GetComponent<CharacterStatus>().num_selectedSkill;
+		int no_skill = attackMonster.GetComponent<CharacterStatus>().skills[num_selectedSkill-1];
+		DisplaySkillNameTxt(attackMonster,no_skill);
+
 		//前に出る
 		StepFront(attackMonster,attackedMonster);
 
@@ -401,12 +408,15 @@ public class BattleManager : MonoBehaviour {
 		float attributeMatch = 1.0f; //タイプ一致
 		float attributeAffinity = 1.0f; //タイプ相性
 
-		float damage = 22 * skillDamage * attack / defence / 50 * attributeMatch * attributeAffinity;
+		int damage = (int)(22 * skillDamage * attack / defence / 50 * attributeMatch * attributeAffinity);
 
 		//hp計算
 		int originalHp = attackedMonster.GetComponent<CharacterStatus>().hp;
-		attackedMonster.GetComponent<CharacterStatus>().hp -= (int)damage;
+		attackedMonster.GetComponent<CharacterStatus>().hp -= damage;
 		int hp = attackedMonster.GetComponent<CharacterStatus>().hp;
+
+		//ダメージテキスト表示
+		DisplayDamageText(attackedMonster,damage);
 
 		//スライダー
 		//attackedMonster.transform.Find("Slider").gameObject.GetComponent<Slider>().value = hp;
@@ -562,6 +572,38 @@ public class BattleManager : MonoBehaviour {
 			txt.GetComponent<TextMeshProUGUI>().color = new Color(0.49f,0.1f,0.86f);
 			//アニメーション
 		}
+	}
+
+	/*=====================================
+	 *
+	 * テキスト表示
+	 *
+	 ======================================*/
+
+	//技名表示
+	private void DisplaySkillNameTxt(GameObject attackMonster,int no_skill){
+		//変数代入
+		Vector3 posMons = canvas.transform.InverseTransformPoint(attackMonster.GetComponent<RectTransform>().position);
+		string name_skill = skillData.sheets[0].list[no_skill-1].Name; //技のダメージ
+		//txtPrefabの設定
+		GameObject txt = (GameObject)Instantiate(txt_skillNamePrefab);
+		txt.transform.SetParent(canvas.transform);
+		txt.GetComponent<RectTransform>().localPosition 
+			= new Vector3(posMons.x,posMons.y - 40,posMons.z);
+		//txt.GetComponent<RectTransform>().localScale = new Vector3(0,0,0);
+		txt.GetComponent<Text>().text = name_skill;
+	}
+
+	//ダメージ表示
+	private void DisplayDamageText(GameObject attackedMonster,int damage){
+		//変数代入
+		Vector3 posMons = canvas.transform.InverseTransformPoint(attackedMonster.GetComponent<RectTransform>().position);
+		//txt_damagePrefabの設定
+		GameObject txt = (GameObject)Instantiate(txt_damagePrefab);
+		txt.transform.SetParent(canvas.transform);
+		txt.GetComponent<RectTransform>().localPosition 
+			= new Vector3(posMons.x,posMons.y,posMons.z);
+		txt.GetComponent<Text>().text = damage.ToString();
 	}
 
 	/*=====================================
