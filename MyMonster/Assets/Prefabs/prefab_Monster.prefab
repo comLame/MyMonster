@@ -182,10 +182,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: "\u30EC\u30C3\u30C9\u30C9\u30E9\u30B4\u30F3"
   battleId: 1
+  level: 0
   hp: 185
   attack: 161
   defense: 137
   speed: 152
+  skills: 00000000000000000000000000000000
+  num_selectedSkill: 1
   deathFlag: 0
 --- !u!114 &114416485518251626
 MonoBehaviour:
