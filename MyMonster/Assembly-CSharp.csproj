@@ -56,8 +56,11 @@
      <Compile Include="Assets\Scripts\BattleManager.cs" />
      <Compile Include="Assets\Scripts\CharacterStatus.cs" />
      <Compile Include="Assets\Scripts\DamageTextAnimation.cs" />
+     <Compile Include="Assets\Scripts\DestroyAtkFX.cs" />
+     <Compile Include="Assets\Scripts\MonsterAnimation.cs" />
      <Compile Include="Assets\Scripts\SkillEffectData.cs" />
      <Compile Include="Assets\Scripts\SkillNameTextAnimation.cs" />
+     <Compile Include="Assets\Scripts\SliderAnimation.cs" />
      <Compile Include="Assets\Scripts\TouchCommandButton.cs" />
      <Compile Include="Assets\Scripts\TouchMonster.cs" />
      <Compile Include="Assets\Terasurware\Classes\BaseStatsData.cs" />

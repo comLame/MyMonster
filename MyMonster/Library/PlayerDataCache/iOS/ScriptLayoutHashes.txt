@@ -127,7 +127,8 @@ e1ea12ca952c81d81a9a21fdf34446ed UnityEngine.HoloLens.dll:UnityEngine.EventSyste
 98d69a140ec0084cde3b6a5e09aea295 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 dfd33ff9ae3ce8d7ca1f22b475ec2387 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 96f3ea9f23b6f08e60710ebb4af49174 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
-8286af034228d10038e44b05b6fe0cd5 Assembly-CSharp.dll:.BattleManager
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.DamageTextAnimation
+165d0bf79c158b06d24658005a751633 Assembly-CSharp.dll:.BattleManager
 f16835701e71dd5d6fb1fed4b7aff1d8 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 486cd95c82d8305219c352c06b776e1f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 08b2734e983a2cf0e8450d89b28efa64 Assembly-CSharp.dll:.CharacterStatus
@@ -170,7 +171,7 @@ e1ea12ca952c81d81a9a21fdf34446ed UnityEngine.HoloLens.dll:UnityEngine.EventSyste
 dfd33ff9ae3ce8d7ca1f22b475ec2387 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 aac9c55ae7ba4b95b852a7d9c191acd1 Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp-firstpass.dll:.RotateSample
-9b6fd4c95ddc70bd3993d8268ed43d30 Assembly-CSharp.dll:.SkillData
+2e760ac05afdccc9fb1d77dfaedd848f Assembly-CSharp.dll:.SkillData
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 2f9af06a78208a67db480e9bfed4a076 Unity.TextMeshPro.dll:TMPro.TextMeshPro
@@ -179,4 +180,6 @@ e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 a7d4acaff3341781ab45c4bcb83128ad Assembly-CSharp.dll:.EnemyPartyData
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.SkillNameTextAnimation
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.TouchMonster
-486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.DamageTextAnimation
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.SliderAnimation
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.DestroyAtkFX
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.MonsterAnimation

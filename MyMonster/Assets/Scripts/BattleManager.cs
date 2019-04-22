@@ -22,12 +22,14 @@ public class BattleManager : MonoBehaviour {
 	public GameObject targetMarker_ally;
 	public GameObject targetMarker_enemy;
 	public GameObject bg_VOD;
-	public GameObject atkFX_x8;
-	public GameObject atkFX_x10;
+	public GameObject atkFX_x8Prefab;
+	public GameObject atkFX_x10Prefab;
 	public GameObject skillEffectData;
 	public GameObject txt_skillNamePrefab;
 	public GameObject txt_damagePrefab;
 
+	private int counter_checkNextAction = 0;
+	private int count_targetMonster = 0; //攻撃対象になるモンスターの数
 	private int vod = 0; //勝敗 1->勝ち -1->敗け
 	private int targetMonsterId_ally = 0;
 	private int targetMonsterId_enemy = 0;
@@ -46,8 +48,8 @@ public class BattleManager : MonoBehaviour {
 	private List<GameObject> monsterOrderList = new List<GameObject>();
 	private List<GameObject> myPartyList = new List<GameObject>();
 	private List<GameObject> enemyPartyList = new List<GameObject>();
-	private Slider animateSlider; //アニメーションするスライダー
-	private GameObject privateGameObject; //一時的に使いたい時のGameObject
+	//private Slider animateSlider; //アニメーションするスライダー
+	//private GameObject privateGameObject; //一時的に使いたい時のGameObject
 
 	// Use this for initialization
 	void Start () {
@@ -203,6 +205,7 @@ public class BattleManager : MonoBehaviour {
 	
 	//次の行動が味方なのか敵なのか判定
 	private void CheckNextAction(){
+		counter_checkNextAction = 0;
 		actionCount++;
 		if(actionCount >= 11){
 			actionCount = 1;
@@ -272,55 +275,137 @@ public class BattleManager : MonoBehaviour {
 	public void AllyAttack(int num_skill){
 		commandArea.SetActive(false);
 		//動くモンスターの特定
-		GameObject monster = monsterOrderList[actionCount-1].gameObject;
+		GameObject attackMonster = monsterOrderList[actionCount-1].gameObject;
+
 		//技を設定
-		monster.GetComponent<CharacterStatus>().num_selectedSkill = num_skill;
-		SetSelectMarker(monster);
+		attackMonster.GetComponent<CharacterStatus>().num_selectedSkill = num_skill;
+		int no_skill = attackMonster.GetComponent<CharacterStatus>().skills[num_skill - 1];
+		SetSelectMarker(attackMonster);
 
 		//攻撃する相手の決定
-		GameObject targetMonster;
-		if(targetMonsterId_enemy == 0){
-			//ターゲットしていない
-			List<GameObject> remainEnemyPartyList = new List<GameObject>(); //生きている味方のリスト
-			for(int i=0;i<enemyPartyList.Count;i++){
-				if(!enemyPartyList[i].GetComponent<CharacterStatus>().deathFlag){
-					//生きていればListに追加
-					remainEnemyPartyList.Add(enemyPartyList[i]);
-				}
+		List<GameObject> partyList; //参照するパーティリスト
+		List<GameObject> remainTargetPartyList = new List<GameObject>(); //生きているターゲットモンスターのリスト
+		int count_target = 1; //ターゲットの体数 1->単体 5->全体
+		List<GameObject> attackedMonsters = new List<GameObject>(); //攻撃対象のモンスター
+
+		//技のターゲットによって分類
+		switch(skillData.sheets[0].list[no_skill-1].Target){
+		case "SingleEnemy":
+			count_target = 1;
+			partyList = enemyPartyList;
+			break;
+		case "WholeEnemy":
+			count_target = 5;
+			partyList = enemyPartyList;
+			break;
+		case "SingleAlly":
+			count_target = 1;
+			partyList = myPartyList;
+			break;
+		case "WholeAlly":
+			count_target = 5;
+			partyList = myPartyList;
+			break;
+		default:
+			count_target = 1;
+			partyList = enemyPartyList;
+			break;
+		}
+
+		for(int i=0;i<partyList.Count;i++){
+			if(!partyList[i].GetComponent<CharacterStatus>().deathFlag){
+				//生きていればListに追加
+				remainTargetPartyList.Add(partyList[i]);
 			}
-			remainEnemyPartyList = remainEnemyPartyList.OrderBy(a => Guid.NewGuid()).ToList(); //シャッフル
-			
-			targetMonster = remainEnemyPartyList[0];
+		}
+		remainTargetPartyList = remainTargetPartyList.OrderBy(a => Guid.NewGuid()).ToList(); //シャッフル
+
+		//attackedMonsterの決定
+		if(count_target == 1){
+			//単体
+			count_targetMonster = 1;
+			//ターゲットしているかどうかで分類
+			if(targetMonsterId_enemy == 0){
+				//誰も選択していない
+				attackedMonsters.Add(remainTargetPartyList[0]);
+			}else{
+				//ターゲットしている
+				attackedMonsters.Add(enemyPartyList[targetMonsterId_enemy - 6]);
+			}
 		}else{
-			//ターゲットしている
-			targetMonster = enemyPartyList[targetMonsterId_enemy - 6];
+			//全体
+			count_targetMonster = remainTargetPartyList.Count;
+			attackedMonsters = remainTargetPartyList;
 		}
 
 		//攻撃
-		Attack(monster,targetMonster);
+		Attack(attackMonster,attackedMonsters);
 	}
 
 	//敵の行動
 	private void EnemyAction(){
 		//動くモンスターの特定
-		GameObject monster = monsterOrderList[actionCount-1].gameObject;
-		SetSelectMarker(monster);
+		GameObject attackMonster = monsterOrderList[actionCount-1].gameObject;
+		SetSelectMarker(attackMonster);
+
+		//技の決定
+		List<int> skillList = attackMonster.GetComponent<CharacterStatus>().skills;
+		int num_skill = UnityEngine.Random.Range(0,4); //持ち技の中の何番目の技か
+		attackMonster.GetComponent<CharacterStatus>().num_selectedSkill = num_skill + 1;
+		int no_skill = skillList[num_skill]; //放つ技の技番号
 
 		//攻撃する相手の決定
-		List<GameObject> remainMyPartyList = new List<GameObject>(); //生きている味方のリスト
-		for(int i=0;i<myPartyList.Count;i++){
-			if(!myPartyList[i].GetComponent<CharacterStatus>().deathFlag){
+		List<GameObject> partyList; //参照するパーティリスト
+		List<GameObject> remainTargetPartyList = new List<GameObject>(); //生きているターゲットモンスターのリスト
+		int count_target = 1; //ターゲットの体数 1->単体 5->全体
+		List<GameObject> attackedMonsters = new List<GameObject>(); //攻撃対象のモンスター
+
+		//技のターゲットによって分類
+		switch(skillData.sheets[0].list[no_skill-1].Target){
+		case "SingleEnemy":
+			count_target = 1;
+			partyList = myPartyList;
+			break;
+		case "WholeEnemy":
+			count_target = 5;
+			partyList = myPartyList;
+			break;
+		case "SingleAlly":
+			count_target = 1;
+			partyList = enemyPartyList;
+			break;
+		case "WholeAlly":
+			count_target = 5;
+			partyList = enemyPartyList;
+			break;
+		default:
+			count_target = 1;
+			partyList = myPartyList;
+			break;
+		}
+
+		for(int i=0;i<partyList.Count;i++){
+			if(!partyList[i].GetComponent<CharacterStatus>().deathFlag){
 				//生きていればListに追加
-				remainMyPartyList.Add(myPartyList[i]);
+				remainTargetPartyList.Add(partyList[i]);
 			}
 		}
-		remainMyPartyList = remainMyPartyList.OrderBy(a => Guid.NewGuid()).ToList(); //シャッフル
-		
-		GameObject targetMonster = remainMyPartyList[0];
+		remainTargetPartyList = remainTargetPartyList.OrderBy(a => Guid.NewGuid()).ToList(); //シャッフル
+
+		//attackedMonsterの決定
+		if(count_target == 1){
+			//単体
+			count_targetMonster = 1;
+			attackedMonsters.Add(remainTargetPartyList[0]);
+		}else{
+			//全体
+			count_targetMonster = remainTargetPartyList.Count;
+			attackedMonsters = remainTargetPartyList;
+		}
 
 		//攻撃
 		StartCoroutine(DelayMethod(time_break,() => {
-			Attack(monster,targetMonster);
+			Attack(attackMonster,attackedMonsters);
 		}));
 	}
 
@@ -332,7 +417,7 @@ public class BattleManager : MonoBehaviour {
 	}
 
 	//攻撃
-	private void Attack(GameObject attackMonster,GameObject attackedMonster){
+	private void Attack(GameObject attackMonster,List<GameObject> attackedMonsters){
 		if(vod != 0)return; //もし勝敗がついてたらreturn
 
 		//スキル名表示
@@ -341,18 +426,20 @@ public class BattleManager : MonoBehaviour {
 		DisplaySkillNameTxt(attackMonster,no_skill);
 
 		//前に出る
-		StepFront(attackMonster,attackedMonster);
+		StepFront(attackMonster,attackedMonsters);
 
 	}
 
 	//前に出る
-	private void StepFront(GameObject attackMonster,GameObject attackedMonster){
+	private void StepFront(GameObject attackMonster,List<GameObject> attackedMonsters){
 		//移動
 		iTween.MoveAdd(attackMonster,iTween.Hash("x",diff_step,"time",time_stepFront,"easeType",iTween.EaseType.linear));
 
 		//攻撃
 		StartCoroutine(DelayMethod(time_stepFront,() => {
-			AttackAnimation(attackMonster,attackedMonster);
+			for(int i=0;i<attackedMonsters.Count;i++){
+				AttackAnimation(attackMonster,attackedMonsters[i]);
+			}
 		}));
 	}
 
@@ -363,8 +450,9 @@ public class BattleManager : MonoBehaviour {
 		int num_selectedSkill = attackMonster.GetComponent<CharacterStatus>().num_selectedSkill;
 		int no_skill = attackMonster.GetComponent<CharacterStatus>().skills[num_selectedSkill-1]; //１~>
 
+
 		//ParticleSystemの設定
-		GameObject atkFX;
+		GameObject atkFXPrefab;
 		//ParticleSystem ps = attackEffect.GetComponent<ParticleSystem>();
 		Material m = skillEffectData.GetComponent<SkillEffectData>().material;
 		Texture texture = skillEffectData.GetComponent<SkillEffectData>()._valueListList[no_skill-1].texture;
@@ -376,24 +464,25 @@ public class BattleManager : MonoBehaviour {
 		m.mainTexture = texture;
 		//atkFXの決定
 		if(x == 8){
-			atkFX = atkFX_x8;
+			atkFXPrefab = atkFX_x8Prefab;
 		}else if(x == 10){
-			atkFX = atkFX_x10;
+			atkFXPrefab = atkFX_x10Prefab;
 		}else{
-			atkFX = atkFX_x10;
+			atkFXPrefab = atkFX_x10Prefab;
 		}
 		//particlesystemの決定
+		GameObject atkFX = (GameObject)Instantiate(atkFXPrefab);
 		ParticleSystem ps = atkFX.GetComponent<ParticleSystem>();
-		//ps.duration
-
-		Vector3 mPos = attackedMonster.GetComponent<RectTransform>().position;
 		//位置
+		Vector3 mPos = attackedMonster.GetComponent<RectTransform>().position;
 		atkFX.GetComponent<Transform>().position 
 			= new Vector3(mPos.x,mPos.y,zPos_attackEffect);
+		//scale
+		atkFX.GetComponent<Transform>().localScale = new Vector3(scale,scale,1);
 		ps.Play();
 
 		StartCoroutine(DelayMethod(time_attackAnimation,() => {
-			HitAnimation(attackMonster,attackedMonster);
+				HitAnimation(attackMonster,attackedMonster);
 		}));
 	}
 
@@ -420,26 +509,16 @@ public class BattleManager : MonoBehaviour {
 
 		//スライダー
 		//attackedMonster.transform.Find("Slider").gameObject.GetComponent<Slider>().value = hp;
-		SliderAnimation(attackedMonster.transform.Find("Slider").gameObject.GetComponent<Slider>(),originalHp,hp);
+		//SliderAnimation(attackedMonster.transform.Find("Slider").gameObject.GetComponent<Slider>(),originalHp,hp);
+		attackedMonster.transform.Find("Slider").gameObject.GetComponent<SliderAnimation>().Animation(originalHp,hp,time_hitAnimation);
 
 		//被弾モーション
 		StartCoroutine("Blink",attackedMonster);
 
-		//ステップバック
+		//JudgeDeath
 		StartCoroutine(DelayMethod(time_hitAnimation,() => {
 			JudgeDeath(attackMonster,attackedMonster,hp);
 		}));
-	}
-
-	//スライダーアニメーション
-	private void SliderAnimation(Slider slider,int originalHp,int currentHp){
-		animateSlider = slider;
-		iTween.ValueTo(gameObject,iTween.Hash("from",originalHp,"to",currentHp,"onupdatetarget",gameObject,
-			"onupdate","UpdateSlider","time",time_hitAnimation));
-	}
-
-	private void UpdateSlider(float hp){
-		animateSlider.value = hp;
 	}
 
 	//点滅
@@ -461,6 +540,10 @@ public class BattleManager : MonoBehaviour {
     }
 
 	private void JudgeDeath(GameObject attackMonster,GameObject attackedMonster, int hp){
+		//死んだモンスターがいるかどうか
+		bool existDeathMonster = false;
+		counter_checkNextAction++;
+
 		//死亡判定
 		if(hp <= 0){
 			//死亡
@@ -487,31 +570,23 @@ public class BattleManager : MonoBehaviour {
 				}));
 			}
 			//死亡アニメーション 
-			DeathAnimation(attackedMonster);
-			//ステップバック
-			StartCoroutine(DelayMethod(time_deathAnimation,() => {
-				StepBack(attackMonster);
-			}));
-		}else{
-			//ステップバック
-			StepBack(attackMonster);
+			attackedMonster.GetComponent<MonsterAnimation>().DeathAnimation(time_deathAnimation);
+			existDeathMonster = true;
 		}
-	}
-
-	//死亡アニメーション
-	private void DeathAnimation(GameObject attackedMonster){
-		privateGameObject = attackedMonster;
-		iTween.ValueTo(gameObject, iTween.Hash("from",1,"to",0,"time",time_deathAnimation,
-			"onupdate","UpdateDeathAnimation","onupdatetarget",gameObject,"easetype",iTween.EaseType.linear));
-		StartCoroutine(DelayMethod(time_deathAnimation,() => {
-			attackedMonster.SetActive(false);
-		}));
-	}
-
-	//死亡アニメーションのUpdate
-	private void UpdateDeathAnimation(float alfa){
-		Color c = privateGameObject.GetComponent<Image>().color;
-		privateGameObject.GetComponent<Image>().color = new Color(c.r,c.g,c.b,alfa);
+		
+		if(counter_checkNextAction == count_targetMonster){
+			if(existDeathMonster){
+				//死んだモンスターがいる
+				//ステップバック
+				StartCoroutine(DelayMethod(time_deathAnimation,() => {
+					StepBack(attackMonster);
+				}));
+			}else{
+				//死んだモンスターがいない
+				//ステップバック
+				StepBack(attackMonster);
+			}
+		}
 	}
 
 	//ステップバック
@@ -544,7 +619,7 @@ public class BattleManager : MonoBehaviour {
 			GameSet(); //バトル終了
 			return;
 		}
-		CheckNextAction();
+		CheckNextAction(); //最後の行動の時に次の行動にいく
 	}
 
 	//ゲーム終了

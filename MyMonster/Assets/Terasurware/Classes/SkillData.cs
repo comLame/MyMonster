@@ -20,8 +20,11 @@ public class SkillData : ScriptableObject
 		public int No;
 		public string Name;
 		public string Species;
+		public string Target;
 		public string Type;
 		public int Damage;
+		public int HealAmount;
+		public int ChangeAmount;
 	}
 }
 
