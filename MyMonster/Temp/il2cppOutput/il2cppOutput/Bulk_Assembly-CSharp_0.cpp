@@ -402,6 +402,8 @@ extern String_t* _stringLiteral1521314867;
 extern String_t* _stringLiteral1627209283;
 extern String_t* _stringLiteral1676131252;
 extern String_t* _stringLiteral1682983502;
+extern String_t* _stringLiteral1782372744;
+extern String_t* _stringLiteral1797452011;
 extern String_t* _stringLiteral1838265295;
 extern String_t* _stringLiteral1914798882;
 extern String_t* _stringLiteral2077336076;
@@ -409,23 +411,31 @@ extern String_t* _stringLiteral2233825277;
 extern String_t* _stringLiteral225174863;
 extern String_t* _stringLiteral2359404361;
 extern String_t* _stringLiteral2707269980;
+extern String_t* _stringLiteral2726307342;
+extern String_t* _stringLiteral2733581838;
 extern String_t* _stringLiteral2755855785;
+extern String_t* _stringLiteral2764457919;
 extern String_t* _stringLiteral2948080582;
 extern String_t* _stringLiteral2981016172;
 extern String_t* _stringLiteral2986166144;
 extern String_t* _stringLiteral3017306250;
+extern String_t* _stringLiteral3133200776;
 extern String_t* _stringLiteral3186493525;
 extern String_t* _stringLiteral3452614615;
 extern String_t* _stringLiteral3452614616;
 extern String_t* _stringLiteral3454777292;
 extern String_t* _stringLiteral3592659555;
 extern String_t* _stringLiteral372943555;
+extern String_t* _stringLiteral376393253;
+extern String_t* _stringLiteral3808826312;
 extern String_t* _stringLiteral3825885973;
 extern String_t* _stringLiteral39716438;
 extern String_t* _stringLiteral446682791;
 extern String_t* _stringLiteral492205433;
 extern String_t* _stringLiteral63249541;
 extern String_t* _stringLiteral687878766;
+extern String_t* _stringLiteral760905195;
+extern String_t* _stringLiteral765165035;
 extern String_t* _stringLiteral78692563;
 extern const RuntimeMethod* BattleManager_U3CAllyAttackU3Em__1_m2761715413_RuntimeMethod_var;
 extern const RuntimeMethod* BattleManager_U3CEnemyActionU3Em__2_m924278545_RuntimeMethod_var;
@@ -12221,6 +12231,8 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_Attack_m4245653054 (BattleManag
 extern "C" IL2CPP_METHOD_ATTR void U3CEnemyActionU3Ec__AnonStorey2__ctor_m2757631318 (U3CEnemyActionU3Ec__AnonStorey2_t1657202313 * __this, const RuntimeMethod* method);
 // System.Int32 UnityEngine.Random::Range(System.Int32,System.Int32)
 extern "C" IL2CPP_METHOD_ATTR int32_t Random_Range_m4054026115 (RuntimeObject * __this /* static, unused */, int32_t p0, int32_t p1, const RuntimeMethod* method);
+// System.String System.String::Concat(System.Object,System.Object)
+extern "C" IL2CPP_METHOD_ATTR String_t* String_Concat_m904156431 (RuntimeObject * __this /* static, unused */, RuntimeObject * p0, RuntimeObject * p1, const RuntimeMethod* method);
 // System.Void System.Action::.ctor(System.Object,System.IntPtr)
 extern "C" IL2CPP_METHOD_ATTR void Action__ctor_m2994342681 (Action_t1264377477 * __this, RuntimeObject * p0, intptr_t p1, const RuntimeMethod* method);
 // System.Collections.IEnumerator BattleManager::DelayMethod(System.Single,System.Action)
@@ -13996,6 +14008,8 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_EnemyAction_m2230293482 (Battle
 		U3CEnemyActionU3Ec__AnonStorey2_t1657202313 * L_1 = V_0;
 		NullCheck(L_1);
 		L_1->set_U24this_2(__this);
+		IL2CPP_RUNTIME_CLASS_INIT(Debug_t3317548046_il2cpp_TypeInfo_var);
+		Debug_Log_m4051431634(NULL /*static, unused*/, _stringLiteral376393253, /*hidden argument*/NULL);
 		U3CEnemyActionU3Ec__AnonStorey2_t1657202313 * L_2 = V_0;
 		List_1_t2585711361 * L_3 = __this->get_monsterOrderList_38();
 		int32_t L_4 = __this->get_actionCount_26();
@@ -14009,6 +14023,7 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_EnemyAction_m2230293482 (Battle
 		NullCheck(L_7);
 		GameObject_t1113636619 * L_8 = L_7->get_attackMonster_0();
 		BattleManager_SetSelectMarker_m3246452214(__this, L_8, /*hidden argument*/NULL);
+		Debug_Log_m4051431634(NULL /*static, unused*/, _stringLiteral2726307342, /*hidden argument*/NULL);
 		U3CEnemyActionU3Ec__AnonStorey2_t1657202313 * L_9 = V_0;
 		NullCheck(L_9);
 		GameObject_t1113636619 * L_10 = L_9->get_attackMonster_0();
@@ -14032,6 +14047,7 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_EnemyAction_m2230293482 (Battle
 		NullCheck(L_18);
 		int32_t L_20 = List_1_get_Item_m888956288(L_18, L_19, /*hidden argument*/List_1_get_Item_m888956288_RuntimeMethod_var);
 		V_3 = L_20;
+		Debug_Log_m4051431634(NULL /*static, unused*/, _stringLiteral2733581838, /*hidden argument*/NULL);
 		List_1_t2585711361 * L_21 = (List_1_t2585711361 *)il2cpp_codegen_object_new(List_1_t2585711361_il2cpp_TypeInfo_var);
 		List_1__ctor_m1424466557(L_21, /*hidden argument*/List_1__ctor_m1424466557_RuntimeMethod_var);
 		V_5 = L_21;
@@ -14041,217 +14057,247 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_EnemyAction_m2230293482 (Battle
 		List_1__ctor_m1424466557(L_23, /*hidden argument*/List_1__ctor_m1424466557_RuntimeMethod_var);
 		NullCheck(L_22);
 		L_22->set_attackedMonsters_1(L_23);
+		Debug_Log_m4051431634(NULL /*static, unused*/, _stringLiteral3133200776, /*hidden argument*/NULL);
 		SkillData_t2800605269 * L_24 = __this->get_skillData_7();
-		NullCheck(L_24);
-		List_1_t3144494484 * L_25 = L_24->get_sheets_4();
-		NullCheck(L_25);
-		Sheet_t1672419742 * L_26 = List_1_get_Item_m2244599752(L_25, 0, /*hidden argument*/List_1_get_Item_m2244599752_RuntimeMethod_var);
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		String_t* L_25 = String_Concat_m904156431(NULL /*static, unused*/, _stringLiteral1797452011, L_24, /*hidden argument*/NULL);
+		Debug_Log_m4051431634(NULL /*static, unused*/, L_25, /*hidden argument*/NULL);
+		SkillData_t2800605269 * L_26 = __this->get_skillData_7();
 		NullCheck(L_26);
-		List_1_t2959069203 * L_27 = L_26->get_list_1();
-		int32_t L_28 = V_3;
+		List_1_t3144494484 * L_27 = L_26->get_sheets_4();
 		NullCheck(L_27);
-		Param_t1486994461 * L_29 = List_1_get_Item_m3628436273(L_27, ((int32_t)il2cpp_codegen_subtract((int32_t)L_28, (int32_t)1)), /*hidden argument*/List_1_get_Item_m3628436273_RuntimeMethod_var);
-		NullCheck(L_29);
-		String_t* L_30 = L_29->get_Target_3();
-		V_7 = L_30;
-		String_t* L_31 = V_7;
-		if (!L_31)
+		Sheet_t1672419742 * L_28 = List_1_get_Item_m2244599752(L_27, 0, /*hidden argument*/List_1_get_Item_m2244599752_RuntimeMethod_var);
+		String_t* L_29 = String_Concat_m904156431(NULL /*static, unused*/, _stringLiteral3808826312, L_28, /*hidden argument*/NULL);
+		Debug_Log_m4051431634(NULL /*static, unused*/, L_29, /*hidden argument*/NULL);
+		SkillData_t2800605269 * L_30 = __this->get_skillData_7();
+		NullCheck(L_30);
+		List_1_t3144494484 * L_31 = L_30->get_sheets_4();
+		NullCheck(L_31);
+		Sheet_t1672419742 * L_32 = List_1_get_Item_m2244599752(L_31, 0, /*hidden argument*/List_1_get_Item_m2244599752_RuntimeMethod_var);
+		NullCheck(L_32);
+		List_1_t2959069203 * L_33 = L_32->get_list_1();
+		int32_t L_34 = V_3;
+		NullCheck(L_33);
+		Param_t1486994461 * L_35 = List_1_get_Item_m3628436273(L_33, ((int32_t)il2cpp_codegen_subtract((int32_t)L_34, (int32_t)1)), /*hidden argument*/List_1_get_Item_m3628436273_RuntimeMethod_var);
+		String_t* L_36 = String_Concat_m904156431(NULL /*static, unused*/, _stringLiteral2764457919, L_35, /*hidden argument*/NULL);
+		Debug_Log_m4051431634(NULL /*static, unused*/, L_36, /*hidden argument*/NULL);
+		SkillData_t2800605269 * L_37 = __this->get_skillData_7();
+		NullCheck(L_37);
+		List_1_t3144494484 * L_38 = L_37->get_sheets_4();
+		NullCheck(L_38);
+		Sheet_t1672419742 * L_39 = List_1_get_Item_m2244599752(L_38, 0, /*hidden argument*/List_1_get_Item_m2244599752_RuntimeMethod_var);
+		NullCheck(L_39);
+		List_1_t2959069203 * L_40 = L_39->get_list_1();
+		int32_t L_41 = V_3;
+		NullCheck(L_40);
+		Param_t1486994461 * L_42 = List_1_get_Item_m3628436273(L_40, ((int32_t)il2cpp_codegen_subtract((int32_t)L_41, (int32_t)1)), /*hidden argument*/List_1_get_Item_m3628436273_RuntimeMethod_var);
+		NullCheck(L_42);
+		String_t* L_43 = L_42->get_Target_3();
+		V_7 = L_43;
+		String_t* L_44 = V_7;
+		if (!L_44)
 		{
-			goto IL_0135;
+			goto IL_01bf;
 		}
 	}
 	{
-		String_t* L_32 = V_7;
+		String_t* L_45 = V_7;
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-		bool L_33 = String_op_Equality_m920492651(NULL /*static, unused*/, L_32, _stringLiteral2077336076, /*hidden argument*/NULL);
-		if (L_33)
+		bool L_46 = String_op_Equality_m920492651(NULL /*static, unused*/, L_45, _stringLiteral2077336076, /*hidden argument*/NULL);
+		if (L_46)
 		{
-			goto IL_00f5;
+			goto IL_017f;
 		}
 	}
 	{
-		String_t* L_34 = V_7;
+		String_t* L_47 = V_7;
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-		bool L_35 = String_op_Equality_m920492651(NULL /*static, unused*/, L_34, _stringLiteral1254263725, /*hidden argument*/NULL);
-		if (L_35)
+		bool L_48 = String_op_Equality_m920492651(NULL /*static, unused*/, L_47, _stringLiteral1254263725, /*hidden argument*/NULL);
+		if (L_48)
 		{
-			goto IL_0105;
+			goto IL_018f;
 		}
 	}
 	{
-		String_t* L_36 = V_7;
+		String_t* L_49 = V_7;
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-		bool L_37 = String_op_Equality_m920492651(NULL /*static, unused*/, L_36, _stringLiteral3825885973, /*hidden argument*/NULL);
-		if (L_37)
+		bool L_50 = String_op_Equality_m920492651(NULL /*static, unused*/, L_49, _stringLiteral3825885973, /*hidden argument*/NULL);
+		if (L_50)
 		{
-			goto IL_0115;
+			goto IL_019f;
 		}
 	}
 	{
-		String_t* L_38 = V_7;
+		String_t* L_51 = V_7;
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-		bool L_39 = String_op_Equality_m920492651(NULL /*static, unused*/, L_38, _stringLiteral3592659555, /*hidden argument*/NULL);
-		if (L_39)
+		bool L_52 = String_op_Equality_m920492651(NULL /*static, unused*/, L_51, _stringLiteral3592659555, /*hidden argument*/NULL);
+		if (L_52)
 		{
-			goto IL_0125;
+			goto IL_01af;
 		}
 	}
 	{
-		goto IL_0135;
+		goto IL_01bf;
 	}
 
-IL_00f5:
+IL_017f:
 	{
 		V_6 = 1;
-		List_1_t2585711361 * L_40 = __this->get_myPartyList_39();
-		V_4 = L_40;
-		goto IL_0145;
+		List_1_t2585711361 * L_53 = __this->get_myPartyList_39();
+		V_4 = L_53;
+		goto IL_01cf;
 	}
 
-IL_0105:
+IL_018f:
 	{
 		V_6 = 5;
-		List_1_t2585711361 * L_41 = __this->get_myPartyList_39();
-		V_4 = L_41;
-		goto IL_0145;
+		List_1_t2585711361 * L_54 = __this->get_myPartyList_39();
+		V_4 = L_54;
+		goto IL_01cf;
 	}
 
-IL_0115:
+IL_019f:
 	{
 		V_6 = 1;
-		List_1_t2585711361 * L_42 = __this->get_enemyPartyList_40();
-		V_4 = L_42;
-		goto IL_0145;
+		List_1_t2585711361 * L_55 = __this->get_enemyPartyList_40();
+		V_4 = L_55;
+		goto IL_01cf;
 	}
 
-IL_0125:
+IL_01af:
 	{
 		V_6 = 5;
-		List_1_t2585711361 * L_43 = __this->get_enemyPartyList_40();
-		V_4 = L_43;
-		goto IL_0145;
+		List_1_t2585711361 * L_56 = __this->get_enemyPartyList_40();
+		V_4 = L_56;
+		goto IL_01cf;
 	}
 
-IL_0135:
+IL_01bf:
 	{
 		V_6 = 1;
-		List_1_t2585711361 * L_44 = __this->get_myPartyList_39();
-		V_4 = L_44;
-		goto IL_0145;
+		List_1_t2585711361 * L_57 = __this->get_myPartyList_39();
+		V_4 = L_57;
+		goto IL_01cf;
 	}
 
-IL_0145:
+IL_01cf:
 	{
+		IL2CPP_RUNTIME_CLASS_INIT(Debug_t3317548046_il2cpp_TypeInfo_var);
+		Debug_Log_m4051431634(NULL /*static, unused*/, _stringLiteral1782372744, /*hidden argument*/NULL);
 		V_8 = 0;
-		goto IL_017b;
+		goto IL_020f;
 	}
 
-IL_014d:
+IL_01e1:
 	{
-		List_1_t2585711361 * L_45 = V_4;
-		int32_t L_46 = V_8;
-		NullCheck(L_45);
-		GameObject_t1113636619 * L_47 = List_1_get_Item_m3743125852(L_45, L_46, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
-		NullCheck(L_47);
-		CharacterStatus_t2166422524 * L_48 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_47, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
-		NullCheck(L_48);
-		bool L_49 = L_48->get_deathFlag_13();
-		if (L_49)
+		List_1_t2585711361 * L_58 = V_4;
+		int32_t L_59 = V_8;
+		NullCheck(L_58);
+		GameObject_t1113636619 * L_60 = List_1_get_Item_m3743125852(L_58, L_59, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
+		NullCheck(L_60);
+		CharacterStatus_t2166422524 * L_61 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_60, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
+		NullCheck(L_61);
+		bool L_62 = L_61->get_deathFlag_13();
+		if (L_62)
 		{
-			goto IL_0175;
+			goto IL_0209;
 		}
 	}
 	{
-		List_1_t2585711361 * L_50 = V_5;
-		List_1_t2585711361 * L_51 = V_4;
-		int32_t L_52 = V_8;
-		NullCheck(L_51);
-		GameObject_t1113636619 * L_53 = List_1_get_Item_m3743125852(L_51, L_52, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
-		NullCheck(L_50);
-		List_1_Add_m2765963565(L_50, L_53, /*hidden argument*/List_1_Add_m2765963565_RuntimeMethod_var);
+		List_1_t2585711361 * L_63 = V_5;
+		List_1_t2585711361 * L_64 = V_4;
+		int32_t L_65 = V_8;
+		NullCheck(L_64);
+		GameObject_t1113636619 * L_66 = List_1_get_Item_m3743125852(L_64, L_65, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
+		NullCheck(L_63);
+		List_1_Add_m2765963565(L_63, L_66, /*hidden argument*/List_1_Add_m2765963565_RuntimeMethod_var);
 	}
 
-IL_0175:
+IL_0209:
 	{
-		int32_t L_54 = V_8;
-		V_8 = ((int32_t)il2cpp_codegen_add((int32_t)L_54, (int32_t)1));
+		int32_t L_67 = V_8;
+		V_8 = ((int32_t)il2cpp_codegen_add((int32_t)L_67, (int32_t)1));
 	}
 
-IL_017b:
+IL_020f:
 	{
-		int32_t L_55 = V_8;
-		List_1_t2585711361 * L_56 = V_4;
-		NullCheck(L_56);
-		int32_t L_57 = List_1_get_Count_m2812834599(L_56, /*hidden argument*/List_1_get_Count_m2812834599_RuntimeMethod_var);
-		if ((((int32_t)L_55) < ((int32_t)L_57)))
+		int32_t L_68 = V_8;
+		List_1_t2585711361 * L_69 = V_4;
+		NullCheck(L_69);
+		int32_t L_70 = List_1_get_Count_m2812834599(L_69, /*hidden argument*/List_1_get_Count_m2812834599_RuntimeMethod_var);
+		if ((((int32_t)L_68) < ((int32_t)L_70)))
 		{
-			goto IL_014d;
+			goto IL_01e1;
 		}
 	}
 	{
-		List_1_t2585711361 * L_58 = V_5;
-		Func_2_t3045216918 * L_59 = ((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->get_U3CU3Ef__amU24cache2_43();
-		G_B17_0 = L_58;
-		if (L_59)
+		List_1_t2585711361 * L_71 = V_5;
+		Func_2_t3045216918 * L_72 = ((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->get_U3CU3Ef__amU24cache2_43();
+		G_B17_0 = L_71;
+		if (L_72)
 		{
-			G_B18_0 = L_58;
-			goto IL_01a3;
+			G_B18_0 = L_71;
+			goto IL_0237;
 		}
 	}
 	{
-		intptr_t L_60 = (intptr_t)BattleManager_U3CEnemyActionU3Em__2_m924278545_RuntimeMethod_var;
-		Func_2_t3045216918 * L_61 = (Func_2_t3045216918 *)il2cpp_codegen_object_new(Func_2_t3045216918_il2cpp_TypeInfo_var);
-		Func_2__ctor_m4230906135(L_61, NULL, (intptr_t)L_60, /*hidden argument*/Func_2__ctor_m4230906135_RuntimeMethod_var);
-		((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->set_U3CU3Ef__amU24cache2_43(L_61);
+		intptr_t L_73 = (intptr_t)BattleManager_U3CEnemyActionU3Em__2_m924278545_RuntimeMethod_var;
+		Func_2_t3045216918 * L_74 = (Func_2_t3045216918 *)il2cpp_codegen_object_new(Func_2_t3045216918_il2cpp_TypeInfo_var);
+		Func_2__ctor_m4230906135(L_74, NULL, (intptr_t)L_73, /*hidden argument*/Func_2__ctor_m4230906135_RuntimeMethod_var);
+		((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->set_U3CU3Ef__amU24cache2_43(L_74);
 		G_B18_0 = G_B17_0;
 	}
 
-IL_01a3:
+IL_0237:
 	{
-		Func_2_t3045216918 * L_62 = ((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->get_U3CU3Ef__amU24cache2_43();
-		RuntimeObject* L_63 = Enumerable_OrderBy_TisGameObject_t1113636619_TisGuid_t_m1752567050(NULL /*static, unused*/, G_B18_0, L_62, /*hidden argument*/Enumerable_OrderBy_TisGameObject_t1113636619_TisGuid_t_m1752567050_RuntimeMethod_var);
-		List_1_t2585711361 * L_64 = Enumerable_ToList_TisGameObject_t1113636619_m3189537243(NULL /*static, unused*/, L_63, /*hidden argument*/Enumerable_ToList_TisGameObject_t1113636619_m3189537243_RuntimeMethod_var);
-		V_5 = L_64;
-		int32_t L_65 = V_6;
-		if ((!(((uint32_t)L_65) == ((uint32_t)1))))
+		Func_2_t3045216918 * L_75 = ((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->get_U3CU3Ef__amU24cache2_43();
+		RuntimeObject* L_76 = Enumerable_OrderBy_TisGameObject_t1113636619_TisGuid_t_m1752567050(NULL /*static, unused*/, G_B18_0, L_75, /*hidden argument*/Enumerable_OrderBy_TisGameObject_t1113636619_TisGuid_t_m1752567050_RuntimeMethod_var);
+		List_1_t2585711361 * L_77 = Enumerable_ToList_TisGameObject_t1113636619_m3189537243(NULL /*static, unused*/, L_76, /*hidden argument*/Enumerable_ToList_TisGameObject_t1113636619_m3189537243_RuntimeMethod_var);
+		V_5 = L_77;
+		IL2CPP_RUNTIME_CLASS_INIT(Debug_t3317548046_il2cpp_TypeInfo_var);
+		Debug_Log_m4051431634(NULL /*static, unused*/, _stringLiteral765165035, /*hidden argument*/NULL);
+		int32_t L_78 = V_6;
+		if ((!(((uint32_t)L_78) == ((uint32_t)1))))
 		{
-			goto IL_01db;
+			goto IL_0279;
 		}
 	}
 	{
 		__this->set_count_targetMonster_22(1);
-		U3CEnemyActionU3Ec__AnonStorey2_t1657202313 * L_66 = V_0;
-		NullCheck(L_66);
-		List_1_t2585711361 * L_67 = L_66->get_attackedMonsters_1();
-		List_1_t2585711361 * L_68 = V_5;
-		NullCheck(L_68);
-		GameObject_t1113636619 * L_69 = List_1_get_Item_m3743125852(L_68, 0, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
-		NullCheck(L_67);
-		List_1_Add_m2765963565(L_67, L_69, /*hidden argument*/List_1_Add_m2765963565_RuntimeMethod_var);
-		goto IL_01f0;
+		U3CEnemyActionU3Ec__AnonStorey2_t1657202313 * L_79 = V_0;
+		NullCheck(L_79);
+		List_1_t2585711361 * L_80 = L_79->get_attackedMonsters_1();
+		List_1_t2585711361 * L_81 = V_5;
+		NullCheck(L_81);
+		GameObject_t1113636619 * L_82 = List_1_get_Item_m3743125852(L_81, 0, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
+		NullCheck(L_80);
+		List_1_Add_m2765963565(L_80, L_82, /*hidden argument*/List_1_Add_m2765963565_RuntimeMethod_var);
+		goto IL_028e;
 	}
 
-IL_01db:
+IL_0279:
 	{
-		List_1_t2585711361 * L_70 = V_5;
-		NullCheck(L_70);
-		int32_t L_71 = List_1_get_Count_m2812834599(L_70, /*hidden argument*/List_1_get_Count_m2812834599_RuntimeMethod_var);
-		__this->set_count_targetMonster_22(L_71);
-		U3CEnemyActionU3Ec__AnonStorey2_t1657202313 * L_72 = V_0;
-		List_1_t2585711361 * L_73 = V_5;
-		NullCheck(L_72);
-		L_72->set_attackedMonsters_1(L_73);
+		List_1_t2585711361 * L_83 = V_5;
+		NullCheck(L_83);
+		int32_t L_84 = List_1_get_Count_m2812834599(L_83, /*hidden argument*/List_1_get_Count_m2812834599_RuntimeMethod_var);
+		__this->set_count_targetMonster_22(L_84);
+		U3CEnemyActionU3Ec__AnonStorey2_t1657202313 * L_85 = V_0;
+		List_1_t2585711361 * L_86 = V_5;
+		NullCheck(L_85);
+		L_85->set_attackedMonsters_1(L_86);
 	}
 
-IL_01f0:
+IL_028e:
 	{
-		float L_74 = __this->get_time_break_27();
-		U3CEnemyActionU3Ec__AnonStorey2_t1657202313 * L_75 = V_0;
-		intptr_t L_76 = (intptr_t)U3CEnemyActionU3Ec__AnonStorey2_U3CU3Em__0_m3093528882_RuntimeMethod_var;
-		Action_t1264377477 * L_77 = (Action_t1264377477 *)il2cpp_codegen_object_new(Action_t1264377477_il2cpp_TypeInfo_var);
-		Action__ctor_m2994342681(L_77, L_75, (intptr_t)L_76, /*hidden argument*/NULL);
-		RuntimeObject* L_78 = BattleManager_DelayMethod_m2023750302(__this, L_74, L_77, /*hidden argument*/NULL);
-		MonoBehaviour_StartCoroutine_m3411253000(__this, L_78, /*hidden argument*/NULL);
+		IL2CPP_RUNTIME_CLASS_INIT(Debug_t3317548046_il2cpp_TypeInfo_var);
+		Debug_Log_m4051431634(NULL /*static, unused*/, _stringLiteral760905195, /*hidden argument*/NULL);
+		float L_87 = __this->get_time_break_27();
+		U3CEnemyActionU3Ec__AnonStorey2_t1657202313 * L_88 = V_0;
+		intptr_t L_89 = (intptr_t)U3CEnemyActionU3Ec__AnonStorey2_U3CU3Em__0_m3093528882_RuntimeMethod_var;
+		Action_t1264377477 * L_90 = (Action_t1264377477 *)il2cpp_codegen_object_new(Action_t1264377477_il2cpp_TypeInfo_var);
+		Action__ctor_m2994342681(L_90, L_88, (intptr_t)L_89, /*hidden argument*/NULL);
+		RuntimeObject* L_91 = BattleManager_DelayMethod_m2023750302(__this, L_87, L_90, /*hidden argument*/NULL);
+		MonoBehaviour_StartCoroutine_m3411253000(__this, L_91, /*hidden argument*/NULL);
 		return;
 	}
 }

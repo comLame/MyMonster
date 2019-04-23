@@ -9214,6 +9214,16 @@ String_t* _stringLiteral2077336076;
 String_t* _stringLiteral1254263725;
 String_t* _stringLiteral3825885973;
 String_t* _stringLiteral3592659555;
+String_t* _stringLiteral376393253;
+String_t* _stringLiteral2726307342;
+String_t* _stringLiteral2733581838;
+String_t* _stringLiteral3133200776;
+String_t* _stringLiteral1797452011;
+String_t* _stringLiteral3808826312;
+String_t* _stringLiteral2764457919;
+String_t* _stringLiteral1782372744;
+String_t* _stringLiteral765165035;
+String_t* _stringLiteral760905195;
 String_t* _stringLiteral39716438;
 String_t* _stringLiteral687878766;
 String_t* _stringLiteral225174863;
@@ -9267,7 +9277,7 @@ String_t* _stringLiteral46997234;
 String_t* _stringLiteral1132744560;
 String_t* _stringLiteral1864861238;
 String_t* _stringLiteral3926843441;
-extern void** const g_MetadataUsages[9248] = 
+extern void** const g_MetadataUsages[9258] = 
 {
 	(void**)(&Contraction_t1589275354_0_0_0_var),
 	(void**)(&Level2Map_t3640798870_0_0_0_var),
@@ -18464,6 +18474,16 @@ extern void** const g_MetadataUsages[9248] =
 	(void**)(&_stringLiteral1254263725),
 	(void**)(&_stringLiteral3825885973),
 	(void**)(&_stringLiteral3592659555),
+	(void**)(&_stringLiteral376393253),
+	(void**)(&_stringLiteral2726307342),
+	(void**)(&_stringLiteral2733581838),
+	(void**)(&_stringLiteral3133200776),
+	(void**)(&_stringLiteral1797452011),
+	(void**)(&_stringLiteral3808826312),
+	(void**)(&_stringLiteral2764457919),
+	(void**)(&_stringLiteral1782372744),
+	(void**)(&_stringLiteral765165035),
+	(void**)(&_stringLiteral760905195),
 	(void**)(&_stringLiteral39716438),
 	(void**)(&_stringLiteral687878766),
 	(void**)(&_stringLiteral225174863),

@@ -27,6 +27,7 @@ public class BattleManager : MonoBehaviour {
 	public GameObject skillEffectData;
 	public GameObject txt_skillNamePrefab;
 	public GameObject txt_damagePrefab;
+	public GameObject txt_healPrefab;
 
 	private int counter_checkNextAction = 0;
 	private int count_targetMonster = 0; //攻撃対象になるモンスターの数
@@ -174,6 +175,7 @@ public class BattleManager : MonoBehaviour {
 		//Debug.Log(bs_hp + " " + bs_attack + " "+ bs_defence + " "+ bs_speed);
 		//データ代入
 		monster.GetComponent<CharacterStatus>().level = level;
+		monster.GetComponent<CharacterStatus>().maxHp = GetActualValue(bs_hp,level,true);
 		monster.GetComponent<CharacterStatus>().hp = GetActualValue(bs_hp,level,true);
 		monster.GetComponent<CharacterStatus>().attack = GetActualValue(bs_attack,level);
 		monster.GetComponent<CharacterStatus>().defense= GetActualValue(bs_defence,level);
@@ -344,6 +346,7 @@ public class BattleManager : MonoBehaviour {
 
 	//敵の行動
 	private void EnemyAction(){
+
 		//動くモンスターの特定
 		GameObject attackMonster = monsterOrderList[actionCount-1].gameObject;
 		SetSelectMarker(attackMonster);
@@ -491,6 +494,21 @@ public class BattleManager : MonoBehaviour {
 		//変数代入
 		int num_selectedSkill = attackMonster.GetComponent<CharacterStatus>().num_selectedSkill;
 		int no_skill = attackMonster.GetComponent<CharacterStatus>().skills[num_selectedSkill - 1];
+		String speceis = skillData.sheets[0].list[no_skill - 1].Species; //技の種類
+
+		//技の種類によって分類
+		switch(speceis){
+		case "Damage":
+			DamageSkill(attackMonster,attackedMonster,no_skill);
+			break;
+		case "Heal":
+			HealSkill(attackMonster,attackedMonster,no_skill);
+			break;
+		case "Change":
+			ChangeSkill(attackMonster,attackedMonster,no_skill);
+			break;
+		}
+		/*
 		float skillDamage = skillData.sheets[0].list[no_skill-1].Damage; //技のダメージ
 		float attack = attackMonster.GetComponent<CharacterStatus>().attack; //攻撃するモンスターの攻撃力
 		float defence = attackedMonster.GetComponent<CharacterStatus>().defense; //攻撃されるモンスターの防御力
@@ -511,6 +529,96 @@ public class BattleManager : MonoBehaviour {
 		//attackedMonster.transform.Find("Slider").gameObject.GetComponent<Slider>().value = hp;
 		//SliderAnimation(attackedMonster.transform.Find("Slider").gameObject.GetComponent<Slider>(),originalHp,hp);
 		attackedMonster.transform.Find("Slider").gameObject.GetComponent<SliderAnimation>().Animation(originalHp,hp,time_hitAnimation);
+
+		//被弾モーション
+		//攻撃技じゃなければ点滅しない
+		if(skillData.sheets[0].list[no_skill-1].Species == "Damage"){
+			StartCoroutine("Blink",attackedMonster);
+		}
+
+		//JudgeDeath
+		StartCoroutine(DelayMethod(time_hitAnimation,() => {
+			JudgeDeath(attackMonster,attackedMonster,hp);
+		}));
+		*/
+	}
+
+	//攻撃技
+	private void DamageSkill(GameObject attackMonster,GameObject attackedMonster,int no_skill){
+		float skillDamage = skillData.sheets[0].list[no_skill-1].Damage; //技のダメージ
+		float attack = attackMonster.GetComponent<CharacterStatus>().attack; //攻撃するモンスターの攻撃力
+		float defence = attackedMonster.GetComponent<CharacterStatus>().defense; //攻撃されるモンスターの防御力
+		float attributeMatch = 1.0f; //タイプ一致
+		float attributeAffinity = 1.0f; //タイプ相性
+
+		int damage = (int)(22 * skillDamage * attack / defence / 50 * attributeMatch * attributeAffinity);
+
+		//hp計算
+		int originalHp = attackedMonster.GetComponent<CharacterStatus>().hp;
+		attackedMonster.GetComponent<CharacterStatus>().hp -= damage;
+		int hp = attackedMonster.GetComponent<CharacterStatus>().hp;
+
+		//ダメージテキスト表示
+		DisplayDamageText(attackedMonster,damage);
+
+		//スライダー
+		attackedMonster.transform.Find("Slider").gameObject
+			.GetComponent<SliderAnimation>().Animation(originalHp,hp,time_hitAnimation);
+
+		//被弾モーション
+		StartCoroutine("Blink",attackedMonster);
+
+		//JudgeDeath
+		StartCoroutine(DelayMethod(time_hitAnimation,() => {
+			JudgeDeath(attackMonster,attackedMonster,hp);
+		}));
+	}
+
+	//回復技
+	private void HealSkill(GameObject attackMonster,GameObject attackedMonster,int no_skill){
+		int maxHp = attackedMonster.GetComponent<CharacterStatus>().maxHp;
+		int healAmount = skillData.sheets[0].list[no_skill-1].HealAmount; //回復量（%）
+		healAmount = (int)(maxHp * healAmount / 100); //回復量（実数値） 
+
+		//hp計算
+		int originalHp = attackedMonster.GetComponent<CharacterStatus>().hp;
+		int currentHp = originalHp + healAmount;
+		currentHp = (currentHp >= maxHp) ? maxHp : currentHp; //最大値を超えないように
+
+		//Healテキスト表示
+		DisplayHealText(attackedMonster,healAmount);
+
+		//スライダー
+		attackedMonster.transform.Find("Slider").gameObject
+			.GetComponent<SliderAnimation>().Animation(originalHp,currentHp,time_hitAnimation);
+
+		//JudgeDeath
+		StartCoroutine(DelayMethod(time_hitAnimation,() => {
+			JudgeDeath(attackMonster,attackedMonster,currentHp);
+		}));
+	}
+
+	//変化技
+	private void ChangeSkill(GameObject attackMonster,GameObject attackedMonster,int no_skill){
+		float skillDamage = skillData.sheets[0].list[no_skill-1].Damage; //技のダメージ
+		float attack = attackMonster.GetComponent<CharacterStatus>().attack; //攻撃するモンスターの攻撃力
+		float defence = attackedMonster.GetComponent<CharacterStatus>().defense; //攻撃されるモンスターの防御力
+		float attributeMatch = 1.0f; //タイプ一致
+		float attributeAffinity = 1.0f; //タイプ相性
+
+		int damage = (int)(22 * skillDamage * attack / defence / 50 * attributeMatch * attributeAffinity);
+
+		//hp計算
+		int originalHp = attackedMonster.GetComponent<CharacterStatus>().hp;
+		attackedMonster.GetComponent<CharacterStatus>().hp -= damage;
+		int hp = attackedMonster.GetComponent<CharacterStatus>().hp;
+
+		//ダメージテキスト表示
+		DisplayDamageText(attackedMonster,damage);
+
+		//スライダー
+		attackedMonster.transform.Find("Slider").gameObject
+			.GetComponent<SliderAnimation>().Animation(originalHp,hp,time_hitAnimation);
 
 		//被弾モーション
 		StartCoroutine("Blink",attackedMonster);
@@ -679,6 +787,20 @@ public class BattleManager : MonoBehaviour {
 		txt.GetComponent<RectTransform>().localPosition 
 			= new Vector3(posMons.x,posMons.y,posMons.z);
 		txt.GetComponent<Text>().text = damage.ToString();
+		txt.GetComponent<Text>().color = new Color(1,0.75f,0.175f);
+	}
+
+	//回復量表示
+	private void DisplayHealText(GameObject attackedMonster,int healAmount){
+		//変数代入
+		Vector3 posMons = canvas.transform.InverseTransformPoint(attackedMonster.GetComponent<RectTransform>().position);
+		//txt_damagePrefabの設定
+		GameObject txt = (GameObject)Instantiate(txt_healPrefab);
+		txt.transform.SetParent(canvas.transform);
+		txt.GetComponent<RectTransform>().localPosition 
+			= new Vector3(posMons.x,posMons.y,posMons.z);
+		txt.GetComponent<Text>().text = healAmount.ToString();
+		txt.GetComponent<Text>().color = new Color(0.351f,1,0.176f);
 	}
 
 	/*=====================================
