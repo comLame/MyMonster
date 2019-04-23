@@ -28,6 +28,7 @@ public class BattleManager : MonoBehaviour {
 	public GameObject txt_skillNamePrefab;
 	public GameObject txt_damagePrefab;
 	public GameObject txt_healPrefab;
+	public GameObject txt_changePrefab;
 
 	private int counter_checkNextAction = 0;
 	private int count_targetMonster = 0; //攻撃対象になるモンスターの数
@@ -91,7 +92,9 @@ public class BattleManager : MonoBehaviour {
 
 	//monsterOrderリスト内のオブジェクトをスピード順に並び替える
 	private void SortMonsterOrder(){
-		monsterOrderList.Sort((a,b) => b.GetComponent<CharacterStatus>().speed - a.GetComponent<CharacterStatus>().speed  );
+		monsterOrderList.Sort((a,b) => 
+			(b.GetComponent<CharacterStatus>().speed * (1 + b.GetComponent<CharacterStatus>().statusRank_speed/2))
+			 - (a.GetComponent<CharacterStatus>().speed * (1 + a.GetComponent<CharacterStatus>().statusRank_speed/2))  );
 	}
 	
 	//monsterOrderListの中身をDebug.Logする
@@ -103,9 +106,9 @@ public class BattleManager : MonoBehaviour {
 			int level = monsterOrderList[i].GetComponent<CharacterStatus>().level;
 			int hp = monsterOrderList[i].GetComponent<CharacterStatus>().hp;
 			int attack = monsterOrderList[i].GetComponent<CharacterStatus>().attack;
-			int defence = monsterOrderList[i].GetComponent<CharacterStatus>().defense;
+			int defense = monsterOrderList[i].GetComponent<CharacterStatus>().defense;
 			int speed = monsterOrderList[i].GetComponent<CharacterStatus>().speed;
-			//Debug.Log("B_ID:" + battleId + " Lv."+ level + " " + name + " " + hp + " "+ attack + " "+ defence + " " + speed + " ");
+			//Debug.Log("B_ID:" + battleId + " Lv."+ level + " " + name + " " + hp + " "+ attack + " "+ defense + " " + speed + " ");
 		}
 	}
 
@@ -170,18 +173,18 @@ public class BattleManager : MonoBehaviour {
 		//種族値
 		int bs_hp = baseStatsData.sheets[0].list[num_pictureBook-1].Hp;
 		int bs_attack = baseStatsData.sheets[0].list[num_pictureBook-1].Attack;
-		int bs_defence = baseStatsData.sheets[0].list[num_pictureBook-1].Defence;
+		int bs_defense = baseStatsData.sheets[0].list[num_pictureBook-1].Defense;
 		int bs_speed = baseStatsData.sheets[0].list[num_pictureBook-1].Speed;
-		//Debug.Log(bs_hp + " " + bs_attack + " "+ bs_defence + " "+ bs_speed);
+		//Debug.Log(bs_hp + " " + bs_attack + " "+ bs_defense + " "+ bs_speed);
 		//データ代入
 		monster.GetComponent<CharacterStatus>().level = level;
 		monster.GetComponent<CharacterStatus>().maxHp = GetActualValue(bs_hp,level,true);
 		monster.GetComponent<CharacterStatus>().hp = GetActualValue(bs_hp,level,true);
 		monster.GetComponent<CharacterStatus>().attack = GetActualValue(bs_attack,level);
-		monster.GetComponent<CharacterStatus>().defense= GetActualValue(bs_defence,level);
+		monster.GetComponent<CharacterStatus>().defense= GetActualValue(bs_defense,level);
 		monster.GetComponent<CharacterStatus>().speed = GetActualValue(bs_speed,level);
 		//Debug.Log(GetActualValue(bs_hp,level,true) + " " + GetActualValue(bs_attack,level) + " "+ 
-		//	GetActualValue(bs_defence,level) + " "+ GetActualValue(bs_speed,level));
+		//	GetActualValue(bs_defense,level) + " "+ GetActualValue(bs_speed,level));
 	}
 
 	//実数値取得 かつ 返す
@@ -326,13 +329,35 @@ public class BattleManager : MonoBehaviour {
 		if(count_target == 1){
 			//単体
 			count_targetMonster = 1;
-			//ターゲットしているかどうかで分類
-			if(targetMonsterId_enemy == 0){
+			//ターゲットしているかどうか,対象が敵か味方かで分類
+			switch(skillData.sheets[0].list[no_skill-1].Target){
+			case "SingleEnemy":
+				if(targetMonsterId_enemy == 0){
 				//誰も選択していない
 				attackedMonsters.Add(remainTargetPartyList[0]);
-			}else{
-				//ターゲットしている
-				attackedMonsters.Add(enemyPartyList[targetMonsterId_enemy - 6]);
+				}else{
+					//ターゲットしている
+					attackedMonsters.Add(enemyPartyList[targetMonsterId_enemy - 6]);
+				}
+				break;
+			case "SingleAlly":
+				if(targetMonsterId_ally == 0){
+					//誰も選択していない
+					attackedMonsters.Add(remainTargetPartyList[0]);
+				}else{
+					//ターゲットしている
+					attackedMonsters.Add(myPartyList[targetMonsterId_ally-1]);
+				}
+				break;
+			default:
+				if(targetMonsterId_enemy == 0){
+					//誰も選択していない
+					attackedMonsters.Add(remainTargetPartyList[0]);
+				}else{
+					//ターゲットしている
+					attackedMonsters.Add(enemyPartyList[targetMonsterId_enemy - 6]);
+				}
+				break;
 			}
 		}else{
 			//全体
@@ -508,50 +533,19 @@ public class BattleManager : MonoBehaviour {
 			ChangeSkill(attackMonster,attackedMonster,no_skill);
 			break;
 		}
-		/*
-		float skillDamage = skillData.sheets[0].list[no_skill-1].Damage; //技のダメージ
-		float attack = attackMonster.GetComponent<CharacterStatus>().attack; //攻撃するモンスターの攻撃力
-		float defence = attackedMonster.GetComponent<CharacterStatus>().defense; //攻撃されるモンスターの防御力
-		float attributeMatch = 1.0f; //タイプ一致
-		float attributeAffinity = 1.0f; //タイプ相性
-
-		int damage = (int)(22 * skillDamage * attack / defence / 50 * attributeMatch * attributeAffinity);
-
-		//hp計算
-		int originalHp = attackedMonster.GetComponent<CharacterStatus>().hp;
-		attackedMonster.GetComponent<CharacterStatus>().hp -= damage;
-		int hp = attackedMonster.GetComponent<CharacterStatus>().hp;
-
-		//ダメージテキスト表示
-		DisplayDamageText(attackedMonster,damage);
-
-		//スライダー
-		//attackedMonster.transform.Find("Slider").gameObject.GetComponent<Slider>().value = hp;
-		//SliderAnimation(attackedMonster.transform.Find("Slider").gameObject.GetComponent<Slider>(),originalHp,hp);
-		attackedMonster.transform.Find("Slider").gameObject.GetComponent<SliderAnimation>().Animation(originalHp,hp,time_hitAnimation);
-
-		//被弾モーション
-		//攻撃技じゃなければ点滅しない
-		if(skillData.sheets[0].list[no_skill-1].Species == "Damage"){
-			StartCoroutine("Blink",attackedMonster);
-		}
-
-		//JudgeDeath
-		StartCoroutine(DelayMethod(time_hitAnimation,() => {
-			JudgeDeath(attackMonster,attackedMonster,hp);
-		}));
-		*/
 	}
 
 	//攻撃技
 	private void DamageSkill(GameObject attackMonster,GameObject attackedMonster,int no_skill){
 		float skillDamage = skillData.sheets[0].list[no_skill-1].Damage; //技のダメージ
-		float attack = attackMonster.GetComponent<CharacterStatus>().attack; //攻撃するモンスターの攻撃力
-		float defence = attackedMonster.GetComponent<CharacterStatus>().defense; //攻撃されるモンスターの防御力
+		float attack = attackMonster.GetComponent<CharacterStatus>().attack
+			* (1 + attackMonster.GetComponent<CharacterStatus>().statusRank_attack/2.0f); //攻撃するモンスターの攻撃力
+		float defense = attackedMonster.GetComponent<CharacterStatus>().defense
+			* (1 + attackedMonster.GetComponent<CharacterStatus>().statusRank_defense/2.0f); //攻撃されるモンスターの防御力
 		float attributeMatch = 1.0f; //タイプ一致
 		float attributeAffinity = 1.0f; //タイプ相性
 
-		int damage = (int)(22 * skillDamage * attack / defence / 50 * attributeMatch * attributeAffinity);
+		int damage = (int)(22 * skillDamage * attack / defense / 50 * attributeMatch * attributeAffinity);
 
 		//hp計算
 		int originalHp = attackedMonster.GetComponent<CharacterStatus>().hp;
@@ -584,6 +578,7 @@ public class BattleManager : MonoBehaviour {
 		int originalHp = attackedMonster.GetComponent<CharacterStatus>().hp;
 		int currentHp = originalHp + healAmount;
 		currentHp = (currentHp >= maxHp) ? maxHp : currentHp; //最大値を超えないように
+		attackedMonster.GetComponent<CharacterStatus>().hp = currentHp;
 
 		//Healテキスト表示
 		DisplayHealText(attackedMonster,healAmount);
@@ -600,28 +595,29 @@ public class BattleManager : MonoBehaviour {
 
 	//変化技
 	private void ChangeSkill(GameObject attackMonster,GameObject attackedMonster,int no_skill){
-		float skillDamage = skillData.sheets[0].list[no_skill-1].Damage; //技のダメージ
-		float attack = attackMonster.GetComponent<CharacterStatus>().attack; //攻撃するモンスターの攻撃力
-		float defence = attackedMonster.GetComponent<CharacterStatus>().defense; //攻撃されるモンスターの防御力
-		float attributeMatch = 1.0f; //タイプ一致
-		float attributeAffinity = 1.0f; //タイプ相性
+		//変数代入
+		int changeAmount = skillData.sheets[0].list[no_skill - 1].ChangeAmount; //変化量
+		bool isUp = changeAmount >= 0 ? true : false; //上昇なのか減少なのか
+		String changeStatus = skillData.sheets[0].list[no_skill-1].ChangeStatus; //変化するステータス
 
-		int damage = (int)(22 * skillDamage * attack / defence / 50 * attributeMatch * attributeAffinity);
+		//実際にステータス変化
+		switch(changeStatus){
+		case "Attack":
+			attackedMonster.GetComponent<CharacterStatus>().statusRank_attack += changeAmount;
+			break;
+		case "Defense":
+			attackedMonster.GetComponent<CharacterStatus>().statusRank_defense += changeAmount;
+			break;
+		case "Speed":
+			attackedMonster.GetComponent<CharacterStatus>().statusRank_speed += changeAmount;
+			break;
+		}
 
 		//hp計算
-		int originalHp = attackedMonster.GetComponent<CharacterStatus>().hp;
-		attackedMonster.GetComponent<CharacterStatus>().hp -= damage;
 		int hp = attackedMonster.GetComponent<CharacterStatus>().hp;
 
-		//ダメージテキスト表示
-		DisplayDamageText(attackedMonster,damage);
-
-		//スライダー
-		attackedMonster.transform.Find("Slider").gameObject
-			.GetComponent<SliderAnimation>().Animation(originalHp,hp,time_hitAnimation);
-
-		//被弾モーション
-		StartCoroutine("Blink",attackedMonster);
+		//変化技テキスト表示
+		DisplayChangeText(attackedMonster,changeStatus,isUp);
 
 		//JudgeDeath
 		StartCoroutine(DelayMethod(time_hitAnimation,() => {
@@ -794,13 +790,44 @@ public class BattleManager : MonoBehaviour {
 	private void DisplayHealText(GameObject attackedMonster,int healAmount){
 		//変数代入
 		Vector3 posMons = canvas.transform.InverseTransformPoint(attackedMonster.GetComponent<RectTransform>().position);
-		//txt_damagePrefabの設定
+		//txt_healPrefabの設定
 		GameObject txt = (GameObject)Instantiate(txt_healPrefab);
 		txt.transform.SetParent(canvas.transform);
 		txt.GetComponent<RectTransform>().localPosition 
 			= new Vector3(posMons.x,posMons.y,posMons.z);
 		txt.GetComponent<Text>().text = healAmount.ToString();
 		txt.GetComponent<Text>().color = new Color(0.351f,1,0.176f);
+	}
+
+	//変化技テキスト表示
+	private void DisplayChangeText(GameObject attackedMonster,string changeStatus,bool isUp){
+		//変数代入
+		Vector3 posMons = canvas.transform.InverseTransformPoint(attackedMonster.GetComponent<RectTransform>().position);
+		String str_changeStatus = "";
+		switch(changeStatus){
+		case "Hp":
+			str_changeStatus = "体力";
+			break;
+		case "Attack":
+			str_changeStatus = "攻撃力";
+			break;
+		case "Defense":
+			str_changeStatus = "防御力";
+			break;
+		case "Speed":
+			str_changeStatus = "スピード";
+			break;
+		}
+		String str_isUp = isUp ? "上昇↑" : "減少↓";
+
+		//txt_changePrefabの設定
+		GameObject txt = (GameObject)Instantiate(txt_changePrefab);
+		txt.transform.SetParent(canvas.transform);
+		txt.GetComponent<RectTransform>().localPosition 
+			= new Vector3(posMons.x,posMons.y,posMons.z);
+		txt.GetComponent<Text>().text = str_changeStatus + str_isUp;
+		txt.GetComponent<Text>().color = isUp ? 
+			new Color(0.519f,0.85f,0.925f) : new Color(0.726f,0.202f,0.677f);
 	}
 
 	/*=====================================

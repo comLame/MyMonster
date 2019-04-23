@@ -58,6 +58,7 @@ public class SkillData_importer : AssetPostprocessor {
 					cell = row.GetCell(5); p.Damage = (int)(cell == null ? 0 : cell.NumericCellValue);
 					cell = row.GetCell(6); p.HealAmount = (int)(cell == null ? 0 : cell.NumericCellValue);
 					cell = row.GetCell(7); p.ChangeAmount = (int)(cell == null ? 0 : cell.NumericCellValue);
+					cell = row.GetCell(8); p.ChangeStatus = (cell == null ? "" : cell.StringCellValue);
 						s.list.Add (p);
 					}
 					data.sheets.Add(s);

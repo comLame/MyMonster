@@ -50,14 +50,12 @@ struct List_1_t1783228709;
 struct List_1_t2536592187;
 // System.Collections.Generic.List`1<EnemyPartyData/Sheet>
 struct List_1_t2353299670;
-// System.Collections.Generic.List`1<MonsterData/Param>
-struct List_1_t938867609;
-// System.Collections.Generic.List`1<MonsterData/Sheet>
-struct List_1_t2799822858;
 // System.Collections.Generic.List`1<MyPartyData/Param>
 struct List_1_t1245911379;
 // System.Collections.Generic.List`1<MyPartyData/Sheet>
 struct List_1_t13627024;
+// System.Collections.Generic.List`1<SkillData/Param>
+struct List_1_t2959069203;
 // System.Collections.Generic.List`1<SkillData/Sheet>
 struct List_1_t3144494484;
 // System.Collections.Generic.List`1<System.Collections.Hashtable>
@@ -170,26 +168,6 @@ struct EasingFunction_t2767217938;
 
 
 
-#ifndef U3CMODULEU3E_T692745546_H
-#define U3CMODULEU3E_T692745546_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// <Module>
-struct  U3CModuleU3E_t692745546 
-{
-public:
-
-public:
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // U3CMODULEU3E_T692745546_H
 #ifndef U3CMODULEU3E_T692745547_H
 #define U3CMODULEU3E_T692745547_H
 #ifdef __clang__
@@ -230,6 +208,26 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // U3CMODULEU3E_T692745548_H
+#ifndef U3CMODULEU3E_T692745546_H
+#define U3CMODULEU3E_T692745546_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// <Module>
+struct  U3CModuleU3E_t692745546 
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // U3CMODULEU3E_T692745546_H
 #ifndef U3CMODULEU3E_T692745545_H
 #define U3CMODULEU3E_T692745545_H
 #ifdef __clang__
@@ -284,8 +282,8 @@ public:
 	int32_t ___Hp_2;
 	// System.Int32 BaseStatsData/Param::Attack
 	int32_t ___Attack_3;
-	// System.Int32 BaseStatsData/Param::Defence
-	int32_t ___Defence_4;
+	// System.Int32 BaseStatsData/Param::Defense
+	int32_t ___Defense_4;
 	// System.Int32 BaseStatsData/Param::Speed
 	int32_t ___Speed_5;
 
@@ -323,12 +321,12 @@ public:
 		___Attack_3 = value;
 	}
 
-	inline static int32_t get_offset_of_Defence_4() { return static_cast<int32_t>(offsetof(Param_t678613560, ___Defence_4)); }
-	inline int32_t get_Defence_4() const { return ___Defence_4; }
-	inline int32_t* get_address_of_Defence_4() { return &___Defence_4; }
-	inline void set_Defence_4(int32_t value)
+	inline static int32_t get_offset_of_Defense_4() { return static_cast<int32_t>(offsetof(Param_t678613560, ___Defense_4)); }
+	inline int32_t get_Defense_4() const { return ___Defense_4; }
+	inline int32_t* get_address_of_Defense_4() { return &___Defense_4; }
+	inline void set_Defense_4(int32_t value)
 	{
-		___Defence_4 = value;
+		___Defense_4 = value;
 	}
 
 	inline static int32_t get_offset_of_Speed_5() { return static_cast<int32_t>(offsetof(Param_t678613560, ___Speed_5)); }
@@ -437,6 +435,130 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // U3CATTACKANIMATIONU3EC__ANONSTOREY4_T464051646_H
+#ifndef U3CCHANGESKILLU3EC__ANONSTOREY7_T1079478228_H
+#define U3CCHANGESKILLU3EC__ANONSTOREY7_T1079478228_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// BattleManager/<ChangeSkill>c__AnonStorey7
+struct  U3CChangeSkillU3Ec__AnonStorey7_t1079478228  : public RuntimeObject
+{
+public:
+	// UnityEngine.GameObject BattleManager/<ChangeSkill>c__AnonStorey7::attackMonster
+	GameObject_t1113636619 * ___attackMonster_0;
+	// UnityEngine.GameObject BattleManager/<ChangeSkill>c__AnonStorey7::attackedMonster
+	GameObject_t1113636619 * ___attackedMonster_1;
+	// System.Int32 BattleManager/<ChangeSkill>c__AnonStorey7::hp
+	int32_t ___hp_2;
+	// BattleManager BattleManager/<ChangeSkill>c__AnonStorey7::$this
+	BattleManager_t4022130644 * ___U24this_3;
+
+public:
+	inline static int32_t get_offset_of_attackMonster_0() { return static_cast<int32_t>(offsetof(U3CChangeSkillU3Ec__AnonStorey7_t1079478228, ___attackMonster_0)); }
+	inline GameObject_t1113636619 * get_attackMonster_0() const { return ___attackMonster_0; }
+	inline GameObject_t1113636619 ** get_address_of_attackMonster_0() { return &___attackMonster_0; }
+	inline void set_attackMonster_0(GameObject_t1113636619 * value)
+	{
+		___attackMonster_0 = value;
+		Il2CppCodeGenWriteBarrier((&___attackMonster_0), value);
+	}
+
+	inline static int32_t get_offset_of_attackedMonster_1() { return static_cast<int32_t>(offsetof(U3CChangeSkillU3Ec__AnonStorey7_t1079478228, ___attackedMonster_1)); }
+	inline GameObject_t1113636619 * get_attackedMonster_1() const { return ___attackedMonster_1; }
+	inline GameObject_t1113636619 ** get_address_of_attackedMonster_1() { return &___attackedMonster_1; }
+	inline void set_attackedMonster_1(GameObject_t1113636619 * value)
+	{
+		___attackedMonster_1 = value;
+		Il2CppCodeGenWriteBarrier((&___attackedMonster_1), value);
+	}
+
+	inline static int32_t get_offset_of_hp_2() { return static_cast<int32_t>(offsetof(U3CChangeSkillU3Ec__AnonStorey7_t1079478228, ___hp_2)); }
+	inline int32_t get_hp_2() const { return ___hp_2; }
+	inline int32_t* get_address_of_hp_2() { return &___hp_2; }
+	inline void set_hp_2(int32_t value)
+	{
+		___hp_2 = value;
+	}
+
+	inline static int32_t get_offset_of_U24this_3() { return static_cast<int32_t>(offsetof(U3CChangeSkillU3Ec__AnonStorey7_t1079478228, ___U24this_3)); }
+	inline BattleManager_t4022130644 * get_U24this_3() const { return ___U24this_3; }
+	inline BattleManager_t4022130644 ** get_address_of_U24this_3() { return &___U24this_3; }
+	inline void set_U24this_3(BattleManager_t4022130644 * value)
+	{
+		___U24this_3 = value;
+		Il2CppCodeGenWriteBarrier((&___U24this_3), value);
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // U3CCHANGESKILLU3EC__ANONSTOREY7_T1079478228_H
+#ifndef U3CDAMAGESKILLU3EC__ANONSTOREY5_T102370528_H
+#define U3CDAMAGESKILLU3EC__ANONSTOREY5_T102370528_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// BattleManager/<DamageSkill>c__AnonStorey5
+struct  U3CDamageSkillU3Ec__AnonStorey5_t102370528  : public RuntimeObject
+{
+public:
+	// UnityEngine.GameObject BattleManager/<DamageSkill>c__AnonStorey5::attackMonster
+	GameObject_t1113636619 * ___attackMonster_0;
+	// UnityEngine.GameObject BattleManager/<DamageSkill>c__AnonStorey5::attackedMonster
+	GameObject_t1113636619 * ___attackedMonster_1;
+	// System.Int32 BattleManager/<DamageSkill>c__AnonStorey5::hp
+	int32_t ___hp_2;
+	// BattleManager BattleManager/<DamageSkill>c__AnonStorey5::$this
+	BattleManager_t4022130644 * ___U24this_3;
+
+public:
+	inline static int32_t get_offset_of_attackMonster_0() { return static_cast<int32_t>(offsetof(U3CDamageSkillU3Ec__AnonStorey5_t102370528, ___attackMonster_0)); }
+	inline GameObject_t1113636619 * get_attackMonster_0() const { return ___attackMonster_0; }
+	inline GameObject_t1113636619 ** get_address_of_attackMonster_0() { return &___attackMonster_0; }
+	inline void set_attackMonster_0(GameObject_t1113636619 * value)
+	{
+		___attackMonster_0 = value;
+		Il2CppCodeGenWriteBarrier((&___attackMonster_0), value);
+	}
+
+	inline static int32_t get_offset_of_attackedMonster_1() { return static_cast<int32_t>(offsetof(U3CDamageSkillU3Ec__AnonStorey5_t102370528, ___attackedMonster_1)); }
+	inline GameObject_t1113636619 * get_attackedMonster_1() const { return ___attackedMonster_1; }
+	inline GameObject_t1113636619 ** get_address_of_attackedMonster_1() { return &___attackedMonster_1; }
+	inline void set_attackedMonster_1(GameObject_t1113636619 * value)
+	{
+		___attackedMonster_1 = value;
+		Il2CppCodeGenWriteBarrier((&___attackedMonster_1), value);
+	}
+
+	inline static int32_t get_offset_of_hp_2() { return static_cast<int32_t>(offsetof(U3CDamageSkillU3Ec__AnonStorey5_t102370528, ___hp_2)); }
+	inline int32_t get_hp_2() const { return ___hp_2; }
+	inline int32_t* get_address_of_hp_2() { return &___hp_2; }
+	inline void set_hp_2(int32_t value)
+	{
+		___hp_2 = value;
+	}
+
+	inline static int32_t get_offset_of_U24this_3() { return static_cast<int32_t>(offsetof(U3CDamageSkillU3Ec__AnonStorey5_t102370528, ___U24this_3)); }
+	inline BattleManager_t4022130644 * get_U24this_3() const { return ___U24this_3; }
+	inline BattleManager_t4022130644 ** get_address_of_U24this_3() { return &___U24this_3; }
+	inline void set_U24this_3(BattleManager_t4022130644 * value)
+	{
+		___U24this_3 = value;
+		Il2CppCodeGenWriteBarrier((&___U24this_3), value);
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // U3CDAMAGESKILLU3EC__ANONSTOREY5_T102370528_H
 #ifndef U3CDELAYMETHODU3EC__ITERATOR1_T1075979784_H
 #define U3CDELAYMETHODU3EC__ITERATOR1_T1075979784_H
 #ifdef __clang__
@@ -560,29 +682,29 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // U3CENEMYACTIONU3EC__ANONSTOREY2_T1657202313_H
-#ifndef U3CHITANIMATIONU3EC__ANONSTOREY5_T246070209_H
-#define U3CHITANIMATIONU3EC__ANONSTOREY5_T246070209_H
+#ifndef U3CHEALSKILLU3EC__ANONSTOREY6_T4147225704_H
+#define U3CHEALSKILLU3EC__ANONSTOREY6_T4147225704_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// BattleManager/<HitAnimation>c__AnonStorey5
-struct  U3CHitAnimationU3Ec__AnonStorey5_t246070209  : public RuntimeObject
+// BattleManager/<HealSkill>c__AnonStorey6
+struct  U3CHealSkillU3Ec__AnonStorey6_t4147225704  : public RuntimeObject
 {
 public:
-	// UnityEngine.GameObject BattleManager/<HitAnimation>c__AnonStorey5::attackMonster
+	// UnityEngine.GameObject BattleManager/<HealSkill>c__AnonStorey6::attackMonster
 	GameObject_t1113636619 * ___attackMonster_0;
-	// UnityEngine.GameObject BattleManager/<HitAnimation>c__AnonStorey5::attackedMonster
+	// UnityEngine.GameObject BattleManager/<HealSkill>c__AnonStorey6::attackedMonster
 	GameObject_t1113636619 * ___attackedMonster_1;
-	// System.Int32 BattleManager/<HitAnimation>c__AnonStorey5::hp
-	int32_t ___hp_2;
-	// BattleManager BattleManager/<HitAnimation>c__AnonStorey5::$this
+	// System.Int32 BattleManager/<HealSkill>c__AnonStorey6::currentHp
+	int32_t ___currentHp_2;
+	// BattleManager BattleManager/<HealSkill>c__AnonStorey6::$this
 	BattleManager_t4022130644 * ___U24this_3;
 
 public:
-	inline static int32_t get_offset_of_attackMonster_0() { return static_cast<int32_t>(offsetof(U3CHitAnimationU3Ec__AnonStorey5_t246070209, ___attackMonster_0)); }
+	inline static int32_t get_offset_of_attackMonster_0() { return static_cast<int32_t>(offsetof(U3CHealSkillU3Ec__AnonStorey6_t4147225704, ___attackMonster_0)); }
 	inline GameObject_t1113636619 * get_attackMonster_0() const { return ___attackMonster_0; }
 	inline GameObject_t1113636619 ** get_address_of_attackMonster_0() { return &___attackMonster_0; }
 	inline void set_attackMonster_0(GameObject_t1113636619 * value)
@@ -591,7 +713,7 @@ public:
 		Il2CppCodeGenWriteBarrier((&___attackMonster_0), value);
 	}
 
-	inline static int32_t get_offset_of_attackedMonster_1() { return static_cast<int32_t>(offsetof(U3CHitAnimationU3Ec__AnonStorey5_t246070209, ___attackedMonster_1)); }
+	inline static int32_t get_offset_of_attackedMonster_1() { return static_cast<int32_t>(offsetof(U3CHealSkillU3Ec__AnonStorey6_t4147225704, ___attackedMonster_1)); }
 	inline GameObject_t1113636619 * get_attackedMonster_1() const { return ___attackedMonster_1; }
 	inline GameObject_t1113636619 ** get_address_of_attackedMonster_1() { return &___attackedMonster_1; }
 	inline void set_attackedMonster_1(GameObject_t1113636619 * value)
@@ -600,15 +722,15 @@ public:
 		Il2CppCodeGenWriteBarrier((&___attackedMonster_1), value);
 	}
 
-	inline static int32_t get_offset_of_hp_2() { return static_cast<int32_t>(offsetof(U3CHitAnimationU3Ec__AnonStorey5_t246070209, ___hp_2)); }
-	inline int32_t get_hp_2() const { return ___hp_2; }
-	inline int32_t* get_address_of_hp_2() { return &___hp_2; }
-	inline void set_hp_2(int32_t value)
+	inline static int32_t get_offset_of_currentHp_2() { return static_cast<int32_t>(offsetof(U3CHealSkillU3Ec__AnonStorey6_t4147225704, ___currentHp_2)); }
+	inline int32_t get_currentHp_2() const { return ___currentHp_2; }
+	inline int32_t* get_address_of_currentHp_2() { return &___currentHp_2; }
+	inline void set_currentHp_2(int32_t value)
 	{
-		___hp_2 = value;
+		___currentHp_2 = value;
 	}
 
-	inline static int32_t get_offset_of_U24this_3() { return static_cast<int32_t>(offsetof(U3CHitAnimationU3Ec__AnonStorey5_t246070209, ___U24this_3)); }
+	inline static int32_t get_offset_of_U24this_3() { return static_cast<int32_t>(offsetof(U3CHealSkillU3Ec__AnonStorey6_t4147225704, ___U24this_3)); }
 	inline BattleManager_t4022130644 * get_U24this_3() const { return ___U24this_3; }
 	inline BattleManager_t4022130644 ** get_address_of_U24this_3() { return &___U24this_3; }
 	inline void set_U24this_3(BattleManager_t4022130644 * value)
@@ -621,26 +743,26 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // U3CHITANIMATIONU3EC__ANONSTOREY5_T246070209_H
-#ifndef U3CJUDGEDEATHU3EC__ANONSTOREY6_T3788336905_H
-#define U3CJUDGEDEATHU3EC__ANONSTOREY6_T3788336905_H
+#endif // U3CHEALSKILLU3EC__ANONSTOREY6_T4147225704_H
+#ifndef U3CJUDGEDEATHU3EC__ANONSTOREY8_T2641325833_H
+#define U3CJUDGEDEATHU3EC__ANONSTOREY8_T2641325833_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// BattleManager/<JudgeDeath>c__AnonStorey6
-struct  U3CJudgeDeathU3Ec__AnonStorey6_t3788336905  : public RuntimeObject
+// BattleManager/<JudgeDeath>c__AnonStorey8
+struct  U3CJudgeDeathU3Ec__AnonStorey8_t2641325833  : public RuntimeObject
 {
 public:
-	// UnityEngine.GameObject BattleManager/<JudgeDeath>c__AnonStorey6::attackMonster
+	// UnityEngine.GameObject BattleManager/<JudgeDeath>c__AnonStorey8::attackMonster
 	GameObject_t1113636619 * ___attackMonster_0;
-	// BattleManager BattleManager/<JudgeDeath>c__AnonStorey6::$this
+	// BattleManager BattleManager/<JudgeDeath>c__AnonStorey8::$this
 	BattleManager_t4022130644 * ___U24this_1;
 
 public:
-	inline static int32_t get_offset_of_attackMonster_0() { return static_cast<int32_t>(offsetof(U3CJudgeDeathU3Ec__AnonStorey6_t3788336905, ___attackMonster_0)); }
+	inline static int32_t get_offset_of_attackMonster_0() { return static_cast<int32_t>(offsetof(U3CJudgeDeathU3Ec__AnonStorey8_t2641325833, ___attackMonster_0)); }
 	inline GameObject_t1113636619 * get_attackMonster_0() const { return ___attackMonster_0; }
 	inline GameObject_t1113636619 ** get_address_of_attackMonster_0() { return &___attackMonster_0; }
 	inline void set_attackMonster_0(GameObject_t1113636619 * value)
@@ -649,7 +771,7 @@ public:
 		Il2CppCodeGenWriteBarrier((&___attackMonster_0), value);
 	}
 
-	inline static int32_t get_offset_of_U24this_1() { return static_cast<int32_t>(offsetof(U3CJudgeDeathU3Ec__AnonStorey6_t3788336905, ___U24this_1)); }
+	inline static int32_t get_offset_of_U24this_1() { return static_cast<int32_t>(offsetof(U3CJudgeDeathU3Ec__AnonStorey8_t2641325833, ___U24this_1)); }
 	inline BattleManager_t4022130644 * get_U24this_1() const { return ___U24this_1; }
 	inline BattleManager_t4022130644 ** get_address_of_U24this_1() { return &___U24this_1; }
 	inline void set_U24this_1(BattleManager_t4022130644 * value)
@@ -662,7 +784,7 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // U3CJUDGEDEATHU3EC__ANONSTOREY6_T3788336905_H
+#endif // U3CJUDGEDEATHU3EC__ANONSTOREY8_T2641325833_H
 #ifndef U3CSTEPFRONTU3EC__ANONSTOREY3_T425534604_H
 #define U3CSTEPFRONTU3EC__ANONSTOREY3_T425534604_H
 #ifdef __clang__
@@ -1103,127 +1225,6 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // U3CDELAYMETHODU3EC__ITERATOR0_T1042502033_H
-#ifndef PARAM_T3761760163_H
-#define PARAM_T3761760163_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// MonsterData/Param
-struct  Param_t3761760163  : public RuntimeObject
-{
-public:
-	// System.Int32 MonsterData/Param::No
-	int32_t ___No_0;
-	// System.String MonsterData/Param::Name
-	String_t* ___Name_1;
-	// System.Int32 MonsterData/Param::Hp
-	int32_t ___Hp_2;
-	// System.Int32 MonsterData/Param::Attack
-	int32_t ___Attack_3;
-	// System.Int32 MonsterData/Param::Defence
-	int32_t ___Defence_4;
-	// System.Int32 MonsterData/Param::Speed
-	int32_t ___Speed_5;
-
-public:
-	inline static int32_t get_offset_of_No_0() { return static_cast<int32_t>(offsetof(Param_t3761760163, ___No_0)); }
-	inline int32_t get_No_0() const { return ___No_0; }
-	inline int32_t* get_address_of_No_0() { return &___No_0; }
-	inline void set_No_0(int32_t value)
-	{
-		___No_0 = value;
-	}
-
-	inline static int32_t get_offset_of_Name_1() { return static_cast<int32_t>(offsetof(Param_t3761760163, ___Name_1)); }
-	inline String_t* get_Name_1() const { return ___Name_1; }
-	inline String_t** get_address_of_Name_1() { return &___Name_1; }
-	inline void set_Name_1(String_t* value)
-	{
-		___Name_1 = value;
-		Il2CppCodeGenWriteBarrier((&___Name_1), value);
-	}
-
-	inline static int32_t get_offset_of_Hp_2() { return static_cast<int32_t>(offsetof(Param_t3761760163, ___Hp_2)); }
-	inline int32_t get_Hp_2() const { return ___Hp_2; }
-	inline int32_t* get_address_of_Hp_2() { return &___Hp_2; }
-	inline void set_Hp_2(int32_t value)
-	{
-		___Hp_2 = value;
-	}
-
-	inline static int32_t get_offset_of_Attack_3() { return static_cast<int32_t>(offsetof(Param_t3761760163, ___Attack_3)); }
-	inline int32_t get_Attack_3() const { return ___Attack_3; }
-	inline int32_t* get_address_of_Attack_3() { return &___Attack_3; }
-	inline void set_Attack_3(int32_t value)
-	{
-		___Attack_3 = value;
-	}
-
-	inline static int32_t get_offset_of_Defence_4() { return static_cast<int32_t>(offsetof(Param_t3761760163, ___Defence_4)); }
-	inline int32_t get_Defence_4() const { return ___Defence_4; }
-	inline int32_t* get_address_of_Defence_4() { return &___Defence_4; }
-	inline void set_Defence_4(int32_t value)
-	{
-		___Defence_4 = value;
-	}
-
-	inline static int32_t get_offset_of_Speed_5() { return static_cast<int32_t>(offsetof(Param_t3761760163, ___Speed_5)); }
-	inline int32_t get_Speed_5() const { return ___Speed_5; }
-	inline int32_t* get_address_of_Speed_5() { return &___Speed_5; }
-	inline void set_Speed_5(int32_t value)
-	{
-		___Speed_5 = value;
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // PARAM_T3761760163_H
-#ifndef SHEET_T1327748116_H
-#define SHEET_T1327748116_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// MonsterData/Sheet
-struct  Sheet_t1327748116  : public RuntimeObject
-{
-public:
-	// System.String MonsterData/Sheet::name
-	String_t* ___name_0;
-	// System.Collections.Generic.List`1<MonsterData/Param> MonsterData/Sheet::list
-	List_1_t938867609 * ___list_1;
-
-public:
-	inline static int32_t get_offset_of_name_0() { return static_cast<int32_t>(offsetof(Sheet_t1327748116, ___name_0)); }
-	inline String_t* get_name_0() const { return ___name_0; }
-	inline String_t** get_address_of_name_0() { return &___name_0; }
-	inline void set_name_0(String_t* value)
-	{
-		___name_0 = value;
-		Il2CppCodeGenWriteBarrier((&___name_0), value);
-	}
-
-	inline static int32_t get_offset_of_list_1() { return static_cast<int32_t>(offsetof(Sheet_t1327748116, ___list_1)); }
-	inline List_1_t938867609 * get_list_1() const { return ___list_1; }
-	inline List_1_t938867609 ** get_address_of_list_1() { return &___list_1; }
-	inline void set_list_1(List_1_t938867609 * value)
-	{
-		___list_1 = value;
-		Il2CppCodeGenWriteBarrier((&___list_1), value);
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // SHEET_T1327748116_H
 #ifndef PARAM_T4068803933_H
 #define PARAM_T4068803933_H
 #ifdef __clang__
@@ -1399,6 +1400,47 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // SHEET_T2836519578_H
+#ifndef SHEET_T1672419742_H
+#define SHEET_T1672419742_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// SkillData/Sheet
+struct  Sheet_t1672419742  : public RuntimeObject
+{
+public:
+	// System.String SkillData/Sheet::name
+	String_t* ___name_0;
+	// System.Collections.Generic.List`1<SkillData/Param> SkillData/Sheet::list
+	List_1_t2959069203 * ___list_1;
+
+public:
+	inline static int32_t get_offset_of_name_0() { return static_cast<int32_t>(offsetof(Sheet_t1672419742, ___name_0)); }
+	inline String_t* get_name_0() const { return ___name_0; }
+	inline String_t** get_address_of_name_0() { return &___name_0; }
+	inline void set_name_0(String_t* value)
+	{
+		___name_0 = value;
+		Il2CppCodeGenWriteBarrier((&___name_0), value);
+	}
+
+	inline static int32_t get_offset_of_list_1() { return static_cast<int32_t>(offsetof(Sheet_t1672419742, ___list_1)); }
+	inline List_1_t2959069203 * get_list_1() const { return ___list_1; }
+	inline List_1_t2959069203 ** get_address_of_list_1() { return &___list_1; }
+	inline void set_list_1(List_1_t2959069203 * value)
+	{
+		___list_1 = value;
+		Il2CppCodeGenWriteBarrier((&___list_1), value);
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // SHEET_T1672419742_H
 #ifndef U3CDELAYMETHODU3EC__ITERATOR0_T905607539_H
 #define U3CDELAYMETHODU3EC__ITERATOR0_T905607539_H
 #ifdef __clang__
@@ -7239,36 +7281,6 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // ENEMYPARTYDATA_T1860595397_H
-#ifndef MONSTERDATA_T2246618540_H
-#define MONSTERDATA_T2246618540_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// MonsterData
-struct  MonsterData_t2246618540  : public ScriptableObject_t2528358522
-{
-public:
-	// System.Collections.Generic.List`1<MonsterData/Sheet> MonsterData::sheets
-	List_1_t2799822858 * ___sheets_4;
-
-public:
-	inline static int32_t get_offset_of_sheets_4() { return static_cast<int32_t>(offsetof(MonsterData_t2246618540, ___sheets_4)); }
-	inline List_1_t2799822858 * get_sheets_4() const { return ___sheets_4; }
-	inline List_1_t2799822858 ** get_address_of_sheets_4() { return &___sheets_4; }
-	inline void set_sheets_4(List_1_t2799822858 * value)
-	{
-		___sheets_4 = value;
-		Il2CppCodeGenWriteBarrier((&___sheets_4), value);
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // MONSTERDATA_T2246618540_H
 #ifndef MYPARTYDATA_T3954641067_H
 #define MYPARTYDATA_T3954641067_H
 #ifdef __clang__
@@ -8166,46 +8178,50 @@ public:
 	GameObject_t1113636619 * ___txt_skillNamePrefab_19;
 	// UnityEngine.GameObject BattleManager::txt_damagePrefab
 	GameObject_t1113636619 * ___txt_damagePrefab_20;
+	// UnityEngine.GameObject BattleManager::txt_healPrefab
+	GameObject_t1113636619 * ___txt_healPrefab_21;
+	// UnityEngine.GameObject BattleManager::txt_changePrefab
+	GameObject_t1113636619 * ___txt_changePrefab_22;
 	// System.Int32 BattleManager::counter_checkNextAction
-	int32_t ___counter_checkNextAction_21;
+	int32_t ___counter_checkNextAction_23;
 	// System.Int32 BattleManager::count_targetMonster
-	int32_t ___count_targetMonster_22;
+	int32_t ___count_targetMonster_24;
 	// System.Int32 BattleManager::vod
-	int32_t ___vod_23;
+	int32_t ___vod_25;
 	// System.Int32 BattleManager::targetMonsterId_ally
-	int32_t ___targetMonsterId_ally_24;
+	int32_t ___targetMonsterId_ally_26;
 	// System.Int32 BattleManager::targetMonsterId_enemy
-	int32_t ___targetMonsterId_enemy_25;
+	int32_t ___targetMonsterId_enemy_27;
 	// System.Int32 BattleManager::actionCount
-	int32_t ___actionCount_26;
+	int32_t ___actionCount_28;
 	// System.Single BattleManager::time_break
-	float ___time_break_27;
+	float ___time_break_29;
 	// System.Single BattleManager::time_stepFront
-	float ___time_stepFront_28;
+	float ___time_stepFront_30;
 	// System.Single BattleManager::time_stepBack
-	float ___time_stepBack_29;
+	float ___time_stepBack_31;
 	// System.Single BattleManager::time_attackAnimation
-	float ___time_attackAnimation_30;
+	float ___time_attackAnimation_32;
 	// System.Single BattleManager::time_hitAnimation
-	float ___time_hitAnimation_31;
+	float ___time_hitAnimation_33;
 	// System.Single BattleManager::time_deathAnimation
-	float ___time_deathAnimation_32;
+	float ___time_deathAnimation_34;
 	// System.Single BattleManager::time_frame
-	float ___time_frame_33;
+	float ___time_frame_35;
 	// System.Int32 BattleManager::num_frame
-	int32_t ___num_frame_34;
+	int32_t ___num_frame_36;
 	// System.Single BattleManager::speed_attackAnimation
-	float ___speed_attackAnimation_35;
+	float ___speed_attackAnimation_37;
 	// System.Single BattleManager::diff_step
-	float ___diff_step_36;
+	float ___diff_step_38;
 	// System.Single BattleManager::zPos_attackEffect
-	float ___zPos_attackEffect_37;
+	float ___zPos_attackEffect_39;
 	// System.Collections.Generic.List`1<UnityEngine.GameObject> BattleManager::monsterOrderList
-	List_1_t2585711361 * ___monsterOrderList_38;
+	List_1_t2585711361 * ___monsterOrderList_40;
 	// System.Collections.Generic.List`1<UnityEngine.GameObject> BattleManager::myPartyList
-	List_1_t2585711361 * ___myPartyList_39;
+	List_1_t2585711361 * ___myPartyList_41;
 	// System.Collections.Generic.List`1<UnityEngine.GameObject> BattleManager::enemyPartyList
-	List_1_t2585711361 * ___enemyPartyList_40;
+	List_1_t2585711361 * ___enemyPartyList_42;
 
 public:
 	inline static int32_t get_offset_of_baseStatsData_4() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___baseStatsData_4)); }
@@ -8361,167 +8377,185 @@ public:
 		Il2CppCodeGenWriteBarrier((&___txt_damagePrefab_20), value);
 	}
 
-	inline static int32_t get_offset_of_counter_checkNextAction_21() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___counter_checkNextAction_21)); }
-	inline int32_t get_counter_checkNextAction_21() const { return ___counter_checkNextAction_21; }
-	inline int32_t* get_address_of_counter_checkNextAction_21() { return &___counter_checkNextAction_21; }
-	inline void set_counter_checkNextAction_21(int32_t value)
+	inline static int32_t get_offset_of_txt_healPrefab_21() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___txt_healPrefab_21)); }
+	inline GameObject_t1113636619 * get_txt_healPrefab_21() const { return ___txt_healPrefab_21; }
+	inline GameObject_t1113636619 ** get_address_of_txt_healPrefab_21() { return &___txt_healPrefab_21; }
+	inline void set_txt_healPrefab_21(GameObject_t1113636619 * value)
 	{
-		___counter_checkNextAction_21 = value;
+		___txt_healPrefab_21 = value;
+		Il2CppCodeGenWriteBarrier((&___txt_healPrefab_21), value);
 	}
 
-	inline static int32_t get_offset_of_count_targetMonster_22() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___count_targetMonster_22)); }
-	inline int32_t get_count_targetMonster_22() const { return ___count_targetMonster_22; }
-	inline int32_t* get_address_of_count_targetMonster_22() { return &___count_targetMonster_22; }
-	inline void set_count_targetMonster_22(int32_t value)
+	inline static int32_t get_offset_of_txt_changePrefab_22() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___txt_changePrefab_22)); }
+	inline GameObject_t1113636619 * get_txt_changePrefab_22() const { return ___txt_changePrefab_22; }
+	inline GameObject_t1113636619 ** get_address_of_txt_changePrefab_22() { return &___txt_changePrefab_22; }
+	inline void set_txt_changePrefab_22(GameObject_t1113636619 * value)
 	{
-		___count_targetMonster_22 = value;
+		___txt_changePrefab_22 = value;
+		Il2CppCodeGenWriteBarrier((&___txt_changePrefab_22), value);
 	}
 
-	inline static int32_t get_offset_of_vod_23() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___vod_23)); }
-	inline int32_t get_vod_23() const { return ___vod_23; }
-	inline int32_t* get_address_of_vod_23() { return &___vod_23; }
-	inline void set_vod_23(int32_t value)
+	inline static int32_t get_offset_of_counter_checkNextAction_23() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___counter_checkNextAction_23)); }
+	inline int32_t get_counter_checkNextAction_23() const { return ___counter_checkNextAction_23; }
+	inline int32_t* get_address_of_counter_checkNextAction_23() { return &___counter_checkNextAction_23; }
+	inline void set_counter_checkNextAction_23(int32_t value)
 	{
-		___vod_23 = value;
+		___counter_checkNextAction_23 = value;
 	}
 
-	inline static int32_t get_offset_of_targetMonsterId_ally_24() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___targetMonsterId_ally_24)); }
-	inline int32_t get_targetMonsterId_ally_24() const { return ___targetMonsterId_ally_24; }
-	inline int32_t* get_address_of_targetMonsterId_ally_24() { return &___targetMonsterId_ally_24; }
-	inline void set_targetMonsterId_ally_24(int32_t value)
+	inline static int32_t get_offset_of_count_targetMonster_24() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___count_targetMonster_24)); }
+	inline int32_t get_count_targetMonster_24() const { return ___count_targetMonster_24; }
+	inline int32_t* get_address_of_count_targetMonster_24() { return &___count_targetMonster_24; }
+	inline void set_count_targetMonster_24(int32_t value)
 	{
-		___targetMonsterId_ally_24 = value;
+		___count_targetMonster_24 = value;
 	}
 
-	inline static int32_t get_offset_of_targetMonsterId_enemy_25() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___targetMonsterId_enemy_25)); }
-	inline int32_t get_targetMonsterId_enemy_25() const { return ___targetMonsterId_enemy_25; }
-	inline int32_t* get_address_of_targetMonsterId_enemy_25() { return &___targetMonsterId_enemy_25; }
-	inline void set_targetMonsterId_enemy_25(int32_t value)
+	inline static int32_t get_offset_of_vod_25() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___vod_25)); }
+	inline int32_t get_vod_25() const { return ___vod_25; }
+	inline int32_t* get_address_of_vod_25() { return &___vod_25; }
+	inline void set_vod_25(int32_t value)
 	{
-		___targetMonsterId_enemy_25 = value;
+		___vod_25 = value;
 	}
 
-	inline static int32_t get_offset_of_actionCount_26() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___actionCount_26)); }
-	inline int32_t get_actionCount_26() const { return ___actionCount_26; }
-	inline int32_t* get_address_of_actionCount_26() { return &___actionCount_26; }
-	inline void set_actionCount_26(int32_t value)
+	inline static int32_t get_offset_of_targetMonsterId_ally_26() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___targetMonsterId_ally_26)); }
+	inline int32_t get_targetMonsterId_ally_26() const { return ___targetMonsterId_ally_26; }
+	inline int32_t* get_address_of_targetMonsterId_ally_26() { return &___targetMonsterId_ally_26; }
+	inline void set_targetMonsterId_ally_26(int32_t value)
 	{
-		___actionCount_26 = value;
+		___targetMonsterId_ally_26 = value;
 	}
 
-	inline static int32_t get_offset_of_time_break_27() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_break_27)); }
-	inline float get_time_break_27() const { return ___time_break_27; }
-	inline float* get_address_of_time_break_27() { return &___time_break_27; }
-	inline void set_time_break_27(float value)
+	inline static int32_t get_offset_of_targetMonsterId_enemy_27() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___targetMonsterId_enemy_27)); }
+	inline int32_t get_targetMonsterId_enemy_27() const { return ___targetMonsterId_enemy_27; }
+	inline int32_t* get_address_of_targetMonsterId_enemy_27() { return &___targetMonsterId_enemy_27; }
+	inline void set_targetMonsterId_enemy_27(int32_t value)
 	{
-		___time_break_27 = value;
+		___targetMonsterId_enemy_27 = value;
 	}
 
-	inline static int32_t get_offset_of_time_stepFront_28() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_stepFront_28)); }
-	inline float get_time_stepFront_28() const { return ___time_stepFront_28; }
-	inline float* get_address_of_time_stepFront_28() { return &___time_stepFront_28; }
-	inline void set_time_stepFront_28(float value)
+	inline static int32_t get_offset_of_actionCount_28() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___actionCount_28)); }
+	inline int32_t get_actionCount_28() const { return ___actionCount_28; }
+	inline int32_t* get_address_of_actionCount_28() { return &___actionCount_28; }
+	inline void set_actionCount_28(int32_t value)
 	{
-		___time_stepFront_28 = value;
+		___actionCount_28 = value;
 	}
 
-	inline static int32_t get_offset_of_time_stepBack_29() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_stepBack_29)); }
-	inline float get_time_stepBack_29() const { return ___time_stepBack_29; }
-	inline float* get_address_of_time_stepBack_29() { return &___time_stepBack_29; }
-	inline void set_time_stepBack_29(float value)
+	inline static int32_t get_offset_of_time_break_29() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_break_29)); }
+	inline float get_time_break_29() const { return ___time_break_29; }
+	inline float* get_address_of_time_break_29() { return &___time_break_29; }
+	inline void set_time_break_29(float value)
 	{
-		___time_stepBack_29 = value;
+		___time_break_29 = value;
 	}
 
-	inline static int32_t get_offset_of_time_attackAnimation_30() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_attackAnimation_30)); }
-	inline float get_time_attackAnimation_30() const { return ___time_attackAnimation_30; }
-	inline float* get_address_of_time_attackAnimation_30() { return &___time_attackAnimation_30; }
-	inline void set_time_attackAnimation_30(float value)
+	inline static int32_t get_offset_of_time_stepFront_30() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_stepFront_30)); }
+	inline float get_time_stepFront_30() const { return ___time_stepFront_30; }
+	inline float* get_address_of_time_stepFront_30() { return &___time_stepFront_30; }
+	inline void set_time_stepFront_30(float value)
 	{
-		___time_attackAnimation_30 = value;
+		___time_stepFront_30 = value;
 	}
 
-	inline static int32_t get_offset_of_time_hitAnimation_31() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_hitAnimation_31)); }
-	inline float get_time_hitAnimation_31() const { return ___time_hitAnimation_31; }
-	inline float* get_address_of_time_hitAnimation_31() { return &___time_hitAnimation_31; }
-	inline void set_time_hitAnimation_31(float value)
+	inline static int32_t get_offset_of_time_stepBack_31() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_stepBack_31)); }
+	inline float get_time_stepBack_31() const { return ___time_stepBack_31; }
+	inline float* get_address_of_time_stepBack_31() { return &___time_stepBack_31; }
+	inline void set_time_stepBack_31(float value)
 	{
-		___time_hitAnimation_31 = value;
+		___time_stepBack_31 = value;
 	}
 
-	inline static int32_t get_offset_of_time_deathAnimation_32() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_deathAnimation_32)); }
-	inline float get_time_deathAnimation_32() const { return ___time_deathAnimation_32; }
-	inline float* get_address_of_time_deathAnimation_32() { return &___time_deathAnimation_32; }
-	inline void set_time_deathAnimation_32(float value)
+	inline static int32_t get_offset_of_time_attackAnimation_32() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_attackAnimation_32)); }
+	inline float get_time_attackAnimation_32() const { return ___time_attackAnimation_32; }
+	inline float* get_address_of_time_attackAnimation_32() { return &___time_attackAnimation_32; }
+	inline void set_time_attackAnimation_32(float value)
 	{
-		___time_deathAnimation_32 = value;
+		___time_attackAnimation_32 = value;
 	}
 
-	inline static int32_t get_offset_of_time_frame_33() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_frame_33)); }
-	inline float get_time_frame_33() const { return ___time_frame_33; }
-	inline float* get_address_of_time_frame_33() { return &___time_frame_33; }
-	inline void set_time_frame_33(float value)
+	inline static int32_t get_offset_of_time_hitAnimation_33() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_hitAnimation_33)); }
+	inline float get_time_hitAnimation_33() const { return ___time_hitAnimation_33; }
+	inline float* get_address_of_time_hitAnimation_33() { return &___time_hitAnimation_33; }
+	inline void set_time_hitAnimation_33(float value)
 	{
-		___time_frame_33 = value;
+		___time_hitAnimation_33 = value;
 	}
 
-	inline static int32_t get_offset_of_num_frame_34() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___num_frame_34)); }
-	inline int32_t get_num_frame_34() const { return ___num_frame_34; }
-	inline int32_t* get_address_of_num_frame_34() { return &___num_frame_34; }
-	inline void set_num_frame_34(int32_t value)
+	inline static int32_t get_offset_of_time_deathAnimation_34() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_deathAnimation_34)); }
+	inline float get_time_deathAnimation_34() const { return ___time_deathAnimation_34; }
+	inline float* get_address_of_time_deathAnimation_34() { return &___time_deathAnimation_34; }
+	inline void set_time_deathAnimation_34(float value)
 	{
-		___num_frame_34 = value;
+		___time_deathAnimation_34 = value;
 	}
 
-	inline static int32_t get_offset_of_speed_attackAnimation_35() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___speed_attackAnimation_35)); }
-	inline float get_speed_attackAnimation_35() const { return ___speed_attackAnimation_35; }
-	inline float* get_address_of_speed_attackAnimation_35() { return &___speed_attackAnimation_35; }
-	inline void set_speed_attackAnimation_35(float value)
+	inline static int32_t get_offset_of_time_frame_35() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_frame_35)); }
+	inline float get_time_frame_35() const { return ___time_frame_35; }
+	inline float* get_address_of_time_frame_35() { return &___time_frame_35; }
+	inline void set_time_frame_35(float value)
 	{
-		___speed_attackAnimation_35 = value;
+		___time_frame_35 = value;
 	}
 
-	inline static int32_t get_offset_of_diff_step_36() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___diff_step_36)); }
-	inline float get_diff_step_36() const { return ___diff_step_36; }
-	inline float* get_address_of_diff_step_36() { return &___diff_step_36; }
-	inline void set_diff_step_36(float value)
+	inline static int32_t get_offset_of_num_frame_36() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___num_frame_36)); }
+	inline int32_t get_num_frame_36() const { return ___num_frame_36; }
+	inline int32_t* get_address_of_num_frame_36() { return &___num_frame_36; }
+	inline void set_num_frame_36(int32_t value)
 	{
-		___diff_step_36 = value;
+		___num_frame_36 = value;
 	}
 
-	inline static int32_t get_offset_of_zPos_attackEffect_37() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___zPos_attackEffect_37)); }
-	inline float get_zPos_attackEffect_37() const { return ___zPos_attackEffect_37; }
-	inline float* get_address_of_zPos_attackEffect_37() { return &___zPos_attackEffect_37; }
-	inline void set_zPos_attackEffect_37(float value)
+	inline static int32_t get_offset_of_speed_attackAnimation_37() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___speed_attackAnimation_37)); }
+	inline float get_speed_attackAnimation_37() const { return ___speed_attackAnimation_37; }
+	inline float* get_address_of_speed_attackAnimation_37() { return &___speed_attackAnimation_37; }
+	inline void set_speed_attackAnimation_37(float value)
 	{
-		___zPos_attackEffect_37 = value;
+		___speed_attackAnimation_37 = value;
 	}
 
-	inline static int32_t get_offset_of_monsterOrderList_38() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___monsterOrderList_38)); }
-	inline List_1_t2585711361 * get_monsterOrderList_38() const { return ___monsterOrderList_38; }
-	inline List_1_t2585711361 ** get_address_of_monsterOrderList_38() { return &___monsterOrderList_38; }
-	inline void set_monsterOrderList_38(List_1_t2585711361 * value)
+	inline static int32_t get_offset_of_diff_step_38() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___diff_step_38)); }
+	inline float get_diff_step_38() const { return ___diff_step_38; }
+	inline float* get_address_of_diff_step_38() { return &___diff_step_38; }
+	inline void set_diff_step_38(float value)
 	{
-		___monsterOrderList_38 = value;
-		Il2CppCodeGenWriteBarrier((&___monsterOrderList_38), value);
+		___diff_step_38 = value;
 	}
 
-	inline static int32_t get_offset_of_myPartyList_39() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___myPartyList_39)); }
-	inline List_1_t2585711361 * get_myPartyList_39() const { return ___myPartyList_39; }
-	inline List_1_t2585711361 ** get_address_of_myPartyList_39() { return &___myPartyList_39; }
-	inline void set_myPartyList_39(List_1_t2585711361 * value)
+	inline static int32_t get_offset_of_zPos_attackEffect_39() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___zPos_attackEffect_39)); }
+	inline float get_zPos_attackEffect_39() const { return ___zPos_attackEffect_39; }
+	inline float* get_address_of_zPos_attackEffect_39() { return &___zPos_attackEffect_39; }
+	inline void set_zPos_attackEffect_39(float value)
 	{
-		___myPartyList_39 = value;
-		Il2CppCodeGenWriteBarrier((&___myPartyList_39), value);
+		___zPos_attackEffect_39 = value;
 	}
 
-	inline static int32_t get_offset_of_enemyPartyList_40() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___enemyPartyList_40)); }
-	inline List_1_t2585711361 * get_enemyPartyList_40() const { return ___enemyPartyList_40; }
-	inline List_1_t2585711361 ** get_address_of_enemyPartyList_40() { return &___enemyPartyList_40; }
-	inline void set_enemyPartyList_40(List_1_t2585711361 * value)
+	inline static int32_t get_offset_of_monsterOrderList_40() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___monsterOrderList_40)); }
+	inline List_1_t2585711361 * get_monsterOrderList_40() const { return ___monsterOrderList_40; }
+	inline List_1_t2585711361 ** get_address_of_monsterOrderList_40() { return &___monsterOrderList_40; }
+	inline void set_monsterOrderList_40(List_1_t2585711361 * value)
 	{
-		___enemyPartyList_40 = value;
-		Il2CppCodeGenWriteBarrier((&___enemyPartyList_40), value);
+		___monsterOrderList_40 = value;
+		Il2CppCodeGenWriteBarrier((&___monsterOrderList_40), value);
+	}
+
+	inline static int32_t get_offset_of_myPartyList_41() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___myPartyList_41)); }
+	inline List_1_t2585711361 * get_myPartyList_41() const { return ___myPartyList_41; }
+	inline List_1_t2585711361 ** get_address_of_myPartyList_41() { return &___myPartyList_41; }
+	inline void set_myPartyList_41(List_1_t2585711361 * value)
+	{
+		___myPartyList_41 = value;
+		Il2CppCodeGenWriteBarrier((&___myPartyList_41), value);
+	}
+
+	inline static int32_t get_offset_of_enemyPartyList_42() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___enemyPartyList_42)); }
+	inline List_1_t2585711361 * get_enemyPartyList_42() const { return ___enemyPartyList_42; }
+	inline List_1_t2585711361 ** get_address_of_enemyPartyList_42() { return &___enemyPartyList_42; }
+	inline void set_enemyPartyList_42(List_1_t2585711361 * value)
+	{
+		___enemyPartyList_42 = value;
+		Il2CppCodeGenWriteBarrier((&___enemyPartyList_42), value);
 	}
 };
 
@@ -8529,38 +8563,38 @@ struct BattleManager_t4022130644_StaticFields
 {
 public:
 	// System.Comparison`1<UnityEngine.GameObject> BattleManager::<>f__am$cache0
-	Comparison_1_t888567798 * ___U3CU3Ef__amU24cache0_41;
+	Comparison_1_t888567798 * ___U3CU3Ef__amU24cache0_43;
 	// System.Func`2<UnityEngine.GameObject,System.Guid> BattleManager::<>f__am$cache1
-	Func_2_t3045216918 * ___U3CU3Ef__amU24cache1_42;
+	Func_2_t3045216918 * ___U3CU3Ef__amU24cache1_44;
 	// System.Func`2<UnityEngine.GameObject,System.Guid> BattleManager::<>f__am$cache2
-	Func_2_t3045216918 * ___U3CU3Ef__amU24cache2_43;
+	Func_2_t3045216918 * ___U3CU3Ef__amU24cache2_45;
 
 public:
-	inline static int32_t get_offset_of_U3CU3Ef__amU24cache0_41() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644_StaticFields, ___U3CU3Ef__amU24cache0_41)); }
-	inline Comparison_1_t888567798 * get_U3CU3Ef__amU24cache0_41() const { return ___U3CU3Ef__amU24cache0_41; }
-	inline Comparison_1_t888567798 ** get_address_of_U3CU3Ef__amU24cache0_41() { return &___U3CU3Ef__amU24cache0_41; }
-	inline void set_U3CU3Ef__amU24cache0_41(Comparison_1_t888567798 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__amU24cache0_43() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644_StaticFields, ___U3CU3Ef__amU24cache0_43)); }
+	inline Comparison_1_t888567798 * get_U3CU3Ef__amU24cache0_43() const { return ___U3CU3Ef__amU24cache0_43; }
+	inline Comparison_1_t888567798 ** get_address_of_U3CU3Ef__amU24cache0_43() { return &___U3CU3Ef__amU24cache0_43; }
+	inline void set_U3CU3Ef__amU24cache0_43(Comparison_1_t888567798 * value)
 	{
-		___U3CU3Ef__amU24cache0_41 = value;
-		Il2CppCodeGenWriteBarrier((&___U3CU3Ef__amU24cache0_41), value);
+		___U3CU3Ef__amU24cache0_43 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CU3Ef__amU24cache0_43), value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__amU24cache1_42() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644_StaticFields, ___U3CU3Ef__amU24cache1_42)); }
-	inline Func_2_t3045216918 * get_U3CU3Ef__amU24cache1_42() const { return ___U3CU3Ef__amU24cache1_42; }
-	inline Func_2_t3045216918 ** get_address_of_U3CU3Ef__amU24cache1_42() { return &___U3CU3Ef__amU24cache1_42; }
-	inline void set_U3CU3Ef__amU24cache1_42(Func_2_t3045216918 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__amU24cache1_44() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644_StaticFields, ___U3CU3Ef__amU24cache1_44)); }
+	inline Func_2_t3045216918 * get_U3CU3Ef__amU24cache1_44() const { return ___U3CU3Ef__amU24cache1_44; }
+	inline Func_2_t3045216918 ** get_address_of_U3CU3Ef__amU24cache1_44() { return &___U3CU3Ef__amU24cache1_44; }
+	inline void set_U3CU3Ef__amU24cache1_44(Func_2_t3045216918 * value)
 	{
-		___U3CU3Ef__amU24cache1_42 = value;
-		Il2CppCodeGenWriteBarrier((&___U3CU3Ef__amU24cache1_42), value);
+		___U3CU3Ef__amU24cache1_44 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CU3Ef__amU24cache1_44), value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__amU24cache2_43() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644_StaticFields, ___U3CU3Ef__amU24cache2_43)); }
-	inline Func_2_t3045216918 * get_U3CU3Ef__amU24cache2_43() const { return ___U3CU3Ef__amU24cache2_43; }
-	inline Func_2_t3045216918 ** get_address_of_U3CU3Ef__amU24cache2_43() { return &___U3CU3Ef__amU24cache2_43; }
-	inline void set_U3CU3Ef__amU24cache2_43(Func_2_t3045216918 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__amU24cache2_45() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644_StaticFields, ___U3CU3Ef__amU24cache2_45)); }
+	inline Func_2_t3045216918 * get_U3CU3Ef__amU24cache2_45() const { return ___U3CU3Ef__amU24cache2_45; }
+	inline Func_2_t3045216918 ** get_address_of_U3CU3Ef__amU24cache2_45() { return &___U3CU3Ef__amU24cache2_45; }
+	inline void set_U3CU3Ef__amU24cache2_45(Func_2_t3045216918 * value)
 	{
-		___U3CU3Ef__amU24cache2_43 = value;
-		Il2CppCodeGenWriteBarrier((&___U3CU3Ef__amU24cache2_43), value);
+		___U3CU3Ef__amU24cache2_45 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CU3Ef__amU24cache2_45), value);
 	}
 };
 
@@ -8586,20 +8620,28 @@ public:
 	int32_t ___battleId_5;
 	// System.Int32 CharacterStatus::level
 	int32_t ___level_6;
+	// System.Int32 CharacterStatus::maxHp
+	int32_t ___maxHp_7;
 	// System.Int32 CharacterStatus::hp
-	int32_t ___hp_7;
+	int32_t ___hp_8;
 	// System.Int32 CharacterStatus::attack
-	int32_t ___attack_8;
+	int32_t ___attack_9;
 	// System.Int32 CharacterStatus::defense
-	int32_t ___defense_9;
+	int32_t ___defense_10;
 	// System.Int32 CharacterStatus::speed
-	int32_t ___speed_10;
+	int32_t ___speed_11;
+	// System.Int32 CharacterStatus::statusRank_attack
+	int32_t ___statusRank_attack_12;
+	// System.Int32 CharacterStatus::statusRank_defense
+	int32_t ___statusRank_defense_13;
+	// System.Int32 CharacterStatus::statusRank_speed
+	int32_t ___statusRank_speed_14;
 	// System.Collections.Generic.List`1<System.Int32> CharacterStatus::skills
-	List_1_t128053199 * ___skills_11;
+	List_1_t128053199 * ___skills_15;
 	// System.Int32 CharacterStatus::num_selectedSkill
-	int32_t ___num_selectedSkill_12;
+	int32_t ___num_selectedSkill_16;
 	// System.Boolean CharacterStatus::deathFlag
-	bool ___deathFlag_13;
+	bool ___deathFlag_17;
 
 public:
 	inline static int32_t get_offset_of_name_4() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___name_4)); }
@@ -8627,61 +8669,93 @@ public:
 		___level_6 = value;
 	}
 
-	inline static int32_t get_offset_of_hp_7() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___hp_7)); }
-	inline int32_t get_hp_7() const { return ___hp_7; }
-	inline int32_t* get_address_of_hp_7() { return &___hp_7; }
-	inline void set_hp_7(int32_t value)
+	inline static int32_t get_offset_of_maxHp_7() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___maxHp_7)); }
+	inline int32_t get_maxHp_7() const { return ___maxHp_7; }
+	inline int32_t* get_address_of_maxHp_7() { return &___maxHp_7; }
+	inline void set_maxHp_7(int32_t value)
 	{
-		___hp_7 = value;
+		___maxHp_7 = value;
 	}
 
-	inline static int32_t get_offset_of_attack_8() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___attack_8)); }
-	inline int32_t get_attack_8() const { return ___attack_8; }
-	inline int32_t* get_address_of_attack_8() { return &___attack_8; }
-	inline void set_attack_8(int32_t value)
+	inline static int32_t get_offset_of_hp_8() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___hp_8)); }
+	inline int32_t get_hp_8() const { return ___hp_8; }
+	inline int32_t* get_address_of_hp_8() { return &___hp_8; }
+	inline void set_hp_8(int32_t value)
 	{
-		___attack_8 = value;
+		___hp_8 = value;
 	}
 
-	inline static int32_t get_offset_of_defense_9() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___defense_9)); }
-	inline int32_t get_defense_9() const { return ___defense_9; }
-	inline int32_t* get_address_of_defense_9() { return &___defense_9; }
-	inline void set_defense_9(int32_t value)
+	inline static int32_t get_offset_of_attack_9() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___attack_9)); }
+	inline int32_t get_attack_9() const { return ___attack_9; }
+	inline int32_t* get_address_of_attack_9() { return &___attack_9; }
+	inline void set_attack_9(int32_t value)
 	{
-		___defense_9 = value;
+		___attack_9 = value;
 	}
 
-	inline static int32_t get_offset_of_speed_10() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___speed_10)); }
-	inline int32_t get_speed_10() const { return ___speed_10; }
-	inline int32_t* get_address_of_speed_10() { return &___speed_10; }
-	inline void set_speed_10(int32_t value)
+	inline static int32_t get_offset_of_defense_10() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___defense_10)); }
+	inline int32_t get_defense_10() const { return ___defense_10; }
+	inline int32_t* get_address_of_defense_10() { return &___defense_10; }
+	inline void set_defense_10(int32_t value)
 	{
-		___speed_10 = value;
+		___defense_10 = value;
 	}
 
-	inline static int32_t get_offset_of_skills_11() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___skills_11)); }
-	inline List_1_t128053199 * get_skills_11() const { return ___skills_11; }
-	inline List_1_t128053199 ** get_address_of_skills_11() { return &___skills_11; }
-	inline void set_skills_11(List_1_t128053199 * value)
+	inline static int32_t get_offset_of_speed_11() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___speed_11)); }
+	inline int32_t get_speed_11() const { return ___speed_11; }
+	inline int32_t* get_address_of_speed_11() { return &___speed_11; }
+	inline void set_speed_11(int32_t value)
 	{
-		___skills_11 = value;
-		Il2CppCodeGenWriteBarrier((&___skills_11), value);
+		___speed_11 = value;
 	}
 
-	inline static int32_t get_offset_of_num_selectedSkill_12() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___num_selectedSkill_12)); }
-	inline int32_t get_num_selectedSkill_12() const { return ___num_selectedSkill_12; }
-	inline int32_t* get_address_of_num_selectedSkill_12() { return &___num_selectedSkill_12; }
-	inline void set_num_selectedSkill_12(int32_t value)
+	inline static int32_t get_offset_of_statusRank_attack_12() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___statusRank_attack_12)); }
+	inline int32_t get_statusRank_attack_12() const { return ___statusRank_attack_12; }
+	inline int32_t* get_address_of_statusRank_attack_12() { return &___statusRank_attack_12; }
+	inline void set_statusRank_attack_12(int32_t value)
 	{
-		___num_selectedSkill_12 = value;
+		___statusRank_attack_12 = value;
 	}
 
-	inline static int32_t get_offset_of_deathFlag_13() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___deathFlag_13)); }
-	inline bool get_deathFlag_13() const { return ___deathFlag_13; }
-	inline bool* get_address_of_deathFlag_13() { return &___deathFlag_13; }
-	inline void set_deathFlag_13(bool value)
+	inline static int32_t get_offset_of_statusRank_defense_13() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___statusRank_defense_13)); }
+	inline int32_t get_statusRank_defense_13() const { return ___statusRank_defense_13; }
+	inline int32_t* get_address_of_statusRank_defense_13() { return &___statusRank_defense_13; }
+	inline void set_statusRank_defense_13(int32_t value)
 	{
-		___deathFlag_13 = value;
+		___statusRank_defense_13 = value;
+	}
+
+	inline static int32_t get_offset_of_statusRank_speed_14() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___statusRank_speed_14)); }
+	inline int32_t get_statusRank_speed_14() const { return ___statusRank_speed_14; }
+	inline int32_t* get_address_of_statusRank_speed_14() { return &___statusRank_speed_14; }
+	inline void set_statusRank_speed_14(int32_t value)
+	{
+		___statusRank_speed_14 = value;
+	}
+
+	inline static int32_t get_offset_of_skills_15() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___skills_15)); }
+	inline List_1_t128053199 * get_skills_15() const { return ___skills_15; }
+	inline List_1_t128053199 ** get_address_of_skills_15() { return &___skills_15; }
+	inline void set_skills_15(List_1_t128053199 * value)
+	{
+		___skills_15 = value;
+		Il2CppCodeGenWriteBarrier((&___skills_15), value);
+	}
+
+	inline static int32_t get_offset_of_num_selectedSkill_16() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___num_selectedSkill_16)); }
+	inline int32_t get_num_selectedSkill_16() const { return ___num_selectedSkill_16; }
+	inline int32_t* get_address_of_num_selectedSkill_16() { return &___num_selectedSkill_16; }
+	inline void set_num_selectedSkill_16(int32_t value)
+	{
+		___num_selectedSkill_16 = value;
+	}
+
+	inline static int32_t get_offset_of_deathFlag_17() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___deathFlag_17)); }
+	inline bool get_deathFlag_17() const { return ___deathFlag_17; }
+	inline bool* get_address_of_deathFlag_17() { return &___deathFlag_17; }
+	inline void set_deathFlag_17(bool value)
+	{
+		___deathFlag_17 = value;
 	}
 };
 
@@ -10195,7 +10269,7 @@ extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2262 = { sizeof (Rota
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2263 = { sizeof (SampleInfo_t3693012684), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2264 = { sizeof (U3CModuleU3E_t692745548), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2265 = { sizeof (BattleManager_t4022130644), -1, sizeof(BattleManager_t4022130644_StaticFields), 0 };
-extern const int32_t g_FieldOffsetTable2265[40] = 
+extern const int32_t g_FieldOffsetTable2265[42] = 
 {
 	BattleManager_t4022130644::get_offset_of_baseStatsData_4(),
 	BattleManager_t4022130644::get_offset_of_enemyPartyData_5(),
@@ -10214,29 +10288,31 @@ extern const int32_t g_FieldOffsetTable2265[40] =
 	BattleManager_t4022130644::get_offset_of_skillEffectData_18(),
 	BattleManager_t4022130644::get_offset_of_txt_skillNamePrefab_19(),
 	BattleManager_t4022130644::get_offset_of_txt_damagePrefab_20(),
-	BattleManager_t4022130644::get_offset_of_counter_checkNextAction_21(),
-	BattleManager_t4022130644::get_offset_of_count_targetMonster_22(),
-	BattleManager_t4022130644::get_offset_of_vod_23(),
-	BattleManager_t4022130644::get_offset_of_targetMonsterId_ally_24(),
-	BattleManager_t4022130644::get_offset_of_targetMonsterId_enemy_25(),
-	BattleManager_t4022130644::get_offset_of_actionCount_26(),
-	BattleManager_t4022130644::get_offset_of_time_break_27(),
-	BattleManager_t4022130644::get_offset_of_time_stepFront_28(),
-	BattleManager_t4022130644::get_offset_of_time_stepBack_29(),
-	BattleManager_t4022130644::get_offset_of_time_attackAnimation_30(),
-	BattleManager_t4022130644::get_offset_of_time_hitAnimation_31(),
-	BattleManager_t4022130644::get_offset_of_time_deathAnimation_32(),
-	BattleManager_t4022130644::get_offset_of_time_frame_33(),
-	BattleManager_t4022130644::get_offset_of_num_frame_34(),
-	BattleManager_t4022130644::get_offset_of_speed_attackAnimation_35(),
-	BattleManager_t4022130644::get_offset_of_diff_step_36(),
-	BattleManager_t4022130644::get_offset_of_zPos_attackEffect_37(),
-	BattleManager_t4022130644::get_offset_of_monsterOrderList_38(),
-	BattleManager_t4022130644::get_offset_of_myPartyList_39(),
-	BattleManager_t4022130644::get_offset_of_enemyPartyList_40(),
-	BattleManager_t4022130644_StaticFields::get_offset_of_U3CU3Ef__amU24cache0_41(),
-	BattleManager_t4022130644_StaticFields::get_offset_of_U3CU3Ef__amU24cache1_42(),
-	BattleManager_t4022130644_StaticFields::get_offset_of_U3CU3Ef__amU24cache2_43(),
+	BattleManager_t4022130644::get_offset_of_txt_healPrefab_21(),
+	BattleManager_t4022130644::get_offset_of_txt_changePrefab_22(),
+	BattleManager_t4022130644::get_offset_of_counter_checkNextAction_23(),
+	BattleManager_t4022130644::get_offset_of_count_targetMonster_24(),
+	BattleManager_t4022130644::get_offset_of_vod_25(),
+	BattleManager_t4022130644::get_offset_of_targetMonsterId_ally_26(),
+	BattleManager_t4022130644::get_offset_of_targetMonsterId_enemy_27(),
+	BattleManager_t4022130644::get_offset_of_actionCount_28(),
+	BattleManager_t4022130644::get_offset_of_time_break_29(),
+	BattleManager_t4022130644::get_offset_of_time_stepFront_30(),
+	BattleManager_t4022130644::get_offset_of_time_stepBack_31(),
+	BattleManager_t4022130644::get_offset_of_time_attackAnimation_32(),
+	BattleManager_t4022130644::get_offset_of_time_hitAnimation_33(),
+	BattleManager_t4022130644::get_offset_of_time_deathAnimation_34(),
+	BattleManager_t4022130644::get_offset_of_time_frame_35(),
+	BattleManager_t4022130644::get_offset_of_num_frame_36(),
+	BattleManager_t4022130644::get_offset_of_speed_attackAnimation_37(),
+	BattleManager_t4022130644::get_offset_of_diff_step_38(),
+	BattleManager_t4022130644::get_offset_of_zPos_attackEffect_39(),
+	BattleManager_t4022130644::get_offset_of_monsterOrderList_40(),
+	BattleManager_t4022130644::get_offset_of_myPartyList_41(),
+	BattleManager_t4022130644::get_offset_of_enemyPartyList_42(),
+	BattleManager_t4022130644_StaticFields::get_offset_of_U3CU3Ef__amU24cache0_43(),
+	BattleManager_t4022130644_StaticFields::get_offset_of_U3CU3Ef__amU24cache1_44(),
+	BattleManager_t4022130644_StaticFields::get_offset_of_U3CU3Ef__amU24cache2_45(),
 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2266 = { sizeof (U3CEnemyActionU3Ec__AnonStorey2_t1657202313), -1, 0, 0 };
 extern const int32_t g_FieldOffsetTable2266[3] = 
@@ -10259,16 +10335,32 @@ extern const int32_t g_FieldOffsetTable2268[3] =
 	U3CAttackAnimationU3Ec__AnonStorey4_t464051646::get_offset_of_attackedMonster_1(),
 	U3CAttackAnimationU3Ec__AnonStorey4_t464051646::get_offset_of_U24this_2(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2269 = { sizeof (U3CHitAnimationU3Ec__AnonStorey5_t246070209), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2269 = { sizeof (U3CDamageSkillU3Ec__AnonStorey5_t102370528), -1, 0, 0 };
 extern const int32_t g_FieldOffsetTable2269[4] = 
 {
-	U3CHitAnimationU3Ec__AnonStorey5_t246070209::get_offset_of_attackMonster_0(),
-	U3CHitAnimationU3Ec__AnonStorey5_t246070209::get_offset_of_attackedMonster_1(),
-	U3CHitAnimationU3Ec__AnonStorey5_t246070209::get_offset_of_hp_2(),
-	U3CHitAnimationU3Ec__AnonStorey5_t246070209::get_offset_of_U24this_3(),
+	U3CDamageSkillU3Ec__AnonStorey5_t102370528::get_offset_of_attackMonster_0(),
+	U3CDamageSkillU3Ec__AnonStorey5_t102370528::get_offset_of_attackedMonster_1(),
+	U3CDamageSkillU3Ec__AnonStorey5_t102370528::get_offset_of_hp_2(),
+	U3CDamageSkillU3Ec__AnonStorey5_t102370528::get_offset_of_U24this_3(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2270 = { sizeof (U3CBlinkU3Ec__Iterator0_t466598710), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2270[6] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2270 = { sizeof (U3CHealSkillU3Ec__AnonStorey6_t4147225704), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2270[4] = 
+{
+	U3CHealSkillU3Ec__AnonStorey6_t4147225704::get_offset_of_attackMonster_0(),
+	U3CHealSkillU3Ec__AnonStorey6_t4147225704::get_offset_of_attackedMonster_1(),
+	U3CHealSkillU3Ec__AnonStorey6_t4147225704::get_offset_of_currentHp_2(),
+	U3CHealSkillU3Ec__AnonStorey6_t4147225704::get_offset_of_U24this_3(),
+};
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2271 = { sizeof (U3CChangeSkillU3Ec__AnonStorey7_t1079478228), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2271[4] = 
+{
+	U3CChangeSkillU3Ec__AnonStorey7_t1079478228::get_offset_of_attackMonster_0(),
+	U3CChangeSkillU3Ec__AnonStorey7_t1079478228::get_offset_of_attackedMonster_1(),
+	U3CChangeSkillU3Ec__AnonStorey7_t1079478228::get_offset_of_hp_2(),
+	U3CChangeSkillU3Ec__AnonStorey7_t1079478228::get_offset_of_U24this_3(),
+};
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2272 = { sizeof (U3CBlinkU3Ec__Iterator0_t466598710), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2272[6] = 
 {
 	U3CBlinkU3Ec__Iterator0_t466598710::get_offset_of_U3CcountU3E__0_0(),
 	U3CBlinkU3Ec__Iterator0_t466598710::get_offset_of_monster_1(),
@@ -10277,14 +10369,14 @@ extern const int32_t g_FieldOffsetTable2270[6] =
 	U3CBlinkU3Ec__Iterator0_t466598710::get_offset_of_U24disposing_4(),
 	U3CBlinkU3Ec__Iterator0_t466598710::get_offset_of_U24PC_5(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2271 = { sizeof (U3CJudgeDeathU3Ec__AnonStorey6_t3788336905), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2271[2] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2273 = { sizeof (U3CJudgeDeathU3Ec__AnonStorey8_t2641325833), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2273[2] = 
 {
-	U3CJudgeDeathU3Ec__AnonStorey6_t3788336905::get_offset_of_attackMonster_0(),
-	U3CJudgeDeathU3Ec__AnonStorey6_t3788336905::get_offset_of_U24this_1(),
+	U3CJudgeDeathU3Ec__AnonStorey8_t2641325833::get_offset_of_attackMonster_0(),
+	U3CJudgeDeathU3Ec__AnonStorey8_t2641325833::get_offset_of_U24this_1(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2272 = { sizeof (U3CDelayMethodU3Ec__Iterator1_t1075979784), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2272[5] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2274 = { sizeof (U3CDelayMethodU3Ec__Iterator1_t1075979784), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2274[5] = 
 {
 	U3CDelayMethodU3Ec__Iterator1_t1075979784::get_offset_of_waitTime_0(),
 	U3CDelayMethodU3Ec__Iterator1_t1075979784::get_offset_of_action_1(),
@@ -10292,22 +10384,26 @@ extern const int32_t g_FieldOffsetTable2272[5] =
 	U3CDelayMethodU3Ec__Iterator1_t1075979784::get_offset_of_U24disposing_3(),
 	U3CDelayMethodU3Ec__Iterator1_t1075979784::get_offset_of_U24PC_4(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2273 = { sizeof (CharacterStatus_t2166422524), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2273[10] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2275 = { sizeof (CharacterStatus_t2166422524), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2275[14] = 
 {
 	CharacterStatus_t2166422524::get_offset_of_name_4(),
 	CharacterStatus_t2166422524::get_offset_of_battleId_5(),
 	CharacterStatus_t2166422524::get_offset_of_level_6(),
-	CharacterStatus_t2166422524::get_offset_of_hp_7(),
-	CharacterStatus_t2166422524::get_offset_of_attack_8(),
-	CharacterStatus_t2166422524::get_offset_of_defense_9(),
-	CharacterStatus_t2166422524::get_offset_of_speed_10(),
-	CharacterStatus_t2166422524::get_offset_of_skills_11(),
-	CharacterStatus_t2166422524::get_offset_of_num_selectedSkill_12(),
-	CharacterStatus_t2166422524::get_offset_of_deathFlag_13(),
+	CharacterStatus_t2166422524::get_offset_of_maxHp_7(),
+	CharacterStatus_t2166422524::get_offset_of_hp_8(),
+	CharacterStatus_t2166422524::get_offset_of_attack_9(),
+	CharacterStatus_t2166422524::get_offset_of_defense_10(),
+	CharacterStatus_t2166422524::get_offset_of_speed_11(),
+	CharacterStatus_t2166422524::get_offset_of_statusRank_attack_12(),
+	CharacterStatus_t2166422524::get_offset_of_statusRank_defense_13(),
+	CharacterStatus_t2166422524::get_offset_of_statusRank_speed_14(),
+	CharacterStatus_t2166422524::get_offset_of_skills_15(),
+	CharacterStatus_t2166422524::get_offset_of_num_selectedSkill_16(),
+	CharacterStatus_t2166422524::get_offset_of_deathFlag_17(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2274 = { sizeof (DamageTextAnimation_t1783136372), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2274[5] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2276 = { sizeof (DamageTextAnimation_t1783136372), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2276[5] = 
 {
 	DamageTextAnimation_t1783136372::get_offset_of_time_animation_4(),
 	DamageTextAnimation_t1783136372::get_offset_of_time_fadeout_5(),
@@ -10315,8 +10411,8 @@ extern const int32_t g_FieldOffsetTable2274[5] =
 	DamageTextAnimation_t1783136372::get_offset_of_dis_up_7(),
 	DamageTextAnimation_t1783136372::get_offset_of_scale_max_8(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2275 = { sizeof (U3CDelayMethodU3Ec__Iterator0_t1245856546), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2275[5] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2277 = { sizeof (U3CDelayMethodU3Ec__Iterator0_t1245856546), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2277[5] = 
 {
 	U3CDelayMethodU3Ec__Iterator0_t1245856546::get_offset_of_waitTime_0(),
 	U3CDelayMethodU3Ec__Iterator0_t1245856546::get_offset_of_action_1(),
@@ -10324,9 +10420,9 @@ extern const int32_t g_FieldOffsetTable2275[5] =
 	U3CDelayMethodU3Ec__Iterator0_t1245856546::get_offset_of_U24disposing_3(),
 	U3CDelayMethodU3Ec__Iterator0_t1245856546::get_offset_of_U24PC_4(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2276 = { sizeof (DestroyAtkFX_t289372473), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2277 = { sizeof (U3CDelayMethodU3Ec__Iterator0_t4192432910), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2277[5] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2278 = { sizeof (DestroyAtkFX_t289372473), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2279 = { sizeof (U3CDelayMethodU3Ec__Iterator0_t4192432910), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2279[5] = 
 {
 	U3CDelayMethodU3Ec__Iterator0_t4192432910::get_offset_of_waitTime_0(),
 	U3CDelayMethodU3Ec__Iterator0_t4192432910::get_offset_of_action_1(),
@@ -10334,9 +10430,9 @@ extern const int32_t g_FieldOffsetTable2277[5] =
 	U3CDelayMethodU3Ec__Iterator0_t4192432910::get_offset_of_U24disposing_3(),
 	U3CDelayMethodU3Ec__Iterator0_t4192432910::get_offset_of_U24PC_4(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2278 = { sizeof (MonsterAnimation_t2565820548), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2279 = { sizeof (U3CDelayMethodU3Ec__Iterator0_t1042502033), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2279[5] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2280 = { sizeof (MonsterAnimation_t2565820548), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2281 = { sizeof (U3CDelayMethodU3Ec__Iterator0_t1042502033), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2281[5] = 
 {
 	U3CDelayMethodU3Ec__Iterator0_t1042502033::get_offset_of_waitTime_0(),
 	U3CDelayMethodU3Ec__Iterator0_t1042502033::get_offset_of_action_1(),
@@ -10344,8 +10440,8 @@ extern const int32_t g_FieldOffsetTable2279[5] =
 	U3CDelayMethodU3Ec__Iterator0_t1042502033::get_offset_of_U24disposing_3(),
 	U3CDelayMethodU3Ec__Iterator0_t1042502033::get_offset_of_U24PC_4(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2280 = { sizeof (ValueList_t1539205005), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2280[5] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2282 = { sizeof (ValueList_t1539205005), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2282[5] = 
 {
 	ValueList_t1539205005::get_offset_of_texture_0(),
 	ValueList_t1539205005::get_offset_of_x_1(),
@@ -10353,21 +10449,21 @@ extern const int32_t g_FieldOffsetTable2280[5] =
 	ValueList_t1539205005::get_offset_of_scale_3(),
 	ValueList_t1539205005::get_offset_of_speed_4(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2281 = { sizeof (SkillEffectData_t1173205727), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2281[2] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2283 = { sizeof (SkillEffectData_t1173205727), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2283[2] = 
 {
 	SkillEffectData_t1173205727::get_offset_of_material_4(),
 	SkillEffectData_t1173205727::get_offset_of__valueListList_5(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2282 = { sizeof (SkillNameTextAnimation_t1928640971), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2282[3] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2284 = { sizeof (SkillNameTextAnimation_t1928640971), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2284[3] = 
 {
 	SkillNameTextAnimation_t1928640971::get_offset_of_time_scaleUp_4(),
 	SkillNameTextAnimation_t1928640971::get_offset_of_time_animation_5(),
 	SkillNameTextAnimation_t1928640971::get_offset_of_time_fadeout_6(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2283 = { sizeof (U3CDelayMethodU3Ec__Iterator0_t905607539), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2283[5] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2285 = { sizeof (U3CDelayMethodU3Ec__Iterator0_t905607539), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2285[5] = 
 {
 	U3CDelayMethodU3Ec__Iterator0_t905607539::get_offset_of_waitTime_0(),
 	U3CDelayMethodU3Ec__Iterator0_t905607539::get_offset_of_action_1(),
@@ -10375,43 +10471,43 @@ extern const int32_t g_FieldOffsetTable2283[5] =
 	U3CDelayMethodU3Ec__Iterator0_t905607539::get_offset_of_U24disposing_3(),
 	U3CDelayMethodU3Ec__Iterator0_t905607539::get_offset_of_U24PC_4(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2284 = { sizeof (SliderAnimation_t2941502852), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2285 = { sizeof (TouchCommandButton_t2655587651), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2286 = { sizeof (TouchMonster_t246505180), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2287 = { sizeof (BaseStatsData_t1917765109), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2287[1] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2286 = { sizeof (SliderAnimation_t2941502852), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2287 = { sizeof (TouchCommandButton_t2655587651), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2288 = { sizeof (TouchMonster_t246505180), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2289 = { sizeof (BaseStatsData_t1917765109), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2289[1] = 
 {
 	BaseStatsData_t1917765109::get_offset_of_sheets_4(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2288 = { sizeof (Sheet_t311153967), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2288[2] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2290 = { sizeof (Sheet_t311153967), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2290[2] = 
 {
 	Sheet_t311153967::get_offset_of_name_0(),
 	Sheet_t311153967::get_offset_of_list_1(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2289 = { sizeof (Param_t678613560), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2289[6] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2291 = { sizeof (Param_t678613560), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2291[6] = 
 {
 	Param_t678613560::get_offset_of_No_0(),
 	Param_t678613560::get_offset_of_Name_1(),
 	Param_t678613560::get_offset_of_Hp_2(),
 	Param_t678613560::get_offset_of_Attack_3(),
-	Param_t678613560::get_offset_of_Defence_4(),
+	Param_t678613560::get_offset_of_Defense_4(),
 	Param_t678613560::get_offset_of_Speed_5(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2290 = { sizeof (EnemyPartyData_t1860595397), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2290[1] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2292 = { sizeof (EnemyPartyData_t1860595397), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2292[1] = 
 {
 	EnemyPartyData_t1860595397::get_offset_of_sheets_4(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2291 = { sizeof (Sheet_t881224928), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2291[2] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2293 = { sizeof (Sheet_t881224928), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2293[2] = 
 {
 	Sheet_t881224928::get_offset_of_name_0(),
 	Sheet_t881224928::get_offset_of_list_1(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2292 = { sizeof (Param_t1064517445), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2292[11] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2294 = { sizeof (Param_t1064517445), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2294[11] = 
 {
 	Param_t1064517445::get_offset_of_No_0(),
 	Param_t1064517445::get_offset_of_Name_1(),
@@ -10425,40 +10521,19 @@ extern const int32_t g_FieldOffsetTable2292[11] =
 	Param_t1064517445::get_offset_of_No_Skill4_9(),
 	Param_t1064517445::get_offset_of_Name_Skill4_10(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2293 = { sizeof (MonsterData_t2246618540), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2293[1] = 
-{
-	MonsterData_t2246618540::get_offset_of_sheets_4(),
-};
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2294 = { sizeof (Sheet_t1327748116), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2294[2] = 
-{
-	Sheet_t1327748116::get_offset_of_name_0(),
-	Sheet_t1327748116::get_offset_of_list_1(),
-};
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2295 = { sizeof (Param_t3761760163), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2295[6] = 
-{
-	Param_t3761760163::get_offset_of_No_0(),
-	Param_t3761760163::get_offset_of_Name_1(),
-	Param_t3761760163::get_offset_of_Hp_2(),
-	Param_t3761760163::get_offset_of_Attack_3(),
-	Param_t3761760163::get_offset_of_Defence_4(),
-	Param_t3761760163::get_offset_of_Speed_5(),
-};
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2296 = { sizeof (MyPartyData_t3954641067), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2296[1] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2295 = { sizeof (MyPartyData_t3954641067), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2295[1] = 
 {
 	MyPartyData_t3954641067::get_offset_of_sheets_4(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2297 = { sizeof (Sheet_t2836519578), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2297[2] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2296 = { sizeof (Sheet_t2836519578), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2296[2] = 
 {
 	Sheet_t2836519578::get_offset_of_name_0(),
 	Sheet_t2836519578::get_offset_of_list_1(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2298 = { sizeof (Param_t4068803933), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2298[11] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2297 = { sizeof (Param_t4068803933), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2297[11] = 
 {
 	Param_t4068803933::get_offset_of_No_0(),
 	Param_t4068803933::get_offset_of_Name_1(),
@@ -10472,10 +10547,16 @@ extern const int32_t g_FieldOffsetTable2298[11] =
 	Param_t4068803933::get_offset_of_No_Skill4_9(),
 	Param_t4068803933::get_offset_of_Name_Skill4_10(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2299 = { sizeof (SkillData_t2800605269), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2299[1] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2298 = { sizeof (SkillData_t2800605269), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2298[1] = 
 {
 	SkillData_t2800605269::get_offset_of_sheets_4(),
+};
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2299 = { sizeof (Sheet_t1672419742), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2299[2] = 
+{
+	Sheet_t1672419742::get_offset_of_name_0(),
+	Sheet_t1672419742::get_offset_of_list_1(),
 };
 #ifdef __clang__
 #pragma clang diagnostic pop

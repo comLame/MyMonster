@@ -462,8 +462,6 @@ extern const Il2CppType Param_t678613560_0_0_0;
 extern const Il2CppType Sheet_t1672419742_0_0_0;
 extern const Il2CppType Param_t1486994461_0_0_0;
 extern const Il2CppType ValueList_t1539205005_0_0_0;
-extern const Il2CppType Sheet_t1327748116_0_0_0;
-extern const Il2CppType Param_t3761760163_0_0_0;
 extern const Il2CppType DefaultExecutionOrder_t3059642329_0_0_0;
 extern const Il2CppType PlayerConnection_t3081694049_0_0_0;
 extern const Il2CppType GUILayer_t2783472903_0_0_0;
@@ -1887,10 +1885,6 @@ static const RuntimeType* GenInst_Param_t1486994461_0_0_0_Types[] = { (&Param_t1
 extern const Il2CppGenericInst GenInst_Param_t1486994461_0_0_0 = { 1, GenInst_Param_t1486994461_0_0_0_Types };
 static const RuntimeType* GenInst_ValueList_t1539205005_0_0_0_Types[] = { (&ValueList_t1539205005_0_0_0) };
 extern const Il2CppGenericInst GenInst_ValueList_t1539205005_0_0_0 = { 1, GenInst_ValueList_t1539205005_0_0_0_Types };
-static const RuntimeType* GenInst_Sheet_t1327748116_0_0_0_Types[] = { (&Sheet_t1327748116_0_0_0) };
-extern const Il2CppGenericInst GenInst_Sheet_t1327748116_0_0_0 = { 1, GenInst_Sheet_t1327748116_0_0_0_Types };
-static const RuntimeType* GenInst_Param_t3761760163_0_0_0_Types[] = { (&Param_t3761760163_0_0_0) };
-extern const Il2CppGenericInst GenInst_Param_t3761760163_0_0_0 = { 1, GenInst_Param_t3761760163_0_0_0_Types };
 static const RuntimeType* GenInst_DefaultExecutionOrder_t3059642329_0_0_0_Types[] = { (&DefaultExecutionOrder_t3059642329_0_0_0) };
 extern const Il2CppGenericInst GenInst_DefaultExecutionOrder_t3059642329_0_0_0 = { 1, GenInst_DefaultExecutionOrder_t3059642329_0_0_0_Types };
 static const RuntimeType* GenInst_PlayerConnection_t3081694049_0_0_0_Types[] = { (&PlayerConnection_t3081694049_0_0_0) };
@@ -2497,7 +2491,7 @@ static const RuntimeType* GenInst_TMP_XmlTagStack_1_t3882766083_gp_0_0_0_0_Types
 extern const Il2CppGenericInst GenInst_TMP_XmlTagStack_1_t3882766083_gp_0_0_0_0 = { 1, GenInst_TMP_XmlTagStack_1_t3882766083_gp_0_0_0_0_Types };
 static const RuntimeType* GenInst_TMPro_ExtensionMethods_FindInstanceID_m37534805_gp_0_0_0_0_Types[] = { (&TMPro_ExtensionMethods_FindInstanceID_m37534805_gp_0_0_0_0) };
 extern const Il2CppGenericInst GenInst_TMPro_ExtensionMethods_FindInstanceID_m37534805_gp_0_0_0_0 = { 1, GenInst_TMPro_ExtensionMethods_FindInstanceID_m37534805_gp_0_0_0_0_Types };
-extern const Il2CppGenericInst* const g_Il2CppGenericInstTable[887] = 
+extern const Il2CppGenericInst* const g_Il2CppGenericInstTable[885] = 
 {
 	&GenInst_RuntimeObject_0_0_0,
 	&GenInst_Int32_t2950945753_0_0_0,
@@ -3081,8 +3075,6 @@ extern const Il2CppGenericInst* const g_Il2CppGenericInstTable[887] =
 	&GenInst_Sheet_t1672419742_0_0_0,
 	&GenInst_Param_t1486994461_0_0_0,
 	&GenInst_ValueList_t1539205005_0_0_0,
-	&GenInst_Sheet_t1327748116_0_0_0,
-	&GenInst_Param_t3761760163_0_0_0,
 	&GenInst_DefaultExecutionOrder_t3059642329_0_0_0,
 	&GenInst_PlayerConnection_t3081694049_0_0_0,
 	&GenInst_GUILayer_t2783472903_0_0_0,

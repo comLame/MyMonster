@@ -36839,7 +36839,21 @@ static void U3CAttackAnimationU3Ec__AnonStorey4_t464051646_CustomAttributesCache
 		CompilerGeneratedAttribute__ctor_m3151881902(tmp, NULL);
 	}
 }
-static void U3CHitAnimationU3Ec__AnonStorey5_t246070209_CustomAttributesCacheGenerator(CustomAttributesCache* cache)
+static void U3CDamageSkillU3Ec__AnonStorey5_t102370528_CustomAttributesCacheGenerator(CustomAttributesCache* cache)
+{
+	{
+		CompilerGeneratedAttribute_t23527886 * tmp = (CompilerGeneratedAttribute_t23527886 *)cache->attributes[0];
+		CompilerGeneratedAttribute__ctor_m3151881902(tmp, NULL);
+	}
+}
+static void U3CHealSkillU3Ec__AnonStorey6_t4147225704_CustomAttributesCacheGenerator(CustomAttributesCache* cache)
+{
+	{
+		CompilerGeneratedAttribute_t23527886 * tmp = (CompilerGeneratedAttribute_t23527886 *)cache->attributes[0];
+		CompilerGeneratedAttribute__ctor_m3151881902(tmp, NULL);
+	}
+}
+static void U3CChangeSkillU3Ec__AnonStorey7_t1079478228_CustomAttributesCacheGenerator(CustomAttributesCache* cache)
 {
 	{
 		CompilerGeneratedAttribute_t23527886 * tmp = (CompilerGeneratedAttribute_t23527886 *)cache->attributes[0];
@@ -36888,7 +36902,7 @@ static void U3CBlinkU3Ec__Iterator0_t466598710_CustomAttributesCacheGenerator_U3
 		DebuggerHiddenAttribute__ctor_m2764625696(tmp, NULL);
 	}
 }
-static void U3CJudgeDeathU3Ec__AnonStorey6_t3788336905_CustomAttributesCacheGenerator(CustomAttributesCache* cache)
+static void U3CJudgeDeathU3Ec__AnonStorey8_t2641325833_CustomAttributesCacheGenerator(CustomAttributesCache* cache)
 {
 	{
 		CompilerGeneratedAttribute_t23527886 * tmp = (CompilerGeneratedAttribute_t23527886 *)cache->attributes[0];
@@ -37175,7 +37189,7 @@ static void U3CDelayMethodU3Ec__Iterator0_t905607539_CustomAttributesCacheGenera
 		DebuggerHiddenAttribute__ctor_m2764625696(tmp, NULL);
 	}
 }
-extern const CustomAttributesCacheGenerator g_AttributeGenerators[3389] = 
+extern const CustomAttributesCacheGenerator g_AttributeGenerators[3391] = 
 {
 	NULL,
 	g_mscorlib_Assembly_CustomAttributesCacheGenerator,
@@ -40518,14 +40532,16 @@ extern const CustomAttributesCacheGenerator g_AttributeGenerators[3389] =
 	U3CEnemyActionU3Ec__AnonStorey2_t1657202313_CustomAttributesCacheGenerator,
 	U3CStepFrontU3Ec__AnonStorey3_t425534604_CustomAttributesCacheGenerator,
 	U3CAttackAnimationU3Ec__AnonStorey4_t464051646_CustomAttributesCacheGenerator,
-	U3CHitAnimationU3Ec__AnonStorey5_t246070209_CustomAttributesCacheGenerator,
+	U3CDamageSkillU3Ec__AnonStorey5_t102370528_CustomAttributesCacheGenerator,
+	U3CHealSkillU3Ec__AnonStorey6_t4147225704_CustomAttributesCacheGenerator,
+	U3CChangeSkillU3Ec__AnonStorey7_t1079478228_CustomAttributesCacheGenerator,
 	U3CBlinkU3Ec__Iterator0_t466598710_CustomAttributesCacheGenerator,
 	U3CBlinkU3Ec__Iterator0_t466598710_CustomAttributesCacheGenerator_U3CBlinkU3Ec__Iterator0__ctor_m3390134852,
 	U3CBlinkU3Ec__Iterator0_t466598710_CustomAttributesCacheGenerator_U3CBlinkU3Ec__Iterator0_System_Collections_Generic_IEnumeratorU3CobjectU3E_get_Current_m624654536,
 	U3CBlinkU3Ec__Iterator0_t466598710_CustomAttributesCacheGenerator_U3CBlinkU3Ec__Iterator0_System_Collections_IEnumerator_get_Current_m3405794895,
 	U3CBlinkU3Ec__Iterator0_t466598710_CustomAttributesCacheGenerator_U3CBlinkU3Ec__Iterator0_Dispose_m1160585256,
 	U3CBlinkU3Ec__Iterator0_t466598710_CustomAttributesCacheGenerator_U3CBlinkU3Ec__Iterator0_Reset_m398838904,
-	U3CJudgeDeathU3Ec__AnonStorey6_t3788336905_CustomAttributesCacheGenerator,
+	U3CJudgeDeathU3Ec__AnonStorey8_t2641325833_CustomAttributesCacheGenerator,
 	U3CDelayMethodU3Ec__Iterator1_t1075979784_CustomAttributesCacheGenerator,
 	U3CDelayMethodU3Ec__Iterator1_t1075979784_CustomAttributesCacheGenerator_U3CDelayMethodU3Ec__Iterator1__ctor_m3655161227,
 	U3CDelayMethodU3Ec__Iterator1_t1075979784_CustomAttributesCacheGenerator_U3CDelayMethodU3Ec__Iterator1_System_Collections_Generic_IEnumeratorU3CobjectU3E_get_Current_m2480440918,

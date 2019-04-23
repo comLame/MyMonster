@@ -58,14 +58,18 @@ struct BattleManager_t4022130644;
 struct U3CAttackAnimationU3Ec__AnonStorey4_t464051646;
 // BattleManager/<Blink>c__Iterator0
 struct U3CBlinkU3Ec__Iterator0_t466598710;
+// BattleManager/<ChangeSkill>c__AnonStorey7
+struct U3CChangeSkillU3Ec__AnonStorey7_t1079478228;
+// BattleManager/<DamageSkill>c__AnonStorey5
+struct U3CDamageSkillU3Ec__AnonStorey5_t102370528;
 // BattleManager/<DelayMethod>c__Iterator1
 struct U3CDelayMethodU3Ec__Iterator1_t1075979784;
 // BattleManager/<EnemyAction>c__AnonStorey2
 struct U3CEnemyActionU3Ec__AnonStorey2_t1657202313;
-// BattleManager/<HitAnimation>c__AnonStorey5
-struct U3CHitAnimationU3Ec__AnonStorey5_t246070209;
-// BattleManager/<JudgeDeath>c__AnonStorey6
-struct U3CJudgeDeathU3Ec__AnonStorey6_t3788336905;
+// BattleManager/<HealSkill>c__AnonStorey6
+struct U3CHealSkillU3Ec__AnonStorey6_t4147225704;
+// BattleManager/<JudgeDeath>c__AnonStorey8
+struct U3CJudgeDeathU3Ec__AnonStorey8_t2641325833;
 // BattleManager/<StepFront>c__AnonStorey3
 struct U3CStepFrontU3Ec__AnonStorey3_t425534604;
 // CharacterStatus
@@ -92,16 +96,6 @@ struct SheetU5BU5D_t3534021537;
 struct MonsterAnimation_t2565820548;
 // MonsterAnimation/<DelayMethod>c__Iterator0
 struct U3CDelayMethodU3Ec__Iterator0_t1042502033;
-// MonsterData
-struct MonsterData_t2246618540;
-// MonsterData/Param
-struct Param_t3761760163;
-// MonsterData/Param[]
-struct ParamU5BU5D_t966151794;
-// MonsterData/Sheet
-struct Sheet_t1327748116;
-// MonsterData/Sheet[]
-struct SheetU5BU5D_t2875397405;
 // MyPartyData
 struct MyPartyData_t3954641067;
 // MyPartyData/Param
@@ -152,10 +146,6 @@ struct List_1_t1783228709;
 struct List_1_t2536592187;
 // System.Collections.Generic.List`1<EnemyPartyData/Sheet>
 struct List_1_t2353299670;
-// System.Collections.Generic.List`1<MonsterData/Param>
-struct List_1_t938867609;
-// System.Collections.Generic.List`1<MonsterData/Sheet>
-struct List_1_t2799822858;
 // System.Collections.Generic.List`1<MyPartyData/Param>
 struct List_1_t1245911379;
 // System.Collections.Generic.List`1<MyPartyData/Sheet>
@@ -369,11 +359,9 @@ extern RuntimeClass* List_1_t2150688302_il2cpp_TypeInfo_var;
 extern RuntimeClass* List_1_t2353299670_il2cpp_TypeInfo_var;
 extern RuntimeClass* List_1_t2536592187_il2cpp_TypeInfo_var;
 extern RuntimeClass* List_1_t2585711361_il2cpp_TypeInfo_var;
-extern RuntimeClass* List_1_t2799822858_il2cpp_TypeInfo_var;
 extern RuntimeClass* List_1_t2959069203_il2cpp_TypeInfo_var;
 extern RuntimeClass* List_1_t3011279747_il2cpp_TypeInfo_var;
 extern RuntimeClass* List_1_t3144494484_il2cpp_TypeInfo_var;
-extern RuntimeClass* List_1_t938867609_il2cpp_TypeInfo_var;
 extern RuntimeClass* NotSupportedException_t1314879016_il2cpp_TypeInfo_var;
 extern RuntimeClass* ObjectU5BU5D_t2843939325_il2cpp_TypeInfo_var;
 extern RuntimeClass* Object_t631007953_il2cpp_TypeInfo_var;
@@ -381,14 +369,16 @@ extern RuntimeClass* Single_t1397266774_il2cpp_TypeInfo_var;
 extern RuntimeClass* String_t_il2cpp_TypeInfo_var;
 extern RuntimeClass* U3CAttackAnimationU3Ec__AnonStorey4_t464051646_il2cpp_TypeInfo_var;
 extern RuntimeClass* U3CBlinkU3Ec__Iterator0_t466598710_il2cpp_TypeInfo_var;
+extern RuntimeClass* U3CChangeSkillU3Ec__AnonStorey7_t1079478228_il2cpp_TypeInfo_var;
+extern RuntimeClass* U3CDamageSkillU3Ec__AnonStorey5_t102370528_il2cpp_TypeInfo_var;
 extern RuntimeClass* U3CDelayMethodU3Ec__Iterator0_t1042502033_il2cpp_TypeInfo_var;
 extern RuntimeClass* U3CDelayMethodU3Ec__Iterator0_t1245856546_il2cpp_TypeInfo_var;
 extern RuntimeClass* U3CDelayMethodU3Ec__Iterator0_t4192432910_il2cpp_TypeInfo_var;
 extern RuntimeClass* U3CDelayMethodU3Ec__Iterator0_t905607539_il2cpp_TypeInfo_var;
 extern RuntimeClass* U3CDelayMethodU3Ec__Iterator1_t1075979784_il2cpp_TypeInfo_var;
 extern RuntimeClass* U3CEnemyActionU3Ec__AnonStorey2_t1657202313_il2cpp_TypeInfo_var;
-extern RuntimeClass* U3CHitAnimationU3Ec__AnonStorey5_t246070209_il2cpp_TypeInfo_var;
-extern RuntimeClass* U3CJudgeDeathU3Ec__AnonStorey6_t3788336905_il2cpp_TypeInfo_var;
+extern RuntimeClass* U3CHealSkillU3Ec__AnonStorey6_t4147225704_il2cpp_TypeInfo_var;
+extern RuntimeClass* U3CJudgeDeathU3Ec__AnonStorey8_t2641325833_il2cpp_TypeInfo_var;
 extern RuntimeClass* U3CStepFrontU3Ec__AnonStorey3_t425534604_il2cpp_TypeInfo_var;
 extern RuntimeClass* WaitForSeconds_t1699091251_il2cpp_TypeInfo_var;
 extern RuntimeClass* iTween_t770867771_il2cpp_TypeInfo_var;
@@ -398,45 +388,48 @@ extern String_t* _stringLiteral1093925504;
 extern String_t* _stringLiteral110303722;
 extern String_t* _stringLiteral1231356567;
 extern String_t* _stringLiteral1254263725;
+extern String_t* _stringLiteral141685313;
 extern String_t* _stringLiteral1521314867;
 extern String_t* _stringLiteral1627209283;
 extern String_t* _stringLiteral1676131252;
 extern String_t* _stringLiteral1682983502;
-extern String_t* _stringLiteral1782372744;
-extern String_t* _stringLiteral1797452011;
+extern String_t* _stringLiteral1747750976;
 extern String_t* _stringLiteral1838265295;
 extern String_t* _stringLiteral1914798882;
+extern String_t* _stringLiteral1961094925;
+extern String_t* _stringLiteral204627857;
 extern String_t* _stringLiteral2077336076;
+extern String_t* _stringLiteral214419195;
 extern String_t* _stringLiteral2233825277;
 extern String_t* _stringLiteral225174863;
 extern String_t* _stringLiteral2359404361;
 extern String_t* _stringLiteral2707269980;
-extern String_t* _stringLiteral2726307342;
-extern String_t* _stringLiteral2733581838;
 extern String_t* _stringLiteral2755855785;
-extern String_t* _stringLiteral2764457919;
 extern String_t* _stringLiteral2948080582;
 extern String_t* _stringLiteral2981016172;
 extern String_t* _stringLiteral2986166144;
 extern String_t* _stringLiteral3017306250;
-extern String_t* _stringLiteral3133200776;
+extern String_t* _stringLiteral314477317;
 extern String_t* _stringLiteral3186493525;
 extern String_t* _stringLiteral3452614615;
 extern String_t* _stringLiteral3452614616;
 extern String_t* _stringLiteral3454777292;
+extern String_t* _stringLiteral3455760360;
+extern String_t* _stringLiteral3556802456;
 extern String_t* _stringLiteral3592659555;
 extern String_t* _stringLiteral372943555;
-extern String_t* _stringLiteral376393253;
-extern String_t* _stringLiteral3808826312;
 extern String_t* _stringLiteral3825885973;
+extern String_t* _stringLiteral3934443792;
 extern String_t* _stringLiteral39716438;
+extern String_t* _stringLiteral4019232584;
+extern String_t* _stringLiteral402303835;
+extern String_t* _stringLiteral4284480749;
 extern String_t* _stringLiteral446682791;
 extern String_t* _stringLiteral492205433;
 extern String_t* _stringLiteral63249541;
 extern String_t* _stringLiteral687878766;
-extern String_t* _stringLiteral760905195;
-extern String_t* _stringLiteral765165035;
 extern String_t* _stringLiteral78692563;
+extern String_t* _stringLiteral868794430;
 extern const RuntimeMethod* BattleManager_U3CAllyAttackU3Em__1_m2761715413_RuntimeMethod_var;
 extern const RuntimeMethod* BattleManager_U3CEnemyActionU3Em__2_m924278545_RuntimeMethod_var;
 extern const RuntimeMethod* BattleManager_U3CSortMonsterOrderU3Em__0_m24542191_RuntimeMethod_var;
@@ -464,13 +457,11 @@ extern const RuntimeMethod* List_1_Add_m2765963565_RuntimeMethod_var;
 extern const RuntimeMethod* List_1_Add_m697420525_RuntimeMethod_var;
 extern const RuntimeMethod* List_1_Sort_m2322041901_RuntimeMethod_var;
 extern const RuntimeMethod* List_1__ctor_m113165201_RuntimeMethod_var;
-extern const RuntimeMethod* List_1__ctor_m1352397184_RuntimeMethod_var;
 extern const RuntimeMethod* List_1__ctor_m1424466557_RuntimeMethod_var;
 extern const RuntimeMethod* List_1__ctor_m1447625395_RuntimeMethod_var;
 extern const RuntimeMethod* List_1__ctor_m1628857705_RuntimeMethod_var;
 extern const RuntimeMethod* List_1__ctor_m2284207523_RuntimeMethod_var;
 extern const RuntimeMethod* List_1__ctor_m2703737823_RuntimeMethod_var;
-extern const RuntimeMethod* List_1__ctor_m2887460832_RuntimeMethod_var;
 extern const RuntimeMethod* List_1__ctor_m3039234984_RuntimeMethod_var;
 extern const RuntimeMethod* List_1__ctor_m3086277361_RuntimeMethod_var;
 extern const RuntimeMethod* List_1__ctor_m4145185010_RuntimeMethod_var;
@@ -497,16 +488,18 @@ extern const RuntimeMethod* SkillNameTextAnimation_U3CStartU3Em__0_m2441651886_R
 extern const RuntimeMethod* SkillNameTextAnimation_U3CStartU3Em__1_m4007735827_RuntimeMethod_var;
 extern const RuntimeMethod* U3CAttackAnimationU3Ec__AnonStorey4_U3CU3Em__0_m3962459880_RuntimeMethod_var;
 extern const RuntimeMethod* U3CBlinkU3Ec__Iterator0_Reset_m398838904_RuntimeMethod_var;
+extern const RuntimeMethod* U3CChangeSkillU3Ec__AnonStorey7_U3CU3Em__0_m3985990463_RuntimeMethod_var;
+extern const RuntimeMethod* U3CDamageSkillU3Ec__AnonStorey5_U3CU3Em__0_m3410607442_RuntimeMethod_var;
 extern const RuntimeMethod* U3CDelayMethodU3Ec__Iterator0_Reset_m1614528171_RuntimeMethod_var;
 extern const RuntimeMethod* U3CDelayMethodU3Ec__Iterator0_Reset_m2097004277_RuntimeMethod_var;
 extern const RuntimeMethod* U3CDelayMethodU3Ec__Iterator0_Reset_m3188631039_RuntimeMethod_var;
 extern const RuntimeMethod* U3CDelayMethodU3Ec__Iterator0_Reset_m3959135449_RuntimeMethod_var;
 extern const RuntimeMethod* U3CDelayMethodU3Ec__Iterator1_Reset_m1300792695_RuntimeMethod_var;
 extern const RuntimeMethod* U3CEnemyActionU3Ec__AnonStorey2_U3CU3Em__0_m3093528882_RuntimeMethod_var;
-extern const RuntimeMethod* U3CHitAnimationU3Ec__AnonStorey5_U3CU3Em__0_m2822479741_RuntimeMethod_var;
-extern const RuntimeMethod* U3CJudgeDeathU3Ec__AnonStorey6_U3CU3Em__0_m2784192153_RuntimeMethod_var;
-extern const RuntimeMethod* U3CJudgeDeathU3Ec__AnonStorey6_U3CU3Em__1_m445539993_RuntimeMethod_var;
-extern const RuntimeMethod* U3CJudgeDeathU3Ec__AnonStorey6_U3CU3Em__2_m3166529177_RuntimeMethod_var;
+extern const RuntimeMethod* U3CHealSkillU3Ec__AnonStorey6_U3CU3Em__0_m3297680134_RuntimeMethod_var;
+extern const RuntimeMethod* U3CJudgeDeathU3Ec__AnonStorey8_U3CU3Em__0_m2703809332_RuntimeMethod_var;
+extern const RuntimeMethod* U3CJudgeDeathU3Ec__AnonStorey8_U3CU3Em__1_m365157172_RuntimeMethod_var;
+extern const RuntimeMethod* U3CJudgeDeathU3Ec__AnonStorey8_U3CU3Em__2_m2321472308_RuntimeMethod_var;
 extern const RuntimeMethod* U3CStepFrontU3Ec__AnonStorey3_U3CU3Em__0_m3481879337_RuntimeMethod_var;
 extern const uint32_t BaseStatsData__ctor_m3728184168_MetadataUsageId;
 extern const uint32_t BattleManager_AllyAction_m1509047675_MetadataUsageId;
@@ -514,10 +507,14 @@ extern const uint32_t BattleManager_AllyAttack_m1822061981_MetadataUsageId;
 extern const uint32_t BattleManager_AttackAnimation_m3516900703_MetadataUsageId;
 extern const uint32_t BattleManager_Attack_m4245653054_MetadataUsageId;
 extern const uint32_t BattleManager_Blink_m286119324_MetadataUsageId;
+extern const uint32_t BattleManager_ChangeSkill_m4129388635_MetadataUsageId;
 extern const uint32_t BattleManager_CheckNextAction_m2974562959_MetadataUsageId;
+extern const uint32_t BattleManager_DamageSkill_m3817667082_MetadataUsageId;
 extern const uint32_t BattleManager_DebugMonsterOrderList_m3975567990_MetadataUsageId;
 extern const uint32_t BattleManager_DelayMethod_m2023750302_MetadataUsageId;
+extern const uint32_t BattleManager_DisplayChangeText_m4082015172_MetadataUsageId;
 extern const uint32_t BattleManager_DisplayDamageText_m4197033457_MetadataUsageId;
+extern const uint32_t BattleManager_DisplayHealText_m1325575413_MetadataUsageId;
 extern const uint32_t BattleManager_DisplaySkillNameTxt_m3180555583_MetadataUsageId;
 extern const uint32_t BattleManager_DisplayVOD_m769596753_MetadataUsageId;
 extern const uint32_t BattleManager_EnemyAction_m2230293482_MetadataUsageId;
@@ -526,6 +523,7 @@ extern const uint32_t BattleManager_GetEnemyPartyData_m1631919152_MetadataUsageI
 extern const uint32_t BattleManager_GetMyPartyData_m1680970290_MetadataUsageId;
 extern const uint32_t BattleManager_GetSkill_m3244845817_MetadataUsageId;
 extern const uint32_t BattleManager_GetStatus_m1506710924_MetadataUsageId;
+extern const uint32_t BattleManager_HealSkill_m2042033746_MetadataUsageId;
 extern const uint32_t BattleManager_HitAnimation_m4133938581_MetadataUsageId;
 extern const uint32_t BattleManager_InitializeSlider_m2470088846_MetadataUsageId;
 extern const uint32_t BattleManager_InputMonsterList_m2240497511_MetadataUsageId;
@@ -552,9 +550,7 @@ extern const uint32_t EnemyPartyData__ctor_m2828013198_MetadataUsageId;
 extern const uint32_t MonsterAnimation_DeathAnimation_m4177925567_MetadataUsageId;
 extern const uint32_t MonsterAnimation_DelayMethod_m2975060154_MetadataUsageId;
 extern const uint32_t MonsterAnimation_UpdateDeathAnimation_m3429241927_MetadataUsageId;
-extern const uint32_t MonsterData__ctor_m16094597_MetadataUsageId;
 extern const uint32_t MyPartyData__ctor_m2609442980_MetadataUsageId;
-extern const uint32_t Sheet__ctor_m2437517533_MetadataUsageId;
 extern const uint32_t Sheet__ctor_m3192619757_MetadataUsageId;
 extern const uint32_t Sheet__ctor_m3860963975_MetadataUsageId;
 extern const uint32_t Sheet__ctor_m4189984813_MetadataUsageId;
@@ -642,8 +638,8 @@ public:
 	int32_t ___Hp_2;
 	// System.Int32 BaseStatsData/Param::Attack
 	int32_t ___Attack_3;
-	// System.Int32 BaseStatsData/Param::Defence
-	int32_t ___Defence_4;
+	// System.Int32 BaseStatsData/Param::Defense
+	int32_t ___Defense_4;
 	// System.Int32 BaseStatsData/Param::Speed
 	int32_t ___Speed_5;
 
@@ -681,12 +677,12 @@ public:
 		___Attack_3 = value;
 	}
 
-	inline static int32_t get_offset_of_Defence_4() { return static_cast<int32_t>(offsetof(Param_t678613560, ___Defence_4)); }
-	inline int32_t get_Defence_4() const { return ___Defence_4; }
-	inline int32_t* get_address_of_Defence_4() { return &___Defence_4; }
-	inline void set_Defence_4(int32_t value)
+	inline static int32_t get_offset_of_Defense_4() { return static_cast<int32_t>(offsetof(Param_t678613560, ___Defense_4)); }
+	inline int32_t get_Defense_4() const { return ___Defense_4; }
+	inline int32_t* get_address_of_Defense_4() { return &___Defense_4; }
+	inline void set_Defense_4(int32_t value)
 	{
-		___Defence_4 = value;
+		___Defense_4 = value;
 	}
 
 	inline static int32_t get_offset_of_Speed_5() { return static_cast<int32_t>(offsetof(Param_t678613560, ___Speed_5)); }
@@ -795,6 +791,130 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // U3CATTACKANIMATIONU3EC__ANONSTOREY4_T464051646_H
+#ifndef U3CCHANGESKILLU3EC__ANONSTOREY7_T1079478228_H
+#define U3CCHANGESKILLU3EC__ANONSTOREY7_T1079478228_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// BattleManager/<ChangeSkill>c__AnonStorey7
+struct  U3CChangeSkillU3Ec__AnonStorey7_t1079478228  : public RuntimeObject
+{
+public:
+	// UnityEngine.GameObject BattleManager/<ChangeSkill>c__AnonStorey7::attackMonster
+	GameObject_t1113636619 * ___attackMonster_0;
+	// UnityEngine.GameObject BattleManager/<ChangeSkill>c__AnonStorey7::attackedMonster
+	GameObject_t1113636619 * ___attackedMonster_1;
+	// System.Int32 BattleManager/<ChangeSkill>c__AnonStorey7::hp
+	int32_t ___hp_2;
+	// BattleManager BattleManager/<ChangeSkill>c__AnonStorey7::$this
+	BattleManager_t4022130644 * ___U24this_3;
+
+public:
+	inline static int32_t get_offset_of_attackMonster_0() { return static_cast<int32_t>(offsetof(U3CChangeSkillU3Ec__AnonStorey7_t1079478228, ___attackMonster_0)); }
+	inline GameObject_t1113636619 * get_attackMonster_0() const { return ___attackMonster_0; }
+	inline GameObject_t1113636619 ** get_address_of_attackMonster_0() { return &___attackMonster_0; }
+	inline void set_attackMonster_0(GameObject_t1113636619 * value)
+	{
+		___attackMonster_0 = value;
+		Il2CppCodeGenWriteBarrier((&___attackMonster_0), value);
+	}
+
+	inline static int32_t get_offset_of_attackedMonster_1() { return static_cast<int32_t>(offsetof(U3CChangeSkillU3Ec__AnonStorey7_t1079478228, ___attackedMonster_1)); }
+	inline GameObject_t1113636619 * get_attackedMonster_1() const { return ___attackedMonster_1; }
+	inline GameObject_t1113636619 ** get_address_of_attackedMonster_1() { return &___attackedMonster_1; }
+	inline void set_attackedMonster_1(GameObject_t1113636619 * value)
+	{
+		___attackedMonster_1 = value;
+		Il2CppCodeGenWriteBarrier((&___attackedMonster_1), value);
+	}
+
+	inline static int32_t get_offset_of_hp_2() { return static_cast<int32_t>(offsetof(U3CChangeSkillU3Ec__AnonStorey7_t1079478228, ___hp_2)); }
+	inline int32_t get_hp_2() const { return ___hp_2; }
+	inline int32_t* get_address_of_hp_2() { return &___hp_2; }
+	inline void set_hp_2(int32_t value)
+	{
+		___hp_2 = value;
+	}
+
+	inline static int32_t get_offset_of_U24this_3() { return static_cast<int32_t>(offsetof(U3CChangeSkillU3Ec__AnonStorey7_t1079478228, ___U24this_3)); }
+	inline BattleManager_t4022130644 * get_U24this_3() const { return ___U24this_3; }
+	inline BattleManager_t4022130644 ** get_address_of_U24this_3() { return &___U24this_3; }
+	inline void set_U24this_3(BattleManager_t4022130644 * value)
+	{
+		___U24this_3 = value;
+		Il2CppCodeGenWriteBarrier((&___U24this_3), value);
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // U3CCHANGESKILLU3EC__ANONSTOREY7_T1079478228_H
+#ifndef U3CDAMAGESKILLU3EC__ANONSTOREY5_T102370528_H
+#define U3CDAMAGESKILLU3EC__ANONSTOREY5_T102370528_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// BattleManager/<DamageSkill>c__AnonStorey5
+struct  U3CDamageSkillU3Ec__AnonStorey5_t102370528  : public RuntimeObject
+{
+public:
+	// UnityEngine.GameObject BattleManager/<DamageSkill>c__AnonStorey5::attackMonster
+	GameObject_t1113636619 * ___attackMonster_0;
+	// UnityEngine.GameObject BattleManager/<DamageSkill>c__AnonStorey5::attackedMonster
+	GameObject_t1113636619 * ___attackedMonster_1;
+	// System.Int32 BattleManager/<DamageSkill>c__AnonStorey5::hp
+	int32_t ___hp_2;
+	// BattleManager BattleManager/<DamageSkill>c__AnonStorey5::$this
+	BattleManager_t4022130644 * ___U24this_3;
+
+public:
+	inline static int32_t get_offset_of_attackMonster_0() { return static_cast<int32_t>(offsetof(U3CDamageSkillU3Ec__AnonStorey5_t102370528, ___attackMonster_0)); }
+	inline GameObject_t1113636619 * get_attackMonster_0() const { return ___attackMonster_0; }
+	inline GameObject_t1113636619 ** get_address_of_attackMonster_0() { return &___attackMonster_0; }
+	inline void set_attackMonster_0(GameObject_t1113636619 * value)
+	{
+		___attackMonster_0 = value;
+		Il2CppCodeGenWriteBarrier((&___attackMonster_0), value);
+	}
+
+	inline static int32_t get_offset_of_attackedMonster_1() { return static_cast<int32_t>(offsetof(U3CDamageSkillU3Ec__AnonStorey5_t102370528, ___attackedMonster_1)); }
+	inline GameObject_t1113636619 * get_attackedMonster_1() const { return ___attackedMonster_1; }
+	inline GameObject_t1113636619 ** get_address_of_attackedMonster_1() { return &___attackedMonster_1; }
+	inline void set_attackedMonster_1(GameObject_t1113636619 * value)
+	{
+		___attackedMonster_1 = value;
+		Il2CppCodeGenWriteBarrier((&___attackedMonster_1), value);
+	}
+
+	inline static int32_t get_offset_of_hp_2() { return static_cast<int32_t>(offsetof(U3CDamageSkillU3Ec__AnonStorey5_t102370528, ___hp_2)); }
+	inline int32_t get_hp_2() const { return ___hp_2; }
+	inline int32_t* get_address_of_hp_2() { return &___hp_2; }
+	inline void set_hp_2(int32_t value)
+	{
+		___hp_2 = value;
+	}
+
+	inline static int32_t get_offset_of_U24this_3() { return static_cast<int32_t>(offsetof(U3CDamageSkillU3Ec__AnonStorey5_t102370528, ___U24this_3)); }
+	inline BattleManager_t4022130644 * get_U24this_3() const { return ___U24this_3; }
+	inline BattleManager_t4022130644 ** get_address_of_U24this_3() { return &___U24this_3; }
+	inline void set_U24this_3(BattleManager_t4022130644 * value)
+	{
+		___U24this_3 = value;
+		Il2CppCodeGenWriteBarrier((&___U24this_3), value);
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // U3CDAMAGESKILLU3EC__ANONSTOREY5_T102370528_H
 #ifndef U3CDELAYMETHODU3EC__ITERATOR1_T1075979784_H
 #define U3CDELAYMETHODU3EC__ITERATOR1_T1075979784_H
 #ifdef __clang__
@@ -918,29 +1038,29 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // U3CENEMYACTIONU3EC__ANONSTOREY2_T1657202313_H
-#ifndef U3CHITANIMATIONU3EC__ANONSTOREY5_T246070209_H
-#define U3CHITANIMATIONU3EC__ANONSTOREY5_T246070209_H
+#ifndef U3CHEALSKILLU3EC__ANONSTOREY6_T4147225704_H
+#define U3CHEALSKILLU3EC__ANONSTOREY6_T4147225704_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// BattleManager/<HitAnimation>c__AnonStorey5
-struct  U3CHitAnimationU3Ec__AnonStorey5_t246070209  : public RuntimeObject
+// BattleManager/<HealSkill>c__AnonStorey6
+struct  U3CHealSkillU3Ec__AnonStorey6_t4147225704  : public RuntimeObject
 {
 public:
-	// UnityEngine.GameObject BattleManager/<HitAnimation>c__AnonStorey5::attackMonster
+	// UnityEngine.GameObject BattleManager/<HealSkill>c__AnonStorey6::attackMonster
 	GameObject_t1113636619 * ___attackMonster_0;
-	// UnityEngine.GameObject BattleManager/<HitAnimation>c__AnonStorey5::attackedMonster
+	// UnityEngine.GameObject BattleManager/<HealSkill>c__AnonStorey6::attackedMonster
 	GameObject_t1113636619 * ___attackedMonster_1;
-	// System.Int32 BattleManager/<HitAnimation>c__AnonStorey5::hp
-	int32_t ___hp_2;
-	// BattleManager BattleManager/<HitAnimation>c__AnonStorey5::$this
+	// System.Int32 BattleManager/<HealSkill>c__AnonStorey6::currentHp
+	int32_t ___currentHp_2;
+	// BattleManager BattleManager/<HealSkill>c__AnonStorey6::$this
 	BattleManager_t4022130644 * ___U24this_3;
 
 public:
-	inline static int32_t get_offset_of_attackMonster_0() { return static_cast<int32_t>(offsetof(U3CHitAnimationU3Ec__AnonStorey5_t246070209, ___attackMonster_0)); }
+	inline static int32_t get_offset_of_attackMonster_0() { return static_cast<int32_t>(offsetof(U3CHealSkillU3Ec__AnonStorey6_t4147225704, ___attackMonster_0)); }
 	inline GameObject_t1113636619 * get_attackMonster_0() const { return ___attackMonster_0; }
 	inline GameObject_t1113636619 ** get_address_of_attackMonster_0() { return &___attackMonster_0; }
 	inline void set_attackMonster_0(GameObject_t1113636619 * value)
@@ -949,7 +1069,7 @@ public:
 		Il2CppCodeGenWriteBarrier((&___attackMonster_0), value);
 	}
 
-	inline static int32_t get_offset_of_attackedMonster_1() { return static_cast<int32_t>(offsetof(U3CHitAnimationU3Ec__AnonStorey5_t246070209, ___attackedMonster_1)); }
+	inline static int32_t get_offset_of_attackedMonster_1() { return static_cast<int32_t>(offsetof(U3CHealSkillU3Ec__AnonStorey6_t4147225704, ___attackedMonster_1)); }
 	inline GameObject_t1113636619 * get_attackedMonster_1() const { return ___attackedMonster_1; }
 	inline GameObject_t1113636619 ** get_address_of_attackedMonster_1() { return &___attackedMonster_1; }
 	inline void set_attackedMonster_1(GameObject_t1113636619 * value)
@@ -958,15 +1078,15 @@ public:
 		Il2CppCodeGenWriteBarrier((&___attackedMonster_1), value);
 	}
 
-	inline static int32_t get_offset_of_hp_2() { return static_cast<int32_t>(offsetof(U3CHitAnimationU3Ec__AnonStorey5_t246070209, ___hp_2)); }
-	inline int32_t get_hp_2() const { return ___hp_2; }
-	inline int32_t* get_address_of_hp_2() { return &___hp_2; }
-	inline void set_hp_2(int32_t value)
+	inline static int32_t get_offset_of_currentHp_2() { return static_cast<int32_t>(offsetof(U3CHealSkillU3Ec__AnonStorey6_t4147225704, ___currentHp_2)); }
+	inline int32_t get_currentHp_2() const { return ___currentHp_2; }
+	inline int32_t* get_address_of_currentHp_2() { return &___currentHp_2; }
+	inline void set_currentHp_2(int32_t value)
 	{
-		___hp_2 = value;
+		___currentHp_2 = value;
 	}
 
-	inline static int32_t get_offset_of_U24this_3() { return static_cast<int32_t>(offsetof(U3CHitAnimationU3Ec__AnonStorey5_t246070209, ___U24this_3)); }
+	inline static int32_t get_offset_of_U24this_3() { return static_cast<int32_t>(offsetof(U3CHealSkillU3Ec__AnonStorey6_t4147225704, ___U24this_3)); }
 	inline BattleManager_t4022130644 * get_U24this_3() const { return ___U24this_3; }
 	inline BattleManager_t4022130644 ** get_address_of_U24this_3() { return &___U24this_3; }
 	inline void set_U24this_3(BattleManager_t4022130644 * value)
@@ -979,26 +1099,26 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // U3CHITANIMATIONU3EC__ANONSTOREY5_T246070209_H
-#ifndef U3CJUDGEDEATHU3EC__ANONSTOREY6_T3788336905_H
-#define U3CJUDGEDEATHU3EC__ANONSTOREY6_T3788336905_H
+#endif // U3CHEALSKILLU3EC__ANONSTOREY6_T4147225704_H
+#ifndef U3CJUDGEDEATHU3EC__ANONSTOREY8_T2641325833_H
+#define U3CJUDGEDEATHU3EC__ANONSTOREY8_T2641325833_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// BattleManager/<JudgeDeath>c__AnonStorey6
-struct  U3CJudgeDeathU3Ec__AnonStorey6_t3788336905  : public RuntimeObject
+// BattleManager/<JudgeDeath>c__AnonStorey8
+struct  U3CJudgeDeathU3Ec__AnonStorey8_t2641325833  : public RuntimeObject
 {
 public:
-	// UnityEngine.GameObject BattleManager/<JudgeDeath>c__AnonStorey6::attackMonster
+	// UnityEngine.GameObject BattleManager/<JudgeDeath>c__AnonStorey8::attackMonster
 	GameObject_t1113636619 * ___attackMonster_0;
-	// BattleManager BattleManager/<JudgeDeath>c__AnonStorey6::$this
+	// BattleManager BattleManager/<JudgeDeath>c__AnonStorey8::$this
 	BattleManager_t4022130644 * ___U24this_1;
 
 public:
-	inline static int32_t get_offset_of_attackMonster_0() { return static_cast<int32_t>(offsetof(U3CJudgeDeathU3Ec__AnonStorey6_t3788336905, ___attackMonster_0)); }
+	inline static int32_t get_offset_of_attackMonster_0() { return static_cast<int32_t>(offsetof(U3CJudgeDeathU3Ec__AnonStorey8_t2641325833, ___attackMonster_0)); }
 	inline GameObject_t1113636619 * get_attackMonster_0() const { return ___attackMonster_0; }
 	inline GameObject_t1113636619 ** get_address_of_attackMonster_0() { return &___attackMonster_0; }
 	inline void set_attackMonster_0(GameObject_t1113636619 * value)
@@ -1007,7 +1127,7 @@ public:
 		Il2CppCodeGenWriteBarrier((&___attackMonster_0), value);
 	}
 
-	inline static int32_t get_offset_of_U24this_1() { return static_cast<int32_t>(offsetof(U3CJudgeDeathU3Ec__AnonStorey6_t3788336905, ___U24this_1)); }
+	inline static int32_t get_offset_of_U24this_1() { return static_cast<int32_t>(offsetof(U3CJudgeDeathU3Ec__AnonStorey8_t2641325833, ___U24this_1)); }
 	inline BattleManager_t4022130644 * get_U24this_1() const { return ___U24this_1; }
 	inline BattleManager_t4022130644 ** get_address_of_U24this_1() { return &___U24this_1; }
 	inline void set_U24this_1(BattleManager_t4022130644 * value)
@@ -1020,7 +1140,7 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // U3CJUDGEDEATHU3EC__ANONSTOREY6_T3788336905_H
+#endif // U3CJUDGEDEATHU3EC__ANONSTOREY8_T2641325833_H
 #ifndef U3CSTEPFRONTU3EC__ANONSTOREY3_T425534604_H
 #define U3CSTEPFRONTU3EC__ANONSTOREY3_T425534604_H
 #ifdef __clang__
@@ -1461,127 +1581,6 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // U3CDELAYMETHODU3EC__ITERATOR0_T1042502033_H
-#ifndef PARAM_T3761760163_H
-#define PARAM_T3761760163_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// MonsterData/Param
-struct  Param_t3761760163  : public RuntimeObject
-{
-public:
-	// System.Int32 MonsterData/Param::No
-	int32_t ___No_0;
-	// System.String MonsterData/Param::Name
-	String_t* ___Name_1;
-	// System.Int32 MonsterData/Param::Hp
-	int32_t ___Hp_2;
-	// System.Int32 MonsterData/Param::Attack
-	int32_t ___Attack_3;
-	// System.Int32 MonsterData/Param::Defence
-	int32_t ___Defence_4;
-	// System.Int32 MonsterData/Param::Speed
-	int32_t ___Speed_5;
-
-public:
-	inline static int32_t get_offset_of_No_0() { return static_cast<int32_t>(offsetof(Param_t3761760163, ___No_0)); }
-	inline int32_t get_No_0() const { return ___No_0; }
-	inline int32_t* get_address_of_No_0() { return &___No_0; }
-	inline void set_No_0(int32_t value)
-	{
-		___No_0 = value;
-	}
-
-	inline static int32_t get_offset_of_Name_1() { return static_cast<int32_t>(offsetof(Param_t3761760163, ___Name_1)); }
-	inline String_t* get_Name_1() const { return ___Name_1; }
-	inline String_t** get_address_of_Name_1() { return &___Name_1; }
-	inline void set_Name_1(String_t* value)
-	{
-		___Name_1 = value;
-		Il2CppCodeGenWriteBarrier((&___Name_1), value);
-	}
-
-	inline static int32_t get_offset_of_Hp_2() { return static_cast<int32_t>(offsetof(Param_t3761760163, ___Hp_2)); }
-	inline int32_t get_Hp_2() const { return ___Hp_2; }
-	inline int32_t* get_address_of_Hp_2() { return &___Hp_2; }
-	inline void set_Hp_2(int32_t value)
-	{
-		___Hp_2 = value;
-	}
-
-	inline static int32_t get_offset_of_Attack_3() { return static_cast<int32_t>(offsetof(Param_t3761760163, ___Attack_3)); }
-	inline int32_t get_Attack_3() const { return ___Attack_3; }
-	inline int32_t* get_address_of_Attack_3() { return &___Attack_3; }
-	inline void set_Attack_3(int32_t value)
-	{
-		___Attack_3 = value;
-	}
-
-	inline static int32_t get_offset_of_Defence_4() { return static_cast<int32_t>(offsetof(Param_t3761760163, ___Defence_4)); }
-	inline int32_t get_Defence_4() const { return ___Defence_4; }
-	inline int32_t* get_address_of_Defence_4() { return &___Defence_4; }
-	inline void set_Defence_4(int32_t value)
-	{
-		___Defence_4 = value;
-	}
-
-	inline static int32_t get_offset_of_Speed_5() { return static_cast<int32_t>(offsetof(Param_t3761760163, ___Speed_5)); }
-	inline int32_t get_Speed_5() const { return ___Speed_5; }
-	inline int32_t* get_address_of_Speed_5() { return &___Speed_5; }
-	inline void set_Speed_5(int32_t value)
-	{
-		___Speed_5 = value;
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // PARAM_T3761760163_H
-#ifndef SHEET_T1327748116_H
-#define SHEET_T1327748116_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// MonsterData/Sheet
-struct  Sheet_t1327748116  : public RuntimeObject
-{
-public:
-	// System.String MonsterData/Sheet::name
-	String_t* ___name_0;
-	// System.Collections.Generic.List`1<MonsterData/Param> MonsterData/Sheet::list
-	List_1_t938867609 * ___list_1;
-
-public:
-	inline static int32_t get_offset_of_name_0() { return static_cast<int32_t>(offsetof(Sheet_t1327748116, ___name_0)); }
-	inline String_t* get_name_0() const { return ___name_0; }
-	inline String_t** get_address_of_name_0() { return &___name_0; }
-	inline void set_name_0(String_t* value)
-	{
-		___name_0 = value;
-		Il2CppCodeGenWriteBarrier((&___name_0), value);
-	}
-
-	inline static int32_t get_offset_of_list_1() { return static_cast<int32_t>(offsetof(Sheet_t1327748116, ___list_1)); }
-	inline List_1_t938867609 * get_list_1() const { return ___list_1; }
-	inline List_1_t938867609 ** get_address_of_list_1() { return &___list_1; }
-	inline void set_list_1(List_1_t938867609 * value)
-	{
-		___list_1 = value;
-		Il2CppCodeGenWriteBarrier((&___list_1), value);
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // SHEET_T1327748116_H
 #ifndef PARAM_T4068803933_H
 #define PARAM_T4068803933_H
 #ifdef __clang__
@@ -1785,6 +1784,8 @@ public:
 	int32_t ___HealAmount_6;
 	// System.Int32 SkillData/Param::ChangeAmount
 	int32_t ___ChangeAmount_7;
+	// System.String SkillData/Param::ChangeStatus
+	String_t* ___ChangeStatus_8;
 
 public:
 	inline static int32_t get_offset_of_No_0() { return static_cast<int32_t>(offsetof(Param_t1486994461, ___No_0)); }
@@ -1853,6 +1854,15 @@ public:
 	inline void set_ChangeAmount_7(int32_t value)
 	{
 		___ChangeAmount_7 = value;
+	}
+
+	inline static int32_t get_offset_of_ChangeStatus_8() { return static_cast<int32_t>(offsetof(Param_t1486994461, ___ChangeStatus_8)); }
+	inline String_t* get_ChangeStatus_8() const { return ___ChangeStatus_8; }
+	inline String_t** get_address_of_ChangeStatus_8() { return &___ChangeStatus_8; }
+	inline void set_ChangeStatus_8(String_t* value)
+	{
+		___ChangeStatus_8 = value;
+		Il2CppCodeGenWriteBarrier((&___ChangeStatus_8), value);
 	}
 };
 
@@ -2255,140 +2265,6 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // LIST_1_T2353299670_H
-#ifndef LIST_1_T938867609_H
-#define LIST_1_T938867609_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// System.Collections.Generic.List`1<MonsterData/Param>
-struct  List_1_t938867609  : public RuntimeObject
-{
-public:
-	// T[] System.Collections.Generic.List`1::_items
-	ParamU5BU5D_t966151794* ____items_1;
-	// System.Int32 System.Collections.Generic.List`1::_size
-	int32_t ____size_2;
-	// System.Int32 System.Collections.Generic.List`1::_version
-	int32_t ____version_3;
-
-public:
-	inline static int32_t get_offset_of__items_1() { return static_cast<int32_t>(offsetof(List_1_t938867609, ____items_1)); }
-	inline ParamU5BU5D_t966151794* get__items_1() const { return ____items_1; }
-	inline ParamU5BU5D_t966151794** get_address_of__items_1() { return &____items_1; }
-	inline void set__items_1(ParamU5BU5D_t966151794* value)
-	{
-		____items_1 = value;
-		Il2CppCodeGenWriteBarrier((&____items_1), value);
-	}
-
-	inline static int32_t get_offset_of__size_2() { return static_cast<int32_t>(offsetof(List_1_t938867609, ____size_2)); }
-	inline int32_t get__size_2() const { return ____size_2; }
-	inline int32_t* get_address_of__size_2() { return &____size_2; }
-	inline void set__size_2(int32_t value)
-	{
-		____size_2 = value;
-	}
-
-	inline static int32_t get_offset_of__version_3() { return static_cast<int32_t>(offsetof(List_1_t938867609, ____version_3)); }
-	inline int32_t get__version_3() const { return ____version_3; }
-	inline int32_t* get_address_of__version_3() { return &____version_3; }
-	inline void set__version_3(int32_t value)
-	{
-		____version_3 = value;
-	}
-};
-
-struct List_1_t938867609_StaticFields
-{
-public:
-	// T[] System.Collections.Generic.List`1::EmptyArray
-	ParamU5BU5D_t966151794* ___EmptyArray_4;
-
-public:
-	inline static int32_t get_offset_of_EmptyArray_4() { return static_cast<int32_t>(offsetof(List_1_t938867609_StaticFields, ___EmptyArray_4)); }
-	inline ParamU5BU5D_t966151794* get_EmptyArray_4() const { return ___EmptyArray_4; }
-	inline ParamU5BU5D_t966151794** get_address_of_EmptyArray_4() { return &___EmptyArray_4; }
-	inline void set_EmptyArray_4(ParamU5BU5D_t966151794* value)
-	{
-		___EmptyArray_4 = value;
-		Il2CppCodeGenWriteBarrier((&___EmptyArray_4), value);
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // LIST_1_T938867609_H
-#ifndef LIST_1_T2799822858_H
-#define LIST_1_T2799822858_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// System.Collections.Generic.List`1<MonsterData/Sheet>
-struct  List_1_t2799822858  : public RuntimeObject
-{
-public:
-	// T[] System.Collections.Generic.List`1::_items
-	SheetU5BU5D_t2875397405* ____items_1;
-	// System.Int32 System.Collections.Generic.List`1::_size
-	int32_t ____size_2;
-	// System.Int32 System.Collections.Generic.List`1::_version
-	int32_t ____version_3;
-
-public:
-	inline static int32_t get_offset_of__items_1() { return static_cast<int32_t>(offsetof(List_1_t2799822858, ____items_1)); }
-	inline SheetU5BU5D_t2875397405* get__items_1() const { return ____items_1; }
-	inline SheetU5BU5D_t2875397405** get_address_of__items_1() { return &____items_1; }
-	inline void set__items_1(SheetU5BU5D_t2875397405* value)
-	{
-		____items_1 = value;
-		Il2CppCodeGenWriteBarrier((&____items_1), value);
-	}
-
-	inline static int32_t get_offset_of__size_2() { return static_cast<int32_t>(offsetof(List_1_t2799822858, ____size_2)); }
-	inline int32_t get__size_2() const { return ____size_2; }
-	inline int32_t* get_address_of__size_2() { return &____size_2; }
-	inline void set__size_2(int32_t value)
-	{
-		____size_2 = value;
-	}
-
-	inline static int32_t get_offset_of__version_3() { return static_cast<int32_t>(offsetof(List_1_t2799822858, ____version_3)); }
-	inline int32_t get__version_3() const { return ____version_3; }
-	inline int32_t* get_address_of__version_3() { return &____version_3; }
-	inline void set__version_3(int32_t value)
-	{
-		____version_3 = value;
-	}
-};
-
-struct List_1_t2799822858_StaticFields
-{
-public:
-	// T[] System.Collections.Generic.List`1::EmptyArray
-	SheetU5BU5D_t2875397405* ___EmptyArray_4;
-
-public:
-	inline static int32_t get_offset_of_EmptyArray_4() { return static_cast<int32_t>(offsetof(List_1_t2799822858_StaticFields, ___EmptyArray_4)); }
-	inline SheetU5BU5D_t2875397405* get_EmptyArray_4() const { return ___EmptyArray_4; }
-	inline SheetU5BU5D_t2875397405** get_address_of_EmptyArray_4() { return &___EmptyArray_4; }
-	inline void set_EmptyArray_4(SheetU5BU5D_t2875397405* value)
-	{
-		___EmptyArray_4 = value;
-		Il2CppCodeGenWriteBarrier((&___EmptyArray_4), value);
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // LIST_1_T2799822858_H
 #ifndef LIST_1_T1245911379_H
 #define LIST_1_T1245911379_H
 #ifdef __clang__
@@ -6767,36 +6643,6 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // ENEMYPARTYDATA_T1860595397_H
-#ifndef MONSTERDATA_T2246618540_H
-#define MONSTERDATA_T2246618540_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// MonsterData
-struct  MonsterData_t2246618540  : public ScriptableObject_t2528358522
-{
-public:
-	// System.Collections.Generic.List`1<MonsterData/Sheet> MonsterData::sheets
-	List_1_t2799822858 * ___sheets_4;
-
-public:
-	inline static int32_t get_offset_of_sheets_4() { return static_cast<int32_t>(offsetof(MonsterData_t2246618540, ___sheets_4)); }
-	inline List_1_t2799822858 * get_sheets_4() const { return ___sheets_4; }
-	inline List_1_t2799822858 ** get_address_of_sheets_4() { return &___sheets_4; }
-	inline void set_sheets_4(List_1_t2799822858 * value)
-	{
-		___sheets_4 = value;
-		Il2CppCodeGenWriteBarrier((&___sheets_4), value);
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // MONSTERDATA_T2246618540_H
 #ifndef MYPARTYDATA_T3954641067_H
 #define MYPARTYDATA_T3954641067_H
 #ifdef __clang__
@@ -7771,46 +7617,50 @@ public:
 	GameObject_t1113636619 * ___txt_skillNamePrefab_19;
 	// UnityEngine.GameObject BattleManager::txt_damagePrefab
 	GameObject_t1113636619 * ___txt_damagePrefab_20;
+	// UnityEngine.GameObject BattleManager::txt_healPrefab
+	GameObject_t1113636619 * ___txt_healPrefab_21;
+	// UnityEngine.GameObject BattleManager::txt_changePrefab
+	GameObject_t1113636619 * ___txt_changePrefab_22;
 	// System.Int32 BattleManager::counter_checkNextAction
-	int32_t ___counter_checkNextAction_21;
+	int32_t ___counter_checkNextAction_23;
 	// System.Int32 BattleManager::count_targetMonster
-	int32_t ___count_targetMonster_22;
+	int32_t ___count_targetMonster_24;
 	// System.Int32 BattleManager::vod
-	int32_t ___vod_23;
+	int32_t ___vod_25;
 	// System.Int32 BattleManager::targetMonsterId_ally
-	int32_t ___targetMonsterId_ally_24;
+	int32_t ___targetMonsterId_ally_26;
 	// System.Int32 BattleManager::targetMonsterId_enemy
-	int32_t ___targetMonsterId_enemy_25;
+	int32_t ___targetMonsterId_enemy_27;
 	// System.Int32 BattleManager::actionCount
-	int32_t ___actionCount_26;
+	int32_t ___actionCount_28;
 	// System.Single BattleManager::time_break
-	float ___time_break_27;
+	float ___time_break_29;
 	// System.Single BattleManager::time_stepFront
-	float ___time_stepFront_28;
+	float ___time_stepFront_30;
 	// System.Single BattleManager::time_stepBack
-	float ___time_stepBack_29;
+	float ___time_stepBack_31;
 	// System.Single BattleManager::time_attackAnimation
-	float ___time_attackAnimation_30;
+	float ___time_attackAnimation_32;
 	// System.Single BattleManager::time_hitAnimation
-	float ___time_hitAnimation_31;
+	float ___time_hitAnimation_33;
 	// System.Single BattleManager::time_deathAnimation
-	float ___time_deathAnimation_32;
+	float ___time_deathAnimation_34;
 	// System.Single BattleManager::time_frame
-	float ___time_frame_33;
+	float ___time_frame_35;
 	// System.Int32 BattleManager::num_frame
-	int32_t ___num_frame_34;
+	int32_t ___num_frame_36;
 	// System.Single BattleManager::speed_attackAnimation
-	float ___speed_attackAnimation_35;
+	float ___speed_attackAnimation_37;
 	// System.Single BattleManager::diff_step
-	float ___diff_step_36;
+	float ___diff_step_38;
 	// System.Single BattleManager::zPos_attackEffect
-	float ___zPos_attackEffect_37;
+	float ___zPos_attackEffect_39;
 	// System.Collections.Generic.List`1<UnityEngine.GameObject> BattleManager::monsterOrderList
-	List_1_t2585711361 * ___monsterOrderList_38;
+	List_1_t2585711361 * ___monsterOrderList_40;
 	// System.Collections.Generic.List`1<UnityEngine.GameObject> BattleManager::myPartyList
-	List_1_t2585711361 * ___myPartyList_39;
+	List_1_t2585711361 * ___myPartyList_41;
 	// System.Collections.Generic.List`1<UnityEngine.GameObject> BattleManager::enemyPartyList
-	List_1_t2585711361 * ___enemyPartyList_40;
+	List_1_t2585711361 * ___enemyPartyList_42;
 
 public:
 	inline static int32_t get_offset_of_baseStatsData_4() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___baseStatsData_4)); }
@@ -7966,167 +7816,185 @@ public:
 		Il2CppCodeGenWriteBarrier((&___txt_damagePrefab_20), value);
 	}
 
-	inline static int32_t get_offset_of_counter_checkNextAction_21() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___counter_checkNextAction_21)); }
-	inline int32_t get_counter_checkNextAction_21() const { return ___counter_checkNextAction_21; }
-	inline int32_t* get_address_of_counter_checkNextAction_21() { return &___counter_checkNextAction_21; }
-	inline void set_counter_checkNextAction_21(int32_t value)
+	inline static int32_t get_offset_of_txt_healPrefab_21() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___txt_healPrefab_21)); }
+	inline GameObject_t1113636619 * get_txt_healPrefab_21() const { return ___txt_healPrefab_21; }
+	inline GameObject_t1113636619 ** get_address_of_txt_healPrefab_21() { return &___txt_healPrefab_21; }
+	inline void set_txt_healPrefab_21(GameObject_t1113636619 * value)
 	{
-		___counter_checkNextAction_21 = value;
+		___txt_healPrefab_21 = value;
+		Il2CppCodeGenWriteBarrier((&___txt_healPrefab_21), value);
 	}
 
-	inline static int32_t get_offset_of_count_targetMonster_22() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___count_targetMonster_22)); }
-	inline int32_t get_count_targetMonster_22() const { return ___count_targetMonster_22; }
-	inline int32_t* get_address_of_count_targetMonster_22() { return &___count_targetMonster_22; }
-	inline void set_count_targetMonster_22(int32_t value)
+	inline static int32_t get_offset_of_txt_changePrefab_22() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___txt_changePrefab_22)); }
+	inline GameObject_t1113636619 * get_txt_changePrefab_22() const { return ___txt_changePrefab_22; }
+	inline GameObject_t1113636619 ** get_address_of_txt_changePrefab_22() { return &___txt_changePrefab_22; }
+	inline void set_txt_changePrefab_22(GameObject_t1113636619 * value)
 	{
-		___count_targetMonster_22 = value;
+		___txt_changePrefab_22 = value;
+		Il2CppCodeGenWriteBarrier((&___txt_changePrefab_22), value);
 	}
 
-	inline static int32_t get_offset_of_vod_23() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___vod_23)); }
-	inline int32_t get_vod_23() const { return ___vod_23; }
-	inline int32_t* get_address_of_vod_23() { return &___vod_23; }
-	inline void set_vod_23(int32_t value)
+	inline static int32_t get_offset_of_counter_checkNextAction_23() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___counter_checkNextAction_23)); }
+	inline int32_t get_counter_checkNextAction_23() const { return ___counter_checkNextAction_23; }
+	inline int32_t* get_address_of_counter_checkNextAction_23() { return &___counter_checkNextAction_23; }
+	inline void set_counter_checkNextAction_23(int32_t value)
 	{
-		___vod_23 = value;
+		___counter_checkNextAction_23 = value;
 	}
 
-	inline static int32_t get_offset_of_targetMonsterId_ally_24() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___targetMonsterId_ally_24)); }
-	inline int32_t get_targetMonsterId_ally_24() const { return ___targetMonsterId_ally_24; }
-	inline int32_t* get_address_of_targetMonsterId_ally_24() { return &___targetMonsterId_ally_24; }
-	inline void set_targetMonsterId_ally_24(int32_t value)
+	inline static int32_t get_offset_of_count_targetMonster_24() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___count_targetMonster_24)); }
+	inline int32_t get_count_targetMonster_24() const { return ___count_targetMonster_24; }
+	inline int32_t* get_address_of_count_targetMonster_24() { return &___count_targetMonster_24; }
+	inline void set_count_targetMonster_24(int32_t value)
 	{
-		___targetMonsterId_ally_24 = value;
+		___count_targetMonster_24 = value;
 	}
 
-	inline static int32_t get_offset_of_targetMonsterId_enemy_25() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___targetMonsterId_enemy_25)); }
-	inline int32_t get_targetMonsterId_enemy_25() const { return ___targetMonsterId_enemy_25; }
-	inline int32_t* get_address_of_targetMonsterId_enemy_25() { return &___targetMonsterId_enemy_25; }
-	inline void set_targetMonsterId_enemy_25(int32_t value)
+	inline static int32_t get_offset_of_vod_25() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___vod_25)); }
+	inline int32_t get_vod_25() const { return ___vod_25; }
+	inline int32_t* get_address_of_vod_25() { return &___vod_25; }
+	inline void set_vod_25(int32_t value)
 	{
-		___targetMonsterId_enemy_25 = value;
+		___vod_25 = value;
 	}
 
-	inline static int32_t get_offset_of_actionCount_26() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___actionCount_26)); }
-	inline int32_t get_actionCount_26() const { return ___actionCount_26; }
-	inline int32_t* get_address_of_actionCount_26() { return &___actionCount_26; }
-	inline void set_actionCount_26(int32_t value)
+	inline static int32_t get_offset_of_targetMonsterId_ally_26() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___targetMonsterId_ally_26)); }
+	inline int32_t get_targetMonsterId_ally_26() const { return ___targetMonsterId_ally_26; }
+	inline int32_t* get_address_of_targetMonsterId_ally_26() { return &___targetMonsterId_ally_26; }
+	inline void set_targetMonsterId_ally_26(int32_t value)
 	{
-		___actionCount_26 = value;
+		___targetMonsterId_ally_26 = value;
 	}
 
-	inline static int32_t get_offset_of_time_break_27() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_break_27)); }
-	inline float get_time_break_27() const { return ___time_break_27; }
-	inline float* get_address_of_time_break_27() { return &___time_break_27; }
-	inline void set_time_break_27(float value)
+	inline static int32_t get_offset_of_targetMonsterId_enemy_27() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___targetMonsterId_enemy_27)); }
+	inline int32_t get_targetMonsterId_enemy_27() const { return ___targetMonsterId_enemy_27; }
+	inline int32_t* get_address_of_targetMonsterId_enemy_27() { return &___targetMonsterId_enemy_27; }
+	inline void set_targetMonsterId_enemy_27(int32_t value)
 	{
-		___time_break_27 = value;
+		___targetMonsterId_enemy_27 = value;
 	}
 
-	inline static int32_t get_offset_of_time_stepFront_28() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_stepFront_28)); }
-	inline float get_time_stepFront_28() const { return ___time_stepFront_28; }
-	inline float* get_address_of_time_stepFront_28() { return &___time_stepFront_28; }
-	inline void set_time_stepFront_28(float value)
+	inline static int32_t get_offset_of_actionCount_28() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___actionCount_28)); }
+	inline int32_t get_actionCount_28() const { return ___actionCount_28; }
+	inline int32_t* get_address_of_actionCount_28() { return &___actionCount_28; }
+	inline void set_actionCount_28(int32_t value)
 	{
-		___time_stepFront_28 = value;
+		___actionCount_28 = value;
 	}
 
-	inline static int32_t get_offset_of_time_stepBack_29() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_stepBack_29)); }
-	inline float get_time_stepBack_29() const { return ___time_stepBack_29; }
-	inline float* get_address_of_time_stepBack_29() { return &___time_stepBack_29; }
-	inline void set_time_stepBack_29(float value)
+	inline static int32_t get_offset_of_time_break_29() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_break_29)); }
+	inline float get_time_break_29() const { return ___time_break_29; }
+	inline float* get_address_of_time_break_29() { return &___time_break_29; }
+	inline void set_time_break_29(float value)
 	{
-		___time_stepBack_29 = value;
+		___time_break_29 = value;
 	}
 
-	inline static int32_t get_offset_of_time_attackAnimation_30() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_attackAnimation_30)); }
-	inline float get_time_attackAnimation_30() const { return ___time_attackAnimation_30; }
-	inline float* get_address_of_time_attackAnimation_30() { return &___time_attackAnimation_30; }
-	inline void set_time_attackAnimation_30(float value)
+	inline static int32_t get_offset_of_time_stepFront_30() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_stepFront_30)); }
+	inline float get_time_stepFront_30() const { return ___time_stepFront_30; }
+	inline float* get_address_of_time_stepFront_30() { return &___time_stepFront_30; }
+	inline void set_time_stepFront_30(float value)
 	{
-		___time_attackAnimation_30 = value;
+		___time_stepFront_30 = value;
 	}
 
-	inline static int32_t get_offset_of_time_hitAnimation_31() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_hitAnimation_31)); }
-	inline float get_time_hitAnimation_31() const { return ___time_hitAnimation_31; }
-	inline float* get_address_of_time_hitAnimation_31() { return &___time_hitAnimation_31; }
-	inline void set_time_hitAnimation_31(float value)
+	inline static int32_t get_offset_of_time_stepBack_31() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_stepBack_31)); }
+	inline float get_time_stepBack_31() const { return ___time_stepBack_31; }
+	inline float* get_address_of_time_stepBack_31() { return &___time_stepBack_31; }
+	inline void set_time_stepBack_31(float value)
 	{
-		___time_hitAnimation_31 = value;
+		___time_stepBack_31 = value;
 	}
 
-	inline static int32_t get_offset_of_time_deathAnimation_32() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_deathAnimation_32)); }
-	inline float get_time_deathAnimation_32() const { return ___time_deathAnimation_32; }
-	inline float* get_address_of_time_deathAnimation_32() { return &___time_deathAnimation_32; }
-	inline void set_time_deathAnimation_32(float value)
+	inline static int32_t get_offset_of_time_attackAnimation_32() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_attackAnimation_32)); }
+	inline float get_time_attackAnimation_32() const { return ___time_attackAnimation_32; }
+	inline float* get_address_of_time_attackAnimation_32() { return &___time_attackAnimation_32; }
+	inline void set_time_attackAnimation_32(float value)
 	{
-		___time_deathAnimation_32 = value;
+		___time_attackAnimation_32 = value;
 	}
 
-	inline static int32_t get_offset_of_time_frame_33() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_frame_33)); }
-	inline float get_time_frame_33() const { return ___time_frame_33; }
-	inline float* get_address_of_time_frame_33() { return &___time_frame_33; }
-	inline void set_time_frame_33(float value)
+	inline static int32_t get_offset_of_time_hitAnimation_33() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_hitAnimation_33)); }
+	inline float get_time_hitAnimation_33() const { return ___time_hitAnimation_33; }
+	inline float* get_address_of_time_hitAnimation_33() { return &___time_hitAnimation_33; }
+	inline void set_time_hitAnimation_33(float value)
 	{
-		___time_frame_33 = value;
+		___time_hitAnimation_33 = value;
 	}
 
-	inline static int32_t get_offset_of_num_frame_34() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___num_frame_34)); }
-	inline int32_t get_num_frame_34() const { return ___num_frame_34; }
-	inline int32_t* get_address_of_num_frame_34() { return &___num_frame_34; }
-	inline void set_num_frame_34(int32_t value)
+	inline static int32_t get_offset_of_time_deathAnimation_34() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_deathAnimation_34)); }
+	inline float get_time_deathAnimation_34() const { return ___time_deathAnimation_34; }
+	inline float* get_address_of_time_deathAnimation_34() { return &___time_deathAnimation_34; }
+	inline void set_time_deathAnimation_34(float value)
 	{
-		___num_frame_34 = value;
+		___time_deathAnimation_34 = value;
 	}
 
-	inline static int32_t get_offset_of_speed_attackAnimation_35() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___speed_attackAnimation_35)); }
-	inline float get_speed_attackAnimation_35() const { return ___speed_attackAnimation_35; }
-	inline float* get_address_of_speed_attackAnimation_35() { return &___speed_attackAnimation_35; }
-	inline void set_speed_attackAnimation_35(float value)
+	inline static int32_t get_offset_of_time_frame_35() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___time_frame_35)); }
+	inline float get_time_frame_35() const { return ___time_frame_35; }
+	inline float* get_address_of_time_frame_35() { return &___time_frame_35; }
+	inline void set_time_frame_35(float value)
 	{
-		___speed_attackAnimation_35 = value;
+		___time_frame_35 = value;
 	}
 
-	inline static int32_t get_offset_of_diff_step_36() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___diff_step_36)); }
-	inline float get_diff_step_36() const { return ___diff_step_36; }
-	inline float* get_address_of_diff_step_36() { return &___diff_step_36; }
-	inline void set_diff_step_36(float value)
+	inline static int32_t get_offset_of_num_frame_36() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___num_frame_36)); }
+	inline int32_t get_num_frame_36() const { return ___num_frame_36; }
+	inline int32_t* get_address_of_num_frame_36() { return &___num_frame_36; }
+	inline void set_num_frame_36(int32_t value)
 	{
-		___diff_step_36 = value;
+		___num_frame_36 = value;
 	}
 
-	inline static int32_t get_offset_of_zPos_attackEffect_37() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___zPos_attackEffect_37)); }
-	inline float get_zPos_attackEffect_37() const { return ___zPos_attackEffect_37; }
-	inline float* get_address_of_zPos_attackEffect_37() { return &___zPos_attackEffect_37; }
-	inline void set_zPos_attackEffect_37(float value)
+	inline static int32_t get_offset_of_speed_attackAnimation_37() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___speed_attackAnimation_37)); }
+	inline float get_speed_attackAnimation_37() const { return ___speed_attackAnimation_37; }
+	inline float* get_address_of_speed_attackAnimation_37() { return &___speed_attackAnimation_37; }
+	inline void set_speed_attackAnimation_37(float value)
 	{
-		___zPos_attackEffect_37 = value;
+		___speed_attackAnimation_37 = value;
 	}
 
-	inline static int32_t get_offset_of_monsterOrderList_38() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___monsterOrderList_38)); }
-	inline List_1_t2585711361 * get_monsterOrderList_38() const { return ___monsterOrderList_38; }
-	inline List_1_t2585711361 ** get_address_of_monsterOrderList_38() { return &___monsterOrderList_38; }
-	inline void set_monsterOrderList_38(List_1_t2585711361 * value)
+	inline static int32_t get_offset_of_diff_step_38() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___diff_step_38)); }
+	inline float get_diff_step_38() const { return ___diff_step_38; }
+	inline float* get_address_of_diff_step_38() { return &___diff_step_38; }
+	inline void set_diff_step_38(float value)
 	{
-		___monsterOrderList_38 = value;
-		Il2CppCodeGenWriteBarrier((&___monsterOrderList_38), value);
+		___diff_step_38 = value;
 	}
 
-	inline static int32_t get_offset_of_myPartyList_39() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___myPartyList_39)); }
-	inline List_1_t2585711361 * get_myPartyList_39() const { return ___myPartyList_39; }
-	inline List_1_t2585711361 ** get_address_of_myPartyList_39() { return &___myPartyList_39; }
-	inline void set_myPartyList_39(List_1_t2585711361 * value)
+	inline static int32_t get_offset_of_zPos_attackEffect_39() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___zPos_attackEffect_39)); }
+	inline float get_zPos_attackEffect_39() const { return ___zPos_attackEffect_39; }
+	inline float* get_address_of_zPos_attackEffect_39() { return &___zPos_attackEffect_39; }
+	inline void set_zPos_attackEffect_39(float value)
 	{
-		___myPartyList_39 = value;
-		Il2CppCodeGenWriteBarrier((&___myPartyList_39), value);
+		___zPos_attackEffect_39 = value;
 	}
 
-	inline static int32_t get_offset_of_enemyPartyList_40() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___enemyPartyList_40)); }
-	inline List_1_t2585711361 * get_enemyPartyList_40() const { return ___enemyPartyList_40; }
-	inline List_1_t2585711361 ** get_address_of_enemyPartyList_40() { return &___enemyPartyList_40; }
-	inline void set_enemyPartyList_40(List_1_t2585711361 * value)
+	inline static int32_t get_offset_of_monsterOrderList_40() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___monsterOrderList_40)); }
+	inline List_1_t2585711361 * get_monsterOrderList_40() const { return ___monsterOrderList_40; }
+	inline List_1_t2585711361 ** get_address_of_monsterOrderList_40() { return &___monsterOrderList_40; }
+	inline void set_monsterOrderList_40(List_1_t2585711361 * value)
 	{
-		___enemyPartyList_40 = value;
-		Il2CppCodeGenWriteBarrier((&___enemyPartyList_40), value);
+		___monsterOrderList_40 = value;
+		Il2CppCodeGenWriteBarrier((&___monsterOrderList_40), value);
+	}
+
+	inline static int32_t get_offset_of_myPartyList_41() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___myPartyList_41)); }
+	inline List_1_t2585711361 * get_myPartyList_41() const { return ___myPartyList_41; }
+	inline List_1_t2585711361 ** get_address_of_myPartyList_41() { return &___myPartyList_41; }
+	inline void set_myPartyList_41(List_1_t2585711361 * value)
+	{
+		___myPartyList_41 = value;
+		Il2CppCodeGenWriteBarrier((&___myPartyList_41), value);
+	}
+
+	inline static int32_t get_offset_of_enemyPartyList_42() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644, ___enemyPartyList_42)); }
+	inline List_1_t2585711361 * get_enemyPartyList_42() const { return ___enemyPartyList_42; }
+	inline List_1_t2585711361 ** get_address_of_enemyPartyList_42() { return &___enemyPartyList_42; }
+	inline void set_enemyPartyList_42(List_1_t2585711361 * value)
+	{
+		___enemyPartyList_42 = value;
+		Il2CppCodeGenWriteBarrier((&___enemyPartyList_42), value);
 	}
 };
 
@@ -8134,38 +8002,38 @@ struct BattleManager_t4022130644_StaticFields
 {
 public:
 	// System.Comparison`1<UnityEngine.GameObject> BattleManager::<>f__am$cache0
-	Comparison_1_t888567798 * ___U3CU3Ef__amU24cache0_41;
+	Comparison_1_t888567798 * ___U3CU3Ef__amU24cache0_43;
 	// System.Func`2<UnityEngine.GameObject,System.Guid> BattleManager::<>f__am$cache1
-	Func_2_t3045216918 * ___U3CU3Ef__amU24cache1_42;
+	Func_2_t3045216918 * ___U3CU3Ef__amU24cache1_44;
 	// System.Func`2<UnityEngine.GameObject,System.Guid> BattleManager::<>f__am$cache2
-	Func_2_t3045216918 * ___U3CU3Ef__amU24cache2_43;
+	Func_2_t3045216918 * ___U3CU3Ef__amU24cache2_45;
 
 public:
-	inline static int32_t get_offset_of_U3CU3Ef__amU24cache0_41() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644_StaticFields, ___U3CU3Ef__amU24cache0_41)); }
-	inline Comparison_1_t888567798 * get_U3CU3Ef__amU24cache0_41() const { return ___U3CU3Ef__amU24cache0_41; }
-	inline Comparison_1_t888567798 ** get_address_of_U3CU3Ef__amU24cache0_41() { return &___U3CU3Ef__amU24cache0_41; }
-	inline void set_U3CU3Ef__amU24cache0_41(Comparison_1_t888567798 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__amU24cache0_43() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644_StaticFields, ___U3CU3Ef__amU24cache0_43)); }
+	inline Comparison_1_t888567798 * get_U3CU3Ef__amU24cache0_43() const { return ___U3CU3Ef__amU24cache0_43; }
+	inline Comparison_1_t888567798 ** get_address_of_U3CU3Ef__amU24cache0_43() { return &___U3CU3Ef__amU24cache0_43; }
+	inline void set_U3CU3Ef__amU24cache0_43(Comparison_1_t888567798 * value)
 	{
-		___U3CU3Ef__amU24cache0_41 = value;
-		Il2CppCodeGenWriteBarrier((&___U3CU3Ef__amU24cache0_41), value);
+		___U3CU3Ef__amU24cache0_43 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CU3Ef__amU24cache0_43), value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__amU24cache1_42() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644_StaticFields, ___U3CU3Ef__amU24cache1_42)); }
-	inline Func_2_t3045216918 * get_U3CU3Ef__amU24cache1_42() const { return ___U3CU3Ef__amU24cache1_42; }
-	inline Func_2_t3045216918 ** get_address_of_U3CU3Ef__amU24cache1_42() { return &___U3CU3Ef__amU24cache1_42; }
-	inline void set_U3CU3Ef__amU24cache1_42(Func_2_t3045216918 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__amU24cache1_44() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644_StaticFields, ___U3CU3Ef__amU24cache1_44)); }
+	inline Func_2_t3045216918 * get_U3CU3Ef__amU24cache1_44() const { return ___U3CU3Ef__amU24cache1_44; }
+	inline Func_2_t3045216918 ** get_address_of_U3CU3Ef__amU24cache1_44() { return &___U3CU3Ef__amU24cache1_44; }
+	inline void set_U3CU3Ef__amU24cache1_44(Func_2_t3045216918 * value)
 	{
-		___U3CU3Ef__amU24cache1_42 = value;
-		Il2CppCodeGenWriteBarrier((&___U3CU3Ef__amU24cache1_42), value);
+		___U3CU3Ef__amU24cache1_44 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CU3Ef__amU24cache1_44), value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3Ef__amU24cache2_43() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644_StaticFields, ___U3CU3Ef__amU24cache2_43)); }
-	inline Func_2_t3045216918 * get_U3CU3Ef__amU24cache2_43() const { return ___U3CU3Ef__amU24cache2_43; }
-	inline Func_2_t3045216918 ** get_address_of_U3CU3Ef__amU24cache2_43() { return &___U3CU3Ef__amU24cache2_43; }
-	inline void set_U3CU3Ef__amU24cache2_43(Func_2_t3045216918 * value)
+	inline static int32_t get_offset_of_U3CU3Ef__amU24cache2_45() { return static_cast<int32_t>(offsetof(BattleManager_t4022130644_StaticFields, ___U3CU3Ef__amU24cache2_45)); }
+	inline Func_2_t3045216918 * get_U3CU3Ef__amU24cache2_45() const { return ___U3CU3Ef__amU24cache2_45; }
+	inline Func_2_t3045216918 ** get_address_of_U3CU3Ef__amU24cache2_45() { return &___U3CU3Ef__amU24cache2_45; }
+	inline void set_U3CU3Ef__amU24cache2_45(Func_2_t3045216918 * value)
 	{
-		___U3CU3Ef__amU24cache2_43 = value;
-		Il2CppCodeGenWriteBarrier((&___U3CU3Ef__amU24cache2_43), value);
+		___U3CU3Ef__amU24cache2_45 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CU3Ef__amU24cache2_45), value);
 	}
 };
 
@@ -8191,20 +8059,28 @@ public:
 	int32_t ___battleId_5;
 	// System.Int32 CharacterStatus::level
 	int32_t ___level_6;
+	// System.Int32 CharacterStatus::maxHp
+	int32_t ___maxHp_7;
 	// System.Int32 CharacterStatus::hp
-	int32_t ___hp_7;
+	int32_t ___hp_8;
 	// System.Int32 CharacterStatus::attack
-	int32_t ___attack_8;
+	int32_t ___attack_9;
 	// System.Int32 CharacterStatus::defense
-	int32_t ___defense_9;
+	int32_t ___defense_10;
 	// System.Int32 CharacterStatus::speed
-	int32_t ___speed_10;
+	int32_t ___speed_11;
+	// System.Int32 CharacterStatus::statusRank_attack
+	int32_t ___statusRank_attack_12;
+	// System.Int32 CharacterStatus::statusRank_defense
+	int32_t ___statusRank_defense_13;
+	// System.Int32 CharacterStatus::statusRank_speed
+	int32_t ___statusRank_speed_14;
 	// System.Collections.Generic.List`1<System.Int32> CharacterStatus::skills
-	List_1_t128053199 * ___skills_11;
+	List_1_t128053199 * ___skills_15;
 	// System.Int32 CharacterStatus::num_selectedSkill
-	int32_t ___num_selectedSkill_12;
+	int32_t ___num_selectedSkill_16;
 	// System.Boolean CharacterStatus::deathFlag
-	bool ___deathFlag_13;
+	bool ___deathFlag_17;
 
 public:
 	inline static int32_t get_offset_of_name_4() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___name_4)); }
@@ -8232,61 +8108,93 @@ public:
 		___level_6 = value;
 	}
 
-	inline static int32_t get_offset_of_hp_7() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___hp_7)); }
-	inline int32_t get_hp_7() const { return ___hp_7; }
-	inline int32_t* get_address_of_hp_7() { return &___hp_7; }
-	inline void set_hp_7(int32_t value)
+	inline static int32_t get_offset_of_maxHp_7() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___maxHp_7)); }
+	inline int32_t get_maxHp_7() const { return ___maxHp_7; }
+	inline int32_t* get_address_of_maxHp_7() { return &___maxHp_7; }
+	inline void set_maxHp_7(int32_t value)
 	{
-		___hp_7 = value;
+		___maxHp_7 = value;
 	}
 
-	inline static int32_t get_offset_of_attack_8() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___attack_8)); }
-	inline int32_t get_attack_8() const { return ___attack_8; }
-	inline int32_t* get_address_of_attack_8() { return &___attack_8; }
-	inline void set_attack_8(int32_t value)
+	inline static int32_t get_offset_of_hp_8() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___hp_8)); }
+	inline int32_t get_hp_8() const { return ___hp_8; }
+	inline int32_t* get_address_of_hp_8() { return &___hp_8; }
+	inline void set_hp_8(int32_t value)
 	{
-		___attack_8 = value;
+		___hp_8 = value;
 	}
 
-	inline static int32_t get_offset_of_defense_9() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___defense_9)); }
-	inline int32_t get_defense_9() const { return ___defense_9; }
-	inline int32_t* get_address_of_defense_9() { return &___defense_9; }
-	inline void set_defense_9(int32_t value)
+	inline static int32_t get_offset_of_attack_9() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___attack_9)); }
+	inline int32_t get_attack_9() const { return ___attack_9; }
+	inline int32_t* get_address_of_attack_9() { return &___attack_9; }
+	inline void set_attack_9(int32_t value)
 	{
-		___defense_9 = value;
+		___attack_9 = value;
 	}
 
-	inline static int32_t get_offset_of_speed_10() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___speed_10)); }
-	inline int32_t get_speed_10() const { return ___speed_10; }
-	inline int32_t* get_address_of_speed_10() { return &___speed_10; }
-	inline void set_speed_10(int32_t value)
+	inline static int32_t get_offset_of_defense_10() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___defense_10)); }
+	inline int32_t get_defense_10() const { return ___defense_10; }
+	inline int32_t* get_address_of_defense_10() { return &___defense_10; }
+	inline void set_defense_10(int32_t value)
 	{
-		___speed_10 = value;
+		___defense_10 = value;
 	}
 
-	inline static int32_t get_offset_of_skills_11() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___skills_11)); }
-	inline List_1_t128053199 * get_skills_11() const { return ___skills_11; }
-	inline List_1_t128053199 ** get_address_of_skills_11() { return &___skills_11; }
-	inline void set_skills_11(List_1_t128053199 * value)
+	inline static int32_t get_offset_of_speed_11() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___speed_11)); }
+	inline int32_t get_speed_11() const { return ___speed_11; }
+	inline int32_t* get_address_of_speed_11() { return &___speed_11; }
+	inline void set_speed_11(int32_t value)
 	{
-		___skills_11 = value;
-		Il2CppCodeGenWriteBarrier((&___skills_11), value);
+		___speed_11 = value;
 	}
 
-	inline static int32_t get_offset_of_num_selectedSkill_12() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___num_selectedSkill_12)); }
-	inline int32_t get_num_selectedSkill_12() const { return ___num_selectedSkill_12; }
-	inline int32_t* get_address_of_num_selectedSkill_12() { return &___num_selectedSkill_12; }
-	inline void set_num_selectedSkill_12(int32_t value)
+	inline static int32_t get_offset_of_statusRank_attack_12() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___statusRank_attack_12)); }
+	inline int32_t get_statusRank_attack_12() const { return ___statusRank_attack_12; }
+	inline int32_t* get_address_of_statusRank_attack_12() { return &___statusRank_attack_12; }
+	inline void set_statusRank_attack_12(int32_t value)
 	{
-		___num_selectedSkill_12 = value;
+		___statusRank_attack_12 = value;
 	}
 
-	inline static int32_t get_offset_of_deathFlag_13() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___deathFlag_13)); }
-	inline bool get_deathFlag_13() const { return ___deathFlag_13; }
-	inline bool* get_address_of_deathFlag_13() { return &___deathFlag_13; }
-	inline void set_deathFlag_13(bool value)
+	inline static int32_t get_offset_of_statusRank_defense_13() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___statusRank_defense_13)); }
+	inline int32_t get_statusRank_defense_13() const { return ___statusRank_defense_13; }
+	inline int32_t* get_address_of_statusRank_defense_13() { return &___statusRank_defense_13; }
+	inline void set_statusRank_defense_13(int32_t value)
 	{
-		___deathFlag_13 = value;
+		___statusRank_defense_13 = value;
+	}
+
+	inline static int32_t get_offset_of_statusRank_speed_14() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___statusRank_speed_14)); }
+	inline int32_t get_statusRank_speed_14() const { return ___statusRank_speed_14; }
+	inline int32_t* get_address_of_statusRank_speed_14() { return &___statusRank_speed_14; }
+	inline void set_statusRank_speed_14(int32_t value)
+	{
+		___statusRank_speed_14 = value;
+	}
+
+	inline static int32_t get_offset_of_skills_15() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___skills_15)); }
+	inline List_1_t128053199 * get_skills_15() const { return ___skills_15; }
+	inline List_1_t128053199 ** get_address_of_skills_15() { return &___skills_15; }
+	inline void set_skills_15(List_1_t128053199 * value)
+	{
+		___skills_15 = value;
+		Il2CppCodeGenWriteBarrier((&___skills_15), value);
+	}
+
+	inline static int32_t get_offset_of_num_selectedSkill_16() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___num_selectedSkill_16)); }
+	inline int32_t get_num_selectedSkill_16() const { return ___num_selectedSkill_16; }
+	inline int32_t* get_address_of_num_selectedSkill_16() { return &___num_selectedSkill_16; }
+	inline void set_num_selectedSkill_16(int32_t value)
+	{
+		___num_selectedSkill_16 = value;
+	}
+
+	inline static int32_t get_offset_of_deathFlag_17() { return static_cast<int32_t>(offsetof(CharacterStatus_t2166422524, ___deathFlag_17)); }
+	inline bool get_deathFlag_17() const { return ___deathFlag_17; }
+	inline bool* get_address_of_deathFlag_17() { return &___deathFlag_17; }
+	inline void set_deathFlag_17(bool value)
+	{
+		___deathFlag_17 = value;
 	}
 };
 
@@ -12231,8 +12139,6 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_Attack_m4245653054 (BattleManag
 extern "C" IL2CPP_METHOD_ATTR void U3CEnemyActionU3Ec__AnonStorey2__ctor_m2757631318 (U3CEnemyActionU3Ec__AnonStorey2_t1657202313 * __this, const RuntimeMethod* method);
 // System.Int32 UnityEngine.Random::Range(System.Int32,System.Int32)
 extern "C" IL2CPP_METHOD_ATTR int32_t Random_Range_m4054026115 (RuntimeObject * __this /* static, unused */, int32_t p0, int32_t p1, const RuntimeMethod* method);
-// System.String System.String::Concat(System.Object,System.Object)
-extern "C" IL2CPP_METHOD_ATTR String_t* String_Concat_m904156431 (RuntimeObject * __this /* static, unused */, RuntimeObject * p0, RuntimeObject * p1, const RuntimeMethod* method);
 // System.Void System.Action::.ctor(System.Object,System.IntPtr)
 extern "C" IL2CPP_METHOD_ATTR void Action__ctor_m2994342681 (Action_t1264377477 * __this, RuntimeObject * p0, intptr_t p1, const RuntimeMethod* method);
 // System.Collections.IEnumerator BattleManager::DelayMethod(System.Single,System.Action)
@@ -12297,8 +12203,14 @@ extern "C" IL2CPP_METHOD_ATTR void Transform_set_position_m3387557959 (Transform
 extern "C" IL2CPP_METHOD_ATTR void Transform_set_localScale_m3053443106 (Transform_t3600365921 * __this, Vector3_t3722313464  p0, const RuntimeMethod* method);
 // System.Void UnityEngine.ParticleSystem::Play()
 extern "C" IL2CPP_METHOD_ATTR void ParticleSystem_Play_m882713458 (ParticleSystem_t1800779281 * __this, const RuntimeMethod* method);
-// System.Void BattleManager/<HitAnimation>c__AnonStorey5::.ctor()
-extern "C" IL2CPP_METHOD_ATTR void U3CHitAnimationU3Ec__AnonStorey5__ctor_m849707954 (U3CHitAnimationU3Ec__AnonStorey5_t246070209 * __this, const RuntimeMethod* method);
+// System.Void BattleManager::DamageSkill(UnityEngine.GameObject,UnityEngine.GameObject,System.Int32)
+extern "C" IL2CPP_METHOD_ATTR void BattleManager_DamageSkill_m3817667082 (BattleManager_t4022130644 * __this, GameObject_t1113636619 * ___attackMonster0, GameObject_t1113636619 * ___attackedMonster1, int32_t ___no_skill2, const RuntimeMethod* method);
+// System.Void BattleManager::HealSkill(UnityEngine.GameObject,UnityEngine.GameObject,System.Int32)
+extern "C" IL2CPP_METHOD_ATTR void BattleManager_HealSkill_m2042033746 (BattleManager_t4022130644 * __this, GameObject_t1113636619 * ___attackMonster0, GameObject_t1113636619 * ___attackedMonster1, int32_t ___no_skill2, const RuntimeMethod* method);
+// System.Void BattleManager::ChangeSkill(UnityEngine.GameObject,UnityEngine.GameObject,System.Int32)
+extern "C" IL2CPP_METHOD_ATTR void BattleManager_ChangeSkill_m4129388635 (BattleManager_t4022130644 * __this, GameObject_t1113636619 * ___attackMonster0, GameObject_t1113636619 * ___attackedMonster1, int32_t ___no_skill2, const RuntimeMethod* method);
+// System.Void BattleManager/<DamageSkill>c__AnonStorey5::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void U3CDamageSkillU3Ec__AnonStorey5__ctor_m786810855 (U3CDamageSkillU3Ec__AnonStorey5_t102370528 * __this, const RuntimeMethod* method);
 // System.Void BattleManager::DisplayDamageText(UnityEngine.GameObject,System.Int32)
 extern "C" IL2CPP_METHOD_ATTR void BattleManager_DisplayDamageText_m4197033457 (BattleManager_t4022130644 * __this, GameObject_t1113636619 * ___attackedMonster0, int32_t ___damage1, const RuntimeMethod* method);
 // !!0 UnityEngine.GameObject::GetComponent<SliderAnimation>()
@@ -12310,10 +12222,18 @@ inline SliderAnimation_t2941502852 * GameObject_GetComponent_TisSliderAnimation_
 extern "C" IL2CPP_METHOD_ATTR void SliderAnimation_Animation_m2231208536 (SliderAnimation_t2941502852 * __this, int32_t ___originalHp0, int32_t ___currentHp1, float ___time_hitAnimation2, const RuntimeMethod* method);
 // UnityEngine.Coroutine UnityEngine.MonoBehaviour::StartCoroutine(System.String,System.Object)
 extern "C" IL2CPP_METHOD_ATTR Coroutine_t3829159415 * MonoBehaviour_StartCoroutine_m1654577315 (MonoBehaviour_t3962482529 * __this, String_t* p0, RuntimeObject * p1, const RuntimeMethod* method);
+// System.Void BattleManager/<HealSkill>c__AnonStorey6::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void U3CHealSkillU3Ec__AnonStorey6__ctor_m1686869563 (U3CHealSkillU3Ec__AnonStorey6_t4147225704 * __this, const RuntimeMethod* method);
+// System.Void BattleManager::DisplayHealText(UnityEngine.GameObject,System.Int32)
+extern "C" IL2CPP_METHOD_ATTR void BattleManager_DisplayHealText_m1325575413 (BattleManager_t4022130644 * __this, GameObject_t1113636619 * ___attackedMonster0, int32_t ___healAmount1, const RuntimeMethod* method);
+// System.Void BattleManager/<ChangeSkill>c__AnonStorey7::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void U3CChangeSkillU3Ec__AnonStorey7__ctor_m1267151925 (U3CChangeSkillU3Ec__AnonStorey7_t1079478228 * __this, const RuntimeMethod* method);
+// System.Void BattleManager::DisplayChangeText(UnityEngine.GameObject,System.String,System.Boolean)
+extern "C" IL2CPP_METHOD_ATTR void BattleManager_DisplayChangeText_m4082015172 (BattleManager_t4022130644 * __this, GameObject_t1113636619 * ___attackedMonster0, String_t* ___changeStatus1, bool ___isUp2, const RuntimeMethod* method);
 // System.Void BattleManager/<Blink>c__Iterator0::.ctor()
 extern "C" IL2CPP_METHOD_ATTR void U3CBlinkU3Ec__Iterator0__ctor_m3390134852 (U3CBlinkU3Ec__Iterator0_t466598710 * __this, const RuntimeMethod* method);
-// System.Void BattleManager/<JudgeDeath>c__AnonStorey6::.ctor()
-extern "C" IL2CPP_METHOD_ATTR void U3CJudgeDeathU3Ec__AnonStorey6__ctor_m3227271324 (U3CJudgeDeathU3Ec__AnonStorey6_t3788336905 * __this, const RuntimeMethod* method);
+// System.Void BattleManager/<JudgeDeath>c__AnonStorey8::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void U3CJudgeDeathU3Ec__AnonStorey8__ctor_m2458569729 (U3CJudgeDeathU3Ec__AnonStorey8_t2641325833 * __this, const RuntimeMethod* method);
 // !!0 UnityEngine.GameObject::GetComponent<MonsterAnimation>()
 inline MonsterAnimation_t2565820548 * GameObject_GetComponent_TisMonsterAnimation_t2565820548_m2662653647 (GameObject_t1113636619 * __this, const RuntimeMethod* method)
 {
@@ -12338,6 +12258,8 @@ extern "C" IL2CPP_METHOD_ATTR void TMP_Text_set_text_m1216996582 (TMP_Text_t2599
 extern "C" IL2CPP_METHOD_ATTR void Transform_SetParent_m381167889 (Transform_t3600365921 * __this, Transform_t3600365921 * p0, const RuntimeMethod* method);
 // System.String System.Int32::ToString()
 extern "C" IL2CPP_METHOD_ATTR String_t* Int32_ToString_m141394615 (int32_t* __this, const RuntimeMethod* method);
+// System.String System.String::Concat(System.String,System.String)
+extern "C" IL2CPP_METHOD_ATTR String_t* String_Concat_m3937257545 (RuntimeObject * __this /* static, unused */, String_t* p0, String_t* p1, const RuntimeMethod* method);
 // System.Void BattleManager/<DelayMethod>c__Iterator1::.ctor()
 extern "C" IL2CPP_METHOD_ATTR void U3CDelayMethodU3Ec__Iterator1__ctor_m3655161227 (U3CDelayMethodU3Ec__Iterator1_t1075979784 * __this, const RuntimeMethod* method);
 // System.Guid System.Guid::NewGuid()
@@ -12352,10 +12274,10 @@ extern "C" IL2CPP_METHOD_ATTR void Color__ctor_m2943235014 (Color_t2555686324 * 
 extern "C" IL2CPP_METHOD_ATTR void WaitForSeconds__ctor_m2199082655 (WaitForSeconds_t1699091251 * __this, float p0, const RuntimeMethod* method);
 // System.Void System.NotSupportedException::.ctor()
 extern "C" IL2CPP_METHOD_ATTR void NotSupportedException__ctor_m2730133172 (NotSupportedException_t1314879016 * __this, const RuntimeMethod* method);
-// System.Void System.Action::Invoke()
-extern "C" IL2CPP_METHOD_ATTR void Action_Invoke_m937035532 (Action_t1264377477 * __this, const RuntimeMethod* method);
 // System.Void BattleManager::JudgeDeath(UnityEngine.GameObject,UnityEngine.GameObject,System.Int32)
 extern "C" IL2CPP_METHOD_ATTR void BattleManager_JudgeDeath_m2984070186 (BattleManager_t4022130644 * __this, GameObject_t1113636619 * ___attackMonster0, GameObject_t1113636619 * ___attackedMonster1, int32_t ___hp2, const RuntimeMethod* method);
+// System.Void System.Action::Invoke()
+extern "C" IL2CPP_METHOD_ATTR void Action_Invoke_m937035532 (Action_t1264377477 * __this, const RuntimeMethod* method);
 // System.Void BattleManager::AttackAnimation(UnityEngine.GameObject,UnityEngine.GameObject)
 extern "C" IL2CPP_METHOD_ATTR void BattleManager_AttackAnimation_m3516900703 (BattleManager_t4022130644 * __this, GameObject_t1113636619 * ___attackMonster0, GameObject_t1113636619 * ___attackedMonster1, const RuntimeMethod* method);
 // System.Void System.Collections.Generic.List`1<System.Int32>::.ctor()
@@ -12396,16 +12318,6 @@ extern "C" IL2CPP_METHOD_ATTR void iTween_ValueTo_m2472551293 (RuntimeObject * _
 extern "C" IL2CPP_METHOD_ATTR RuntimeObject* MonsterAnimation_DelayMethod_m2975060154 (MonsterAnimation_t2565820548 * __this, float ___waitTime0, Action_t1264377477 * ___action1, const RuntimeMethod* method);
 // System.Void MonsterAnimation/<DelayMethod>c__Iterator0::.ctor()
 extern "C" IL2CPP_METHOD_ATTR void U3CDelayMethodU3Ec__Iterator0__ctor_m1430877418 (U3CDelayMethodU3Ec__Iterator0_t1042502033 * __this, const RuntimeMethod* method);
-// System.Void System.Collections.Generic.List`1<MonsterData/Sheet>::.ctor()
-inline void List_1__ctor_m2887460832 (List_1_t2799822858 * __this, const RuntimeMethod* method)
-{
-	((  void (*) (List_1_t2799822858 *, const RuntimeMethod*))List_1__ctor_m2321703786_gshared)(__this, method);
-}
-// System.Void System.Collections.Generic.List`1<MonsterData/Param>::.ctor()
-inline void List_1__ctor_m1352397184 (List_1_t938867609 * __this, const RuntimeMethod* method)
-{
-	((  void (*) (List_1_t938867609 *, const RuntimeMethod*))List_1__ctor_m2321703786_gshared)(__this, method);
-}
 // System.Void System.Collections.Generic.List`1<MyPartyData/Sheet>::.ctor()
 inline void List_1__ctor_m1447625395 (List_1_t13627024 * __this, const RuntimeMethod* method)
 {
@@ -12547,26 +12459,26 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager__ctor_m152399991 (BattleManager
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		__this->set_time_break_27((0.5f));
-		__this->set_time_stepFront_28((0.12f));
-		__this->set_time_stepBack_29((0.12f));
-		__this->set_time_attackAnimation_30((1.0f));
-		__this->set_time_hitAnimation_31((1.0f));
-		__this->set_time_deathAnimation_32((1.0f));
-		__this->set_time_frame_33((0.2f));
-		__this->set_num_frame_34(5);
-		__this->set_speed_attackAnimation_35((1.0f));
-		__this->set_diff_step_36((0.2f));
-		__this->set_zPos_attackEffect_37((-3.0f));
+		__this->set_time_break_29((0.5f));
+		__this->set_time_stepFront_30((0.12f));
+		__this->set_time_stepBack_31((0.12f));
+		__this->set_time_attackAnimation_32((1.0f));
+		__this->set_time_hitAnimation_33((1.0f));
+		__this->set_time_deathAnimation_34((1.0f));
+		__this->set_time_frame_35((0.2f));
+		__this->set_num_frame_36(5);
+		__this->set_speed_attackAnimation_37((1.0f));
+		__this->set_diff_step_38((0.2f));
+		__this->set_zPos_attackEffect_39((-3.0f));
 		List_1_t2585711361 * L_0 = (List_1_t2585711361 *)il2cpp_codegen_object_new(List_1_t2585711361_il2cpp_TypeInfo_var);
 		List_1__ctor_m1424466557(L_0, /*hidden argument*/List_1__ctor_m1424466557_RuntimeMethod_var);
-		__this->set_monsterOrderList_38(L_0);
+		__this->set_monsterOrderList_40(L_0);
 		List_1_t2585711361 * L_1 = (List_1_t2585711361 *)il2cpp_codegen_object_new(List_1_t2585711361_il2cpp_TypeInfo_var);
 		List_1__ctor_m1424466557(L_1, /*hidden argument*/List_1__ctor_m1424466557_RuntimeMethod_var);
-		__this->set_myPartyList_39(L_1);
+		__this->set_myPartyList_41(L_1);
 		List_1_t2585711361 * L_2 = (List_1_t2585711361 *)il2cpp_codegen_object_new(List_1_t2585711361_il2cpp_TypeInfo_var);
 		List_1__ctor_m1424466557(L_2, /*hidden argument*/List_1__ctor_m1424466557_RuntimeMethod_var);
-		__this->set_enemyPartyList_40(L_2);
+		__this->set_enemyPartyList_42(L_2);
 		MonoBehaviour__ctor_m1579109191(__this, /*hidden argument*/NULL);
 		return;
 	}
@@ -12578,9 +12490,9 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_Start_m3454889671 (BattleManage
 		BattleManager_InputMonsterList_m2240497511(__this, /*hidden argument*/NULL);
 		BattleManager_GetMyPartyData_m1680970290(__this, /*hidden argument*/NULL);
 		BattleManager_GetEnemyPartyData_m1631919152(__this, /*hidden argument*/NULL);
-		List_1_t2585711361 * L_0 = __this->get_myPartyList_39();
+		List_1_t2585711361 * L_0 = __this->get_myPartyList_41();
 		BattleManager_InitializeSlider_m2470088846(__this, L_0, /*hidden argument*/NULL);
-		List_1_t2585711361 * L_1 = __this->get_enemyPartyList_40();
+		List_1_t2585711361 * L_1 = __this->get_enemyPartyList_42();
 		BattleManager_InitializeSlider_m2470088846(__this, L_1, /*hidden argument*/NULL);
 		BattleManager_SortMonsterOrder_m3881760627(__this, /*hidden argument*/NULL);
 		BattleManager_DebugMonsterOrderList_m3975567990(__this, /*hidden argument*/NULL);
@@ -12617,11 +12529,11 @@ IL_0007:
 		NullCheck(L_3);
 		GameObject_t1113636619 * L_4 = Component_get_gameObject_m442555142(L_3, /*hidden argument*/NULL);
 		V_1 = L_4;
-		List_1_t2585711361 * L_5 = __this->get_monsterOrderList_38();
+		List_1_t2585711361 * L_5 = __this->get_monsterOrderList_40();
 		GameObject_t1113636619 * L_6 = V_1;
 		NullCheck(L_5);
 		List_1_Add_m2765963565(L_5, L_6, /*hidden argument*/List_1_Add_m2765963565_RuntimeMethod_var);
-		List_1_t2585711361 * L_7 = __this->get_myPartyList_39();
+		List_1_t2585711361 * L_7 = __this->get_myPartyList_41();
 		GameObject_t1113636619 * L_8 = V_1;
 		NullCheck(L_7);
 		List_1_Add_m2765963565(L_7, L_8, /*hidden argument*/List_1_Add_m2765963565_RuntimeMethod_var);
@@ -12653,11 +12565,11 @@ IL_0048:
 		NullCheck(L_14);
 		GameObject_t1113636619 * L_15 = Component_get_gameObject_m442555142(L_14, /*hidden argument*/NULL);
 		V_3 = L_15;
-		List_1_t2585711361 * L_16 = __this->get_monsterOrderList_38();
+		List_1_t2585711361 * L_16 = __this->get_monsterOrderList_40();
 		GameObject_t1113636619 * L_17 = V_3;
 		NullCheck(L_16);
 		List_1_Add_m2765963565(L_16, L_17, /*hidden argument*/List_1_Add_m2765963565_RuntimeMethod_var);
-		List_1_t2585711361 * L_18 = __this->get_enemyPartyList_40();
+		List_1_t2585711361 * L_18 = __this->get_enemyPartyList_42();
 		GameObject_t1113636619 * L_19 = V_3;
 		NullCheck(L_18);
 		List_1_Add_m2765963565(L_18, L_19, /*hidden argument*/List_1_Add_m2765963565_RuntimeMethod_var);
@@ -12714,7 +12626,7 @@ IL_0007:
 		NullCheck(L_7);
 		CharacterStatus_t2166422524 * L_8 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_7, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_8);
-		int32_t L_9 = L_8->get_hp_7();
+		int32_t L_9 = L_8->get_hp_8();
 		V_3 = L_9;
 		GameObject_t1113636619 * L_10 = V_2;
 		NullCheck(L_10);
@@ -12759,8 +12671,8 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_SortMonsterOrder_m3881760627 (B
 	List_1_t2585711361 * G_B2_0 = NULL;
 	List_1_t2585711361 * G_B1_0 = NULL;
 	{
-		List_1_t2585711361 * L_0 = __this->get_monsterOrderList_38();
-		Comparison_1_t888567798 * L_1 = ((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->get_U3CU3Ef__amU24cache0_41();
+		List_1_t2585711361 * L_0 = __this->get_monsterOrderList_40();
+		Comparison_1_t888567798 * L_1 = ((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->get_U3CU3Ef__amU24cache0_43();
 		G_B1_0 = L_0;
 		if (L_1)
 		{
@@ -12772,13 +12684,13 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_SortMonsterOrder_m3881760627 (B
 		intptr_t L_2 = (intptr_t)BattleManager_U3CSortMonsterOrderU3Em__0_m24542191_RuntimeMethod_var;
 		Comparison_1_t888567798 * L_3 = (Comparison_1_t888567798 *)il2cpp_codegen_object_new(Comparison_1_t888567798_il2cpp_TypeInfo_var);
 		Comparison_1__ctor_m1173778154(L_3, NULL, (intptr_t)L_2, /*hidden argument*/Comparison_1__ctor_m1173778154_RuntimeMethod_var);
-		((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->set_U3CU3Ef__amU24cache0_41(L_3);
+		((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->set_U3CU3Ef__amU24cache0_43(L_3);
 		G_B2_0 = G_B1_0;
 	}
 
 IL_001e:
 	{
-		Comparison_1_t888567798 * L_4 = ((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->get_U3CU3Ef__amU24cache0_41();
+		Comparison_1_t888567798 * L_4 = ((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->get_U3CU3Ef__amU24cache0_43();
 		NullCheck(G_B2_0);
 		List_1_Sort_m2322041901(G_B2_0, L_4, /*hidden argument*/List_1_Sort_m2322041901_RuntimeMethod_var);
 		return;
@@ -12810,7 +12722,7 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_DebugMonsterOrderList_m39755679
 
 IL_0011:
 	{
-		List_1_t2585711361 * L_0 = __this->get_monsterOrderList_38();
+		List_1_t2585711361 * L_0 = __this->get_monsterOrderList_40();
 		int32_t L_1 = V_0;
 		NullCheck(L_0);
 		GameObject_t1113636619 * L_2 = List_1_get_Item_m3743125852(L_0, L_1, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
@@ -12819,7 +12731,7 @@ IL_0011:
 		NullCheck(L_3);
 		String_t* L_4 = L_3->get_name_4();
 		V_1 = L_4;
-		List_1_t2585711361 * L_5 = __this->get_monsterOrderList_38();
+		List_1_t2585711361 * L_5 = __this->get_monsterOrderList_40();
 		int32_t L_6 = V_0;
 		NullCheck(L_5);
 		GameObject_t1113636619 * L_7 = List_1_get_Item_m3743125852(L_5, L_6, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
@@ -12828,7 +12740,7 @@ IL_0011:
 		NullCheck(L_8);
 		int32_t L_9 = L_8->get_battleId_5();
 		V_2 = L_9;
-		List_1_t2585711361 * L_10 = __this->get_monsterOrderList_38();
+		List_1_t2585711361 * L_10 = __this->get_monsterOrderList_40();
 		int32_t L_11 = V_0;
 		NullCheck(L_10);
 		GameObject_t1113636619 * L_12 = List_1_get_Item_m3743125852(L_10, L_11, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
@@ -12837,41 +12749,41 @@ IL_0011:
 		NullCheck(L_13);
 		int32_t L_14 = L_13->get_level_6();
 		V_3 = L_14;
-		List_1_t2585711361 * L_15 = __this->get_monsterOrderList_38();
+		List_1_t2585711361 * L_15 = __this->get_monsterOrderList_40();
 		int32_t L_16 = V_0;
 		NullCheck(L_15);
 		GameObject_t1113636619 * L_17 = List_1_get_Item_m3743125852(L_15, L_16, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
 		NullCheck(L_17);
 		CharacterStatus_t2166422524 * L_18 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_17, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_18);
-		int32_t L_19 = L_18->get_hp_7();
+		int32_t L_19 = L_18->get_hp_8();
 		V_4 = L_19;
-		List_1_t2585711361 * L_20 = __this->get_monsterOrderList_38();
+		List_1_t2585711361 * L_20 = __this->get_monsterOrderList_40();
 		int32_t L_21 = V_0;
 		NullCheck(L_20);
 		GameObject_t1113636619 * L_22 = List_1_get_Item_m3743125852(L_20, L_21, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
 		NullCheck(L_22);
 		CharacterStatus_t2166422524 * L_23 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_22, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_23);
-		int32_t L_24 = L_23->get_attack_8();
+		int32_t L_24 = L_23->get_attack_9();
 		V_5 = L_24;
-		List_1_t2585711361 * L_25 = __this->get_monsterOrderList_38();
+		List_1_t2585711361 * L_25 = __this->get_monsterOrderList_40();
 		int32_t L_26 = V_0;
 		NullCheck(L_25);
 		GameObject_t1113636619 * L_27 = List_1_get_Item_m3743125852(L_25, L_26, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
 		NullCheck(L_27);
 		CharacterStatus_t2166422524 * L_28 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_27, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_28);
-		int32_t L_29 = L_28->get_defense_9();
+		int32_t L_29 = L_28->get_defense_10();
 		V_6 = L_29;
-		List_1_t2585711361 * L_30 = __this->get_monsterOrderList_38();
+		List_1_t2585711361 * L_30 = __this->get_monsterOrderList_40();
 		int32_t L_31 = V_0;
 		NullCheck(L_30);
 		GameObject_t1113636619 * L_32 = List_1_get_Item_m3743125852(L_30, L_31, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
 		NullCheck(L_32);
 		CharacterStatus_t2166422524 * L_33 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_32, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_33);
-		int32_t L_34 = L_33->get_speed_10();
+		int32_t L_34 = L_33->get_speed_11();
 		V_7 = L_34;
 		int32_t L_35 = V_0;
 		V_0 = ((int32_t)il2cpp_codegen_add((int32_t)L_35, (int32_t)1));
@@ -12880,7 +12792,7 @@ IL_0011:
 IL_00ba:
 	{
 		int32_t L_36 = V_0;
-		List_1_t2585711361 * L_37 = __this->get_monsterOrderList_38();
+		List_1_t2585711361 * L_37 = __this->get_monsterOrderList_40();
 		NullCheck(L_37);
 		int32_t L_38 = List_1_get_Count_m2812834599(L_37, /*hidden argument*/List_1_get_Count_m2812834599_RuntimeMethod_var);
 		if ((((int32_t)L_36) < ((int32_t)L_38)))
@@ -12922,7 +12834,7 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_GetMyPartyData_m1680970290 (Bat
 
 IL_0023:
 	{
-		List_1_t2585711361 * L_5 = __this->get_myPartyList_39();
+		List_1_t2585711361 * L_5 = __this->get_myPartyList_41();
 		int32_t L_6 = V_1;
 		NullCheck(L_5);
 		GameObject_t1113636619 * L_7 = List_1_get_Item_m3743125852(L_5, L_6, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
@@ -12993,7 +12905,7 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_GetEnemyPartyData_m1631919152 (
 
 IL_0023:
 	{
-		List_1_t2585711361 * L_5 = __this->get_enemyPartyList_40();
+		List_1_t2585711361 * L_5 = __this->get_enemyPartyList_42();
 		int32_t L_6 = V_1;
 		NullCheck(L_5);
 		GameObject_t1113636619 * L_7 = List_1_get_Item_m3743125852(L_5, L_6, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
@@ -13172,7 +13084,7 @@ IL_011b:
 		NullCheck(L_57);
 		CharacterStatus_t2166422524 * L_58 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_57, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_58);
-		List_1_t128053199 * L_59 = L_58->get_skills_11();
+		List_1_t128053199 * L_59 = L_58->get_skills_15();
 		int32_t L_60 = V_0;
 		NullCheck(L_59);
 		List_1_set_Item_m2256214292(L_59, 0, L_60, /*hidden argument*/List_1_set_Item_m2256214292_RuntimeMethod_var);
@@ -13180,7 +13092,7 @@ IL_011b:
 		NullCheck(L_61);
 		CharacterStatus_t2166422524 * L_62 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_61, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_62);
-		List_1_t128053199 * L_63 = L_62->get_skills_11();
+		List_1_t128053199 * L_63 = L_62->get_skills_15();
 		int32_t L_64 = V_1;
 		NullCheck(L_63);
 		List_1_set_Item_m2256214292(L_63, 1, L_64, /*hidden argument*/List_1_set_Item_m2256214292_RuntimeMethod_var);
@@ -13188,7 +13100,7 @@ IL_011b:
 		NullCheck(L_65);
 		CharacterStatus_t2166422524 * L_66 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_65, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_66);
-		List_1_t128053199 * L_67 = L_66->get_skills_11();
+		List_1_t128053199 * L_67 = L_66->get_skills_15();
 		int32_t L_68 = V_2;
 		NullCheck(L_67);
 		List_1_set_Item_m2256214292(L_67, 2, L_68, /*hidden argument*/List_1_set_Item_m2256214292_RuntimeMethod_var);
@@ -13196,7 +13108,7 @@ IL_011b:
 		NullCheck(L_69);
 		CharacterStatus_t2166422524 * L_70 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_69, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_70);
-		List_1_t128053199 * L_71 = L_70->get_skills_11();
+		List_1_t128053199 * L_71 = L_70->get_skills_15();
 		int32_t L_72 = V_3;
 		NullCheck(L_71);
 		List_1_set_Item_m2256214292(L_71, 3, L_72, /*hidden argument*/List_1_set_Item_m2256214292_RuntimeMethod_var);
@@ -13254,7 +13166,7 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_GetStatus_m1506710924 (BattleMa
 		NullCheck(L_17);
 		Param_t678613560 * L_19 = List_1_get_Item_m3050265966(L_17, ((int32_t)il2cpp_codegen_subtract((int32_t)L_18, (int32_t)1)), /*hidden argument*/List_1_get_Item_m3050265966_RuntimeMethod_var);
 		NullCheck(L_19);
-		int32_t L_20 = L_19->get_Defence_4();
+		int32_t L_20 = L_19->get_Defense_4();
 		V_2 = L_20;
 		BaseStatsData_t1917765109 * L_21 = __this->get_baseStatsData_4();
 		NullCheck(L_21);
@@ -13282,31 +13194,39 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_GetStatus_m1506710924 (BattleMa
 		int32_t L_34 = ___level2;
 		int32_t L_35 = BattleManager_GetActualValue_m918343710(__this, L_33, L_34, (bool)1, /*hidden argument*/NULL);
 		NullCheck(L_32);
-		L_32->set_hp_7(L_35);
+		L_32->set_maxHp_7(L_35);
 		GameObject_t1113636619 * L_36 = ___monster0;
 		NullCheck(L_36);
 		CharacterStatus_t2166422524 * L_37 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_36, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
-		int32_t L_38 = V_1;
+		int32_t L_38 = V_0;
 		int32_t L_39 = ___level2;
-		int32_t L_40 = BattleManager_GetActualValue_m918343710(__this, L_38, L_39, (bool)0, /*hidden argument*/NULL);
+		int32_t L_40 = BattleManager_GetActualValue_m918343710(__this, L_38, L_39, (bool)1, /*hidden argument*/NULL);
 		NullCheck(L_37);
-		L_37->set_attack_8(L_40);
+		L_37->set_hp_8(L_40);
 		GameObject_t1113636619 * L_41 = ___monster0;
 		NullCheck(L_41);
 		CharacterStatus_t2166422524 * L_42 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_41, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
-		int32_t L_43 = V_2;
+		int32_t L_43 = V_1;
 		int32_t L_44 = ___level2;
 		int32_t L_45 = BattleManager_GetActualValue_m918343710(__this, L_43, L_44, (bool)0, /*hidden argument*/NULL);
 		NullCheck(L_42);
-		L_42->set_defense_9(L_45);
+		L_42->set_attack_9(L_45);
 		GameObject_t1113636619 * L_46 = ___monster0;
 		NullCheck(L_46);
 		CharacterStatus_t2166422524 * L_47 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_46, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
-		int32_t L_48 = V_3;
+		int32_t L_48 = V_2;
 		int32_t L_49 = ___level2;
 		int32_t L_50 = BattleManager_GetActualValue_m918343710(__this, L_48, L_49, (bool)0, /*hidden argument*/NULL);
 		NullCheck(L_47);
-		L_47->set_speed_10(L_50);
+		L_47->set_defense_10(L_50);
+		GameObject_t1113636619 * L_51 = ___monster0;
+		NullCheck(L_51);
+		CharacterStatus_t2166422524 * L_52 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_51, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
+		int32_t L_53 = V_3;
+		int32_t L_54 = ___level2;
+		int32_t L_55 = BattleManager_GetActualValue_m918343710(__this, L_53, L_54, (bool)0, /*hidden argument*/NULL);
+		NullCheck(L_52);
+		L_52->set_speed_11(L_55);
 		return;
 	}
 }
@@ -13360,24 +13280,24 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_CheckNextAction_m2974562959 (Ba
 	GameObject_t1113636619 * V_0 = NULL;
 	int32_t V_1 = 0;
 	{
-		__this->set_counter_checkNextAction_21(0);
-		int32_t L_0 = __this->get_actionCount_26();
-		__this->set_actionCount_26(((int32_t)il2cpp_codegen_add((int32_t)L_0, (int32_t)1)));
-		int32_t L_1 = __this->get_actionCount_26();
+		__this->set_counter_checkNextAction_23(0);
+		int32_t L_0 = __this->get_actionCount_28();
+		__this->set_actionCount_28(((int32_t)il2cpp_codegen_add((int32_t)L_0, (int32_t)1)));
+		int32_t L_1 = __this->get_actionCount_28();
 		if ((((int32_t)L_1) < ((int32_t)((int32_t)11))))
 		{
 			goto IL_002f;
 		}
 	}
 	{
-		__this->set_actionCount_26(1);
+		__this->set_actionCount_28(1);
 		BattleManager_SortMonsterOrder_m3881760627(__this, /*hidden argument*/NULL);
 	}
 
 IL_002f:
 	{
-		List_1_t2585711361 * L_2 = __this->get_monsterOrderList_38();
-		int32_t L_3 = __this->get_actionCount_26();
+		List_1_t2585711361 * L_2 = __this->get_monsterOrderList_40();
+		int32_t L_3 = __this->get_actionCount_28();
 		NullCheck(L_2);
 		GameObject_t1113636619 * L_4 = List_1_get_Item_m3743125852(L_2, ((int32_t)il2cpp_codegen_subtract((int32_t)L_3, (int32_t)1)), /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
 		V_0 = L_4;
@@ -13385,15 +13305,15 @@ IL_002f:
 		NullCheck(L_5);
 		CharacterStatus_t2166422524 * L_6 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_5, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_6);
-		bool L_7 = L_6->get_deathFlag_13();
+		bool L_7 = L_6->get_deathFlag_17();
 		if (L_7)
 		{
 			goto IL_008e;
 		}
 	}
 	{
-		List_1_t2585711361 * L_8 = __this->get_monsterOrderList_38();
-		int32_t L_9 = __this->get_actionCount_26();
+		List_1_t2585711361 * L_8 = __this->get_monsterOrderList_40();
+		int32_t L_9 = __this->get_actionCount_28();
 		NullCheck(L_8);
 		GameObject_t1113636619 * L_10 = List_1_get_Item_m3743125852(L_8, ((int32_t)il2cpp_codegen_subtract((int32_t)L_9, (int32_t)1)), /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
 		NullCheck(L_10);
@@ -13446,8 +13366,8 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_AllyAction_m1509047675 (BattleM
 		GameObject_t1113636619 * L_0 = __this->get_commandArea_10();
 		NullCheck(L_0);
 		GameObject_SetActive_m796801857(L_0, (bool)1, /*hidden argument*/NULL);
-		List_1_t2585711361 * L_1 = __this->get_monsterOrderList_38();
-		int32_t L_2 = __this->get_actionCount_26();
+		List_1_t2585711361 * L_1 = __this->get_monsterOrderList_40();
+		int32_t L_2 = __this->get_actionCount_28();
 		NullCheck(L_1);
 		GameObject_t1113636619 * L_3 = List_1_get_Item_m3743125852(L_1, ((int32_t)il2cpp_codegen_subtract((int32_t)L_2, (int32_t)1)), /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
 		NullCheck(L_3);
@@ -13495,7 +13415,7 @@ IL_0007:
 		NullCheck(L_5);
 		CharacterStatus_t2166422524 * L_6 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_5, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_6);
-		List_1_t128053199 * L_7 = L_6->get_skills_11();
+		List_1_t128053199 * L_7 = L_6->get_skills_15();
 		int32_t L_8 = V_0;
 		NullCheck(L_7);
 		int32_t L_9 = List_1_get_Item_m888956288(L_7, L_8, /*hidden argument*/List_1_get_Item_m888956288_RuntimeMethod_var);
@@ -13715,14 +13635,15 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_AllyAttack_m1822061981 (BattleM
 	List_1_t2585711361 * V_5 = NULL;
 	String_t* V_6 = NULL;
 	int32_t V_7 = 0;
+	String_t* V_8 = NULL;
 	List_1_t2585711361 * G_B18_0 = NULL;
 	List_1_t2585711361 * G_B17_0 = NULL;
 	{
 		GameObject_t1113636619 * L_0 = __this->get_commandArea_10();
 		NullCheck(L_0);
 		GameObject_SetActive_m796801857(L_0, (bool)0, /*hidden argument*/NULL);
-		List_1_t2585711361 * L_1 = __this->get_monsterOrderList_38();
-		int32_t L_2 = __this->get_actionCount_26();
+		List_1_t2585711361 * L_1 = __this->get_monsterOrderList_40();
+		int32_t L_2 = __this->get_actionCount_28();
 		NullCheck(L_1);
 		GameObject_t1113636619 * L_3 = List_1_get_Item_m3743125852(L_1, ((int32_t)il2cpp_codegen_subtract((int32_t)L_2, (int32_t)1)), /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
 		NullCheck(L_3);
@@ -13733,12 +13654,12 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_AllyAttack_m1822061981 (BattleM
 		CharacterStatus_t2166422524 * L_6 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_5, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		int32_t L_7 = ___num_skill0;
 		NullCheck(L_6);
-		L_6->set_num_selectedSkill_12(L_7);
+		L_6->set_num_selectedSkill_16(L_7);
 		GameObject_t1113636619 * L_8 = V_0;
 		NullCheck(L_8);
 		CharacterStatus_t2166422524 * L_9 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_8, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_9);
-		List_1_t128053199 * L_10 = L_9->get_skills_11();
+		List_1_t128053199 * L_10 = L_9->get_skills_15();
 		int32_t L_11 = ___num_skill0;
 		NullCheck(L_10);
 		int32_t L_12 = List_1_get_Item_m888956288(L_10, ((int32_t)il2cpp_codegen_subtract((int32_t)L_11, (int32_t)1)), /*hidden argument*/List_1_get_Item_m888956288_RuntimeMethod_var);
@@ -13814,7 +13735,7 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_AllyAttack_m1822061981 (BattleM
 IL_00d1:
 	{
 		V_4 = 1;
-		List_1_t2585711361 * L_32 = __this->get_enemyPartyList_40();
+		List_1_t2585711361 * L_32 = __this->get_enemyPartyList_42();
 		V_2 = L_32;
 		goto IL_011c;
 	}
@@ -13822,7 +13743,7 @@ IL_00d1:
 IL_00e0:
 	{
 		V_4 = 5;
-		List_1_t2585711361 * L_33 = __this->get_enemyPartyList_40();
+		List_1_t2585711361 * L_33 = __this->get_enemyPartyList_42();
 		V_2 = L_33;
 		goto IL_011c;
 	}
@@ -13830,7 +13751,7 @@ IL_00e0:
 IL_00ef:
 	{
 		V_4 = 1;
-		List_1_t2585711361 * L_34 = __this->get_myPartyList_39();
+		List_1_t2585711361 * L_34 = __this->get_myPartyList_41();
 		V_2 = L_34;
 		goto IL_011c;
 	}
@@ -13838,7 +13759,7 @@ IL_00ef:
 IL_00fe:
 	{
 		V_4 = 5;
-		List_1_t2585711361 * L_35 = __this->get_myPartyList_39();
+		List_1_t2585711361 * L_35 = __this->get_myPartyList_41();
 		V_2 = L_35;
 		goto IL_011c;
 	}
@@ -13846,7 +13767,7 @@ IL_00fe:
 IL_010d:
 	{
 		V_4 = 1;
-		List_1_t2585711361 * L_36 = __this->get_enemyPartyList_40();
+		List_1_t2585711361 * L_36 = __this->get_enemyPartyList_42();
 		V_2 = L_36;
 		goto IL_011c;
 	}
@@ -13866,7 +13787,7 @@ IL_0124:
 		NullCheck(L_39);
 		CharacterStatus_t2166422524 * L_40 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_39, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_40);
-		bool L_41 = L_40->get_deathFlag_13();
+		bool L_41 = L_40->get_deathFlag_17();
 		if (L_41)
 		{
 			goto IL_0149;
@@ -13901,7 +13822,7 @@ IL_014f:
 	}
 	{
 		List_1_t2585711361 * L_50 = V_3;
-		Func_2_t3045216918 * L_51 = ((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->get_U3CU3Ef__amU24cache1_42();
+		Func_2_t3045216918 * L_51 = ((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->get_U3CU3Ef__amU24cache1_44();
 		G_B17_0 = L_50;
 		if (L_51)
 		{
@@ -13913,71 +13834,187 @@ IL_014f:
 		intptr_t L_52 = (intptr_t)BattleManager_U3CAllyAttackU3Em__1_m2761715413_RuntimeMethod_var;
 		Func_2_t3045216918 * L_53 = (Func_2_t3045216918 *)il2cpp_codegen_object_new(Func_2_t3045216918_il2cpp_TypeInfo_var);
 		Func_2__ctor_m4230906135(L_53, NULL, (intptr_t)L_52, /*hidden argument*/Func_2__ctor_m4230906135_RuntimeMethod_var);
-		((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->set_U3CU3Ef__amU24cache1_42(L_53);
+		((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->set_U3CU3Ef__amU24cache1_44(L_53);
 		G_B18_0 = G_B17_0;
 	}
 
 IL_0175:
 	{
-		Func_2_t3045216918 * L_54 = ((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->get_U3CU3Ef__amU24cache1_42();
+		Func_2_t3045216918 * L_54 = ((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->get_U3CU3Ef__amU24cache1_44();
 		RuntimeObject* L_55 = Enumerable_OrderBy_TisGameObject_t1113636619_TisGuid_t_m1752567050(NULL /*static, unused*/, G_B18_0, L_54, /*hidden argument*/Enumerable_OrderBy_TisGameObject_t1113636619_TisGuid_t_m1752567050_RuntimeMethod_var);
 		List_1_t2585711361 * L_56 = Enumerable_ToList_TisGameObject_t1113636619_m3189537243(NULL /*static, unused*/, L_55, /*hidden argument*/Enumerable_ToList_TisGameObject_t1113636619_m3189537243_RuntimeMethod_var);
 		V_3 = L_56;
 		int32_t L_57 = V_4;
 		if ((!(((uint32_t)L_57) == ((uint32_t)1))))
 		{
-			goto IL_01d1;
+			goto IL_02a3;
 		}
 	}
 	{
-		__this->set_count_targetMonster_22(1);
-		int32_t L_58 = __this->get_targetMonsterId_enemy_25();
-		if (L_58)
-		{
-			goto IL_01b2;
-		}
-	}
-	{
-		List_1_t2585711361 * L_59 = V_5;
-		List_1_t2585711361 * L_60 = V_3;
-		NullCheck(L_60);
-		GameObject_t1113636619 * L_61 = List_1_get_Item_m3743125852(L_60, 0, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
+		__this->set_count_targetMonster_24(1);
+		SkillData_t2800605269 * L_58 = __this->get_skillData_7();
+		NullCheck(L_58);
+		List_1_t3144494484 * L_59 = L_58->get_sheets_4();
 		NullCheck(L_59);
-		List_1_Add_m2765963565(L_59, L_61, /*hidden argument*/List_1_Add_m2765963565_RuntimeMethod_var);
-		goto IL_01cc;
-	}
-
-IL_01b2:
-	{
-		List_1_t2585711361 * L_62 = V_5;
-		List_1_t2585711361 * L_63 = __this->get_enemyPartyList_40();
-		int32_t L_64 = __this->get_targetMonsterId_enemy_25();
+		Sheet_t1672419742 * L_60 = List_1_get_Item_m2244599752(L_59, 0, /*hidden argument*/List_1_get_Item_m2244599752_RuntimeMethod_var);
+		NullCheck(L_60);
+		List_1_t2959069203 * L_61 = L_60->get_list_1();
+		int32_t L_62 = V_1;
+		NullCheck(L_61);
+		Param_t1486994461 * L_63 = List_1_get_Item_m3628436273(L_61, ((int32_t)il2cpp_codegen_subtract((int32_t)L_62, (int32_t)1)), /*hidden argument*/List_1_get_Item_m3628436273_RuntimeMethod_var);
 		NullCheck(L_63);
-		GameObject_t1113636619 * L_65 = List_1_get_Item_m3743125852(L_63, ((int32_t)il2cpp_codegen_subtract((int32_t)L_64, (int32_t)6)), /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
-		NullCheck(L_62);
-		List_1_Add_m2765963565(L_62, L_65, /*hidden argument*/List_1_Add_m2765963565_RuntimeMethod_var);
+		String_t* L_64 = L_63->get_Target_3();
+		V_8 = L_64;
+		String_t* L_65 = V_8;
+		if (!L_65)
+		{
+			goto IL_0261;
+		}
+	}
+	{
+		String_t* L_66 = V_8;
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		bool L_67 = String_op_Equality_m920492651(NULL /*static, unused*/, L_66, _stringLiteral2077336076, /*hidden argument*/NULL);
+		if (L_67)
+		{
+			goto IL_01e7;
+		}
+	}
+	{
+		String_t* L_68 = V_8;
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		bool L_69 = String_op_Equality_m920492651(NULL /*static, unused*/, L_68, _stringLiteral3825885973, /*hidden argument*/NULL);
+		if (L_69)
+		{
+			goto IL_0224;
+		}
+	}
+	{
+		goto IL_0261;
 	}
 
-IL_01cc:
+IL_01e7:
 	{
-		goto IL_01e0;
+		int32_t L_70 = __this->get_targetMonsterId_enemy_27();
+		if (L_70)
+		{
+			goto IL_0205;
+		}
+	}
+	{
+		List_1_t2585711361 * L_71 = V_5;
+		List_1_t2585711361 * L_72 = V_3;
+		NullCheck(L_72);
+		GameObject_t1113636619 * L_73 = List_1_get_Item_m3743125852(L_72, 0, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
+		NullCheck(L_71);
+		List_1_Add_m2765963565(L_71, L_73, /*hidden argument*/List_1_Add_m2765963565_RuntimeMethod_var);
+		goto IL_021f;
 	}
 
-IL_01d1:
+IL_0205:
 	{
-		List_1_t2585711361 * L_66 = V_3;
-		NullCheck(L_66);
-		int32_t L_67 = List_1_get_Count_m2812834599(L_66, /*hidden argument*/List_1_get_Count_m2812834599_RuntimeMethod_var);
-		__this->set_count_targetMonster_22(L_67);
-		List_1_t2585711361 * L_68 = V_3;
-		V_5 = L_68;
+		List_1_t2585711361 * L_74 = V_5;
+		List_1_t2585711361 * L_75 = __this->get_enemyPartyList_42();
+		int32_t L_76 = __this->get_targetMonsterId_enemy_27();
+		NullCheck(L_75);
+		GameObject_t1113636619 * L_77 = List_1_get_Item_m3743125852(L_75, ((int32_t)il2cpp_codegen_subtract((int32_t)L_76, (int32_t)6)), /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
+		NullCheck(L_74);
+		List_1_Add_m2765963565(L_74, L_77, /*hidden argument*/List_1_Add_m2765963565_RuntimeMethod_var);
 	}
 
-IL_01e0:
+IL_021f:
 	{
-		GameObject_t1113636619 * L_69 = V_0;
-		List_1_t2585711361 * L_70 = V_5;
-		BattleManager_Attack_m4245653054(__this, L_69, L_70, /*hidden argument*/NULL);
+		goto IL_029e;
+	}
+
+IL_0224:
+	{
+		int32_t L_78 = __this->get_targetMonsterId_ally_26();
+		if (L_78)
+		{
+			goto IL_0242;
+		}
+	}
+	{
+		List_1_t2585711361 * L_79 = V_5;
+		List_1_t2585711361 * L_80 = V_3;
+		NullCheck(L_80);
+		GameObject_t1113636619 * L_81 = List_1_get_Item_m3743125852(L_80, 0, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
+		NullCheck(L_79);
+		List_1_Add_m2765963565(L_79, L_81, /*hidden argument*/List_1_Add_m2765963565_RuntimeMethod_var);
+		goto IL_025c;
+	}
+
+IL_0242:
+	{
+		List_1_t2585711361 * L_82 = V_5;
+		List_1_t2585711361 * L_83 = __this->get_myPartyList_41();
+		int32_t L_84 = __this->get_targetMonsterId_ally_26();
+		NullCheck(L_83);
+		GameObject_t1113636619 * L_85 = List_1_get_Item_m3743125852(L_83, ((int32_t)il2cpp_codegen_subtract((int32_t)L_84, (int32_t)1)), /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
+		NullCheck(L_82);
+		List_1_Add_m2765963565(L_82, L_85, /*hidden argument*/List_1_Add_m2765963565_RuntimeMethod_var);
+	}
+
+IL_025c:
+	{
+		goto IL_029e;
+	}
+
+IL_0261:
+	{
+		int32_t L_86 = __this->get_targetMonsterId_enemy_27();
+		if (L_86)
+		{
+			goto IL_027f;
+		}
+	}
+	{
+		List_1_t2585711361 * L_87 = V_5;
+		List_1_t2585711361 * L_88 = V_3;
+		NullCheck(L_88);
+		GameObject_t1113636619 * L_89 = List_1_get_Item_m3743125852(L_88, 0, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
+		NullCheck(L_87);
+		List_1_Add_m2765963565(L_87, L_89, /*hidden argument*/List_1_Add_m2765963565_RuntimeMethod_var);
+		goto IL_0299;
+	}
+
+IL_027f:
+	{
+		List_1_t2585711361 * L_90 = V_5;
+		List_1_t2585711361 * L_91 = __this->get_enemyPartyList_42();
+		int32_t L_92 = __this->get_targetMonsterId_enemy_27();
+		NullCheck(L_91);
+		GameObject_t1113636619 * L_93 = List_1_get_Item_m3743125852(L_91, ((int32_t)il2cpp_codegen_subtract((int32_t)L_92, (int32_t)6)), /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
+		NullCheck(L_90);
+		List_1_Add_m2765963565(L_90, L_93, /*hidden argument*/List_1_Add_m2765963565_RuntimeMethod_var);
+	}
+
+IL_0299:
+	{
+		goto IL_029e;
+	}
+
+IL_029e:
+	{
+		goto IL_02b2;
+	}
+
+IL_02a3:
+	{
+		List_1_t2585711361 * L_94 = V_3;
+		NullCheck(L_94);
+		int32_t L_95 = List_1_get_Count_m2812834599(L_94, /*hidden argument*/List_1_get_Count_m2812834599_RuntimeMethod_var);
+		__this->set_count_targetMonster_24(L_95);
+		List_1_t2585711361 * L_96 = V_3;
+		V_5 = L_96;
+	}
+
+IL_02b2:
+	{
+		GameObject_t1113636619 * L_97 = V_0;
+		List_1_t2585711361 * L_98 = V_5;
+		BattleManager_Attack_m4245653054(__this, L_97, L_98, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -14008,11 +14045,9 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_EnemyAction_m2230293482 (Battle
 		U3CEnemyActionU3Ec__AnonStorey2_t1657202313 * L_1 = V_0;
 		NullCheck(L_1);
 		L_1->set_U24this_2(__this);
-		IL2CPP_RUNTIME_CLASS_INIT(Debug_t3317548046_il2cpp_TypeInfo_var);
-		Debug_Log_m4051431634(NULL /*static, unused*/, _stringLiteral376393253, /*hidden argument*/NULL);
 		U3CEnemyActionU3Ec__AnonStorey2_t1657202313 * L_2 = V_0;
-		List_1_t2585711361 * L_3 = __this->get_monsterOrderList_38();
-		int32_t L_4 = __this->get_actionCount_26();
+		List_1_t2585711361 * L_3 = __this->get_monsterOrderList_40();
+		int32_t L_4 = __this->get_actionCount_28();
 		NullCheck(L_3);
 		GameObject_t1113636619 * L_5 = List_1_get_Item_m3743125852(L_3, ((int32_t)il2cpp_codegen_subtract((int32_t)L_4, (int32_t)1)), /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
 		NullCheck(L_5);
@@ -14023,14 +14058,13 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_EnemyAction_m2230293482 (Battle
 		NullCheck(L_7);
 		GameObject_t1113636619 * L_8 = L_7->get_attackMonster_0();
 		BattleManager_SetSelectMarker_m3246452214(__this, L_8, /*hidden argument*/NULL);
-		Debug_Log_m4051431634(NULL /*static, unused*/, _stringLiteral2726307342, /*hidden argument*/NULL);
 		U3CEnemyActionU3Ec__AnonStorey2_t1657202313 * L_9 = V_0;
 		NullCheck(L_9);
 		GameObject_t1113636619 * L_10 = L_9->get_attackMonster_0();
 		NullCheck(L_10);
 		CharacterStatus_t2166422524 * L_11 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_10, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_11);
-		List_1_t128053199 * L_12 = L_11->get_skills_11();
+		List_1_t128053199 * L_12 = L_11->get_skills_15();
 		V_1 = L_12;
 		int32_t L_13 = Random_Range_m4054026115(NULL /*static, unused*/, 0, 4, /*hidden argument*/NULL);
 		V_2 = L_13;
@@ -14041,13 +14075,12 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_EnemyAction_m2230293482 (Battle
 		CharacterStatus_t2166422524 * L_16 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_15, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		int32_t L_17 = V_2;
 		NullCheck(L_16);
-		L_16->set_num_selectedSkill_12(((int32_t)il2cpp_codegen_add((int32_t)L_17, (int32_t)1)));
+		L_16->set_num_selectedSkill_16(((int32_t)il2cpp_codegen_add((int32_t)L_17, (int32_t)1)));
 		List_1_t128053199 * L_18 = V_1;
 		int32_t L_19 = V_2;
 		NullCheck(L_18);
 		int32_t L_20 = List_1_get_Item_m888956288(L_18, L_19, /*hidden argument*/List_1_get_Item_m888956288_RuntimeMethod_var);
 		V_3 = L_20;
-		Debug_Log_m4051431634(NULL /*static, unused*/, _stringLiteral2733581838, /*hidden argument*/NULL);
 		List_1_t2585711361 * L_21 = (List_1_t2585711361 *)il2cpp_codegen_object_new(List_1_t2585711361_il2cpp_TypeInfo_var);
 		List_1__ctor_m1424466557(L_21, /*hidden argument*/List_1__ctor_m1424466557_RuntimeMethod_var);
 		V_5 = L_21;
@@ -14057,247 +14090,217 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_EnemyAction_m2230293482 (Battle
 		List_1__ctor_m1424466557(L_23, /*hidden argument*/List_1__ctor_m1424466557_RuntimeMethod_var);
 		NullCheck(L_22);
 		L_22->set_attackedMonsters_1(L_23);
-		Debug_Log_m4051431634(NULL /*static, unused*/, _stringLiteral3133200776, /*hidden argument*/NULL);
 		SkillData_t2800605269 * L_24 = __this->get_skillData_7();
-		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-		String_t* L_25 = String_Concat_m904156431(NULL /*static, unused*/, _stringLiteral1797452011, L_24, /*hidden argument*/NULL);
-		Debug_Log_m4051431634(NULL /*static, unused*/, L_25, /*hidden argument*/NULL);
-		SkillData_t2800605269 * L_26 = __this->get_skillData_7();
+		NullCheck(L_24);
+		List_1_t3144494484 * L_25 = L_24->get_sheets_4();
+		NullCheck(L_25);
+		Sheet_t1672419742 * L_26 = List_1_get_Item_m2244599752(L_25, 0, /*hidden argument*/List_1_get_Item_m2244599752_RuntimeMethod_var);
 		NullCheck(L_26);
-		List_1_t3144494484 * L_27 = L_26->get_sheets_4();
+		List_1_t2959069203 * L_27 = L_26->get_list_1();
+		int32_t L_28 = V_3;
 		NullCheck(L_27);
-		Sheet_t1672419742 * L_28 = List_1_get_Item_m2244599752(L_27, 0, /*hidden argument*/List_1_get_Item_m2244599752_RuntimeMethod_var);
-		String_t* L_29 = String_Concat_m904156431(NULL /*static, unused*/, _stringLiteral3808826312, L_28, /*hidden argument*/NULL);
-		Debug_Log_m4051431634(NULL /*static, unused*/, L_29, /*hidden argument*/NULL);
-		SkillData_t2800605269 * L_30 = __this->get_skillData_7();
-		NullCheck(L_30);
-		List_1_t3144494484 * L_31 = L_30->get_sheets_4();
-		NullCheck(L_31);
-		Sheet_t1672419742 * L_32 = List_1_get_Item_m2244599752(L_31, 0, /*hidden argument*/List_1_get_Item_m2244599752_RuntimeMethod_var);
-		NullCheck(L_32);
-		List_1_t2959069203 * L_33 = L_32->get_list_1();
-		int32_t L_34 = V_3;
-		NullCheck(L_33);
-		Param_t1486994461 * L_35 = List_1_get_Item_m3628436273(L_33, ((int32_t)il2cpp_codegen_subtract((int32_t)L_34, (int32_t)1)), /*hidden argument*/List_1_get_Item_m3628436273_RuntimeMethod_var);
-		String_t* L_36 = String_Concat_m904156431(NULL /*static, unused*/, _stringLiteral2764457919, L_35, /*hidden argument*/NULL);
-		Debug_Log_m4051431634(NULL /*static, unused*/, L_36, /*hidden argument*/NULL);
-		SkillData_t2800605269 * L_37 = __this->get_skillData_7();
-		NullCheck(L_37);
-		List_1_t3144494484 * L_38 = L_37->get_sheets_4();
-		NullCheck(L_38);
-		Sheet_t1672419742 * L_39 = List_1_get_Item_m2244599752(L_38, 0, /*hidden argument*/List_1_get_Item_m2244599752_RuntimeMethod_var);
-		NullCheck(L_39);
-		List_1_t2959069203 * L_40 = L_39->get_list_1();
-		int32_t L_41 = V_3;
-		NullCheck(L_40);
-		Param_t1486994461 * L_42 = List_1_get_Item_m3628436273(L_40, ((int32_t)il2cpp_codegen_subtract((int32_t)L_41, (int32_t)1)), /*hidden argument*/List_1_get_Item_m3628436273_RuntimeMethod_var);
-		NullCheck(L_42);
-		String_t* L_43 = L_42->get_Target_3();
-		V_7 = L_43;
-		String_t* L_44 = V_7;
-		if (!L_44)
+		Param_t1486994461 * L_29 = List_1_get_Item_m3628436273(L_27, ((int32_t)il2cpp_codegen_subtract((int32_t)L_28, (int32_t)1)), /*hidden argument*/List_1_get_Item_m3628436273_RuntimeMethod_var);
+		NullCheck(L_29);
+		String_t* L_30 = L_29->get_Target_3();
+		V_7 = L_30;
+		String_t* L_31 = V_7;
+		if (!L_31)
 		{
-			goto IL_01bf;
+			goto IL_0135;
 		}
 	}
 	{
-		String_t* L_45 = V_7;
+		String_t* L_32 = V_7;
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-		bool L_46 = String_op_Equality_m920492651(NULL /*static, unused*/, L_45, _stringLiteral2077336076, /*hidden argument*/NULL);
-		if (L_46)
+		bool L_33 = String_op_Equality_m920492651(NULL /*static, unused*/, L_32, _stringLiteral2077336076, /*hidden argument*/NULL);
+		if (L_33)
 		{
-			goto IL_017f;
+			goto IL_00f5;
 		}
 	}
 	{
-		String_t* L_47 = V_7;
+		String_t* L_34 = V_7;
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-		bool L_48 = String_op_Equality_m920492651(NULL /*static, unused*/, L_47, _stringLiteral1254263725, /*hidden argument*/NULL);
-		if (L_48)
+		bool L_35 = String_op_Equality_m920492651(NULL /*static, unused*/, L_34, _stringLiteral1254263725, /*hidden argument*/NULL);
+		if (L_35)
 		{
-			goto IL_018f;
+			goto IL_0105;
 		}
 	}
 	{
-		String_t* L_49 = V_7;
+		String_t* L_36 = V_7;
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-		bool L_50 = String_op_Equality_m920492651(NULL /*static, unused*/, L_49, _stringLiteral3825885973, /*hidden argument*/NULL);
-		if (L_50)
+		bool L_37 = String_op_Equality_m920492651(NULL /*static, unused*/, L_36, _stringLiteral3825885973, /*hidden argument*/NULL);
+		if (L_37)
 		{
-			goto IL_019f;
+			goto IL_0115;
 		}
 	}
 	{
-		String_t* L_51 = V_7;
+		String_t* L_38 = V_7;
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-		bool L_52 = String_op_Equality_m920492651(NULL /*static, unused*/, L_51, _stringLiteral3592659555, /*hidden argument*/NULL);
-		if (L_52)
+		bool L_39 = String_op_Equality_m920492651(NULL /*static, unused*/, L_38, _stringLiteral3592659555, /*hidden argument*/NULL);
+		if (L_39)
 		{
-			goto IL_01af;
+			goto IL_0125;
 		}
 	}
 	{
-		goto IL_01bf;
+		goto IL_0135;
 	}
 
-IL_017f:
+IL_00f5:
 	{
 		V_6 = 1;
-		List_1_t2585711361 * L_53 = __this->get_myPartyList_39();
-		V_4 = L_53;
-		goto IL_01cf;
+		List_1_t2585711361 * L_40 = __this->get_myPartyList_41();
+		V_4 = L_40;
+		goto IL_0145;
 	}
 
-IL_018f:
+IL_0105:
 	{
 		V_6 = 5;
-		List_1_t2585711361 * L_54 = __this->get_myPartyList_39();
-		V_4 = L_54;
-		goto IL_01cf;
+		List_1_t2585711361 * L_41 = __this->get_myPartyList_41();
+		V_4 = L_41;
+		goto IL_0145;
 	}
 
-IL_019f:
+IL_0115:
 	{
 		V_6 = 1;
-		List_1_t2585711361 * L_55 = __this->get_enemyPartyList_40();
-		V_4 = L_55;
-		goto IL_01cf;
+		List_1_t2585711361 * L_42 = __this->get_enemyPartyList_42();
+		V_4 = L_42;
+		goto IL_0145;
 	}
 
-IL_01af:
+IL_0125:
 	{
 		V_6 = 5;
-		List_1_t2585711361 * L_56 = __this->get_enemyPartyList_40();
-		V_4 = L_56;
-		goto IL_01cf;
+		List_1_t2585711361 * L_43 = __this->get_enemyPartyList_42();
+		V_4 = L_43;
+		goto IL_0145;
 	}
 
-IL_01bf:
+IL_0135:
 	{
 		V_6 = 1;
-		List_1_t2585711361 * L_57 = __this->get_myPartyList_39();
-		V_4 = L_57;
-		goto IL_01cf;
+		List_1_t2585711361 * L_44 = __this->get_myPartyList_41();
+		V_4 = L_44;
+		goto IL_0145;
 	}
 
-IL_01cf:
+IL_0145:
 	{
-		IL2CPP_RUNTIME_CLASS_INIT(Debug_t3317548046_il2cpp_TypeInfo_var);
-		Debug_Log_m4051431634(NULL /*static, unused*/, _stringLiteral1782372744, /*hidden argument*/NULL);
 		V_8 = 0;
-		goto IL_020f;
+		goto IL_017b;
 	}
 
-IL_01e1:
+IL_014d:
 	{
-		List_1_t2585711361 * L_58 = V_4;
-		int32_t L_59 = V_8;
-		NullCheck(L_58);
-		GameObject_t1113636619 * L_60 = List_1_get_Item_m3743125852(L_58, L_59, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
-		NullCheck(L_60);
-		CharacterStatus_t2166422524 * L_61 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_60, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
-		NullCheck(L_61);
-		bool L_62 = L_61->get_deathFlag_13();
-		if (L_62)
+		List_1_t2585711361 * L_45 = V_4;
+		int32_t L_46 = V_8;
+		NullCheck(L_45);
+		GameObject_t1113636619 * L_47 = List_1_get_Item_m3743125852(L_45, L_46, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
+		NullCheck(L_47);
+		CharacterStatus_t2166422524 * L_48 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_47, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
+		NullCheck(L_48);
+		bool L_49 = L_48->get_deathFlag_17();
+		if (L_49)
 		{
-			goto IL_0209;
+			goto IL_0175;
 		}
 	}
 	{
-		List_1_t2585711361 * L_63 = V_5;
-		List_1_t2585711361 * L_64 = V_4;
-		int32_t L_65 = V_8;
-		NullCheck(L_64);
-		GameObject_t1113636619 * L_66 = List_1_get_Item_m3743125852(L_64, L_65, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
-		NullCheck(L_63);
-		List_1_Add_m2765963565(L_63, L_66, /*hidden argument*/List_1_Add_m2765963565_RuntimeMethod_var);
+		List_1_t2585711361 * L_50 = V_5;
+		List_1_t2585711361 * L_51 = V_4;
+		int32_t L_52 = V_8;
+		NullCheck(L_51);
+		GameObject_t1113636619 * L_53 = List_1_get_Item_m3743125852(L_51, L_52, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
+		NullCheck(L_50);
+		List_1_Add_m2765963565(L_50, L_53, /*hidden argument*/List_1_Add_m2765963565_RuntimeMethod_var);
 	}
 
-IL_0209:
+IL_0175:
 	{
-		int32_t L_67 = V_8;
-		V_8 = ((int32_t)il2cpp_codegen_add((int32_t)L_67, (int32_t)1));
+		int32_t L_54 = V_8;
+		V_8 = ((int32_t)il2cpp_codegen_add((int32_t)L_54, (int32_t)1));
 	}
 
-IL_020f:
+IL_017b:
 	{
-		int32_t L_68 = V_8;
-		List_1_t2585711361 * L_69 = V_4;
-		NullCheck(L_69);
-		int32_t L_70 = List_1_get_Count_m2812834599(L_69, /*hidden argument*/List_1_get_Count_m2812834599_RuntimeMethod_var);
-		if ((((int32_t)L_68) < ((int32_t)L_70)))
+		int32_t L_55 = V_8;
+		List_1_t2585711361 * L_56 = V_4;
+		NullCheck(L_56);
+		int32_t L_57 = List_1_get_Count_m2812834599(L_56, /*hidden argument*/List_1_get_Count_m2812834599_RuntimeMethod_var);
+		if ((((int32_t)L_55) < ((int32_t)L_57)))
 		{
-			goto IL_01e1;
+			goto IL_014d;
 		}
 	}
 	{
-		List_1_t2585711361 * L_71 = V_5;
-		Func_2_t3045216918 * L_72 = ((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->get_U3CU3Ef__amU24cache2_43();
-		G_B17_0 = L_71;
-		if (L_72)
+		List_1_t2585711361 * L_58 = V_5;
+		Func_2_t3045216918 * L_59 = ((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->get_U3CU3Ef__amU24cache2_45();
+		G_B17_0 = L_58;
+		if (L_59)
 		{
-			G_B18_0 = L_71;
-			goto IL_0237;
+			G_B18_0 = L_58;
+			goto IL_01a3;
 		}
 	}
 	{
-		intptr_t L_73 = (intptr_t)BattleManager_U3CEnemyActionU3Em__2_m924278545_RuntimeMethod_var;
-		Func_2_t3045216918 * L_74 = (Func_2_t3045216918 *)il2cpp_codegen_object_new(Func_2_t3045216918_il2cpp_TypeInfo_var);
-		Func_2__ctor_m4230906135(L_74, NULL, (intptr_t)L_73, /*hidden argument*/Func_2__ctor_m4230906135_RuntimeMethod_var);
-		((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->set_U3CU3Ef__amU24cache2_43(L_74);
+		intptr_t L_60 = (intptr_t)BattleManager_U3CEnemyActionU3Em__2_m924278545_RuntimeMethod_var;
+		Func_2_t3045216918 * L_61 = (Func_2_t3045216918 *)il2cpp_codegen_object_new(Func_2_t3045216918_il2cpp_TypeInfo_var);
+		Func_2__ctor_m4230906135(L_61, NULL, (intptr_t)L_60, /*hidden argument*/Func_2__ctor_m4230906135_RuntimeMethod_var);
+		((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->set_U3CU3Ef__amU24cache2_45(L_61);
 		G_B18_0 = G_B17_0;
 	}
 
-IL_0237:
+IL_01a3:
 	{
-		Func_2_t3045216918 * L_75 = ((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->get_U3CU3Ef__amU24cache2_43();
-		RuntimeObject* L_76 = Enumerable_OrderBy_TisGameObject_t1113636619_TisGuid_t_m1752567050(NULL /*static, unused*/, G_B18_0, L_75, /*hidden argument*/Enumerable_OrderBy_TisGameObject_t1113636619_TisGuid_t_m1752567050_RuntimeMethod_var);
-		List_1_t2585711361 * L_77 = Enumerable_ToList_TisGameObject_t1113636619_m3189537243(NULL /*static, unused*/, L_76, /*hidden argument*/Enumerable_ToList_TisGameObject_t1113636619_m3189537243_RuntimeMethod_var);
-		V_5 = L_77;
-		IL2CPP_RUNTIME_CLASS_INIT(Debug_t3317548046_il2cpp_TypeInfo_var);
-		Debug_Log_m4051431634(NULL /*static, unused*/, _stringLiteral765165035, /*hidden argument*/NULL);
-		int32_t L_78 = V_6;
-		if ((!(((uint32_t)L_78) == ((uint32_t)1))))
+		Func_2_t3045216918 * L_62 = ((BattleManager_t4022130644_StaticFields*)il2cpp_codegen_static_fields_for(BattleManager_t4022130644_il2cpp_TypeInfo_var))->get_U3CU3Ef__amU24cache2_45();
+		RuntimeObject* L_63 = Enumerable_OrderBy_TisGameObject_t1113636619_TisGuid_t_m1752567050(NULL /*static, unused*/, G_B18_0, L_62, /*hidden argument*/Enumerable_OrderBy_TisGameObject_t1113636619_TisGuid_t_m1752567050_RuntimeMethod_var);
+		List_1_t2585711361 * L_64 = Enumerable_ToList_TisGameObject_t1113636619_m3189537243(NULL /*static, unused*/, L_63, /*hidden argument*/Enumerable_ToList_TisGameObject_t1113636619_m3189537243_RuntimeMethod_var);
+		V_5 = L_64;
+		int32_t L_65 = V_6;
+		if ((!(((uint32_t)L_65) == ((uint32_t)1))))
 		{
-			goto IL_0279;
+			goto IL_01db;
 		}
 	}
 	{
-		__this->set_count_targetMonster_22(1);
-		U3CEnemyActionU3Ec__AnonStorey2_t1657202313 * L_79 = V_0;
-		NullCheck(L_79);
-		List_1_t2585711361 * L_80 = L_79->get_attackedMonsters_1();
-		List_1_t2585711361 * L_81 = V_5;
-		NullCheck(L_81);
-		GameObject_t1113636619 * L_82 = List_1_get_Item_m3743125852(L_81, 0, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
-		NullCheck(L_80);
-		List_1_Add_m2765963565(L_80, L_82, /*hidden argument*/List_1_Add_m2765963565_RuntimeMethod_var);
-		goto IL_028e;
+		__this->set_count_targetMonster_24(1);
+		U3CEnemyActionU3Ec__AnonStorey2_t1657202313 * L_66 = V_0;
+		NullCheck(L_66);
+		List_1_t2585711361 * L_67 = L_66->get_attackedMonsters_1();
+		List_1_t2585711361 * L_68 = V_5;
+		NullCheck(L_68);
+		GameObject_t1113636619 * L_69 = List_1_get_Item_m3743125852(L_68, 0, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
+		NullCheck(L_67);
+		List_1_Add_m2765963565(L_67, L_69, /*hidden argument*/List_1_Add_m2765963565_RuntimeMethod_var);
+		goto IL_01f0;
 	}
 
-IL_0279:
+IL_01db:
 	{
-		List_1_t2585711361 * L_83 = V_5;
-		NullCheck(L_83);
-		int32_t L_84 = List_1_get_Count_m2812834599(L_83, /*hidden argument*/List_1_get_Count_m2812834599_RuntimeMethod_var);
-		__this->set_count_targetMonster_22(L_84);
-		U3CEnemyActionU3Ec__AnonStorey2_t1657202313 * L_85 = V_0;
-		List_1_t2585711361 * L_86 = V_5;
-		NullCheck(L_85);
-		L_85->set_attackedMonsters_1(L_86);
+		List_1_t2585711361 * L_70 = V_5;
+		NullCheck(L_70);
+		int32_t L_71 = List_1_get_Count_m2812834599(L_70, /*hidden argument*/List_1_get_Count_m2812834599_RuntimeMethod_var);
+		__this->set_count_targetMonster_24(L_71);
+		U3CEnemyActionU3Ec__AnonStorey2_t1657202313 * L_72 = V_0;
+		List_1_t2585711361 * L_73 = V_5;
+		NullCheck(L_72);
+		L_72->set_attackedMonsters_1(L_73);
 	}
 
-IL_028e:
+IL_01f0:
 	{
-		IL2CPP_RUNTIME_CLASS_INIT(Debug_t3317548046_il2cpp_TypeInfo_var);
-		Debug_Log_m4051431634(NULL /*static, unused*/, _stringLiteral760905195, /*hidden argument*/NULL);
-		float L_87 = __this->get_time_break_27();
-		U3CEnemyActionU3Ec__AnonStorey2_t1657202313 * L_88 = V_0;
-		intptr_t L_89 = (intptr_t)U3CEnemyActionU3Ec__AnonStorey2_U3CU3Em__0_m3093528882_RuntimeMethod_var;
-		Action_t1264377477 * L_90 = (Action_t1264377477 *)il2cpp_codegen_object_new(Action_t1264377477_il2cpp_TypeInfo_var);
-		Action__ctor_m2994342681(L_90, L_88, (intptr_t)L_89, /*hidden argument*/NULL);
-		RuntimeObject* L_91 = BattleManager_DelayMethod_m2023750302(__this, L_87, L_90, /*hidden argument*/NULL);
-		MonoBehaviour_StartCoroutine_m3411253000(__this, L_91, /*hidden argument*/NULL);
+		float L_74 = __this->get_time_break_29();
+		U3CEnemyActionU3Ec__AnonStorey2_t1657202313 * L_75 = V_0;
+		intptr_t L_76 = (intptr_t)U3CEnemyActionU3Ec__AnonStorey2_U3CU3Em__0_m3093528882_RuntimeMethod_var;
+		Action_t1264377477 * L_77 = (Action_t1264377477 *)il2cpp_codegen_object_new(Action_t1264377477_il2cpp_TypeInfo_var);
+		Action__ctor_m2994342681(L_77, L_75, (intptr_t)L_76, /*hidden argument*/NULL);
+		RuntimeObject* L_78 = BattleManager_DelayMethod_m2023750302(__this, L_74, L_77, /*hidden argument*/NULL);
+		MonoBehaviour_StartCoroutine_m3411253000(__this, L_78, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -14353,7 +14356,7 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_Attack_m4245653054 (BattleManag
 	int32_t V_0 = 0;
 	int32_t V_1 = 0;
 	{
-		int32_t L_0 = __this->get_vod_23();
+		int32_t L_0 = __this->get_vod_25();
 		if (!L_0)
 		{
 			goto IL_000c;
@@ -14369,13 +14372,13 @@ IL_000c:
 		NullCheck(L_1);
 		CharacterStatus_t2166422524 * L_2 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_1, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_2);
-		int32_t L_3 = L_2->get_num_selectedSkill_12();
+		int32_t L_3 = L_2->get_num_selectedSkill_16();
 		V_0 = L_3;
 		GameObject_t1113636619 * L_4 = ___attackMonster0;
 		NullCheck(L_4);
 		CharacterStatus_t2166422524 * L_5 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_4, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_5);
-		List_1_t128053199 * L_6 = L_5->get_skills_11();
+		List_1_t128053199 * L_6 = L_5->get_skills_15();
 		int32_t L_7 = V_0;
 		NullCheck(L_6);
 		int32_t L_8 = List_1_get_Item_m888956288(L_6, ((int32_t)il2cpp_codegen_subtract((int32_t)L_7, (int32_t)1)), /*hidden argument*/List_1_get_Item_m888956288_RuntimeMethod_var);
@@ -14423,7 +14426,7 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_StepFront_m2512546795 (BattleMa
 		ArrayElementTypeCheck (L_9, _stringLiteral3452614616);
 		(L_9)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject *)_stringLiteral3452614616);
 		ObjectU5BU5D_t2843939325* L_10 = L_9;
-		float L_11 = __this->get_diff_step_36();
+		float L_11 = __this->get_diff_step_38();
 		float L_12 = L_11;
 		RuntimeObject * L_13 = Box(Single_t1397266774_il2cpp_TypeInfo_var, &L_12);
 		NullCheck(L_10);
@@ -14434,7 +14437,7 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_StepFront_m2512546795 (BattleMa
 		ArrayElementTypeCheck (L_14, _stringLiteral63249541);
 		(L_14)->SetAt(static_cast<il2cpp_array_size_t>(2), (RuntimeObject *)_stringLiteral63249541);
 		ObjectU5BU5D_t2843939325* L_15 = L_14;
-		float L_16 = __this->get_time_stepFront_28();
+		float L_16 = __this->get_time_stepFront_30();
 		float L_17 = L_16;
 		RuntimeObject * L_18 = Box(Single_t1397266774_il2cpp_TypeInfo_var, &L_17);
 		NullCheck(L_15);
@@ -14453,7 +14456,7 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_StepFront_m2512546795 (BattleMa
 		IL2CPP_RUNTIME_CLASS_INIT(iTween_t770867771_il2cpp_TypeInfo_var);
 		Hashtable_t1853889766 * L_23 = iTween_Hash_m3216314892(NULL /*static, unused*/, L_20, /*hidden argument*/NULL);
 		iTween_MoveAdd_m1725333547(NULL /*static, unused*/, L_7, L_23, /*hidden argument*/NULL);
-		float L_24 = __this->get_time_stepFront_28();
+		float L_24 = __this->get_time_stepFront_30();
 		U3CStepFrontU3Ec__AnonStorey3_t425534604 * L_25 = V_0;
 		intptr_t L_26 = (intptr_t)U3CStepFrontU3Ec__AnonStorey3_U3CU3Em__0_m3481879337_RuntimeMethod_var;
 		Action_t1264377477 * L_27 = (Action_t1264377477 *)il2cpp_codegen_object_new(Action_t1264377477_il2cpp_TypeInfo_var);
@@ -14507,7 +14510,7 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_AttackAnimation_m3516900703 (Ba
 		NullCheck(L_7);
 		CharacterStatus_t2166422524 * L_8 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_7, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_8);
-		int32_t L_9 = L_8->get_num_selectedSkill_12();
+		int32_t L_9 = L_8->get_num_selectedSkill_16();
 		V_1 = L_9;
 		U3CAttackAnimationU3Ec__AnonStorey4_t464051646 * L_10 = V_0;
 		NullCheck(L_10);
@@ -14515,7 +14518,7 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_AttackAnimation_m3516900703 (Ba
 		NullCheck(L_11);
 		CharacterStatus_t2166422524 * L_12 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_11, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_12);
-		List_1_t128053199 * L_13 = L_12->get_skills_11();
+		List_1_t128053199 * L_13 = L_12->get_skills_15();
 		int32_t L_14 = V_1;
 		NullCheck(L_13);
 		int32_t L_15 = List_1_get_Item_m888956288(L_13, ((int32_t)il2cpp_codegen_subtract((int32_t)L_14, (int32_t)1)), /*hidden argument*/List_1_get_Item_m888956288_RuntimeMethod_var);
@@ -14640,7 +14643,7 @@ IL_012b:
 		Transform_t3600365921 * L_65 = GameObject_GetComponent_TisTransform_t3600365921_m3348034436(L_64, /*hidden argument*/GameObject_GetComponent_TisTransform_t3600365921_m3348034436_RuntimeMethod_var);
 		float L_66 = (&V_12)->get_x_2();
 		float L_67 = (&V_12)->get_y_3();
-		float L_68 = __this->get_zPos_attackEffect_37();
+		float L_68 = __this->get_zPos_attackEffect_39();
 		Vector3_t3722313464  L_69;
 		memset(&L_69, 0, sizeof(L_69));
 		Vector3__ctor_m3353183577((&L_69), L_66, L_67, L_68, /*hidden argument*/NULL);
@@ -14659,7 +14662,7 @@ IL_012b:
 		ParticleSystem_t1800779281 * L_75 = V_11;
 		NullCheck(L_75);
 		ParticleSystem_Play_m882713458(L_75, /*hidden argument*/NULL);
-		float L_76 = __this->get_time_attackAnimation_30();
+		float L_76 = __this->get_time_attackAnimation_32();
 		U3CAttackAnimationU3Ec__AnonStorey4_t464051646 * L_77 = V_0;
 		intptr_t L_78 = (intptr_t)U3CAttackAnimationU3Ec__AnonStorey4_U3CU3Em__0_m3962459880_RuntimeMethod_var;
 		Action_t1264377477 * L_79 = (Action_t1264377477 *)il2cpp_codegen_object_new(Action_t1264377477_il2cpp_TypeInfo_var);
@@ -14678,150 +14681,584 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_HitAnimation_m4133938581 (Battl
 		il2cpp_codegen_initialize_method (BattleManager_HitAnimation_m4133938581_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
-	U3CHitAnimationU3Ec__AnonStorey5_t246070209 * V_0 = NULL;
+	int32_t V_0 = 0;
 	int32_t V_1 = 0;
-	int32_t V_2 = 0;
+	String_t* V_2 = NULL;
+	{
+		GameObject_t1113636619 * L_0 = ___attackMonster0;
+		NullCheck(L_0);
+		CharacterStatus_t2166422524 * L_1 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_0, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
+		NullCheck(L_1);
+		int32_t L_2 = L_1->get_num_selectedSkill_16();
+		V_0 = L_2;
+		GameObject_t1113636619 * L_3 = ___attackMonster0;
+		NullCheck(L_3);
+		CharacterStatus_t2166422524 * L_4 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_3, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
+		NullCheck(L_4);
+		List_1_t128053199 * L_5 = L_4->get_skills_15();
+		int32_t L_6 = V_0;
+		NullCheck(L_5);
+		int32_t L_7 = List_1_get_Item_m888956288(L_5, ((int32_t)il2cpp_codegen_subtract((int32_t)L_6, (int32_t)1)), /*hidden argument*/List_1_get_Item_m888956288_RuntimeMethod_var);
+		V_1 = L_7;
+		SkillData_t2800605269 * L_8 = __this->get_skillData_7();
+		NullCheck(L_8);
+		List_1_t3144494484 * L_9 = L_8->get_sheets_4();
+		NullCheck(L_9);
+		Sheet_t1672419742 * L_10 = List_1_get_Item_m2244599752(L_9, 0, /*hidden argument*/List_1_get_Item_m2244599752_RuntimeMethod_var);
+		NullCheck(L_10);
+		List_1_t2959069203 * L_11 = L_10->get_list_1();
+		int32_t L_12 = V_1;
+		NullCheck(L_11);
+		Param_t1486994461 * L_13 = List_1_get_Item_m3628436273(L_11, ((int32_t)il2cpp_codegen_subtract((int32_t)L_12, (int32_t)1)), /*hidden argument*/List_1_get_Item_m3628436273_RuntimeMethod_var);
+		NullCheck(L_13);
+		String_t* L_14 = L_13->get_Species_2();
+		V_2 = L_14;
+		String_t* L_15 = V_2;
+		if (!L_15)
+		{
+			goto IL_00a9;
+		}
+	}
+	{
+		String_t* L_16 = V_2;
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		bool L_17 = String_op_Equality_m920492651(NULL /*static, unused*/, L_16, _stringLiteral3934443792, /*hidden argument*/NULL);
+		if (L_17)
+		{
+			goto IL_007f;
+		}
+	}
+	{
+		String_t* L_18 = V_2;
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		bool L_19 = String_op_Equality_m920492651(NULL /*static, unused*/, L_18, _stringLiteral1961094925, /*hidden argument*/NULL);
+		if (L_19)
+		{
+			goto IL_008d;
+		}
+	}
+	{
+		String_t* L_20 = V_2;
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		bool L_21 = String_op_Equality_m920492651(NULL /*static, unused*/, L_20, _stringLiteral402303835, /*hidden argument*/NULL);
+		if (L_21)
+		{
+			goto IL_009b;
+		}
+	}
+	{
+		goto IL_00a9;
+	}
+
+IL_007f:
+	{
+		GameObject_t1113636619 * L_22 = ___attackMonster0;
+		GameObject_t1113636619 * L_23 = ___attackedMonster1;
+		int32_t L_24 = V_1;
+		BattleManager_DamageSkill_m3817667082(__this, L_22, L_23, L_24, /*hidden argument*/NULL);
+		goto IL_00a9;
+	}
+
+IL_008d:
+	{
+		GameObject_t1113636619 * L_25 = ___attackMonster0;
+		GameObject_t1113636619 * L_26 = ___attackedMonster1;
+		int32_t L_27 = V_1;
+		BattleManager_HealSkill_m2042033746(__this, L_25, L_26, L_27, /*hidden argument*/NULL);
+		goto IL_00a9;
+	}
+
+IL_009b:
+	{
+		GameObject_t1113636619 * L_28 = ___attackMonster0;
+		GameObject_t1113636619 * L_29 = ___attackedMonster1;
+		int32_t L_30 = V_1;
+		BattleManager_ChangeSkill_m4129388635(__this, L_28, L_29, L_30, /*hidden argument*/NULL);
+		goto IL_00a9;
+	}
+
+IL_00a9:
+	{
+		return;
+	}
+}
+// System.Void BattleManager::DamageSkill(UnityEngine.GameObject,UnityEngine.GameObject,System.Int32)
+extern "C" IL2CPP_METHOD_ATTR void BattleManager_DamageSkill_m3817667082 (BattleManager_t4022130644 * __this, GameObject_t1113636619 * ___attackMonster0, GameObject_t1113636619 * ___attackedMonster1, int32_t ___no_skill2, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (BattleManager_DamageSkill_m3817667082_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	U3CDamageSkillU3Ec__AnonStorey5_t102370528 * V_0 = NULL;
+	float V_1 = 0.0f;
+	float V_2 = 0.0f;
 	float V_3 = 0.0f;
 	float V_4 = 0.0f;
 	float V_5 = 0.0f;
-	float V_6 = 0.0f;
-	float V_7 = 0.0f;
-	int32_t V_8 = 0;
-	int32_t V_9 = 0;
+	int32_t V_6 = 0;
+	int32_t V_7 = 0;
 	{
-		U3CHitAnimationU3Ec__AnonStorey5_t246070209 * L_0 = (U3CHitAnimationU3Ec__AnonStorey5_t246070209 *)il2cpp_codegen_object_new(U3CHitAnimationU3Ec__AnonStorey5_t246070209_il2cpp_TypeInfo_var);
-		U3CHitAnimationU3Ec__AnonStorey5__ctor_m849707954(L_0, /*hidden argument*/NULL);
+		U3CDamageSkillU3Ec__AnonStorey5_t102370528 * L_0 = (U3CDamageSkillU3Ec__AnonStorey5_t102370528 *)il2cpp_codegen_object_new(U3CDamageSkillU3Ec__AnonStorey5_t102370528_il2cpp_TypeInfo_var);
+		U3CDamageSkillU3Ec__AnonStorey5__ctor_m786810855(L_0, /*hidden argument*/NULL);
 		V_0 = L_0;
-		U3CHitAnimationU3Ec__AnonStorey5_t246070209 * L_1 = V_0;
+		U3CDamageSkillU3Ec__AnonStorey5_t102370528 * L_1 = V_0;
 		GameObject_t1113636619 * L_2 = ___attackMonster0;
 		NullCheck(L_1);
 		L_1->set_attackMonster_0(L_2);
-		U3CHitAnimationU3Ec__AnonStorey5_t246070209 * L_3 = V_0;
+		U3CDamageSkillU3Ec__AnonStorey5_t102370528 * L_3 = V_0;
 		GameObject_t1113636619 * L_4 = ___attackedMonster1;
 		NullCheck(L_3);
 		L_3->set_attackedMonster_1(L_4);
-		U3CHitAnimationU3Ec__AnonStorey5_t246070209 * L_5 = V_0;
+		U3CDamageSkillU3Ec__AnonStorey5_t102370528 * L_5 = V_0;
 		NullCheck(L_5);
 		L_5->set_U24this_3(__this);
-		U3CHitAnimationU3Ec__AnonStorey5_t246070209 * L_6 = V_0;
+		SkillData_t2800605269 * L_6 = __this->get_skillData_7();
 		NullCheck(L_6);
-		GameObject_t1113636619 * L_7 = L_6->get_attackMonster_0();
+		List_1_t3144494484 * L_7 = L_6->get_sheets_4();
 		NullCheck(L_7);
-		CharacterStatus_t2166422524 * L_8 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_7, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
+		Sheet_t1672419742 * L_8 = List_1_get_Item_m2244599752(L_7, 0, /*hidden argument*/List_1_get_Item_m2244599752_RuntimeMethod_var);
 		NullCheck(L_8);
-		int32_t L_9 = L_8->get_num_selectedSkill_12();
-		V_1 = L_9;
-		U3CHitAnimationU3Ec__AnonStorey5_t246070209 * L_10 = V_0;
-		NullCheck(L_10);
-		GameObject_t1113636619 * L_11 = L_10->get_attackMonster_0();
+		List_1_t2959069203 * L_9 = L_8->get_list_1();
+		int32_t L_10 = ___no_skill2;
+		NullCheck(L_9);
+		Param_t1486994461 * L_11 = List_1_get_Item_m3628436273(L_9, ((int32_t)il2cpp_codegen_subtract((int32_t)L_10, (int32_t)1)), /*hidden argument*/List_1_get_Item_m3628436273_RuntimeMethod_var);
 		NullCheck(L_11);
-		CharacterStatus_t2166422524 * L_12 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_11, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
-		NullCheck(L_12);
-		List_1_t128053199 * L_13 = L_12->get_skills_11();
-		int32_t L_14 = V_1;
+		int32_t L_12 = L_11->get_Damage_5();
+		V_1 = (((float)((float)L_12)));
+		U3CDamageSkillU3Ec__AnonStorey5_t102370528 * L_13 = V_0;
 		NullCheck(L_13);
-		int32_t L_15 = List_1_get_Item_m888956288(L_13, ((int32_t)il2cpp_codegen_subtract((int32_t)L_14, (int32_t)1)), /*hidden argument*/List_1_get_Item_m888956288_RuntimeMethod_var);
-		V_2 = L_15;
-		SkillData_t2800605269 * L_16 = __this->get_skillData_7();
-		NullCheck(L_16);
-		List_1_t3144494484 * L_17 = L_16->get_sheets_4();
+		GameObject_t1113636619 * L_14 = L_13->get_attackMonster_0();
+		NullCheck(L_14);
+		CharacterStatus_t2166422524 * L_15 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_14, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
+		NullCheck(L_15);
+		int32_t L_16 = L_15->get_attack_9();
+		U3CDamageSkillU3Ec__AnonStorey5_t102370528 * L_17 = V_0;
 		NullCheck(L_17);
-		Sheet_t1672419742 * L_18 = List_1_get_Item_m2244599752(L_17, 0, /*hidden argument*/List_1_get_Item_m2244599752_RuntimeMethod_var);
+		GameObject_t1113636619 * L_18 = L_17->get_attackMonster_0();
 		NullCheck(L_18);
-		List_1_t2959069203 * L_19 = L_18->get_list_1();
-		int32_t L_20 = V_2;
+		CharacterStatus_t2166422524 * L_19 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_18, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_19);
-		Param_t1486994461 * L_21 = List_1_get_Item_m3628436273(L_19, ((int32_t)il2cpp_codegen_subtract((int32_t)L_20, (int32_t)1)), /*hidden argument*/List_1_get_Item_m3628436273_RuntimeMethod_var);
+		int32_t L_20 = L_19->get_statusRank_attack_12();
+		V_2 = ((float)il2cpp_codegen_multiply((float)(((float)((float)L_16))), (float)((float)il2cpp_codegen_add((float)(1.0f), (float)((float)((float)(((float)((float)L_20)))/(float)(2.0f)))))));
+		U3CDamageSkillU3Ec__AnonStorey5_t102370528 * L_21 = V_0;
 		NullCheck(L_21);
-		int32_t L_22 = L_21->get_Damage_5();
-		V_3 = (((float)((float)L_22)));
-		U3CHitAnimationU3Ec__AnonStorey5_t246070209 * L_23 = V_0;
+		GameObject_t1113636619 * L_22 = L_21->get_attackedMonster_1();
+		NullCheck(L_22);
+		CharacterStatus_t2166422524 * L_23 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_22, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_23);
-		GameObject_t1113636619 * L_24 = L_23->get_attackMonster_0();
-		NullCheck(L_24);
-		CharacterStatus_t2166422524 * L_25 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_24, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
+		int32_t L_24 = L_23->get_defense_10();
+		U3CDamageSkillU3Ec__AnonStorey5_t102370528 * L_25 = V_0;
 		NullCheck(L_25);
-		int32_t L_26 = L_25->get_attack_8();
-		V_4 = (((float)((float)L_26)));
-		U3CHitAnimationU3Ec__AnonStorey5_t246070209 * L_27 = V_0;
+		GameObject_t1113636619 * L_26 = L_25->get_attackedMonster_1();
+		NullCheck(L_26);
+		CharacterStatus_t2166422524 * L_27 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_26, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_27);
-		GameObject_t1113636619 * L_28 = L_27->get_attackedMonster_1();
-		NullCheck(L_28);
-		CharacterStatus_t2166422524 * L_29 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_28, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
-		NullCheck(L_29);
-		int32_t L_30 = L_29->get_defense_9();
-		V_5 = (((float)((float)L_30)));
-		V_6 = (1.0f);
-		V_7 = (1.0f);
+		int32_t L_28 = L_27->get_statusRank_defense_13();
+		V_3 = ((float)il2cpp_codegen_multiply((float)(((float)((float)L_24))), (float)((float)il2cpp_codegen_add((float)(1.0f), (float)((float)((float)(((float)((float)L_28)))/(float)(2.0f)))))));
+		V_4 = (1.0f);
+		V_5 = (1.0f);
+		float L_29 = V_1;
+		float L_30 = V_2;
 		float L_31 = V_3;
 		float L_32 = V_4;
 		float L_33 = V_5;
-		float L_34 = V_6;
-		float L_35 = V_7;
-		V_8 = (((int32_t)((int32_t)((float)il2cpp_codegen_multiply((float)((float)il2cpp_codegen_multiply((float)((float)((float)((float)((float)((float)il2cpp_codegen_multiply((float)((float)il2cpp_codegen_multiply((float)(22.0f), (float)L_31)), (float)L_32))/(float)L_33))/(float)(50.0f))), (float)L_34)), (float)L_35)))));
-		U3CHitAnimationU3Ec__AnonStorey5_t246070209 * L_36 = V_0;
+		V_6 = (((int32_t)((int32_t)((float)il2cpp_codegen_multiply((float)((float)il2cpp_codegen_multiply((float)((float)((float)((float)((float)((float)il2cpp_codegen_multiply((float)((float)il2cpp_codegen_multiply((float)(22.0f), (float)L_29)), (float)L_30))/(float)L_31))/(float)(50.0f))), (float)L_32)), (float)L_33)))));
+		U3CDamageSkillU3Ec__AnonStorey5_t102370528 * L_34 = V_0;
+		NullCheck(L_34);
+		GameObject_t1113636619 * L_35 = L_34->get_attackedMonster_1();
+		NullCheck(L_35);
+		CharacterStatus_t2166422524 * L_36 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_35, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_36);
-		GameObject_t1113636619 * L_37 = L_36->get_attackedMonster_1();
-		NullCheck(L_37);
-		CharacterStatus_t2166422524 * L_38 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_37, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
+		int32_t L_37 = L_36->get_hp_8();
+		V_7 = L_37;
+		U3CDamageSkillU3Ec__AnonStorey5_t102370528 * L_38 = V_0;
 		NullCheck(L_38);
-		int32_t L_39 = L_38->get_hp_7();
-		V_9 = L_39;
-		U3CHitAnimationU3Ec__AnonStorey5_t246070209 * L_40 = V_0;
+		GameObject_t1113636619 * L_39 = L_38->get_attackedMonster_1();
+		NullCheck(L_39);
+		CharacterStatus_t2166422524 * L_40 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_39, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
+		CharacterStatus_t2166422524 * L_41 = L_40;
+		NullCheck(L_41);
+		int32_t L_42 = L_41->get_hp_8();
+		int32_t L_43 = V_6;
+		NullCheck(L_41);
+		L_41->set_hp_8(((int32_t)il2cpp_codegen_subtract((int32_t)L_42, (int32_t)L_43)));
+		U3CDamageSkillU3Ec__AnonStorey5_t102370528 * L_44 = V_0;
+		U3CDamageSkillU3Ec__AnonStorey5_t102370528 * L_45 = V_0;
+		NullCheck(L_45);
+		GameObject_t1113636619 * L_46 = L_45->get_attackedMonster_1();
+		NullCheck(L_46);
+		CharacterStatus_t2166422524 * L_47 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_46, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
+		NullCheck(L_47);
+		int32_t L_48 = L_47->get_hp_8();
+		NullCheck(L_44);
+		L_44->set_hp_2(L_48);
+		U3CDamageSkillU3Ec__AnonStorey5_t102370528 * L_49 = V_0;
+		NullCheck(L_49);
+		GameObject_t1113636619 * L_50 = L_49->get_attackedMonster_1();
+		int32_t L_51 = V_6;
+		BattleManager_DisplayDamageText_m4197033457(__this, L_50, L_51, /*hidden argument*/NULL);
+		U3CDamageSkillU3Ec__AnonStorey5_t102370528 * L_52 = V_0;
+		NullCheck(L_52);
+		GameObject_t1113636619 * L_53 = L_52->get_attackedMonster_1();
+		NullCheck(L_53);
+		Transform_t3600365921 * L_54 = GameObject_get_transform_m1369836730(L_53, /*hidden argument*/NULL);
+		NullCheck(L_54);
+		Transform_t3600365921 * L_55 = Transform_Find_m1729760951(L_54, _stringLiteral3186493525, /*hidden argument*/NULL);
+		NullCheck(L_55);
+		GameObject_t1113636619 * L_56 = Component_get_gameObject_m442555142(L_55, /*hidden argument*/NULL);
+		NullCheck(L_56);
+		SliderAnimation_t2941502852 * L_57 = GameObject_GetComponent_TisSliderAnimation_t2941502852_m504811536(L_56, /*hidden argument*/GameObject_GetComponent_TisSliderAnimation_t2941502852_m504811536_RuntimeMethod_var);
+		int32_t L_58 = V_7;
+		U3CDamageSkillU3Ec__AnonStorey5_t102370528 * L_59 = V_0;
+		NullCheck(L_59);
+		int32_t L_60 = L_59->get_hp_2();
+		float L_61 = __this->get_time_hitAnimation_33();
+		NullCheck(L_57);
+		SliderAnimation_Animation_m2231208536(L_57, L_58, L_60, L_61, /*hidden argument*/NULL);
+		U3CDamageSkillU3Ec__AnonStorey5_t102370528 * L_62 = V_0;
+		NullCheck(L_62);
+		GameObject_t1113636619 * L_63 = L_62->get_attackedMonster_1();
+		MonoBehaviour_StartCoroutine_m1654577315(__this, _stringLiteral39716438, L_63, /*hidden argument*/NULL);
+		float L_64 = __this->get_time_hitAnimation_33();
+		U3CDamageSkillU3Ec__AnonStorey5_t102370528 * L_65 = V_0;
+		intptr_t L_66 = (intptr_t)U3CDamageSkillU3Ec__AnonStorey5_U3CU3Em__0_m3410607442_RuntimeMethod_var;
+		Action_t1264377477 * L_67 = (Action_t1264377477 *)il2cpp_codegen_object_new(Action_t1264377477_il2cpp_TypeInfo_var);
+		Action__ctor_m2994342681(L_67, L_65, (intptr_t)L_66, /*hidden argument*/NULL);
+		RuntimeObject* L_68 = BattleManager_DelayMethod_m2023750302(__this, L_64, L_67, /*hidden argument*/NULL);
+		MonoBehaviour_StartCoroutine_m3411253000(__this, L_68, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void BattleManager::HealSkill(UnityEngine.GameObject,UnityEngine.GameObject,System.Int32)
+extern "C" IL2CPP_METHOD_ATTR void BattleManager_HealSkill_m2042033746 (BattleManager_t4022130644 * __this, GameObject_t1113636619 * ___attackMonster0, GameObject_t1113636619 * ___attackedMonster1, int32_t ___no_skill2, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (BattleManager_HealSkill_m2042033746_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	U3CHealSkillU3Ec__AnonStorey6_t4147225704 * V_0 = NULL;
+	int32_t V_1 = 0;
+	int32_t V_2 = 0;
+	int32_t V_3 = 0;
+	U3CHealSkillU3Ec__AnonStorey6_t4147225704 * G_B2_0 = NULL;
+	U3CHealSkillU3Ec__AnonStorey6_t4147225704 * G_B1_0 = NULL;
+	int32_t G_B3_0 = 0;
+	U3CHealSkillU3Ec__AnonStorey6_t4147225704 * G_B3_1 = NULL;
+	{
+		U3CHealSkillU3Ec__AnonStorey6_t4147225704 * L_0 = (U3CHealSkillU3Ec__AnonStorey6_t4147225704 *)il2cpp_codegen_object_new(U3CHealSkillU3Ec__AnonStorey6_t4147225704_il2cpp_TypeInfo_var);
+		U3CHealSkillU3Ec__AnonStorey6__ctor_m1686869563(L_0, /*hidden argument*/NULL);
+		V_0 = L_0;
+		U3CHealSkillU3Ec__AnonStorey6_t4147225704 * L_1 = V_0;
+		GameObject_t1113636619 * L_2 = ___attackMonster0;
+		NullCheck(L_1);
+		L_1->set_attackMonster_0(L_2);
+		U3CHealSkillU3Ec__AnonStorey6_t4147225704 * L_3 = V_0;
+		GameObject_t1113636619 * L_4 = ___attackedMonster1;
+		NullCheck(L_3);
+		L_3->set_attackedMonster_1(L_4);
+		U3CHealSkillU3Ec__AnonStorey6_t4147225704 * L_5 = V_0;
+		NullCheck(L_5);
+		L_5->set_U24this_3(__this);
+		U3CHealSkillU3Ec__AnonStorey6_t4147225704 * L_6 = V_0;
+		NullCheck(L_6);
+		GameObject_t1113636619 * L_7 = L_6->get_attackedMonster_1();
+		NullCheck(L_7);
+		CharacterStatus_t2166422524 * L_8 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_7, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
+		NullCheck(L_8);
+		int32_t L_9 = L_8->get_maxHp_7();
+		V_1 = L_9;
+		SkillData_t2800605269 * L_10 = __this->get_skillData_7();
+		NullCheck(L_10);
+		List_1_t3144494484 * L_11 = L_10->get_sheets_4();
+		NullCheck(L_11);
+		Sheet_t1672419742 * L_12 = List_1_get_Item_m2244599752(L_11, 0, /*hidden argument*/List_1_get_Item_m2244599752_RuntimeMethod_var);
+		NullCheck(L_12);
+		List_1_t2959069203 * L_13 = L_12->get_list_1();
+		int32_t L_14 = ___no_skill2;
+		NullCheck(L_13);
+		Param_t1486994461 * L_15 = List_1_get_Item_m3628436273(L_13, ((int32_t)il2cpp_codegen_subtract((int32_t)L_14, (int32_t)1)), /*hidden argument*/List_1_get_Item_m3628436273_RuntimeMethod_var);
+		NullCheck(L_15);
+		int32_t L_16 = L_15->get_HealAmount_6();
+		V_2 = L_16;
+		int32_t L_17 = V_1;
+		int32_t L_18 = V_2;
+		V_2 = ((int32_t)((int32_t)((int32_t)il2cpp_codegen_multiply((int32_t)L_17, (int32_t)L_18))/(int32_t)((int32_t)100)));
+		U3CHealSkillU3Ec__AnonStorey6_t4147225704 * L_19 = V_0;
+		NullCheck(L_19);
+		GameObject_t1113636619 * L_20 = L_19->get_attackedMonster_1();
+		NullCheck(L_20);
+		CharacterStatus_t2166422524 * L_21 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_20, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
+		NullCheck(L_21);
+		int32_t L_22 = L_21->get_hp_8();
+		V_3 = L_22;
+		U3CHealSkillU3Ec__AnonStorey6_t4147225704 * L_23 = V_0;
+		int32_t L_24 = V_3;
+		int32_t L_25 = V_2;
+		NullCheck(L_23);
+		L_23->set_currentHp_2(((int32_t)il2cpp_codegen_add((int32_t)L_24, (int32_t)L_25)));
+		U3CHealSkillU3Ec__AnonStorey6_t4147225704 * L_26 = V_0;
+		U3CHealSkillU3Ec__AnonStorey6_t4147225704 * L_27 = V_0;
+		NullCheck(L_27);
+		int32_t L_28 = L_27->get_currentHp_2();
+		int32_t L_29 = V_1;
+		G_B1_0 = L_26;
+		if ((((int32_t)L_28) < ((int32_t)L_29)))
+		{
+			G_B2_0 = L_26;
+			goto IL_0084;
+		}
+	}
+	{
+		int32_t L_30 = V_1;
+		G_B3_0 = L_30;
+		G_B3_1 = G_B1_0;
+		goto IL_008a;
+	}
+
+IL_0084:
+	{
+		U3CHealSkillU3Ec__AnonStorey6_t4147225704 * L_31 = V_0;
+		NullCheck(L_31);
+		int32_t L_32 = L_31->get_currentHp_2();
+		G_B3_0 = L_32;
+		G_B3_1 = G_B2_0;
+	}
+
+IL_008a:
+	{
+		NullCheck(G_B3_1);
+		G_B3_1->set_currentHp_2(G_B3_0);
+		U3CHealSkillU3Ec__AnonStorey6_t4147225704 * L_33 = V_0;
+		NullCheck(L_33);
+		GameObject_t1113636619 * L_34 = L_33->get_attackedMonster_1();
+		NullCheck(L_34);
+		CharacterStatus_t2166422524 * L_35 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_34, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
+		U3CHealSkillU3Ec__AnonStorey6_t4147225704 * L_36 = V_0;
+		NullCheck(L_36);
+		int32_t L_37 = L_36->get_currentHp_2();
+		NullCheck(L_35);
+		L_35->set_hp_8(L_37);
+		U3CHealSkillU3Ec__AnonStorey6_t4147225704 * L_38 = V_0;
+		NullCheck(L_38);
+		GameObject_t1113636619 * L_39 = L_38->get_attackedMonster_1();
+		int32_t L_40 = V_2;
+		BattleManager_DisplayHealText_m1325575413(__this, L_39, L_40, /*hidden argument*/NULL);
+		U3CHealSkillU3Ec__AnonStorey6_t4147225704 * L_41 = V_0;
+		NullCheck(L_41);
+		GameObject_t1113636619 * L_42 = L_41->get_attackedMonster_1();
+		NullCheck(L_42);
+		Transform_t3600365921 * L_43 = GameObject_get_transform_m1369836730(L_42, /*hidden argument*/NULL);
+		NullCheck(L_43);
+		Transform_t3600365921 * L_44 = Transform_Find_m1729760951(L_43, _stringLiteral3186493525, /*hidden argument*/NULL);
+		NullCheck(L_44);
+		GameObject_t1113636619 * L_45 = Component_get_gameObject_m442555142(L_44, /*hidden argument*/NULL);
+		NullCheck(L_45);
+		SliderAnimation_t2941502852 * L_46 = GameObject_GetComponent_TisSliderAnimation_t2941502852_m504811536(L_45, /*hidden argument*/GameObject_GetComponent_TisSliderAnimation_t2941502852_m504811536_RuntimeMethod_var);
+		int32_t L_47 = V_3;
+		U3CHealSkillU3Ec__AnonStorey6_t4147225704 * L_48 = V_0;
+		NullCheck(L_48);
+		int32_t L_49 = L_48->get_currentHp_2();
+		float L_50 = __this->get_time_hitAnimation_33();
+		NullCheck(L_46);
+		SliderAnimation_Animation_m2231208536(L_46, L_47, L_49, L_50, /*hidden argument*/NULL);
+		float L_51 = __this->get_time_hitAnimation_33();
+		U3CHealSkillU3Ec__AnonStorey6_t4147225704 * L_52 = V_0;
+		intptr_t L_53 = (intptr_t)U3CHealSkillU3Ec__AnonStorey6_U3CU3Em__0_m3297680134_RuntimeMethod_var;
+		Action_t1264377477 * L_54 = (Action_t1264377477 *)il2cpp_codegen_object_new(Action_t1264377477_il2cpp_TypeInfo_var);
+		Action__ctor_m2994342681(L_54, L_52, (intptr_t)L_53, /*hidden argument*/NULL);
+		RuntimeObject* L_55 = BattleManager_DelayMethod_m2023750302(__this, L_51, L_54, /*hidden argument*/NULL);
+		MonoBehaviour_StartCoroutine_m3411253000(__this, L_55, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void BattleManager::ChangeSkill(UnityEngine.GameObject,UnityEngine.GameObject,System.Int32)
+extern "C" IL2CPP_METHOD_ATTR void BattleManager_ChangeSkill_m4129388635 (BattleManager_t4022130644 * __this, GameObject_t1113636619 * ___attackMonster0, GameObject_t1113636619 * ___attackedMonster1, int32_t ___no_skill2, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (BattleManager_ChangeSkill_m4129388635_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	U3CChangeSkillU3Ec__AnonStorey7_t1079478228 * V_0 = NULL;
+	int32_t V_1 = 0;
+	bool V_2 = false;
+	String_t* V_3 = NULL;
+	int32_t G_B3_0 = 0;
+	{
+		U3CChangeSkillU3Ec__AnonStorey7_t1079478228 * L_0 = (U3CChangeSkillU3Ec__AnonStorey7_t1079478228 *)il2cpp_codegen_object_new(U3CChangeSkillU3Ec__AnonStorey7_t1079478228_il2cpp_TypeInfo_var);
+		U3CChangeSkillU3Ec__AnonStorey7__ctor_m1267151925(L_0, /*hidden argument*/NULL);
+		V_0 = L_0;
+		U3CChangeSkillU3Ec__AnonStorey7_t1079478228 * L_1 = V_0;
+		GameObject_t1113636619 * L_2 = ___attackMonster0;
+		NullCheck(L_1);
+		L_1->set_attackMonster_0(L_2);
+		U3CChangeSkillU3Ec__AnonStorey7_t1079478228 * L_3 = V_0;
+		GameObject_t1113636619 * L_4 = ___attackedMonster1;
+		NullCheck(L_3);
+		L_3->set_attackedMonster_1(L_4);
+		U3CChangeSkillU3Ec__AnonStorey7_t1079478228 * L_5 = V_0;
+		NullCheck(L_5);
+		L_5->set_U24this_3(__this);
+		SkillData_t2800605269 * L_6 = __this->get_skillData_7();
+		NullCheck(L_6);
+		List_1_t3144494484 * L_7 = L_6->get_sheets_4();
+		NullCheck(L_7);
+		Sheet_t1672419742 * L_8 = List_1_get_Item_m2244599752(L_7, 0, /*hidden argument*/List_1_get_Item_m2244599752_RuntimeMethod_var);
+		NullCheck(L_8);
+		List_1_t2959069203 * L_9 = L_8->get_list_1();
+		int32_t L_10 = ___no_skill2;
+		NullCheck(L_9);
+		Param_t1486994461 * L_11 = List_1_get_Item_m3628436273(L_9, ((int32_t)il2cpp_codegen_subtract((int32_t)L_10, (int32_t)1)), /*hidden argument*/List_1_get_Item_m3628436273_RuntimeMethod_var);
+		NullCheck(L_11);
+		int32_t L_12 = L_11->get_ChangeAmount_7();
+		V_1 = L_12;
+		int32_t L_13 = V_1;
+		if ((((int32_t)L_13) < ((int32_t)0)))
+		{
+			goto IL_004c;
+		}
+	}
+	{
+		G_B3_0 = 1;
+		goto IL_004d;
+	}
+
+IL_004c:
+	{
+		G_B3_0 = 0;
+	}
+
+IL_004d:
+	{
+		V_2 = (bool)G_B3_0;
+		SkillData_t2800605269 * L_14 = __this->get_skillData_7();
+		NullCheck(L_14);
+		List_1_t3144494484 * L_15 = L_14->get_sheets_4();
+		NullCheck(L_15);
+		Sheet_t1672419742 * L_16 = List_1_get_Item_m2244599752(L_15, 0, /*hidden argument*/List_1_get_Item_m2244599752_RuntimeMethod_var);
+		NullCheck(L_16);
+		List_1_t2959069203 * L_17 = L_16->get_list_1();
+		int32_t L_18 = ___no_skill2;
+		NullCheck(L_17);
+		Param_t1486994461 * L_19 = List_1_get_Item_m3628436273(L_17, ((int32_t)il2cpp_codegen_subtract((int32_t)L_18, (int32_t)1)), /*hidden argument*/List_1_get_Item_m3628436273_RuntimeMethod_var);
+		NullCheck(L_19);
+		String_t* L_20 = L_19->get_ChangeStatus_8();
+		V_3 = L_20;
+		String_t* L_21 = V_3;
+		if (!L_21)
+		{
+			goto IL_0104;
+		}
+	}
+	{
+		String_t* L_22 = V_3;
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		bool L_23 = String_op_Equality_m920492651(NULL /*static, unused*/, L_22, _stringLiteral868794430, /*hidden argument*/NULL);
+		if (L_23)
+		{
+			goto IL_00ad;
+		}
+	}
+	{
+		String_t* L_24 = V_3;
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		bool L_25 = String_op_Equality_m920492651(NULL /*static, unused*/, L_24, _stringLiteral204627857, /*hidden argument*/NULL);
+		if (L_25)
+		{
+			goto IL_00ca;
+		}
+	}
+	{
+		String_t* L_26 = V_3;
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		bool L_27 = String_op_Equality_m920492651(NULL /*static, unused*/, L_26, _stringLiteral3556802456, /*hidden argument*/NULL);
+		if (L_27)
+		{
+			goto IL_00e7;
+		}
+	}
+	{
+		goto IL_0104;
+	}
+
+IL_00ad:
+	{
+		U3CChangeSkillU3Ec__AnonStorey7_t1079478228 * L_28 = V_0;
+		NullCheck(L_28);
+		GameObject_t1113636619 * L_29 = L_28->get_attackedMonster_1();
+		NullCheck(L_29);
+		CharacterStatus_t2166422524 * L_30 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_29, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
+		CharacterStatus_t2166422524 * L_31 = L_30;
+		NullCheck(L_31);
+		int32_t L_32 = L_31->get_statusRank_attack_12();
+		int32_t L_33 = V_1;
+		NullCheck(L_31);
+		L_31->set_statusRank_attack_12(((int32_t)il2cpp_codegen_add((int32_t)L_32, (int32_t)L_33)));
+		goto IL_0104;
+	}
+
+IL_00ca:
+	{
+		U3CChangeSkillU3Ec__AnonStorey7_t1079478228 * L_34 = V_0;
+		NullCheck(L_34);
+		GameObject_t1113636619 * L_35 = L_34->get_attackedMonster_1();
+		NullCheck(L_35);
+		CharacterStatus_t2166422524 * L_36 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_35, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
+		CharacterStatus_t2166422524 * L_37 = L_36;
+		NullCheck(L_37);
+		int32_t L_38 = L_37->get_statusRank_defense_13();
+		int32_t L_39 = V_1;
+		NullCheck(L_37);
+		L_37->set_statusRank_defense_13(((int32_t)il2cpp_codegen_add((int32_t)L_38, (int32_t)L_39)));
+		goto IL_0104;
+	}
+
+IL_00e7:
+	{
+		U3CChangeSkillU3Ec__AnonStorey7_t1079478228 * L_40 = V_0;
 		NullCheck(L_40);
 		GameObject_t1113636619 * L_41 = L_40->get_attackedMonster_1();
 		NullCheck(L_41);
 		CharacterStatus_t2166422524 * L_42 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_41, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		CharacterStatus_t2166422524 * L_43 = L_42;
 		NullCheck(L_43);
-		int32_t L_44 = L_43->get_hp_7();
-		int32_t L_45 = V_8;
+		int32_t L_44 = L_43->get_statusRank_speed_14();
+		int32_t L_45 = V_1;
 		NullCheck(L_43);
-		L_43->set_hp_7(((int32_t)il2cpp_codegen_subtract((int32_t)L_44, (int32_t)L_45)));
-		U3CHitAnimationU3Ec__AnonStorey5_t246070209 * L_46 = V_0;
-		U3CHitAnimationU3Ec__AnonStorey5_t246070209 * L_47 = V_0;
+		L_43->set_statusRank_speed_14(((int32_t)il2cpp_codegen_add((int32_t)L_44, (int32_t)L_45)));
+		goto IL_0104;
+	}
+
+IL_0104:
+	{
+		U3CChangeSkillU3Ec__AnonStorey7_t1079478228 * L_46 = V_0;
+		U3CChangeSkillU3Ec__AnonStorey7_t1079478228 * L_47 = V_0;
 		NullCheck(L_47);
 		GameObject_t1113636619 * L_48 = L_47->get_attackedMonster_1();
 		NullCheck(L_48);
 		CharacterStatus_t2166422524 * L_49 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_48, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_49);
-		int32_t L_50 = L_49->get_hp_7();
+		int32_t L_50 = L_49->get_hp_8();
 		NullCheck(L_46);
 		L_46->set_hp_2(L_50);
-		U3CHitAnimationU3Ec__AnonStorey5_t246070209 * L_51 = V_0;
+		U3CChangeSkillU3Ec__AnonStorey7_t1079478228 * L_51 = V_0;
 		NullCheck(L_51);
 		GameObject_t1113636619 * L_52 = L_51->get_attackedMonster_1();
-		int32_t L_53 = V_8;
-		BattleManager_DisplayDamageText_m4197033457(__this, L_52, L_53, /*hidden argument*/NULL);
-		U3CHitAnimationU3Ec__AnonStorey5_t246070209 * L_54 = V_0;
-		NullCheck(L_54);
-		GameObject_t1113636619 * L_55 = L_54->get_attackedMonster_1();
-		NullCheck(L_55);
-		Transform_t3600365921 * L_56 = GameObject_get_transform_m1369836730(L_55, /*hidden argument*/NULL);
-		NullCheck(L_56);
-		Transform_t3600365921 * L_57 = Transform_Find_m1729760951(L_56, _stringLiteral3186493525, /*hidden argument*/NULL);
-		NullCheck(L_57);
-		GameObject_t1113636619 * L_58 = Component_get_gameObject_m442555142(L_57, /*hidden argument*/NULL);
-		NullCheck(L_58);
-		SliderAnimation_t2941502852 * L_59 = GameObject_GetComponent_TisSliderAnimation_t2941502852_m504811536(L_58, /*hidden argument*/GameObject_GetComponent_TisSliderAnimation_t2941502852_m504811536_RuntimeMethod_var);
-		int32_t L_60 = V_9;
-		U3CHitAnimationU3Ec__AnonStorey5_t246070209 * L_61 = V_0;
-		NullCheck(L_61);
-		int32_t L_62 = L_61->get_hp_2();
-		float L_63 = __this->get_time_hitAnimation_31();
-		NullCheck(L_59);
-		SliderAnimation_Animation_m2231208536(L_59, L_60, L_62, L_63, /*hidden argument*/NULL);
-		U3CHitAnimationU3Ec__AnonStorey5_t246070209 * L_64 = V_0;
-		NullCheck(L_64);
-		GameObject_t1113636619 * L_65 = L_64->get_attackedMonster_1();
-		MonoBehaviour_StartCoroutine_m1654577315(__this, _stringLiteral39716438, L_65, /*hidden argument*/NULL);
-		float L_66 = __this->get_time_hitAnimation_31();
-		U3CHitAnimationU3Ec__AnonStorey5_t246070209 * L_67 = V_0;
-		intptr_t L_68 = (intptr_t)U3CHitAnimationU3Ec__AnonStorey5_U3CU3Em__0_m2822479741_RuntimeMethod_var;
-		Action_t1264377477 * L_69 = (Action_t1264377477 *)il2cpp_codegen_object_new(Action_t1264377477_il2cpp_TypeInfo_var);
-		Action__ctor_m2994342681(L_69, L_67, (intptr_t)L_68, /*hidden argument*/NULL);
-		RuntimeObject* L_70 = BattleManager_DelayMethod_m2023750302(__this, L_66, L_69, /*hidden argument*/NULL);
-		MonoBehaviour_StartCoroutine_m3411253000(__this, L_70, /*hidden argument*/NULL);
+		String_t* L_53 = V_3;
+		bool L_54 = V_2;
+		BattleManager_DisplayChangeText_m4082015172(__this, L_52, L_53, L_54, /*hidden argument*/NULL);
+		float L_55 = __this->get_time_hitAnimation_33();
+		U3CChangeSkillU3Ec__AnonStorey7_t1079478228 * L_56 = V_0;
+		intptr_t L_57 = (intptr_t)U3CChangeSkillU3Ec__AnonStorey7_U3CU3Em__0_m3985990463_RuntimeMethod_var;
+		Action_t1264377477 * L_58 = (Action_t1264377477 *)il2cpp_codegen_object_new(Action_t1264377477_il2cpp_TypeInfo_var);
+		Action__ctor_m2994342681(L_58, L_56, (intptr_t)L_57, /*hidden argument*/NULL);
+		RuntimeObject* L_59 = BattleManager_DelayMethod_m2023750302(__this, L_55, L_58, /*hidden argument*/NULL);
+		MonoBehaviour_StartCoroutine_m3411253000(__this, L_59, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -14856,23 +15293,23 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_JudgeDeath_m2984070186 (BattleM
 		il2cpp_codegen_initialize_method (BattleManager_JudgeDeath_m2984070186_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
-	U3CJudgeDeathU3Ec__AnonStorey6_t3788336905 * V_0 = NULL;
+	U3CJudgeDeathU3Ec__AnonStorey8_t2641325833 * V_0 = NULL;
 	bool V_1 = false;
 	int32_t V_2 = 0;
 	{
-		U3CJudgeDeathU3Ec__AnonStorey6_t3788336905 * L_0 = (U3CJudgeDeathU3Ec__AnonStorey6_t3788336905 *)il2cpp_codegen_object_new(U3CJudgeDeathU3Ec__AnonStorey6_t3788336905_il2cpp_TypeInfo_var);
-		U3CJudgeDeathU3Ec__AnonStorey6__ctor_m3227271324(L_0, /*hidden argument*/NULL);
+		U3CJudgeDeathU3Ec__AnonStorey8_t2641325833 * L_0 = (U3CJudgeDeathU3Ec__AnonStorey8_t2641325833 *)il2cpp_codegen_object_new(U3CJudgeDeathU3Ec__AnonStorey8_t2641325833_il2cpp_TypeInfo_var);
+		U3CJudgeDeathU3Ec__AnonStorey8__ctor_m2458569729(L_0, /*hidden argument*/NULL);
 		V_0 = L_0;
-		U3CJudgeDeathU3Ec__AnonStorey6_t3788336905 * L_1 = V_0;
+		U3CJudgeDeathU3Ec__AnonStorey8_t2641325833 * L_1 = V_0;
 		GameObject_t1113636619 * L_2 = ___attackMonster0;
 		NullCheck(L_1);
 		L_1->set_attackMonster_0(L_2);
-		U3CJudgeDeathU3Ec__AnonStorey6_t3788336905 * L_3 = V_0;
+		U3CJudgeDeathU3Ec__AnonStorey8_t2641325833 * L_3 = V_0;
 		NullCheck(L_3);
 		L_3->set_U24this_1(__this);
 		V_1 = (bool)0;
-		int32_t L_4 = __this->get_counter_checkNextAction_21();
-		__this->set_counter_checkNextAction_21(((int32_t)il2cpp_codegen_add((int32_t)L_4, (int32_t)1)));
+		int32_t L_4 = __this->get_counter_checkNextAction_23();
+		__this->set_counter_checkNextAction_23(((int32_t)il2cpp_codegen_add((int32_t)L_4, (int32_t)1)));
 		int32_t L_5 = ___hp2;
 		if ((((int32_t)L_5) > ((int32_t)0)))
 		{
@@ -14884,7 +15321,7 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_JudgeDeath_m2984070186 (BattleM
 		NullCheck(L_6);
 		CharacterStatus_t2166422524 * L_7 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_6, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_7);
-		L_7->set_deathFlag_13((bool)1);
+		L_7->set_deathFlag_17((bool)1);
 		GameObject_t1113636619 * L_8 = ___attackedMonster1;
 		NullCheck(L_8);
 		CharacterStatus_t2166422524 * L_9 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_8, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
@@ -14899,16 +15336,16 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_JudgeDeath_m2984070186 (BattleM
 	}
 	{
 		int32_t L_12 = V_2;
-		int32_t L_13 = __this->get_targetMonsterId_ally_24();
+		int32_t L_13 = __this->get_targetMonsterId_ally_26();
 		if ((!(((uint32_t)L_12) == ((uint32_t)L_13))))
 		{
 			goto IL_0080;
 		}
 	}
 	{
-		__this->set_targetMonsterId_ally_24(0);
-		U3CJudgeDeathU3Ec__AnonStorey6_t3788336905 * L_14 = V_0;
-		intptr_t L_15 = (intptr_t)U3CJudgeDeathU3Ec__AnonStorey6_U3CU3Em__0_m2784192153_RuntimeMethod_var;
+		__this->set_targetMonsterId_ally_26(0);
+		U3CJudgeDeathU3Ec__AnonStorey8_t2641325833 * L_14 = V_0;
+		intptr_t L_15 = (intptr_t)U3CJudgeDeathU3Ec__AnonStorey8_U3CU3Em__0_m2703809332_RuntimeMethod_var;
 		Action_t1264377477 * L_16 = (Action_t1264377477 *)il2cpp_codegen_object_new(Action_t1264377477_il2cpp_TypeInfo_var);
 		Action__ctor_m2994342681(L_16, L_14, (intptr_t)L_15, /*hidden argument*/NULL);
 		RuntimeObject* L_17 = BattleManager_DelayMethod_m2023750302(__this, (1.0f), L_16, /*hidden argument*/NULL);
@@ -14926,16 +15363,16 @@ IL_0080:
 	}
 	{
 		int32_t L_19 = V_2;
-		int32_t L_20 = __this->get_targetMonsterId_enemy_25();
+		int32_t L_20 = __this->get_targetMonsterId_enemy_27();
 		if ((!(((uint32_t)L_19) == ((uint32_t)L_20))))
 		{
 			goto IL_00b8;
 		}
 	}
 	{
-		__this->set_targetMonsterId_enemy_25(0);
-		U3CJudgeDeathU3Ec__AnonStorey6_t3788336905 * L_21 = V_0;
-		intptr_t L_22 = (intptr_t)U3CJudgeDeathU3Ec__AnonStorey6_U3CU3Em__1_m445539993_RuntimeMethod_var;
+		__this->set_targetMonsterId_enemy_27(0);
+		U3CJudgeDeathU3Ec__AnonStorey8_t2641325833 * L_21 = V_0;
+		intptr_t L_22 = (intptr_t)U3CJudgeDeathU3Ec__AnonStorey8_U3CU3Em__1_m365157172_RuntimeMethod_var;
 		Action_t1264377477 * L_23 = (Action_t1264377477 *)il2cpp_codegen_object_new(Action_t1264377477_il2cpp_TypeInfo_var);
 		Action__ctor_m2994342681(L_23, L_21, (intptr_t)L_22, /*hidden argument*/NULL);
 		RuntimeObject* L_24 = BattleManager_DelayMethod_m2023750302(__this, (1.0f), L_23, /*hidden argument*/NULL);
@@ -14947,7 +15384,7 @@ IL_00b8:
 		GameObject_t1113636619 * L_25 = ___attackedMonster1;
 		NullCheck(L_25);
 		MonsterAnimation_t2565820548 * L_26 = GameObject_GetComponent_TisMonsterAnimation_t2565820548_m2662653647(L_25, /*hidden argument*/GameObject_GetComponent_TisMonsterAnimation_t2565820548_m2662653647_RuntimeMethod_var);
-		float L_27 = __this->get_time_deathAnimation_32();
+		float L_27 = __this->get_time_deathAnimation_34();
 		NullCheck(L_26);
 		MonsterAnimation_DeathAnimation_m4177925567(L_26, L_27, /*hidden argument*/NULL);
 		V_1 = (bool)1;
@@ -14955,8 +15392,8 @@ IL_00b8:
 
 IL_00cb:
 	{
-		int32_t L_28 = __this->get_counter_checkNextAction_21();
-		int32_t L_29 = __this->get_count_targetMonster_22();
+		int32_t L_28 = __this->get_counter_checkNextAction_23();
+		int32_t L_29 = __this->get_count_targetMonster_24();
 		if ((!(((uint32_t)L_28) == ((uint32_t)L_29))))
 		{
 			goto IL_0112;
@@ -14970,9 +15407,9 @@ IL_00cb:
 		}
 	}
 	{
-		float L_31 = __this->get_time_deathAnimation_32();
-		U3CJudgeDeathU3Ec__AnonStorey6_t3788336905 * L_32 = V_0;
-		intptr_t L_33 = (intptr_t)U3CJudgeDeathU3Ec__AnonStorey6_U3CU3Em__2_m3166529177_RuntimeMethod_var;
+		float L_31 = __this->get_time_deathAnimation_34();
+		U3CJudgeDeathU3Ec__AnonStorey8_t2641325833 * L_32 = V_0;
+		intptr_t L_33 = (intptr_t)U3CJudgeDeathU3Ec__AnonStorey8_U3CU3Em__2_m2321472308_RuntimeMethod_var;
 		Action_t1264377477 * L_34 = (Action_t1264377477 *)il2cpp_codegen_object_new(Action_t1264377477_il2cpp_TypeInfo_var);
 		Action__ctor_m2994342681(L_34, L_32, (intptr_t)L_33, /*hidden argument*/NULL);
 		RuntimeObject* L_35 = BattleManager_DelayMethod_m2023750302(__this, L_31, L_34, /*hidden argument*/NULL);
@@ -14982,7 +15419,7 @@ IL_00cb:
 
 IL_0106:
 	{
-		U3CJudgeDeathU3Ec__AnonStorey6_t3788336905 * L_36 = V_0;
+		U3CJudgeDeathU3Ec__AnonStorey8_t2641325833 * L_36 = V_0;
 		NullCheck(L_36);
 		GameObject_t1113636619 * L_37 = L_36->get_attackMonster_0();
 		BattleManager_StepBack_m2143477052(__this, L_37, /*hidden argument*/NULL);
@@ -15010,7 +15447,7 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_StepBack_m2143477052 (BattleMan
 		ArrayElementTypeCheck (L_2, _stringLiteral3452614616);
 		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject *)_stringLiteral3452614616);
 		ObjectU5BU5D_t2843939325* L_3 = L_2;
-		float L_4 = __this->get_diff_step_36();
+		float L_4 = __this->get_diff_step_38();
 		float L_5 = ((float)il2cpp_codegen_multiply((float)(-1.0f), (float)L_4));
 		RuntimeObject * L_6 = Box(Single_t1397266774_il2cpp_TypeInfo_var, &L_5);
 		NullCheck(L_3);
@@ -15021,7 +15458,7 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_StepBack_m2143477052 (BattleMan
 		ArrayElementTypeCheck (L_7, _stringLiteral63249541);
 		(L_7)->SetAt(static_cast<il2cpp_array_size_t>(2), (RuntimeObject *)_stringLiteral63249541);
 		ObjectU5BU5D_t2843939325* L_8 = L_7;
-		float L_9 = __this->get_time_stepBack_29();
+		float L_9 = __this->get_time_stepBack_31();
 		float L_10 = L_9;
 		RuntimeObject * L_11 = Box(Single_t1397266774_il2cpp_TypeInfo_var, &L_10);
 		NullCheck(L_8);
@@ -15040,7 +15477,7 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_StepBack_m2143477052 (BattleMan
 		IL2CPP_RUNTIME_CLASS_INIT(iTween_t770867771_il2cpp_TypeInfo_var);
 		Hashtable_t1853889766 * L_16 = iTween_Hash_m3216314892(NULL /*static, unused*/, L_13, /*hidden argument*/NULL);
 		iTween_MoveAdd_m1725333547(NULL /*static, unused*/, L_0, L_16, /*hidden argument*/NULL);
-		float L_17 = __this->get_time_stepBack_29();
+		float L_17 = __this->get_time_stepBack_31();
 		intptr_t L_18 = (intptr_t)BattleManager_U3CStepBackU3Em__3_m3084965929_RuntimeMethod_var;
 		Action_t1264377477 * L_19 = (Action_t1264377477 *)il2cpp_codegen_object_new(Action_t1264377477_il2cpp_TypeInfo_var);
 		Action__ctor_m2994342681(L_19, __this, (intptr_t)L_18, /*hidden argument*/NULL);
@@ -15069,14 +15506,14 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_JudgeVOD_m3256436688 (BattleMan
 
 IL_0009:
 	{
-		List_1_t2585711361 * L_0 = __this->get_enemyPartyList_40();
+		List_1_t2585711361 * L_0 = __this->get_enemyPartyList_42();
 		int32_t L_1 = V_1;
 		NullCheck(L_0);
 		GameObject_t1113636619 * L_2 = List_1_get_Item_m3743125852(L_0, L_1, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
 		NullCheck(L_2);
 		CharacterStatus_t2166422524 * L_3 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_2, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_3);
-		bool L_4 = L_3->get_deathFlag_13();
+		bool L_4 = L_3->get_deathFlag_17();
 		if (L_4)
 		{
 			goto IL_0028;
@@ -15096,7 +15533,7 @@ IL_0028:
 IL_002c:
 	{
 		int32_t L_7 = V_1;
-		List_1_t2585711361 * L_8 = __this->get_enemyPartyList_40();
+		List_1_t2585711361 * L_8 = __this->get_enemyPartyList_42();
 		NullCheck(L_8);
 		int32_t L_9 = List_1_get_Count_m2812834599(L_8, /*hidden argument*/List_1_get_Count_m2812834599_RuntimeMethod_var);
 		if ((((int32_t)L_7) < ((int32_t)L_9)))
@@ -15112,7 +15549,7 @@ IL_002c:
 		}
 	}
 	{
-		__this->set_vod_23(1);
+		__this->set_vod_25(1);
 		BattleManager_GameSet_m1655583954(__this, /*hidden argument*/NULL);
 		return;
 	}
@@ -15126,14 +15563,14 @@ IL_0051:
 
 IL_005a:
 	{
-		List_1_t2585711361 * L_11 = __this->get_myPartyList_39();
+		List_1_t2585711361 * L_11 = __this->get_myPartyList_41();
 		int32_t L_12 = V_2;
 		NullCheck(L_11);
 		GameObject_t1113636619 * L_13 = List_1_get_Item_m3743125852(L_11, L_12, /*hidden argument*/List_1_get_Item_m3743125852_RuntimeMethod_var);
 		NullCheck(L_13);
 		CharacterStatus_t2166422524 * L_14 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_13, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_14);
-		bool L_15 = L_14->get_deathFlag_13();
+		bool L_15 = L_14->get_deathFlag_17();
 		if (L_15)
 		{
 			goto IL_0079;
@@ -15153,7 +15590,7 @@ IL_0079:
 IL_007d:
 	{
 		int32_t L_18 = V_2;
-		List_1_t2585711361 * L_19 = __this->get_myPartyList_39();
+		List_1_t2585711361 * L_19 = __this->get_myPartyList_41();
 		NullCheck(L_19);
 		int32_t L_20 = List_1_get_Count_m2812834599(L_19, /*hidden argument*/List_1_get_Count_m2812834599_RuntimeMethod_var);
 		if ((((int32_t)L_18) < ((int32_t)L_20)))
@@ -15169,7 +15606,7 @@ IL_007d:
 		}
 	}
 	{
-		__this->set_vod_23((-1));
+		__this->set_vod_25((-1));
 		BattleManager_GameSet_m1655583954(__this, /*hidden argument*/NULL);
 		return;
 	}
@@ -15263,7 +15700,7 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_DisplayVOD_m769596753 (BattleMa
 	GameObject_t1113636619 * V_0 = NULL;
 	GameObject_t1113636619 * V_1 = NULL;
 	{
-		int32_t L_0 = __this->get_vod_23();
+		int32_t L_0 = __this->get_vod_25();
 		if ((!(((uint32_t)L_0) == ((uint32_t)1))))
 		{
 			goto IL_0062;
@@ -15453,6 +15890,272 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_DisplayDamageText_m4197033457 (
 		String_t* L_20 = Int32_ToString_m141394615((int32_t*)(&___damage1), /*hidden argument*/NULL);
 		NullCheck(L_19);
 		VirtActionInvoker1< String_t* >::Invoke(73 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_19, L_20);
+		GameObject_t1113636619 * L_21 = V_1;
+		NullCheck(L_21);
+		Text_t1901882714 * L_22 = GameObject_GetComponent_TisText_t1901882714_m2114913816(L_21, /*hidden argument*/GameObject_GetComponent_TisText_t1901882714_m2114913816_RuntimeMethod_var);
+		Color_t2555686324  L_23;
+		memset(&L_23, 0, sizeof(L_23));
+		Color__ctor_m286683560((&L_23), (1.0f), (0.75f), (0.175f), /*hidden argument*/NULL);
+		NullCheck(L_22);
+		VirtActionInvoker1< Color_t2555686324  >::Invoke(23 /* System.Void UnityEngine.UI.Graphic::set_color(UnityEngine.Color) */, L_22, L_23);
+		return;
+	}
+}
+// System.Void BattleManager::DisplayHealText(UnityEngine.GameObject,System.Int32)
+extern "C" IL2CPP_METHOD_ATTR void BattleManager_DisplayHealText_m1325575413 (BattleManager_t4022130644 * __this, GameObject_t1113636619 * ___attackedMonster0, int32_t ___healAmount1, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (BattleManager_DisplayHealText_m1325575413_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	Vector3_t3722313464  V_0;
+	memset(&V_0, 0, sizeof(V_0));
+	GameObject_t1113636619 * V_1 = NULL;
+	{
+		GameObject_t1113636619 * L_0 = __this->get_canvas_12();
+		NullCheck(L_0);
+		Transform_t3600365921 * L_1 = GameObject_get_transform_m1369836730(L_0, /*hidden argument*/NULL);
+		GameObject_t1113636619 * L_2 = ___attackedMonster0;
+		NullCheck(L_2);
+		RectTransform_t3704657025 * L_3 = GameObject_GetComponent_TisRectTransform_t3704657025_m2005094398(L_2, /*hidden argument*/GameObject_GetComponent_TisRectTransform_t3704657025_m2005094398_RuntimeMethod_var);
+		NullCheck(L_3);
+		Vector3_t3722313464  L_4 = Transform_get_position_m36019626(L_3, /*hidden argument*/NULL);
+		NullCheck(L_1);
+		Vector3_t3722313464  L_5 = Transform_InverseTransformPoint_m1343916000(L_1, L_4, /*hidden argument*/NULL);
+		V_0 = L_5;
+		GameObject_t1113636619 * L_6 = __this->get_txt_healPrefab_21();
+		IL2CPP_RUNTIME_CLASS_INIT(Object_t631007953_il2cpp_TypeInfo_var);
+		GameObject_t1113636619 * L_7 = Object_Instantiate_TisGameObject_t1113636619_m4070250708(NULL /*static, unused*/, L_6, /*hidden argument*/Object_Instantiate_TisGameObject_t1113636619_m4070250708_RuntimeMethod_var);
+		V_1 = L_7;
+		GameObject_t1113636619 * L_8 = V_1;
+		NullCheck(L_8);
+		Transform_t3600365921 * L_9 = GameObject_get_transform_m1369836730(L_8, /*hidden argument*/NULL);
+		GameObject_t1113636619 * L_10 = __this->get_canvas_12();
+		NullCheck(L_10);
+		Transform_t3600365921 * L_11 = GameObject_get_transform_m1369836730(L_10, /*hidden argument*/NULL);
+		NullCheck(L_9);
+		Transform_SetParent_m381167889(L_9, L_11, /*hidden argument*/NULL);
+		GameObject_t1113636619 * L_12 = V_1;
+		NullCheck(L_12);
+		RectTransform_t3704657025 * L_13 = GameObject_GetComponent_TisRectTransform_t3704657025_m2005094398(L_12, /*hidden argument*/GameObject_GetComponent_TisRectTransform_t3704657025_m2005094398_RuntimeMethod_var);
+		float L_14 = (&V_0)->get_x_2();
+		float L_15 = (&V_0)->get_y_3();
+		float L_16 = (&V_0)->get_z_4();
+		Vector3_t3722313464  L_17;
+		memset(&L_17, 0, sizeof(L_17));
+		Vector3__ctor_m3353183577((&L_17), L_14, L_15, L_16, /*hidden argument*/NULL);
+		NullCheck(L_13);
+		Transform_set_localPosition_m4128471975(L_13, L_17, /*hidden argument*/NULL);
+		GameObject_t1113636619 * L_18 = V_1;
+		NullCheck(L_18);
+		Text_t1901882714 * L_19 = GameObject_GetComponent_TisText_t1901882714_m2114913816(L_18, /*hidden argument*/GameObject_GetComponent_TisText_t1901882714_m2114913816_RuntimeMethod_var);
+		String_t* L_20 = Int32_ToString_m141394615((int32_t*)(&___healAmount1), /*hidden argument*/NULL);
+		NullCheck(L_19);
+		VirtActionInvoker1< String_t* >::Invoke(73 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_19, L_20);
+		GameObject_t1113636619 * L_21 = V_1;
+		NullCheck(L_21);
+		Text_t1901882714 * L_22 = GameObject_GetComponent_TisText_t1901882714_m2114913816(L_21, /*hidden argument*/GameObject_GetComponent_TisText_t1901882714_m2114913816_RuntimeMethod_var);
+		Color_t2555686324  L_23;
+		memset(&L_23, 0, sizeof(L_23));
+		Color__ctor_m286683560((&L_23), (0.351f), (1.0f), (0.176f), /*hidden argument*/NULL);
+		NullCheck(L_22);
+		VirtActionInvoker1< Color_t2555686324  >::Invoke(23 /* System.Void UnityEngine.UI.Graphic::set_color(UnityEngine.Color) */, L_22, L_23);
+		return;
+	}
+}
+// System.Void BattleManager::DisplayChangeText(UnityEngine.GameObject,System.String,System.Boolean)
+extern "C" IL2CPP_METHOD_ATTR void BattleManager_DisplayChangeText_m4082015172 (BattleManager_t4022130644 * __this, GameObject_t1113636619 * ___attackedMonster0, String_t* ___changeStatus1, bool ___isUp2, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (BattleManager_DisplayChangeText_m4082015172_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	Vector3_t3722313464  V_0;
+	memset(&V_0, 0, sizeof(V_0));
+	String_t* V_1 = NULL;
+	String_t* V_2 = NULL;
+	GameObject_t1113636619 * V_3 = NULL;
+	String_t* G_B13_0 = NULL;
+	Text_t1901882714 * G_B15_0 = NULL;
+	Text_t1901882714 * G_B14_0 = NULL;
+	Color_t2555686324  G_B16_0;
+	memset(&G_B16_0, 0, sizeof(G_B16_0));
+	Text_t1901882714 * G_B16_1 = NULL;
+	{
+		GameObject_t1113636619 * L_0 = __this->get_canvas_12();
+		NullCheck(L_0);
+		Transform_t3600365921 * L_1 = GameObject_get_transform_m1369836730(L_0, /*hidden argument*/NULL);
+		GameObject_t1113636619 * L_2 = ___attackedMonster0;
+		NullCheck(L_2);
+		RectTransform_t3704657025 * L_3 = GameObject_GetComponent_TisRectTransform_t3704657025_m2005094398(L_2, /*hidden argument*/GameObject_GetComponent_TisRectTransform_t3704657025_m2005094398_RuntimeMethod_var);
+		NullCheck(L_3);
+		Vector3_t3722313464  L_4 = Transform_get_position_m36019626(L_3, /*hidden argument*/NULL);
+		NullCheck(L_1);
+		Vector3_t3722313464  L_5 = Transform_InverseTransformPoint_m1343916000(L_1, L_4, /*hidden argument*/NULL);
+		V_0 = L_5;
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		String_t* L_6 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->get_Empty_2();
+		V_1 = L_6;
+		String_t* L_7 = ___changeStatus1;
+		if (!L_7)
+		{
+			goto IL_0099;
+		}
+	}
+	{
+		String_t* L_8 = ___changeStatus1;
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		bool L_9 = String_op_Equality_m920492651(NULL /*static, unused*/, L_8, _stringLiteral3455760360, /*hidden argument*/NULL);
+		if (L_9)
+		{
+			goto IL_006d;
+		}
+	}
+	{
+		String_t* L_10 = ___changeStatus1;
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		bool L_11 = String_op_Equality_m920492651(NULL /*static, unused*/, L_10, _stringLiteral868794430, /*hidden argument*/NULL);
+		if (L_11)
+		{
+			goto IL_0078;
+		}
+	}
+	{
+		String_t* L_12 = ___changeStatus1;
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		bool L_13 = String_op_Equality_m920492651(NULL /*static, unused*/, L_12, _stringLiteral204627857, /*hidden argument*/NULL);
+		if (L_13)
+		{
+			goto IL_0083;
+		}
+	}
+	{
+		String_t* L_14 = ___changeStatus1;
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		bool L_15 = String_op_Equality_m920492651(NULL /*static, unused*/, L_14, _stringLiteral3556802456, /*hidden argument*/NULL);
+		if (L_15)
+		{
+			goto IL_008e;
+		}
+	}
+	{
+		goto IL_0099;
+	}
+
+IL_006d:
+	{
+		V_1 = _stringLiteral4284480749;
+		goto IL_0099;
+	}
+
+IL_0078:
+	{
+		V_1 = _stringLiteral4019232584;
+		goto IL_0099;
+	}
+
+IL_0083:
+	{
+		V_1 = _stringLiteral141685313;
+		goto IL_0099;
+	}
+
+IL_008e:
+	{
+		V_1 = _stringLiteral314477317;
+		goto IL_0099;
+	}
+
+IL_0099:
+	{
+		bool L_16 = ___isUp2;
+		if (!L_16)
+		{
+			goto IL_00a9;
+		}
+	}
+	{
+		G_B13_0 = _stringLiteral214419195;
+		goto IL_00ae;
+	}
+
+IL_00a9:
+	{
+		G_B13_0 = _stringLiteral1747750976;
+	}
+
+IL_00ae:
+	{
+		V_2 = G_B13_0;
+		GameObject_t1113636619 * L_17 = __this->get_txt_changePrefab_22();
+		IL2CPP_RUNTIME_CLASS_INIT(Object_t631007953_il2cpp_TypeInfo_var);
+		GameObject_t1113636619 * L_18 = Object_Instantiate_TisGameObject_t1113636619_m4070250708(NULL /*static, unused*/, L_17, /*hidden argument*/Object_Instantiate_TisGameObject_t1113636619_m4070250708_RuntimeMethod_var);
+		V_3 = L_18;
+		GameObject_t1113636619 * L_19 = V_3;
+		NullCheck(L_19);
+		Transform_t3600365921 * L_20 = GameObject_get_transform_m1369836730(L_19, /*hidden argument*/NULL);
+		GameObject_t1113636619 * L_21 = __this->get_canvas_12();
+		NullCheck(L_21);
+		Transform_t3600365921 * L_22 = GameObject_get_transform_m1369836730(L_21, /*hidden argument*/NULL);
+		NullCheck(L_20);
+		Transform_SetParent_m381167889(L_20, L_22, /*hidden argument*/NULL);
+		GameObject_t1113636619 * L_23 = V_3;
+		NullCheck(L_23);
+		RectTransform_t3704657025 * L_24 = GameObject_GetComponent_TisRectTransform_t3704657025_m2005094398(L_23, /*hidden argument*/GameObject_GetComponent_TisRectTransform_t3704657025_m2005094398_RuntimeMethod_var);
+		float L_25 = (&V_0)->get_x_2();
+		float L_26 = (&V_0)->get_y_3();
+		float L_27 = (&V_0)->get_z_4();
+		Vector3_t3722313464  L_28;
+		memset(&L_28, 0, sizeof(L_28));
+		Vector3__ctor_m3353183577((&L_28), L_25, L_26, L_27, /*hidden argument*/NULL);
+		NullCheck(L_24);
+		Transform_set_localPosition_m4128471975(L_24, L_28, /*hidden argument*/NULL);
+		GameObject_t1113636619 * L_29 = V_3;
+		NullCheck(L_29);
+		Text_t1901882714 * L_30 = GameObject_GetComponent_TisText_t1901882714_m2114913816(L_29, /*hidden argument*/GameObject_GetComponent_TisText_t1901882714_m2114913816_RuntimeMethod_var);
+		String_t* L_31 = V_1;
+		String_t* L_32 = V_2;
+		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
+		String_t* L_33 = String_Concat_m3937257545(NULL /*static, unused*/, L_31, L_32, /*hidden argument*/NULL);
+		NullCheck(L_30);
+		VirtActionInvoker1< String_t* >::Invoke(73 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_30, L_33);
+		GameObject_t1113636619 * L_34 = V_3;
+		NullCheck(L_34);
+		Text_t1901882714 * L_35 = GameObject_GetComponent_TisText_t1901882714_m2114913816(L_34, /*hidden argument*/GameObject_GetComponent_TisText_t1901882714_m2114913816_RuntimeMethod_var);
+		bool L_36 = ___isUp2;
+		G_B14_0 = L_35;
+		if (!L_36)
+		{
+			G_B15_0 = L_35;
+			goto IL_012d;
+		}
+	}
+	{
+		Color_t2555686324  L_37;
+		memset(&L_37, 0, sizeof(L_37));
+		Color__ctor_m286683560((&L_37), (0.519f), (0.85f), (0.925f), /*hidden argument*/NULL);
+		G_B16_0 = L_37;
+		G_B16_1 = G_B14_0;
+		goto IL_0141;
+	}
+
+IL_012d:
+	{
+		Color_t2555686324  L_38;
+		memset(&L_38, 0, sizeof(L_38));
+		Color__ctor_m286683560((&L_38), (0.726f), (0.202f), (0.677f), /*hidden argument*/NULL);
+		G_B16_0 = L_38;
+		G_B16_1 = G_B15_0;
+	}
+
+IL_0141:
+	{
+		NullCheck(G_B16_1);
+		VirtActionInvoker1< Color_t2555686324  >::Invoke(23 /* System.Void UnityEngine.UI.Graphic::set_color(UnityEngine.Color) */, G_B16_1, G_B16_0);
 		return;
 	}
 }
@@ -15485,14 +16188,14 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_TouchMonster_m1136501858 (Battl
 	}
 	{
 		int32_t L_4 = V_0;
-		int32_t L_5 = __this->get_targetMonsterId_ally_24();
+		int32_t L_5 = __this->get_targetMonsterId_ally_26();
 		if ((!(((uint32_t)L_4) == ((uint32_t)L_5))))
 		{
 			goto IL_0037;
 		}
 	}
 	{
-		__this->set_targetMonsterId_ally_24(0);
+		__this->set_targetMonsterId_ally_26(0);
 		GameObject_t1113636619 * L_6 = __this->get_targetMarker_ally_13();
 		NullCheck(L_6);
 		GameObject_SetActive_m796801857(L_6, (bool)0, /*hidden argument*/NULL);
@@ -15502,7 +16205,7 @@ extern "C" IL2CPP_METHOD_ATTR void BattleManager_TouchMonster_m1136501858 (Battl
 IL_0037:
 	{
 		int32_t L_7 = V_0;
-		__this->set_targetMonsterId_ally_24(L_7);
+		__this->set_targetMonsterId_ally_26(L_7);
 		GameObject_t1113636619 * L_8 = __this->get_canvas_12();
 		NullCheck(L_8);
 		Transform_t3600365921 * L_9 = GameObject_get_transform_m1369836730(L_8, /*hidden argument*/NULL);
@@ -15538,14 +16241,14 @@ IL_0096:
 IL_009b:
 	{
 		int32_t L_21 = V_0;
-		int32_t L_22 = __this->get_targetMonsterId_enemy_25();
+		int32_t L_22 = __this->get_targetMonsterId_enemy_27();
 		if ((!(((uint32_t)L_21) == ((uint32_t)L_22))))
 		{
 			goto IL_00bf;
 		}
 	}
 	{
-		__this->set_targetMonsterId_enemy_25(0);
+		__this->set_targetMonsterId_enemy_27(0);
 		GameObject_t1113636619 * L_23 = __this->get_targetMarker_enemy_14();
 		NullCheck(L_23);
 		GameObject_SetActive_m796801857(L_23, (bool)0, /*hidden argument*/NULL);
@@ -15555,7 +16258,7 @@ IL_009b:
 IL_00bf:
 	{
 		int32_t L_24 = V_0;
-		__this->set_targetMonsterId_enemy_25(L_24);
+		__this->set_targetMonsterId_enemy_27(L_24);
 		GameObject_t1113636619 * L_25 = __this->get_canvas_12();
 		NullCheck(L_25);
 		Transform_t3600365921 * L_26 = GameObject_get_transform_m1369836730(L_25, /*hidden argument*/NULL);
@@ -15628,13 +16331,23 @@ extern "C" IL2CPP_METHOD_ATTR int32_t BattleManager_U3CSortMonsterOrderU3Em__0_m
 		NullCheck(L_0);
 		CharacterStatus_t2166422524 * L_1 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_0, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_1);
-		int32_t L_2 = L_1->get_speed_10();
-		GameObject_t1113636619 * L_3 = ___a0;
+		int32_t L_2 = L_1->get_speed_11();
+		GameObject_t1113636619 * L_3 = ___b1;
 		NullCheck(L_3);
 		CharacterStatus_t2166422524 * L_4 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_3, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
 		NullCheck(L_4);
-		int32_t L_5 = L_4->get_speed_10();
-		return ((int32_t)il2cpp_codegen_subtract((int32_t)L_2, (int32_t)L_5));
+		int32_t L_5 = L_4->get_statusRank_speed_14();
+		GameObject_t1113636619 * L_6 = ___a0;
+		NullCheck(L_6);
+		CharacterStatus_t2166422524 * L_7 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_6, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
+		NullCheck(L_7);
+		int32_t L_8 = L_7->get_speed_11();
+		GameObject_t1113636619 * L_9 = ___a0;
+		NullCheck(L_9);
+		CharacterStatus_t2166422524 * L_10 = GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501(L_9, /*hidden argument*/GameObject_GetComponent_TisCharacterStatus_t2166422524_m3703852501_RuntimeMethod_var);
+		NullCheck(L_10);
+		int32_t L_11 = L_10->get_statusRank_speed_14();
+		return ((int32_t)il2cpp_codegen_subtract((int32_t)((int32_t)il2cpp_codegen_multiply((int32_t)L_2, (int32_t)((int32_t)il2cpp_codegen_add((int32_t)1, (int32_t)((int32_t)((int32_t)L_5/(int32_t)2)))))), (int32_t)((int32_t)il2cpp_codegen_multiply((int32_t)L_8, (int32_t)((int32_t)il2cpp_codegen_add((int32_t)1, (int32_t)((int32_t)((int32_t)L_11/(int32_t)2))))))));
 	}
 }
 // System.Guid BattleManager::<AllyAttack>m__1(UnityEngine.GameObject)
@@ -15887,6 +16600,64 @@ extern "C" IL2CPP_METHOD_ATTR void U3CBlinkU3Ec__Iterator0_Reset_m398838904 (U3C
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Void BattleManager/<ChangeSkill>c__AnonStorey7::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void U3CChangeSkillU3Ec__AnonStorey7__ctor_m1267151925 (U3CChangeSkillU3Ec__AnonStorey7_t1079478228 * __this, const RuntimeMethod* method)
+{
+	{
+		Object__ctor_m297566312(__this, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void BattleManager/<ChangeSkill>c__AnonStorey7::<>m__0()
+extern "C" IL2CPP_METHOD_ATTR void U3CChangeSkillU3Ec__AnonStorey7_U3CU3Em__0_m3985990463 (U3CChangeSkillU3Ec__AnonStorey7_t1079478228 * __this, const RuntimeMethod* method)
+{
+	{
+		BattleManager_t4022130644 * L_0 = __this->get_U24this_3();
+		GameObject_t1113636619 * L_1 = __this->get_attackMonster_0();
+		GameObject_t1113636619 * L_2 = __this->get_attackedMonster_1();
+		int32_t L_3 = __this->get_hp_2();
+		NullCheck(L_0);
+		BattleManager_JudgeDeath_m2984070186(L_0, L_1, L_2, L_3, /*hidden argument*/NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void BattleManager/<DamageSkill>c__AnonStorey5::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void U3CDamageSkillU3Ec__AnonStorey5__ctor_m786810855 (U3CDamageSkillU3Ec__AnonStorey5_t102370528 * __this, const RuntimeMethod* method)
+{
+	{
+		Object__ctor_m297566312(__this, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void BattleManager/<DamageSkill>c__AnonStorey5::<>m__0()
+extern "C" IL2CPP_METHOD_ATTR void U3CDamageSkillU3Ec__AnonStorey5_U3CU3Em__0_m3410607442 (U3CDamageSkillU3Ec__AnonStorey5_t102370528 * __this, const RuntimeMethod* method)
+{
+	{
+		BattleManager_t4022130644 * L_0 = __this->get_U24this_3();
+		GameObject_t1113636619 * L_1 = __this->get_attackMonster_0();
+		GameObject_t1113636619 * L_2 = __this->get_attackedMonster_1();
+		int32_t L_3 = __this->get_hp_2();
+		NullCheck(L_0);
+		BattleManager_JudgeDeath_m2984070186(L_0, L_1, L_2, L_3, /*hidden argument*/NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
 // System.Void BattleManager/<DelayMethod>c__Iterator1::.ctor()
 extern "C" IL2CPP_METHOD_ATTR void U3CDelayMethodU3Ec__Iterator1__ctor_m3655161227 (U3CDelayMethodU3Ec__Iterator1_t1075979784 * __this, const RuntimeMethod* method)
 {
@@ -16041,22 +16812,22 @@ extern "C" IL2CPP_METHOD_ATTR void U3CEnemyActionU3Ec__AnonStorey2_U3CU3Em__0_m3
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void BattleManager/<HitAnimation>c__AnonStorey5::.ctor()
-extern "C" IL2CPP_METHOD_ATTR void U3CHitAnimationU3Ec__AnonStorey5__ctor_m849707954 (U3CHitAnimationU3Ec__AnonStorey5_t246070209 * __this, const RuntimeMethod* method)
+// System.Void BattleManager/<HealSkill>c__AnonStorey6::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void U3CHealSkillU3Ec__AnonStorey6__ctor_m1686869563 (U3CHealSkillU3Ec__AnonStorey6_t4147225704 * __this, const RuntimeMethod* method)
 {
 	{
 		Object__ctor_m297566312(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Void BattleManager/<HitAnimation>c__AnonStorey5::<>m__0()
-extern "C" IL2CPP_METHOD_ATTR void U3CHitAnimationU3Ec__AnonStorey5_U3CU3Em__0_m2822479741 (U3CHitAnimationU3Ec__AnonStorey5_t246070209 * __this, const RuntimeMethod* method)
+// System.Void BattleManager/<HealSkill>c__AnonStorey6::<>m__0()
+extern "C" IL2CPP_METHOD_ATTR void U3CHealSkillU3Ec__AnonStorey6_U3CU3Em__0_m3297680134 (U3CHealSkillU3Ec__AnonStorey6_t4147225704 * __this, const RuntimeMethod* method)
 {
 	{
 		BattleManager_t4022130644 * L_0 = __this->get_U24this_3();
 		GameObject_t1113636619 * L_1 = __this->get_attackMonster_0();
 		GameObject_t1113636619 * L_2 = __this->get_attackedMonster_1();
-		int32_t L_3 = __this->get_hp_2();
+		int32_t L_3 = __this->get_currentHp_2();
 		NullCheck(L_0);
 		BattleManager_JudgeDeath_m2984070186(L_0, L_1, L_2, L_3, /*hidden argument*/NULL);
 		return;
@@ -16070,16 +16841,16 @@ extern "C" IL2CPP_METHOD_ATTR void U3CHitAnimationU3Ec__AnonStorey5_U3CU3Em__0_m
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void BattleManager/<JudgeDeath>c__AnonStorey6::.ctor()
-extern "C" IL2CPP_METHOD_ATTR void U3CJudgeDeathU3Ec__AnonStorey6__ctor_m3227271324 (U3CJudgeDeathU3Ec__AnonStorey6_t3788336905 * __this, const RuntimeMethod* method)
+// System.Void BattleManager/<JudgeDeath>c__AnonStorey8::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void U3CJudgeDeathU3Ec__AnonStorey8__ctor_m2458569729 (U3CJudgeDeathU3Ec__AnonStorey8_t2641325833 * __this, const RuntimeMethod* method)
 {
 	{
 		Object__ctor_m297566312(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
-// System.Void BattleManager/<JudgeDeath>c__AnonStorey6::<>m__0()
-extern "C" IL2CPP_METHOD_ATTR void U3CJudgeDeathU3Ec__AnonStorey6_U3CU3Em__0_m2784192153 (U3CJudgeDeathU3Ec__AnonStorey6_t3788336905 * __this, const RuntimeMethod* method)
+// System.Void BattleManager/<JudgeDeath>c__AnonStorey8::<>m__0()
+extern "C" IL2CPP_METHOD_ATTR void U3CJudgeDeathU3Ec__AnonStorey8_U3CU3Em__0_m2703809332 (U3CJudgeDeathU3Ec__AnonStorey8_t2641325833 * __this, const RuntimeMethod* method)
 {
 	{
 		BattleManager_t4022130644 * L_0 = __this->get_U24this_1();
@@ -16090,8 +16861,8 @@ extern "C" IL2CPP_METHOD_ATTR void U3CJudgeDeathU3Ec__AnonStorey6_U3CU3Em__0_m27
 		return;
 	}
 }
-// System.Void BattleManager/<JudgeDeath>c__AnonStorey6::<>m__1()
-extern "C" IL2CPP_METHOD_ATTR void U3CJudgeDeathU3Ec__AnonStorey6_U3CU3Em__1_m445539993 (U3CJudgeDeathU3Ec__AnonStorey6_t3788336905 * __this, const RuntimeMethod* method)
+// System.Void BattleManager/<JudgeDeath>c__AnonStorey8::<>m__1()
+extern "C" IL2CPP_METHOD_ATTR void U3CJudgeDeathU3Ec__AnonStorey8_U3CU3Em__1_m365157172 (U3CJudgeDeathU3Ec__AnonStorey8_t2641325833 * __this, const RuntimeMethod* method)
 {
 	{
 		BattleManager_t4022130644 * L_0 = __this->get_U24this_1();
@@ -16102,8 +16873,8 @@ extern "C" IL2CPP_METHOD_ATTR void U3CJudgeDeathU3Ec__AnonStorey6_U3CU3Em__1_m44
 		return;
 	}
 }
-// System.Void BattleManager/<JudgeDeath>c__AnonStorey6::<>m__2()
-extern "C" IL2CPP_METHOD_ATTR void U3CJudgeDeathU3Ec__AnonStorey6_U3CU3Em__2_m3166529177 (U3CJudgeDeathU3Ec__AnonStorey6_t3788336905 * __this, const RuntimeMethod* method)
+// System.Void BattleManager/<JudgeDeath>c__AnonStorey8::<>m__2()
+extern "C" IL2CPP_METHOD_ATTR void U3CJudgeDeathU3Ec__AnonStorey8_U3CU3Em__2_m2321472308 (U3CJudgeDeathU3Ec__AnonStorey8_t2641325833 * __this, const RuntimeMethod* method)
 {
 	{
 		BattleManager_t4022130644 * L_0 = __this->get_U24this_1();
@@ -16208,8 +16979,8 @@ extern "C" IL2CPP_METHOD_ATTR void CharacterStatus__ctor_m1815363834 (CharacterS
 		NullCheck(L_4);
 		List_1_Add_m697420525(L_4, 0, /*hidden argument*/List_1_Add_m697420525_RuntimeMethod_var);
 		List_1_t128053199 * L_5 = V_0;
-		__this->set_skills_11(L_5);
-		__this->set_num_selectedSkill_12(1);
+		__this->set_skills_15(L_5);
+		__this->set_num_selectedSkill_16(1);
 		MonoBehaviour__ctor_m1579109191(__this, /*hidden argument*/NULL);
 		return;
 	}
@@ -17067,75 +17838,6 @@ extern "C" IL2CPP_METHOD_ATTR void U3CDelayMethodU3Ec__Iterator0_Reset_m39591354
 		NotSupportedException_t1314879016 * L_0 = (NotSupportedException_t1314879016 *)il2cpp_codegen_object_new(NotSupportedException_t1314879016_il2cpp_TypeInfo_var);
 		NotSupportedException__ctor_m2730133172(L_0, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, NULL, U3CDelayMethodU3Ec__Iterator0_Reset_m3959135449_RuntimeMethod_var);
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void MonsterData::.ctor()
-extern "C" IL2CPP_METHOD_ATTR void MonsterData__ctor_m16094597 (MonsterData_t2246618540 * __this, const RuntimeMethod* method)
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_method (MonsterData__ctor_m16094597_MetadataUsageId);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		List_1_t2799822858 * L_0 = (List_1_t2799822858 *)il2cpp_codegen_object_new(List_1_t2799822858_il2cpp_TypeInfo_var);
-		List_1__ctor_m2887460832(L_0, /*hidden argument*/List_1__ctor_m2887460832_RuntimeMethod_var);
-		__this->set_sheets_4(L_0);
-		ScriptableObject__ctor_m1310743131(__this, /*hidden argument*/NULL);
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void MonsterData/Param::.ctor()
-extern "C" IL2CPP_METHOD_ATTR void Param__ctor_m418924071 (Param_t3761760163 * __this, const RuntimeMethod* method)
-{
-	{
-		Object__ctor_m297566312(__this, /*hidden argument*/NULL);
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void MonsterData/Sheet::.ctor()
-extern "C" IL2CPP_METHOD_ATTR void Sheet__ctor_m2437517533 (Sheet_t1327748116 * __this, const RuntimeMethod* method)
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_method (Sheet__ctor_m2437517533_MetadataUsageId);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-		String_t* L_0 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->get_Empty_2();
-		__this->set_name_0(L_0);
-		List_1_t938867609 * L_1 = (List_1_t938867609 *)il2cpp_codegen_object_new(List_1_t938867609_il2cpp_TypeInfo_var);
-		List_1__ctor_m1352397184(L_1, /*hidden argument*/List_1__ctor_m1352397184_RuntimeMethod_var);
-		__this->set_list_1(L_1);
-		Object__ctor_m297566312(__this, /*hidden argument*/NULL);
-		return;
 	}
 }
 #ifdef __clang__

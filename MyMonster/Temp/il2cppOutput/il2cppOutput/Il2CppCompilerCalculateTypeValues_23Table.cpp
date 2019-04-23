@@ -20,8 +20,6 @@
 #include "il2cpp-object-internals.h"
 
 
-// System.Collections.Generic.List`1<SkillData/Param>
-struct List_1_t2959069203;
 // System.String
 struct String_t;
 
@@ -70,6 +68,8 @@ public:
 	int32_t ___HealAmount_6;
 	// System.Int32 SkillData/Param::ChangeAmount
 	int32_t ___ChangeAmount_7;
+	// System.String SkillData/Param::ChangeStatus
+	String_t* ___ChangeStatus_8;
 
 public:
 	inline static int32_t get_offset_of_No_0() { return static_cast<int32_t>(offsetof(Param_t1486994461, ___No_0)); }
@@ -139,53 +139,21 @@ public:
 	{
 		___ChangeAmount_7 = value;
 	}
+
+	inline static int32_t get_offset_of_ChangeStatus_8() { return static_cast<int32_t>(offsetof(Param_t1486994461, ___ChangeStatus_8)); }
+	inline String_t* get_ChangeStatus_8() const { return ___ChangeStatus_8; }
+	inline String_t** get_address_of_ChangeStatus_8() { return &___ChangeStatus_8; }
+	inline void set_ChangeStatus_8(String_t* value)
+	{
+		___ChangeStatus_8 = value;
+		Il2CppCodeGenWriteBarrier((&___ChangeStatus_8), value);
+	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
 #endif // PARAM_T1486994461_H
-#ifndef SHEET_T1672419742_H
-#define SHEET_T1672419742_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// SkillData/Sheet
-struct  Sheet_t1672419742  : public RuntimeObject
-{
-public:
-	// System.String SkillData/Sheet::name
-	String_t* ___name_0;
-	// System.Collections.Generic.List`1<SkillData/Param> SkillData/Sheet::list
-	List_1_t2959069203 * ___list_1;
-
-public:
-	inline static int32_t get_offset_of_name_0() { return static_cast<int32_t>(offsetof(Sheet_t1672419742, ___name_0)); }
-	inline String_t* get_name_0() const { return ___name_0; }
-	inline String_t** get_address_of_name_0() { return &___name_0; }
-	inline void set_name_0(String_t* value)
-	{
-		___name_0 = value;
-		Il2CppCodeGenWriteBarrier((&___name_0), value);
-	}
-
-	inline static int32_t get_offset_of_list_1() { return static_cast<int32_t>(offsetof(Sheet_t1672419742, ___list_1)); }
-	inline List_1_t2959069203 * get_list_1() const { return ___list_1; }
-	inline List_1_t2959069203 ** get_address_of_list_1() { return &___list_1; }
-	inline void set_list_1(List_1_t2959069203 * value)
-	{
-		___list_1 = value;
-		Il2CppCodeGenWriteBarrier((&___list_1), value);
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // SHEET_T1672419742_H
 
 
 
@@ -196,14 +164,8 @@ public:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2300 = { sizeof (Sheet_t1672419742), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2300[2] = 
-{
-	Sheet_t1672419742::get_offset_of_name_0(),
-	Sheet_t1672419742::get_offset_of_list_1(),
-};
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2301 = { sizeof (Param_t1486994461), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2301[8] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2300 = { sizeof (Param_t1486994461), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2300[9] = 
 {
 	Param_t1486994461::get_offset_of_No_0(),
 	Param_t1486994461::get_offset_of_Name_1(),
@@ -213,6 +175,7 @@ extern const int32_t g_FieldOffsetTable2301[8] =
 	Param_t1486994461::get_offset_of_Damage_5(),
 	Param_t1486994461::get_offset_of_HealAmount_6(),
 	Param_t1486994461::get_offset_of_ChangeAmount_7(),
+	Param_t1486994461::get_offset_of_ChangeStatus_8(),
 };
 #ifdef __clang__
 #pragma clang diagnostic pop

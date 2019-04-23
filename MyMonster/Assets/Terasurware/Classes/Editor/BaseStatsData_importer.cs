@@ -54,7 +54,7 @@ public class BaseStatsData_importer : AssetPostprocessor {
 					cell = row.GetCell(1); p.Name = (cell == null ? "" : cell.StringCellValue);
 					cell = row.GetCell(2); p.Hp = (int)(cell == null ? 0 : cell.NumericCellValue);
 					cell = row.GetCell(3); p.Attack = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(4); p.Defence = (int)(cell == null ? 0 : cell.NumericCellValue);
+					cell = row.GetCell(4); p.Defense = (int)(cell == null ? 0 : cell.NumericCellValue);
 					cell = row.GetCell(5); p.Speed = (int)(cell == null ? 0 : cell.NumericCellValue);
 						s.list.Add (p);
 					}
