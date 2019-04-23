@@ -21,7 +21,7 @@ public class BaseStatsData : ScriptableObject
 		public string Name;
 		public int Hp;
 		public int Attack;
-		public int Defence;
+		public int Defense;
 		public int Speed;
 	}
 }
