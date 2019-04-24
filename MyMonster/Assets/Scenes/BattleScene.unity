@@ -4439,6 +4439,7 @@ MonoBehaviour:
   enemyPartyData: {fileID: 11400000, guid: 924a2b82de02a4c8a820b6e6fdc1a979, type: 2}
   myPartyData: {fileID: 11400000, guid: d636f2a35cc484c12874bf49ff7302bc, type: 2}
   skillData: {fileID: 11400000, guid: 54af38109becb437b89ef75b6aa3ef48, type: 2}
+  skillEffectData: {fileID: 11400000, guid: b4cb8b86615954b0ca1d81eef6861868, type: 2}
   myParty: {fileID: 901432722}
   enemyParty: {fileID: 1837274135}
   commandArea: {fileID: 1457468653}
@@ -4451,7 +4452,6 @@ MonoBehaviour:
     type: 2}
   atkFX_x10Prefab: {fileID: 1059453260645096, guid: a03dd1ad70fde4508863c6b918202913,
     type: 2}
-  skillEffectData: {fileID: 1862772944}
   txt_skillNamePrefab: {fileID: 1782119619269370, guid: adf63ece49dc64dc9b510e926efe7f36,
     type: 2}
   txt_damagePrefab: {fileID: 1821540437824468, guid: da9eb1c15d09347c49a6bb6576feb4d1,
@@ -4460,6 +4460,7 @@ MonoBehaviour:
     type: 2}
   txt_changePrefab: {fileID: 1775155216669034, guid: 1ec5da5dc0fb143119edf9972945c3a2,
     type: 2}
+  m_skillEffect: {fileID: 2100000, guid: 7339a593f09e245e3ae16ca996f938d4, type: 2}
 --- !u!1 &1862772944
 GameObject:
   m_ObjectHideFlags: 0
@@ -4475,7 +4476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1862772945
 MonoBehaviour:
   m_ObjectHideFlags: 0
