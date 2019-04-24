@@ -13,6 +13,7 @@ public class BattleManager : MonoBehaviour {
 	public EnemyPartyData enemyPartyData;
 	public MyPartyData myPartyData;
 	public SkillData skillData;
+	public SkillEffectData skillEffectData;
 	//ここまで
 	public GameObject myParty;
 	public GameObject enemyParty;
@@ -24,11 +25,11 @@ public class BattleManager : MonoBehaviour {
 	public GameObject bg_VOD;
 	public GameObject atkFX_x8Prefab;
 	public GameObject atkFX_x10Prefab;
-	public GameObject skillEffectData;
 	public GameObject txt_skillNamePrefab;
 	public GameObject txt_damagePrefab;
 	public GameObject txt_healPrefab;
 	public GameObject txt_changePrefab;
+	public Material m_skillEffect;
 
 	private int counter_checkNextAction = 0;
 	private int count_targetMonster = 0; //攻撃対象になるモンスターの数
@@ -50,8 +51,6 @@ public class BattleManager : MonoBehaviour {
 	private List<GameObject> monsterOrderList = new List<GameObject>();
 	private List<GameObject> myPartyList = new List<GameObject>();
 	private List<GameObject> enemyPartyList = new List<GameObject>();
-	//private Slider animateSlider; //アニメーションするスライダー
-	//private GameObject privateGameObject; //一時的に使いたい時のGameObject
 
 	// Use this for initialization
 	void Start () {
@@ -481,15 +480,16 @@ public class BattleManager : MonoBehaviour {
 
 		//ParticleSystemの設定
 		GameObject atkFXPrefab;
-		//ParticleSystem ps = attackEffect.GetComponent<ParticleSystem>();
-		Material m = skillEffectData.GetComponent<SkillEffectData>().material;
-		Texture texture = skillEffectData.GetComponent<SkillEffectData>()._valueListList[no_skill-1].texture;
-		int x = skillEffectData.GetComponent<SkillEffectData>()._valueListList[no_skill-1].x;
-		int y = skillEffectData.GetComponent<SkillEffectData>()._valueListList[no_skill-1].y;
-		float scale = skillEffectData.GetComponent<SkillEffectData>()._valueListList[no_skill-1].scale;
-		float speed = skillEffectData.GetComponent<SkillEffectData>()._valueListList[no_skill-1].speed;
+		
+		int num_texture = skillEffectData.sheets[0].list[no_skill-1].Texture;
+		Texture texture = (Texture)Resources.Load("Img_Effect/pipo-btleffect" + num_texture.ToString("D3"));
+		int x = skillEffectData.sheets[0].list[no_skill-1].x;
+		int y = skillEffectData.sheets[0].list[no_skill-1].y;
+		//float scale = skillEffectData.GetComponent<SkillEffectData>()._valueListList[no_skill-1].scale;
+		//float speed = skillEffectData.GetComponent<SkillEffectData>()._valueListList[no_skill-1].speed;
+		
 		//マテリアルの画像
-		m.mainTexture = texture;
+		m_skillEffect.mainTexture = texture;
 		//atkFXの決定
 		if(x == 8){
 			atkFXPrefab = atkFX_x8Prefab;
@@ -498,6 +498,7 @@ public class BattleManager : MonoBehaviour {
 		}else{
 			atkFXPrefab = atkFX_x10Prefab;
 		}
+		
 		//particlesystemの決定
 		GameObject atkFX = (GameObject)Instantiate(atkFXPrefab);
 		ParticleSystem ps = atkFX.GetComponent<ParticleSystem>();
@@ -506,12 +507,13 @@ public class BattleManager : MonoBehaviour {
 		atkFX.GetComponent<Transform>().position 
 			= new Vector3(mPos.x,mPos.y,zPos_attackEffect);
 		//scale
-		atkFX.GetComponent<Transform>().localScale = new Vector3(scale,scale,1);
+		//atkFX.GetComponent<Transform>().localScale = new Vector3(scale,scale,1);
 		ps.Play();
 
 		StartCoroutine(DelayMethod(time_attackAnimation,() => {
 				HitAnimation(attackMonster,attackedMonster);
 		}));
+		
 	}
 
 	//被弾アニメーション
