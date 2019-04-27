@@ -621,6 +621,9 @@ public class BattleManager : MonoBehaviour {
 		//変化技テキスト表示
 		DisplayChangeText(attackedMonster,changeStatus,isUp);
 
+		//ステータスアイコンの表示
+		DisplayStatusIcon(attackedMonster);
+
 		//JudgeDeath
 		StartCoroutine(DelayMethod(time_hitAnimation,() => {
 			JudgeDeath(attackMonster,attackedMonster,hp);
@@ -820,7 +823,7 @@ public class BattleManager : MonoBehaviour {
 			str_changeStatus = "スピード";
 			break;
 		}
-		String str_isUp = isUp ? "上昇↑" : "減少↓";
+		String str_isUp = isUp ? "上昇" : "減少";
 
 		//txt_changePrefabの設定
 		GameObject txt = (GameObject)Instantiate(txt_changePrefab);
@@ -830,6 +833,69 @@ public class BattleManager : MonoBehaviour {
 		txt.GetComponent<Text>().text = str_changeStatus + str_isUp;
 		txt.GetComponent<Text>().color = isUp ? 
 			new Color(0.519f,0.85f,0.925f) : new Color(0.726f,0.202f,0.677f);
+	}
+
+	void DisplayStatusIcon(GameObject attackedMonster){
+		//変数宣言、代入
+		GameObject container_statusicon = attackedMonster.transform.Find("container_statusicon").gameObject;
+		int rank;
+		GameObject icon;
+		//Attack
+		rank = attackedMonster.GetComponent<CharacterStatus>().statusRank_attack;
+		if(rank > 0){
+			//正のランク補正
+			icon = container_statusicon.transform.GetChild(0).gameObject;
+			container_statusicon.transform.GetChild(1).gameObject.SetActive(false);
+			icon.SetActive(true);
+			icon.transform.GetChild(0).gameObject.GetComponent<Text>().text = rank.ToString();
+		}else if(rank == 0){
+			container_statusicon.transform.GetChild(0).gameObject.SetActive(false);
+			container_statusicon.transform.GetChild(1).gameObject.SetActive(false);
+		}else {
+			//負のランク補正
+			icon = container_statusicon.transform.GetChild(1).gameObject;
+			container_statusicon.transform.GetChild(0).gameObject.SetActive(false);
+			icon.SetActive(true);
+			icon.transform.GetChild(0).gameObject.GetComponent<Text>().text = rank.ToString();
+		}
+
+		//Defense
+		rank = attackedMonster.GetComponent<CharacterStatus>().statusRank_defense;
+		if(rank > 0){
+			//正のランク補正
+			icon = container_statusicon.transform.GetChild(2).gameObject;
+			container_statusicon.transform.GetChild(3).gameObject.SetActive(false);
+			icon.SetActive(true);
+			icon.transform.GetChild(0).gameObject.GetComponent<Text>().text = rank.ToString();
+		}else if(rank == 0){
+			container_statusicon.transform.GetChild(2).gameObject.SetActive(false);
+			container_statusicon.transform.GetChild(3).gameObject.SetActive(false);
+		}else {
+			//負のランク補正
+			icon = container_statusicon.transform.GetChild(3).gameObject;
+			container_statusicon.transform.GetChild(2).gameObject.SetActive(false);
+			icon.SetActive(true);
+			icon.transform.GetChild(0).gameObject.GetComponent<Text>().text = rank.ToString();
+		}
+
+		//Speed
+		rank = attackedMonster.GetComponent<CharacterStatus>().statusRank_speed;
+		if(rank > 0){
+			//正のランク補正
+			icon = container_statusicon.transform.GetChild(4).gameObject;
+			container_statusicon.transform.GetChild(5).gameObject.SetActive(false);
+			icon.SetActive(true);
+			icon.transform.GetChild(0).gameObject.GetComponent<Text>().text = rank.ToString();
+		}else if(rank == 0){
+			container_statusicon.transform.GetChild(4).gameObject.SetActive(false);
+			container_statusicon.transform.GetChild(5).gameObject.SetActive(false);
+		}else {
+			//負のランク補正
+			icon = container_statusicon.transform.GetChild(5).gameObject;
+			container_statusicon.transform.GetChild(4).gameObject.SetActive(false);
+			icon.SetActive(true);
+			icon.transform.GetChild(0).gameObject.GetComponent<Text>().text = rank.ToString();
+		}
 	}
 
 	/*=====================================
