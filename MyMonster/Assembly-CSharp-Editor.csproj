@@ -58,6 +58,7 @@
      <Compile Include="Assets\Terasurware\Classes\Editor\MyPartyData_importer.cs" />
      <Compile Include="Assets\Terasurware\Classes\Editor\SkillData_importer.cs" />
      <Compile Include="Assets\Terasurware\Classes\Editor\SkillEffectData_importer.cs" />
+     <Compile Include="Assets\Terasurware\Classes\Editor\TypeEffectiveness_importer.cs" />
      <Compile Include="Assets\Terasurware\Editor\ExcelImporterMaker.cs" />
      <None Include="Assets\Terasurware\Editor\ExportTemplate.txt" />
      <None Include="Assets\Terasurware\Editor\ExportTemplate2.txt" />

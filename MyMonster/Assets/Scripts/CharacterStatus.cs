@@ -7,6 +7,7 @@ public class CharacterStatus : MonoBehaviour {
 	public string name;
 	public int battleId; //バトルの時にそのキャラに振られる番号 自分のキャラの上から1,2,3,4,5 相手のキャラの上から6,7,8,9,10
 	public int level; //レベル
+	public string type; //属性
 	public int maxHp; //最大HP
 	public int hp; //currentHP
 	public int attack; //攻撃力

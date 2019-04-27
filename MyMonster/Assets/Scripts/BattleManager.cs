@@ -14,6 +14,7 @@ public class BattleManager : MonoBehaviour {
 	public MyPartyData myPartyData;
 	public SkillData skillData;
 	public SkillEffectData skillEffectData;
+	public TypeEffecetiveness typeEffectiveness;
 	//ここまで
 	public GameObject myParty;
 	public GameObject enemyParty;
@@ -51,6 +52,14 @@ public class BattleManager : MonoBehaviour {
 	private List<GameObject> monsterOrderList = new List<GameObject>();
 	private List<GameObject> myPartyList = new List<GameObject>();
 	private List<GameObject> enemyPartyList = new List<GameObject>();
+
+	enum Type {
+		Fire,
+		Water,
+		Grass,
+		Lightning,
+		Darkness
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -177,6 +186,7 @@ public class BattleManager : MonoBehaviour {
 		//Debug.Log(bs_hp + " " + bs_attack + " "+ bs_defense + " "+ bs_speed);
 		//データ代入
 		monster.GetComponent<CharacterStatus>().level = level;
+		monster.GetComponent<CharacterStatus>().type = baseStatsData.sheets[0].list[num_pictureBook-1].Type;
 		monster.GetComponent<CharacterStatus>().maxHp = GetActualValue(bs_hp,level,true);
 		monster.GetComponent<CharacterStatus>().hp = GetActualValue(bs_hp,level,true);
 		monster.GetComponent<CharacterStatus>().attack = GetActualValue(bs_attack,level);
@@ -544,8 +554,13 @@ public class BattleManager : MonoBehaviour {
 			* (1 + attackMonster.GetComponent<CharacterStatus>().statusRank_attack/2.0f); //攻撃するモンスターの攻撃力
 		float defense = attackedMonster.GetComponent<CharacterStatus>().defense
 			* (1 + attackedMonster.GetComponent<CharacterStatus>().statusRank_defense/2.0f); //攻撃されるモンスターの防御力
-		float attributeMatch = 1.0f; //タイプ一致
-		float attributeAffinity = 1.0f; //タイプ相性
+		
+		string type_attackMonster = attackMonster.GetComponent<CharacterStatus>().type;
+		string type_skill = skillData.sheets[0].list[no_skill-1].Type;
+		string type_attackedMonster = attackedMonster.GetComponent<CharacterStatus>().type;
+
+		float attributeMatch = (type_attackMonster == type_skill) ? 1.5f : 1.0f; //タイプ一致
+		float attributeAffinity = GetTypeAttribute(type_skill,type_attackedMonster); //タイプ相性
 
 		int damage = (int)(22 * skillDamage * attack / defense / 50 * attributeMatch * attributeAffinity);
 
@@ -568,6 +583,49 @@ public class BattleManager : MonoBehaviour {
 		StartCoroutine(DelayMethod(time_hitAnimation,() => {
 			JudgeDeath(attackMonster,attackedMonster,hp);
 		}));
+	}
+
+	private float GetTypeAttribute(string type_attack,string type_attacked){
+
+		int int_attackType = 0;
+		int int_attackedType = 0;
+		foreach (Type value in Enum.GetValues(typeof(Type)))
+		{
+			string name = Enum.GetName(typeof(Type), value);
+			if(name == type_attack)int_attackType = (int)value;
+			if(name == type_attacked)int_attackedType = (int)value;
+		}
+
+		//int effective = typeEffectiveness.sheets[0].list[int_attackType].type_attacked;
+		int effective = 0;
+		switch(int_attackedType){
+		case 0:
+			effective = typeEffectiveness.sheets[0].list[int_attackType].Fire;
+			break;
+		case 1:
+			effective = typeEffectiveness.sheets[0].list[int_attackType].Water;
+			break;
+		case 2:
+			effective = typeEffectiveness.sheets[0].list[int_attackType].Grass;
+			break;
+		case 3:
+			effective = typeEffectiveness.sheets[0].list[int_attackType].Lightning;
+			break;
+		case 4:
+			effective = typeEffectiveness.sheets[0].list[int_attackType].Darkness;
+			break;
+		}
+
+		if(effective == 0){
+			Debug.Log("普通");
+			return 1.0f;
+		}else if(effective == 1){
+			Debug.Log("効果は抜群！");
+			return 2.0f;
+		}else{
+			Debug.Log("効果は今ひとつ");
+			return 0.5f;
+		}
 	}
 
 	//回復技

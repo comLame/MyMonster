@@ -4574,6 +4574,7 @@ MonoBehaviour:
   myPartyData: {fileID: 11400000, guid: d636f2a35cc484c12874bf49ff7302bc, type: 2}
   skillData: {fileID: 11400000, guid: 54af38109becb437b89ef75b6aa3ef48, type: 2}
   skillEffectData: {fileID: 11400000, guid: b4cb8b86615954b0ca1d81eef6861868, type: 2}
+  typeEffectiveness: {fileID: 11400000, guid: 7ba0da3a4c49b48d5acbbc516b120470, type: 2}
   myParty: {fileID: 901432722}
   enemyParty: {fileID: 1837274135}
   commandArea: {fileID: 1457468653}
