@@ -253,8 +253,11 @@ public class BattleManager : MonoBehaviour {
 			GameObject btn_command = commandArea.transform.GetChild(i).gameObject;
 			int no_skill = monster.GetComponent<CharacterStatus>().skills[i];
 			string name_skill = skillData.sheets[0].list[no_skill-1].Name;
+			btn_command.GetComponent<TouchCommandButton>().name_skill = name_skill;
 			string type = skillData.sheets[0].list[no_skill-1].Type;
-			Debug.Log(type);
+			//技説明文
+			btn_command.GetComponent<TouchCommandButton>().explain 
+				= skillData.sheets[0].list[no_skill-1].Explain;
 			//名前変更
 			btn_command.transform.GetChild(0).gameObject.GetComponent<Text>().text = name_skill;
 			//色変更
@@ -281,13 +284,14 @@ public class BattleManager : MonoBehaviour {
 				default:
 				break;
 			}
+
 		}
 	}
 
 	//技の選択待ち......
 	//味方の攻撃
 	public void AllyAttack(int num_skill){
-		commandArea.SetActive(false);
+		//commandArea.SetActive(false);
 		//動くモンスターの特定
 		GameObject attackMonster = monsterOrderList[actionCount-1].gameObject;
 
@@ -596,7 +600,6 @@ public class BattleManager : MonoBehaviour {
 			if(name == type_attacked)int_attackedType = (int)value;
 		}
 
-		//int effective = typeEffectiveness.sheets[0].list[int_attackType].type_attacked;
 		int effective = 0;
 		switch(int_attackedType){
 		case 0:
@@ -617,13 +620,10 @@ public class BattleManager : MonoBehaviour {
 		}
 
 		if(effective == 0){
-			Debug.Log("普通");
 			return 1.0f;
 		}else if(effective == 1){
-			Debug.Log("効果は抜群！");
 			return 2.0f;
 		}else{
-			Debug.Log("効果は今ひとつ");
 			return 0.5f;
 		}
 	}
