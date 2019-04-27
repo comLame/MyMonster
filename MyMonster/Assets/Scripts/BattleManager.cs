@@ -14,6 +14,7 @@ public class BattleManager : MonoBehaviour {
 	public MyPartyData myPartyData;
 	public SkillData skillData;
 	public SkillEffectData skillEffectData;
+	public TypeEffecetiveness typeEffectiveness;
 	//ここまで
 	public GameObject myParty;
 	public GameObject enemyParty;
@@ -51,6 +52,14 @@ public class BattleManager : MonoBehaviour {
 	private List<GameObject> monsterOrderList = new List<GameObject>();
 	private List<GameObject> myPartyList = new List<GameObject>();
 	private List<GameObject> enemyPartyList = new List<GameObject>();
+
+	enum Type {
+		Fire,
+		Water,
+		Grass,
+		Lightning,
+		Darkness
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -177,6 +186,7 @@ public class BattleManager : MonoBehaviour {
 		//Debug.Log(bs_hp + " " + bs_attack + " "+ bs_defense + " "+ bs_speed);
 		//データ代入
 		monster.GetComponent<CharacterStatus>().level = level;
+		monster.GetComponent<CharacterStatus>().type = baseStatsData.sheets[0].list[num_pictureBook-1].Type;
 		monster.GetComponent<CharacterStatus>().maxHp = GetActualValue(bs_hp,level,true);
 		monster.GetComponent<CharacterStatus>().hp = GetActualValue(bs_hp,level,true);
 		monster.GetComponent<CharacterStatus>().attack = GetActualValue(bs_attack,level);
@@ -243,8 +253,11 @@ public class BattleManager : MonoBehaviour {
 			GameObject btn_command = commandArea.transform.GetChild(i).gameObject;
 			int no_skill = monster.GetComponent<CharacterStatus>().skills[i];
 			string name_skill = skillData.sheets[0].list[no_skill-1].Name;
+			btn_command.GetComponent<TouchCommandButton>().name_skill = name_skill;
 			string type = skillData.sheets[0].list[no_skill-1].Type;
-			Debug.Log(type);
+			//技説明文
+			btn_command.GetComponent<TouchCommandButton>().explain 
+				= skillData.sheets[0].list[no_skill-1].Explain;
 			//名前変更
 			btn_command.transform.GetChild(0).gameObject.GetComponent<Text>().text = name_skill;
 			//色変更
@@ -271,13 +284,14 @@ public class BattleManager : MonoBehaviour {
 				default:
 				break;
 			}
+
 		}
 	}
 
 	//技の選択待ち......
 	//味方の攻撃
 	public void AllyAttack(int num_skill){
-		commandArea.SetActive(false);
+		//commandArea.SetActive(false);
 		//動くモンスターの特定
 		GameObject attackMonster = monsterOrderList[actionCount-1].gameObject;
 
@@ -544,8 +558,13 @@ public class BattleManager : MonoBehaviour {
 			* (1 + attackMonster.GetComponent<CharacterStatus>().statusRank_attack/2.0f); //攻撃するモンスターの攻撃力
 		float defense = attackedMonster.GetComponent<CharacterStatus>().defense
 			* (1 + attackedMonster.GetComponent<CharacterStatus>().statusRank_defense/2.0f); //攻撃されるモンスターの防御力
-		float attributeMatch = 1.0f; //タイプ一致
-		float attributeAffinity = 1.0f; //タイプ相性
+		
+		string type_attackMonster = attackMonster.GetComponent<CharacterStatus>().type;
+		string type_skill = skillData.sheets[0].list[no_skill-1].Type;
+		string type_attackedMonster = attackedMonster.GetComponent<CharacterStatus>().type;
+
+		float attributeMatch = (type_attackMonster == type_skill) ? 1.5f : 1.0f; //タイプ一致
+		float attributeAffinity = GetTypeAttribute(type_skill,type_attackedMonster); //タイプ相性
 
 		int damage = (int)(22 * skillDamage * attack / defense / 50 * attributeMatch * attributeAffinity);
 
@@ -568,6 +587,45 @@ public class BattleManager : MonoBehaviour {
 		StartCoroutine(DelayMethod(time_hitAnimation,() => {
 			JudgeDeath(attackMonster,attackedMonster,hp);
 		}));
+	}
+
+	private float GetTypeAttribute(string type_attack,string type_attacked){
+
+		int int_attackType = 0;
+		int int_attackedType = 0;
+		foreach (Type value in Enum.GetValues(typeof(Type)))
+		{
+			string name = Enum.GetName(typeof(Type), value);
+			if(name == type_attack)int_attackType = (int)value;
+			if(name == type_attacked)int_attackedType = (int)value;
+		}
+
+		int effective = 0;
+		switch(int_attackedType){
+		case 0:
+			effective = typeEffectiveness.sheets[0].list[int_attackType].Fire;
+			break;
+		case 1:
+			effective = typeEffectiveness.sheets[0].list[int_attackType].Water;
+			break;
+		case 2:
+			effective = typeEffectiveness.sheets[0].list[int_attackType].Grass;
+			break;
+		case 3:
+			effective = typeEffectiveness.sheets[0].list[int_attackType].Lightning;
+			break;
+		case 4:
+			effective = typeEffectiveness.sheets[0].list[int_attackType].Darkness;
+			break;
+		}
+
+		if(effective == 0){
+			return 1.0f;
+		}else if(effective == 1){
+			return 2.0f;
+		}else{
+			return 0.5f;
+		}
 	}
 
 	//回復技
@@ -620,6 +678,9 @@ public class BattleManager : MonoBehaviour {
 
 		//変化技テキスト表示
 		DisplayChangeText(attackedMonster,changeStatus,isUp);
+
+		//ステータスアイコンの表示
+		DisplayStatusIcon(attackedMonster);
 
 		//JudgeDeath
 		StartCoroutine(DelayMethod(time_hitAnimation,() => {
@@ -820,7 +881,7 @@ public class BattleManager : MonoBehaviour {
 			str_changeStatus = "スピード";
 			break;
 		}
-		String str_isUp = isUp ? "上昇↑" : "減少↓";
+		String str_isUp = isUp ? "上昇" : "減少";
 
 		//txt_changePrefabの設定
 		GameObject txt = (GameObject)Instantiate(txt_changePrefab);
@@ -830,6 +891,69 @@ public class BattleManager : MonoBehaviour {
 		txt.GetComponent<Text>().text = str_changeStatus + str_isUp;
 		txt.GetComponent<Text>().color = isUp ? 
 			new Color(0.519f,0.85f,0.925f) : new Color(0.726f,0.202f,0.677f);
+	}
+
+	void DisplayStatusIcon(GameObject attackedMonster){
+		//変数宣言、代入
+		GameObject container_statusicon = attackedMonster.transform.Find("container_statusicon").gameObject;
+		int rank;
+		GameObject icon;
+		//Attack
+		rank = attackedMonster.GetComponent<CharacterStatus>().statusRank_attack;
+		if(rank > 0){
+			//正のランク補正
+			icon = container_statusicon.transform.GetChild(0).gameObject;
+			container_statusicon.transform.GetChild(1).gameObject.SetActive(false);
+			icon.SetActive(true);
+			icon.transform.GetChild(0).gameObject.GetComponent<Text>().text = rank.ToString();
+		}else if(rank == 0){
+			container_statusicon.transform.GetChild(0).gameObject.SetActive(false);
+			container_statusicon.transform.GetChild(1).gameObject.SetActive(false);
+		}else {
+			//負のランク補正
+			icon = container_statusicon.transform.GetChild(1).gameObject;
+			container_statusicon.transform.GetChild(0).gameObject.SetActive(false);
+			icon.SetActive(true);
+			icon.transform.GetChild(0).gameObject.GetComponent<Text>().text = rank.ToString();
+		}
+
+		//Defense
+		rank = attackedMonster.GetComponent<CharacterStatus>().statusRank_defense;
+		if(rank > 0){
+			//正のランク補正
+			icon = container_statusicon.transform.GetChild(2).gameObject;
+			container_statusicon.transform.GetChild(3).gameObject.SetActive(false);
+			icon.SetActive(true);
+			icon.transform.GetChild(0).gameObject.GetComponent<Text>().text = rank.ToString();
+		}else if(rank == 0){
+			container_statusicon.transform.GetChild(2).gameObject.SetActive(false);
+			container_statusicon.transform.GetChild(3).gameObject.SetActive(false);
+		}else {
+			//負のランク補正
+			icon = container_statusicon.transform.GetChild(3).gameObject;
+			container_statusicon.transform.GetChild(2).gameObject.SetActive(false);
+			icon.SetActive(true);
+			icon.transform.GetChild(0).gameObject.GetComponent<Text>().text = rank.ToString();
+		}
+
+		//Speed
+		rank = attackedMonster.GetComponent<CharacterStatus>().statusRank_speed;
+		if(rank > 0){
+			//正のランク補正
+			icon = container_statusicon.transform.GetChild(4).gameObject;
+			container_statusicon.transform.GetChild(5).gameObject.SetActive(false);
+			icon.SetActive(true);
+			icon.transform.GetChild(0).gameObject.GetComponent<Text>().text = rank.ToString();
+		}else if(rank == 0){
+			container_statusicon.transform.GetChild(4).gameObject.SetActive(false);
+			container_statusicon.transform.GetChild(5).gameObject.SetActive(false);
+		}else {
+			//負のランク補正
+			icon = container_statusicon.transform.GetChild(5).gameObject;
+			container_statusicon.transform.GetChild(4).gameObject.SetActive(false);
+			icon.SetActive(true);
+			icon.transform.GetChild(0).gameObject.GetComponent<Text>().text = rank.ToString();
+		}
 	}
 
 	/*=====================================

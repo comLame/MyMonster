@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1e6147e3a9f45bcb9a3a0b895a7b6f, type: 3}
+  m_Name: TypeEffectiveness
+  m_EditorClassIdentifier: 
+  sheets:
+  - name: TypeEffecetiveness
+    list:
+    - Attack: Fire
+      Fire: 0
+      Water: -1
+      Grass: 1
+      Lightning: 0
+      Darkness: 0
+    - Attack: Water
+      Fire: 1
+      Water: 0
+      Grass: -1
+      Lightning: 0
+      Darkness: 0
+    - Attack: Grass
+      Fire: -1
+      Water: 1
+      Grass: 0
+      Lightning: 0
+      Darkness: 0
+    - Attack: Lightning
+      Fire: 0
+      Water: 0
+      Grass: 0
+      Lightning: 0
+      Darkness: 1
+    - Attack: Darkness
+      Fire: 0
+      Water: 0
+      Grass: 0
+      Lightning: 1
+      Darkness: 0

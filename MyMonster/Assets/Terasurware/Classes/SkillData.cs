@@ -26,6 +26,7 @@ public class SkillData : ScriptableObject
 		public int HealAmount;
 		public int ChangeAmount;
 		public string ChangeStatus;
+		public string Explain;
 	}
 }
 

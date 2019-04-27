@@ -16,36 +16,42 @@ MonoBehaviour:
     list:
     - No: 1
       Name: "\u30EC\u30C3\u30C9\u30C9\u30E9\u30B4\u30F3"
+      Type: Fire
       Hp: 78
       Attack: 109
       Defense: 85
       Speed: 100
     - No: 2
       Name: "\u30D6\u30EB\u30FC\u30C9\u30E9\u30B4\u30F3"
+      Type: Water
       Hp: 79
       Attack: 85
       Defense: 105
       Speed: 78
     - No: 3
       Name: "\u30B0\u30EA\u30FC\u30F3\u30C9\u30E9\u30B4\u30F3"
+      Type: Grass
       Hp: 80
       Attack: 100
       Defense: 100
       Speed: 80
     - No: 4
       Name: "\u30B1\u30EB\u30D9\u30ED\u30B9"
+      Type: Fire
       Hp: 75
       Attack: 90
       Defense: 50
       Speed: 95
     - No: 5
       Name: "\u30A6\u30A3\u30C3\u30C1"
+      Type: Water
       Hp: 60
       Attack: 60
       Defense: 60
       Speed: 105
     - No: 6
       Name: "\u30B4\u30D6\u30EA\u30F3"
+      Type: Grass
       Hp: 105
       Attack: 65
       Defense: 75
