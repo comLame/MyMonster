@@ -5,6 +5,7 @@ using System;
 using System.Linq;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening; 
 
 public class BattleManager : MonoBehaviour {
 
@@ -45,6 +46,8 @@ public class BattleManager : MonoBehaviour {
 	private float time_hitAnimation = 1.0f; //被弾モーションのアニメーション時間
 	private float time_deathAnimation = 1.0f; //死亡アニメーション時間
 	private float time_frame = 0.2f; //エフェクトの１枚ずつの表示時間
+	private float time_entranceAnimation = 3f; //入場アニメーションの時間
+	private float time_allyEntranceAnimation = 2f;
 	private int num_frame = 5; //１エフェクトのフレーム数
 	private float speed_attackAnimation = 1f; //攻撃アニメーションのスピード
 	private float diff_step = 0.2f; //ステップの距離
@@ -70,7 +73,11 @@ public class BattleManager : MonoBehaviour {
 		InitializeSlider(enemyPartyList);
 		SortMonsterOrder();
 		DebugMonsterOrderList();
-		CheckNextAction();
+		EntranceAnimation();
+		
+		StartCoroutine(DelayMethod(time_entranceAnimation,()=> {
+			CheckNextAction(); //これを読んだらバトル開始
+		}));
 	}
 	
 	//monsterOrderList,myPartyList,enemyPartyListにオブジェクトを代入
@@ -209,6 +216,38 @@ public class BattleManager : MonoBehaviour {
 			int av = (int)((bs*2 + iv + (ev/4)) * level/100 + 5);
 			return av;
 		}
+	}
+
+	//入場アニメーション
+	private void EntranceAnimation(){
+		//味方
+		//変数宣言
+		Vector3 nowPos = myParty.GetComponent<RectTransform>().localPosition;
+		float disX = 600;
+		float disY = 250;
+		float angle = 60 * Mathf.PI / 180;
+		Vector3[] _path = new Vector3[3];
+		_path[0] = new Vector3(nowPos.x + disX/2 + Mathf.Cos(angle)*disX/2,nowPos.y + Mathf.Sin(angle) * disY,nowPos.z);
+		_path[1] = new Vector3(nowPos.x + disX/2,nowPos.y + disY,nowPos.z);
+		_path[2] = nowPos;
+		myParty.GetComponent<RectTransform>().localPosition = new Vector3(nowPos.x + disX,nowPos.y,nowPos.z);
+		//iTween.MoveTo(myParty,iTween.Hash("path",_path,"time",time_allyEntranceAnimation,
+		//	"easetype",iTween.EaseType.easeInCubic,"isLocal",true));
+		Tweener tween = myParty.GetComponent<RectTransform>().DOLocalPath(_path, 2.0f, PathType.CatmullRom)
+			.SetEase(Ease.InExpo);
+
+		//敵
+		enemyParty.SetActive(false);
+		StartCoroutine(DelayMethod(time_allyEntranceAnimation,()=> {
+			enemyParty.SetActive(true);
+			for(int i =0 ;i<enemyPartyList.Count;i++){
+				enemyPartyList[i].GetComponent<Image>().color = new Color(1,1,1,0);
+				enemyPartyList[i].GetComponent<MonsterAnimation>()
+					.FadeInAnimation(time_entranceAnimation -time_allyEntranceAnimation);
+			}
+		}));
+
+
 	}
 
 	/*=====================================
@@ -474,7 +513,7 @@ public class BattleManager : MonoBehaviour {
 	//前に出る
 	private void StepFront(GameObject attackMonster,List<GameObject> attackedMonsters){
 		//移動
-		iTween.MoveAdd(attackMonster,iTween.Hash("x",diff_step,"time",time_stepFront,"easeType",iTween.EaseType.linear));
+		iTween.MoveAdd(attackMonster,iTween.Hash("x",-1 * diff_step,"time",time_stepFront,"easeType",iTween.EaseType.linear));
 
 		//攻撃
 		StartCoroutine(DelayMethod(time_stepFront,() => {
@@ -759,7 +798,7 @@ public class BattleManager : MonoBehaviour {
 	//ステップバック
 	private void StepBack(GameObject attackMonster){
 		//移動
-		iTween.MoveAdd(attackMonster,iTween.Hash("x",-1*diff_step,"time",time_stepBack,"easeType",iTween.EaseType.linear));
+		iTween.MoveAdd(attackMonster,iTween.Hash("x",diff_step,"time",time_stepBack,"easeType",iTween.EaseType.linear));
 
 		StartCoroutine(DelayMethod(time_stepBack,() => {
 			JudgeVOD();
