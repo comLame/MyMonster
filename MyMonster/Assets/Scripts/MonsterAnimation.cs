@@ -21,6 +21,12 @@ public class MonsterAnimation : MonoBehaviour {
 		gameObject.GetComponent<Image>().color = new Color(c.r,c.g,c.b,alfa);
 	}
 
+	//FadeIn
+	public void FadeInAnimation(float time_fadeinAnimation){
+		iTween.ValueTo(gameObject, iTween.Hash("from",0,"to",1,"time",time_fadeinAnimation,
+			"onupdate","UpdateDeathAnimation","onupdatetarget",gameObject,"easetype",iTween.EaseType.linear));
+	}
+
 	//ディレイメソッド
 	private IEnumerator DelayMethod(float waitTime, Action action)
 	{
