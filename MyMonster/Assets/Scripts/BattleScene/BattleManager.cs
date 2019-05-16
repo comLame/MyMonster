@@ -17,6 +17,7 @@ public class BattleManager : MonoBehaviour {
 	public SkillEffectData skillEffectData;
 	public TypeEffecetiveness typeEffectiveness;
 	//ここまで
+	public GameObject fadeCanvas;
 	public GameObject myParty;
 	public GameObject enemyParty;
 	public GameObject commandArea;
@@ -55,6 +56,7 @@ public class BattleManager : MonoBehaviour {
 	private List<GameObject> monsterOrderList = new List<GameObject>();
 	private List<GameObject> myPartyList = new List<GameObject>();
 	private List<GameObject> enemyPartyList = new List<GameObject>();
+	private Fade fade; //fadeオブジェクト
 
 	enum Type {
 		Fire,
@@ -73,11 +75,28 @@ public class BattleManager : MonoBehaviour {
 		InitializeSlider(enemyPartyList);
 		SortMonsterOrder();
 		DebugMonsterOrderList();
-		EntranceAnimation();
-		
+
+		//fade関係
+		fade = fadeCanvas.transform.GetChild(0).GetComponent<Fade>();
+		GameObject text = fadeCanvas.transform.GetChild(1).gameObject;
+		text.SetActive(true);
+		fade.FadeIn (0, () => {
+			fade.FadeOut(1,() => {
+				StartCoroutine(DelayMethod(0.2f,() => {
+					EntranceAnimation();
+					StartCoroutine(DelayMethod(1f,() => {
+						text.SetActive(false);
+					}));
+				}));
+			});
+		});
+
+		//EntranceAnimation(); //これを呼んだらバトル開始
+		/*
 		StartCoroutine(DelayMethod(time_entranceAnimation,()=> {
 			CheckNextAction(); //これを読んだらバトル開始
 		}));
+		*/
 	}
 	
 	//monsterOrderList,myPartyList,enemyPartyListにオブジェクトを代入
@@ -185,6 +204,9 @@ public class BattleManager : MonoBehaviour {
 	
 	//ステータス
 	private void GetStatus(GameObject monster,int num_pictureBook,int level){
+
+		//0じゃなかったら
+		if(num_pictureBook != 0){
 		//種族値
 		int bs_hp = baseStatsData.sheets[0].list[num_pictureBook-1].Hp;
 		int bs_attack = baseStatsData.sheets[0].list[num_pictureBook-1].Attack;
@@ -201,6 +223,12 @@ public class BattleManager : MonoBehaviour {
 		monster.GetComponent<CharacterStatus>().speed = GetActualValue(bs_speed,level);
 		//Debug.Log(GetActualValue(bs_hp,level,true) + " " + GetActualValue(bs_attack,level) + " "+ 
 		//	GetActualValue(bs_defense,level) + " "+ GetActualValue(bs_speed,level));
+
+		} else if(num_pictureBook == 0){
+			//図鑑番号が0だったら誰もいないということ
+			monster.SetActive(false);
+			monster.GetComponent<CharacterStatus>().deathFlag = true;
+		}
 	}
 
 	//実数値取得 かつ 返す
@@ -221,6 +249,7 @@ public class BattleManager : MonoBehaviour {
 	//入場アニメーション
 	private void EntranceAnimation(){
 		//味方
+		myParty.SetActive(true);
 		//変数宣言
 		Vector3 nowPos = myParty.GetComponent<RectTransform>().localPosition;
 		float disX = 600;
@@ -245,6 +274,11 @@ public class BattleManager : MonoBehaviour {
 				enemyPartyList[i].GetComponent<MonsterAnimation>()
 					.FadeInAnimation(time_entranceAnimation -time_allyEntranceAnimation);
 			}
+		}));
+
+		//バトル開始
+		StartCoroutine(DelayMethod(time_entranceAnimation,() => {
+			CheckNextAction();
 		}));
 
 
@@ -613,7 +647,7 @@ public class BattleManager : MonoBehaviour {
 		int hp = attackedMonster.GetComponent<CharacterStatus>().hp;
 
 		//ダメージテキスト表示
-		DisplayDamageText(attackedMonster,damage);
+		DisplayDamageText(attackedMonster,damage,attributeAffinity);
 
 		//スライダー
 		attackedMonster.transform.Find("Slider").gameObject
@@ -876,7 +910,7 @@ public class BattleManager : MonoBehaviour {
 	}
 
 	//ダメージ表示
-	private void DisplayDamageText(GameObject attackedMonster,int damage){
+	private void DisplayDamageText(GameObject attackedMonster,int damage,float typeEffectiveness){
 		//変数代入
 		Vector3 posMons = canvas.transform.InverseTransformPoint(attackedMonster.GetComponent<RectTransform>().position);
 		//txt_damagePrefabの設定
@@ -886,6 +920,24 @@ public class BattleManager : MonoBehaviour {
 			= new Vector3(posMons.x,posMons.y,posMons.z);
 		txt.GetComponent<Text>().text = damage.ToString();
 		txt.GetComponent<Text>().color = new Color(1,0.75f,0.175f);
+
+		//タイプ相性
+		GameObject txt_typeEffectiveness = txt.transform.GetChild(0).gameObject;
+		if(typeEffectiveness < 1){
+			//抜群
+			txt_typeEffectiveness.SetActive(true);
+			txt_typeEffectiveness.GetComponent<Text>().text = "イマイチ";
+			txt_typeEffectiveness.GetComponent<Text>().color = new Color(0.243f,0.439f,0.773f);
+
+		}else if(typeEffectiveness > 1){
+			//抜群
+			txt_typeEffectiveness.SetActive(true);
+			txt_typeEffectiveness.GetComponent<Text>().text = "弱点！";
+			txt_typeEffectiveness.GetComponent<Text>().color = new Color(0.820f,0.365f,0);
+		}else{
+			//普通
+			txt_typeEffectiveness.SetActive(false);
+		}
 	}
 
 	//回復量表示

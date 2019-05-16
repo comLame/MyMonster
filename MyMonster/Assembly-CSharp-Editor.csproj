@@ -325,6 +325,12 @@
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>/Volumes/KESU/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
+ <Reference Include="DOTween">
+ <HintPath>/Volumes/KESU/Document/GitHub/MyMonster/MyMonster/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTweenEditor">
+ <HintPath>/Volumes/KESU/Document/GitHub/MyMonster/MyMonster/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+ </Reference>
  <Reference Include="ICSharpCode.SharpZipLib">
  <HintPath>/Volumes/KESU/Document/GitHub/MyMonster/MyMonster/Assets/Terasurware/Editor/npoi/ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
@@ -354,12 +360,6 @@
  </Reference>
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>/Users/kimsangwoo/Library/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
- </Reference>
- <Reference Include="DOTweenEditor">
- <HintPath>/Volumes/KESU/Document/GitHub/MyMonster/MyMonster/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
- </Reference>
- <Reference Include="DOTween">
- <HintPath>/Volumes/KESU/Document/GitHub/MyMonster/MyMonster/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Volumes/KESU/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
