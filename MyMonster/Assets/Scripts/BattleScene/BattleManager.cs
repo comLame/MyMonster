@@ -224,6 +224,14 @@ public class BattleManager : MonoBehaviour {
 		//Debug.Log(GetActualValue(bs_hp,level,true) + " " + GetActualValue(bs_attack,level) + " "+ 
 		//	GetActualValue(bs_defense,level) + " "+ GetActualValue(bs_speed,level));
 
+		//属性の色に変更
+		GameObject icon_type = monster.transform.GetChild(0).GetChild(3).gameObject;
+		icon_type.GetComponent<Image>().color = GetTypeColor(baseStatsData.sheets[0].list[num_pictureBook-1].Type);
+
+		//レベル表示
+		GameObject txt_level = icon_type.transform.GetChild(0).gameObject;
+		txt_level.GetComponent<Text>().text = level.ToString();
+
 		} else if(num_pictureBook == 0){
 			//図鑑番号が0だったら誰もいないということ
 			monster.SetActive(false);
@@ -335,28 +343,7 @@ public class BattleManager : MonoBehaviour {
 			btn_command.transform.GetChild(0).gameObject.GetComponent<Text>().text = name_skill;
 			//色変更
 			Image img = btn_command.GetComponent<Image>();
-			switch(type){
-				case "Normal":
-					img.color = new Color(0.736f,0.736f,0.736f);
-				break;
-				case "Fire":
-					img.color = new Color(0.925f,0.280f,0.214f);
-				break;
-				case "Water":
-					img.color = new Color(0.212f,0.368f,0.925f);
-				break;
-				case "Grass":
-					img.color = new Color(0.338f,0.868f,0.168f);
-				break;
-				case "Lightning":
-					img.color = new Color(0.900f,0.915f,0.324f);
-				break;
-				case "Darkness":
-					img.color = new Color(0.858f,0.150f,0.722f);
-				break;
-				default:
-				break;
-			}
+			img.color = GetTypeColor(type);
 
 		}
 	}
@@ -1052,6 +1039,26 @@ public class BattleManager : MonoBehaviour {
 	 * バトル以外
 	 *
 	 ======================================*/
+
+	//属性カラー取得
+	private Color GetTypeColor(string type){
+		switch(type){
+		case "Normal":
+			return new Color(0.736f,0.736f,0.736f);
+		case "Fire":
+			return new Color(0.925f,0.280f,0.214f);
+		case "Water":
+			return new Color(0.212f,0.368f,0.925f);
+		case "Grass":
+			return new Color(0.338f,0.868f,0.168f);
+		case "Lightning":
+			return new Color(0.900f,0.915f,0.324f);
+		case "Darkness":
+			return new Color(0.858f,0.150f,0.722f);
+		default:
+			return new Color(0.736f,0.736f,0.736f);
+		}
+	}
 	
 	//ターゲットマーカーの表示非表示
 	public void TouchMonster(GameObject monster){
