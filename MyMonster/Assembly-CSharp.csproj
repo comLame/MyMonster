@@ -64,6 +64,8 @@
      <Compile Include="Assets\Fade\Scripts\FadeImage.cs" />
      <Compile Include="Assets\Fade\Scripts\FadeUI.cs" />
      <Compile Include="Assets\Fade\Scripts\IFade.cs" />
+     <Compile Include="Assets\naichilab\FadeManager\Sample\FadeSample.cs" />
+     <Compile Include="Assets\naichilab\FadeManager\Scripts\FadeManager.cs" />
      <Compile Include="Assets\Scripts\BattleScene\BattleManager.cs" />
      <Compile Include="Assets\Scripts\BattleScene\CharacterStatus.cs" />
      <Compile Include="Assets\Scripts\BattleScene\ClickPauseButton.cs" />
@@ -74,7 +76,8 @@
      <Compile Include="Assets\Scripts\BattleScene\SliderAnimation.cs" />
      <Compile Include="Assets\Scripts\BattleScene\TouchCommandButton.cs" />
      <Compile Include="Assets\Scripts\BattleScene\TouchMonster.cs" />
-     <Compile Include="Assets\Scripts\TitleScene\ToBattleScene.cs" />
+     <Compile Include="Assets\Scripts\MainScene\FooterManager.cs" />
+     <Compile Include="Assets\Scripts\MainScene\ToBattleScene.cs" />
      <Compile Include="Assets\Terasurware\Classes\BaseStatsData.cs" />
      <Compile Include="Assets\Terasurware\Classes\EnemyPartyData.cs" />
      <Compile Include="Assets\Terasurware\Classes\MyPartyData.cs" />
