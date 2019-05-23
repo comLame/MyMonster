@@ -12,6 +12,7 @@ public class ToBattleScene : MonoBehaviour {
 	private Fade fade; //fade
 
 	public void onClick(){
+		
 		//SceneManager.LoadScene("BattleScene");
 		fade = fadeCanvas.transform.GetChild(0).GetComponent<Fade>();
 		fade.FadeIn (time_fade, () =>
@@ -22,9 +23,13 @@ public class ToBattleScene : MonoBehaviour {
 				text.SetActive(true);
 				StartCoroutine(DelayMethod(0.5f,()=>{
 					SceneManager.LoadScene("BattleScene");
+					//titleScene.SetActive(false);
+					//battleScene.SetActive(true);
 				}));
 			}));
 		});
+		
+		//FadeManager.Instance.LoadScene ("BattleScene", 2.0f);
 	}
 
 	//ディレイメソッド

@@ -2,7 +2,7 @@ iOS
 PlayerPath?
 /Volumes/KESU/Document/iosApp/MyMonster
 SceneListBegin?
-Assets/Scenes/TitleScene.unity
+Assets/Scenes/MainScene.unity
 Assets/Scenes/BattleScene.unity
 SceneListEnd?
 c422dd62785a6d0afa870fbd111886ce Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
@@ -190,3 +190,6 @@ e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 a7d4acaff3341781ab45c4bcb83128ad Assembly-CSharp.dll:.EnemyPartyData
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.SkillNameTextAnimation
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.TouchMonster
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.FadeSample
+6e4675c421bc638daa0532633062ee76 Assembly-CSharp.dll:.FadeManager
+90d680680f0264a84a783debdd05f057 Assembly-CSharp.dll:.FooterManager
