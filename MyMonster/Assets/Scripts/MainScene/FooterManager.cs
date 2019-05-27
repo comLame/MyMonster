@@ -14,11 +14,13 @@ public class FooterManager : MonoBehaviour {
 	private List<GameObject> canvasArray = new List<GameObject>();
 	private GameObject fadeinCanvas;
 	private GameObject fadeoutCanvas;
+	private float time_delay = 0.1f;
 	private float distance = 4.5f;
 	private int nowSceneNum = 0;
+	private bool isMoving = false;
 
 	//time
-	private float time_animation = 0.6f;
+	private float time_animation = 0.4f;
 
 	void Start(){
 		canvasArray.Add(canvasHome);
@@ -34,6 +36,8 @@ public class FooterManager : MonoBehaviour {
 	}
 
 	public void MoveScene(int sceneNum){
+		if(isMoving)return;
+		isMoving = true;
 		HiddenCommonProcess(canvasArray[nowSceneNum]);
 		/* 
 		int len = canvasArray.Count;
@@ -111,8 +115,9 @@ public class FooterManager : MonoBehaviour {
 				,"time",time_animation/2,"delay",time_animation/2 ));
 		}
 
-		StartCoroutine(DelayMethod(time_animation + 0.1f,()=> {
+		StartCoroutine(DelayMethod(time_animation + time_delay,()=> {
 			scene.SetActive(false);
+			isMoving = false;
 		}));
 	}
 
