@@ -76,10 +76,12 @@
      <Compile Include="Assets\Scripts\BattleScene\SliderAnimation.cs" />
      <Compile Include="Assets\Scripts\BattleScene\TouchCommandButton.cs" />
      <Compile Include="Assets\Scripts\BattleScene\TouchMonster.cs" />
+     <Compile Include="Assets\Scripts\MainScene\CanvasManager.cs" />
      <Compile Include="Assets\Scripts\MainScene\FooterManager.cs" />
      <Compile Include="Assets\Scripts\MainScene\MainSceneManager.cs" />
      <Compile Include="Assets\Scripts\MainScene\MoveCategorize.cs" />
      <Compile Include="Assets\Scripts\MainScene\MoveSceneManager.cs" />
+     <Compile Include="Assets\Scripts\MainScene\MoveScreenButtonManager.cs" />
      <Compile Include="Assets\Scripts\MainScene\ToBattleScene.cs" />
      <Compile Include="Assets\Terasurware\Classes\BaseStatsData.cs" />
      <Compile Include="Assets\Terasurware\Classes\EnemyPartyData.cs" />
