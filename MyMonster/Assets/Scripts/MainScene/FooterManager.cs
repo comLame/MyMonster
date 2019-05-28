@@ -14,6 +14,8 @@ public class FooterManager : MonoBehaviour {
 	private List<GameObject> canvasArray = new List<GameObject>();
 	private GameObject fadeinCanvas;
 	private GameObject fadeoutCanvas;
+	private GameObject currentScreen;
+	private GameObject nowScreen;
 	private float time_delay = 0.1f;
 	private float distance = 4.5f;
 	private int nowSceneNum = 0;
@@ -29,32 +31,47 @@ public class FooterManager : MonoBehaviour {
 		canvasArray.Add(canvasGatya);
 		canvasArray.Add(canvasSetting);
 
-		HiddenCommonProcess(canvasMonster);
-		HiddenCommonProcess(canvasShop);
-		HiddenCommonProcess(canvasGatya);
-		HiddenCommonProcess(canvasSetting);
+		currentScreen = canvasHome.GetComponent<CanvasManager>().topScreen;
+
+		//HiddenCommonProcess(canvasMonster);
+		//HiddenCommonProcess(canvasShop);
+		//HiddenCommonProcess(canvasGatya);
+		//HiddenCommonProcess(canvasSetting);
 	}
 
+	//タブの遷移
 	public void MoveScene(int sceneNum){
-		if(isMoving)return;
-		isMoving = true;
-		HiddenCommonProcess(canvasArray[nowSceneNum]);
-		/* 
-		int len = canvasArray.Count;
-		for(int i=0;i<len;i++){
-			canvasArray[i].SetActive(false);
+		//遷移中は入力不可
+		if(isMoving)return;	
+		//同じタブかつそのタブのtopScreenなら入力不可
+		if(nowSceneNum == sceneNum){
+			bool b = canvasArray[sceneNum].GetComponent<CanvasManager>().isTopScreen;
+			if(b)return;
 		}
-
-		canvasArray[nowSceneNum].SetActive(false);
-		*/
-		//canvasArray[sceneNum].SetActive(true);
-		DisplayCommonProcess(canvasArray[sceneNum]);
+		//遷移開始
+		isMoving = true;
+		HiddenCommonProcess(currentScreen);
+		DisplayCommonProcess(canvasArray[sceneNum].GetComponent<CanvasManager>().topScreen);
+		currentScreen = canvasArray[sceneNum].GetComponent<CanvasManager>().topScreen;
 		nowSceneNum = sceneNum;
+	}
+
+	public void MoveScreen(GameObject screen){
+		//遷移中は入力不可
+		if(isMoving)return;	
+
+		nowScreen = screen;
+		DisplayCommonProcess(nowScreen);
+		HiddenCommonProcess(currentScreen);
+		currentScreen = screen;
+		
+
 	}
 
 	//表示の際の共通処理
 	private void DisplayCommonProcess(GameObject scene){
 		scene.GetComponent<CanvasGroup>().alpha = 0;
+		//scene.transform.parent.gameObject.SetActive(true);
 		scene.SetActive(true);
 
 		List<GameObject> left = scene.GetComponent<MoveCategorize>().left;

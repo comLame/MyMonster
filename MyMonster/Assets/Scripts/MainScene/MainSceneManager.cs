@@ -22,8 +22,13 @@ public class MainSceneManager : MonoBehaviour {
 
 		int num_canvas = canvasArray.Count;
 		for(int i=0;i<num_canvas;i++){
-			canvasArray[i].SetActive(true);
-			if(i != 0)canvasArray[i].SetActive(false);
+
+			Transform t = canvasArray[i].transform;
+			foreach (Transform child in t)
+			{
+				child.gameObject.SetActive(false);
+			}
 		}
+		canvasHome.GetComponent<CanvasManager>().topScreen.SetActive(true);
 	}
 }
