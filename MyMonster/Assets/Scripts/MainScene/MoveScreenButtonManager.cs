@@ -4,19 +4,27 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class MoveScreenButtonManager : MonoBehaviour {
-	/*
-	public void AddEventSample()
-	{
-		EventTrigger currentTrigger = AddComponent<EventTrigger>();
-		currentTrigger.triggers = new List<EventTrigger.Entry>();
-		//↑ここでAddComponentしているので一応、初期化しています。
-		
-		EventTrigger.Entry entry = new EventTrigger.Entry();
-		entry.eventID = EventTriggerType.PointerClick; //PointerClickの部分は追加したいEventによって変更してね
-		entry.callback.AddListener( (x) => OnClick() );  //ラムダ式の右側は追加するメソッドです。
 
-		currentTrigger.triggers.Add(entry);
-				
+	
+	[SerializeField] public GameObject transitionDestinationScreen; //遷移先の画面
+	public bool isTab = false; //押したボタンがタブかどうか
+	public bool isTop = false; //遷移先がTopScreenかどうか
+	
+	private MoveScreenManager MoveScreenManager;
+
+	private void Start(){
+		MoveScreenManager = GameObject.Find("MoveScreenManager").GetComponent<MoveScreenManager>();
+
+		var trigger = gameObject.AddComponent<EventTrigger>();
+        trigger.triggers = new List<EventTrigger.Entry>();
+
+        // クリック時のイベントを設定してみる
+        var entry = new EventTrigger.Entry();
+        entry.eventID = EventTriggerType.PointerClick; // 他のイベントを設定したい場合はここを変える
+        entry.callback.AddListener( (x) => { 
+			MoveScreenManager.MoveScreen(transitionDestinationScreen,isTab,isTop);
+		});
+        trigger.triggers.Add(entry);
 	}
-	*/
+
 }

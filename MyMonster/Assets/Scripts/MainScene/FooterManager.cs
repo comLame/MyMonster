@@ -24,6 +24,10 @@ public class FooterManager : MonoBehaviour {
 	//time
 	private float time_animation = 0.4f;
 
+	public static void Static(){
+		
+	}
+
 	void Start(){
 		canvasArray.Add(canvasHome);
 		canvasArray.Add(canvasMonster);
