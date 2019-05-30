@@ -78,6 +78,7 @@
      <Compile Include="Assets\Scripts\BattleScene\TouchMonster.cs" />
      <Compile Include="Assets\Scripts\MainScene\CanvasManager.cs" />
      <Compile Include="Assets\Scripts\MainScene\FooterManager.cs" />
+     <Compile Include="Assets\Scripts\MainScene\LandingButton.cs" />
      <Compile Include="Assets\Scripts\MainScene\MainSceneManager.cs" />
      <Compile Include="Assets\Scripts\MainScene\MoveCategorize.cs" />
      <Compile Include="Assets\Scripts\MainScene\MoveScreenButtonManager.cs" />
