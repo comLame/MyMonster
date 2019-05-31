@@ -8,14 +8,14 @@ public class LandingButton : MonoBehaviour {
 	public GameObject img_explain;
 	public GameObject sv_island;
 	public GameObject content;
+	public GameObject spotArea; //スポットを表示するオブジェクト
 
 	private Vector2 size;
 	private float scale = 3;
-	private float time_animation = 1f;
+	private float time_animation = 0.5f;
 	private bool isMoving = false;
 
 	private void Start(){
-		content = sv_island.transform.GetChild(0).GetChild(0).gameObject;
 
 		float width = content.GetComponent<RectTransform>().rect.width;
 		float height = content.GetComponent<RectTransform>().rect.height;
@@ -27,7 +27,12 @@ public class LandingButton : MonoBehaviour {
 
 		isMoving = true;
 		iTween.ScaleTo(content,iTween.Hash("x",scale,"y",scale,"time",time_animation));
-		StartCoroutine(DelayMethod(time_animation,() => { isMoving = false; } ));
+		StartCoroutine(DelayMethod(time_animation - 0.3f,() => {
+			spotArea.SetActive(true);
+		}));
+		StartCoroutine(DelayMethod(time_animation,() => { 
+			isMoving = false; 
+		} ));
 	}
 
 	private void Update(){
