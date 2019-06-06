@@ -79,7 +79,7 @@ public class BattleManager : MonoBehaviour {
 		//fade関係
 		fade = fadeCanvas.transform.GetChild(0).GetComponent<Fade>();
 		GameObject text = fadeCanvas.transform.GetChild(1).gameObject;
-		text.SetActive(true);
+		//text.SetActive(true);
 		fade.FadeIn (0, () => {
 			fade.FadeOut(1,() => {
 				StartCoroutine(DelayMethod(0.2f,() => {

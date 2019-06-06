@@ -20,7 +20,7 @@ public class ToBattleScene : MonoBehaviour {
 			//fade.FadeOut(time_fade);
 			StartCoroutine(DelayMethod(0.1f,()=>{
 				GameObject text = fadeCanvas.transform.GetChild(1).gameObject;
-				text.SetActive(true);
+				//text.SetActive(true);
 				StartCoroutine(DelayMethod(0.5f,()=>{
 					SceneManager.LoadScene("BattleScene");
 					//titleScene.SetActive(false);
