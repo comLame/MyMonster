@@ -40,6 +40,8 @@ public class BattleManager : MonoBehaviour {
 	private int targetMonsterId_ally = 0;
 	private int targetMonsterId_enemy = 0;
 	private int actionCount = 0; //1だったら1体目の行動 10が終わったら次のターン
+	private int nowWave = 1; //今のWave数 1~
+	private int totalWave; //トータルのWave数 1~
 	private float time_break = 0.5f; //行動と行動の間のブレイク
 	private float time_stepFront = 0.12f; //前にちょこっと進む時間
 	private float time_stepBack = 0.12f; //後ろに戻る時間
@@ -47,8 +49,8 @@ public class BattleManager : MonoBehaviour {
 	private float time_hitAnimation = 1.0f; //被弾モーションのアニメーション時間
 	private float time_deathAnimation = 1.0f; //死亡アニメーション時間
 	private float time_frame = 0.2f; //エフェクトの１枚ずつの表示時間
-	private float time_entranceAnimation = 3f; //入場アニメーションの時間
-	private float time_allyEntranceAnimation = 2f;
+	private float time_entranceAnimation = 2f; //入場アニメーションの時間
+	private float time_allyEntranceAnimation = 0.5f;
 	private int num_frame = 5; //１エフェクトのフレーム数
 	private float speed_attackAnimation = 1f; //攻撃アニメーションのスピード
 	private float diff_step = 0.2f; //ステップの距離
@@ -68,6 +70,7 @@ public class BattleManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		CountWave();
 		InputMonsterList();
 		GetMyPartyData();
 		GetEnemyPartyData();
@@ -76,6 +79,16 @@ public class BattleManager : MonoBehaviour {
 		SortMonsterOrder();
 		DebugMonsterOrderList();
 
+		//fade関係
+		FadeAnimation();
+	}
+
+	//wave数を数える
+	private void CountWave(){
+		totalWave = (int)enemyPartyData.sheets[0].list.Count/5;
+	}
+
+	private void FadeAnimation(){
 		//fade関係
 		fade = fadeCanvas.transform.GetChild(0).GetComponent<Fade>();
 		GameObject text = fadeCanvas.transform.GetChild(1).gameObject;
@@ -90,13 +103,6 @@ public class BattleManager : MonoBehaviour {
 				}));
 			});
 		});
-
-		//EntranceAnimation(); //これを呼んだらバトル開始
-		/*
-		StartCoroutine(DelayMethod(time_entranceAnimation,()=> {
-			CheckNextAction(); //これを読んだらバトル開始
-		}));
-		*/
 	}
 	
 	//monsterOrderList,myPartyList,enemyPartyListにオブジェクトを代入
@@ -166,13 +172,14 @@ public class BattleManager : MonoBehaviour {
 
 	//エネミーパーティデータを読み込む
 	private void GetEnemyPartyData(){
-		int num_total = enemyPartyData.sheets[0].list.Count; //総数取得
+		//int num_total = enemyPartyData.sheets[0].list.Count; //総数取得
 		
-		for(int i=0;i<num_total;i++){
+		for(int i=0;i<5;i++){
 			GameObject monster = enemyPartyList[i];	
-			int num_pb = enemyPartyData.sheets[0].list[i].No; //図鑑番号
+			int listNum = i + ((nowWave - 1) * 5 );
+			int num_pb = enemyPartyData.sheets[0].list[listNum].No; //図鑑番号
 			GetStatus(monster,num_pb,50); 
-			GetSkill(monster,i,true);
+			GetSkill(monster,listNum,true);
 		}
 	}
 
@@ -207,6 +214,7 @@ public class BattleManager : MonoBehaviour {
 
 		//0じゃなかったら
 		if(num_pictureBook != 0){
+		monster.SetActive(true);
 		//種族値
 		int bs_hp = baseStatsData.sheets[0].list[num_pictureBook-1].Hp;
 		int bs_attack = baseStatsData.sheets[0].list[num_pictureBook-1].Attack;
@@ -221,6 +229,7 @@ public class BattleManager : MonoBehaviour {
 		monster.GetComponent<CharacterStatus>().attack = GetActualValue(bs_attack,level);
 		monster.GetComponent<CharacterStatus>().defense= GetActualValue(bs_defense,level);
 		monster.GetComponent<CharacterStatus>().speed = GetActualValue(bs_speed,level);
+		monster.GetComponent<CharacterStatus>().deathFlag = false;
 		//Debug.Log(GetActualValue(bs_hp,level,true) + " " + GetActualValue(bs_attack,level) + " "+ 
 		//	GetActualValue(bs_defense,level) + " "+ GetActualValue(bs_speed,level));
 
@@ -256,6 +265,20 @@ public class BattleManager : MonoBehaviour {
 
 	//入場アニメーション
 	private void EntranceAnimation(){
+		
+		AllyEntranceAnimation();
+		
+		EnemyEntranceAnimation();
+
+		//バトル開始
+		StartCoroutine(DelayMethod(time_entranceAnimation,() => {
+			CheckNextAction();
+		}));
+
+
+	}
+
+	private void AllyEntranceAnimation(){
 		//味方
 		myParty.SetActive(true);
 		//変数宣言
@@ -270,9 +293,11 @@ public class BattleManager : MonoBehaviour {
 		myParty.GetComponent<RectTransform>().localPosition = new Vector3(nowPos.x + disX,nowPos.y,nowPos.z);
 		//iTween.MoveTo(myParty,iTween.Hash("path",_path,"time",time_allyEntranceAnimation,
 		//	"easetype",iTween.EaseType.easeInCubic,"isLocal",true));
-		Tweener tween = myParty.GetComponent<RectTransform>().DOLocalPath(_path, 2.0f, PathType.CatmullRom)
-			.SetEase(Ease.InExpo);
+		Tweener tween = myParty.GetComponent<RectTransform>().DOLocalPath(_path, time_allyEntranceAnimation, PathType.CatmullRom)
+			.SetEase(Ease.InQuad);
+	}
 
+	private void EnemyEntranceAnimation(){
 		//敵
 		enemyParty.SetActive(false);
 		StartCoroutine(DelayMethod(time_allyEntranceAnimation,()=> {
@@ -283,13 +308,6 @@ public class BattleManager : MonoBehaviour {
 					.FadeInAnimation(time_entranceAnimation -time_allyEntranceAnimation);
 			}
 		}));
-
-		//バトル開始
-		StartCoroutine(DelayMethod(time_entranceAnimation,() => {
-			CheckNextAction();
-		}));
-
-
 	}
 
 	/*=====================================
@@ -445,9 +463,13 @@ public class BattleManager : MonoBehaviour {
 	//敵の行動
 	private void EnemyAction(){
 
+		Debug.Log("セットする前");
+
 		//動くモンスターの特定
 		GameObject attackMonster = monsterOrderList[actionCount-1].gameObject;
 		SetSelectMarker(attackMonster);
+
+		Debug.Log("セットした後");
 
 		//技の決定
 		List<int> skillList = attackMonster.GetComponent<CharacterStatus>().skills;
@@ -455,11 +477,15 @@ public class BattleManager : MonoBehaviour {
 		attackMonster.GetComponent<CharacterStatus>().num_selectedSkill = num_skill + 1;
 		int no_skill = skillList[num_skill]; //放つ技の技番号
 
+		Debug.Log("1");
+
 		//攻撃する相手の決定
 		List<GameObject> partyList; //参照するパーティリスト
 		List<GameObject> remainTargetPartyList = new List<GameObject>(); //生きているターゲットモンスターのリスト
 		int count_target = 1; //ターゲットの体数 1->単体 5->全体
 		List<GameObject> attackedMonsters = new List<GameObject>(); //攻撃対象のモンスター
+
+		Debug.Log("2");
 
 		//技のターゲットによって分類
 		switch(skillData.sheets[0].list[no_skill-1].Target){
@@ -485,6 +511,8 @@ public class BattleManager : MonoBehaviour {
 			break;
 		}
 
+		Debug.Log("3");
+
 		for(int i=0;i<partyList.Count;i++){
 			if(!partyList[i].GetComponent<CharacterStatus>().deathFlag){
 				//生きていればListに追加
@@ -492,6 +520,8 @@ public class BattleManager : MonoBehaviour {
 			}
 		}
 		remainTargetPartyList = remainTargetPartyList.OrderBy(a => Guid.NewGuid()).ToList(); //シャッフル
+
+		Debug.Log("4");
 
 		//attackedMonsterの決定
 		if(count_target == 1){
@@ -506,6 +536,7 @@ public class BattleManager : MonoBehaviour {
 
 		//攻撃
 		StartCoroutine(DelayMethod(time_break,() => {
+			Debug.Log("攻撃");
 			Attack(attackMonster,attackedMonsters);
 		}));
 	}
@@ -833,10 +864,17 @@ public class BattleManager : MonoBehaviour {
 			if(!enemyPartyList[i].GetComponent<CharacterStatus>().deathFlag)count++;//いきてたらカウントアップ
 		}
 		if(count == 0){
-			vod = 1;
-			GameSet(); //バトル終了
+			if(nowWave == totalWave){
+				//最後のWaveならバトル終了
+				vod = 1;
+				GameSet(); //バトル終了
+			}else{
+				//そうじゃないなら次のWave
+				GoNextWave();
+			}
 			return;
 		}
+
 		count = 0;
 		for(int i=0;i<myPartyList.Count;i++){
 			if(!myPartyList[i].GetComponent<CharacterStatus>().deathFlag)count++;//いきてたらカウントアップ
@@ -847,6 +885,25 @@ public class BattleManager : MonoBehaviour {
 			return;
 		}
 		CheckNextAction(); //最後の行動の時に次の行動にいく
+	}
+
+	//次のWaveに移動
+	private void GoNextWave(){
+
+		nowWave++;
+
+		//InputMonsterList();
+		//GetMyPartyData();
+		GetEnemyPartyData();
+		//InitializeSlider(myPartyList);
+		InitializeSlider(enemyPartyList);
+		SortMonsterOrder();
+
+		EnemyEntranceAnimation();
+		//バトル開始
+		StartCoroutine(DelayMethod(time_entranceAnimation,() => {
+			CheckNextAction();
+		}));
 	}
 
 	//ゲーム終了
