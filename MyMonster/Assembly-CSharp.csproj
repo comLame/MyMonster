@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\BattleScene\MonsterAnimation.cs" />
      <Compile Include="Assets\Scripts\BattleScene\SkillNameTextAnimation.cs" />
      <Compile Include="Assets\Scripts\BattleScene\SliderAnimation.cs" />
+     <Compile Include="Assets\Scripts\BattleScene\ToHomeScene.cs" />
      <Compile Include="Assets\Scripts\BattleScene\TouchCommandButton.cs" />
      <Compile Include="Assets\Scripts\BattleScene\TouchMonster.cs" />
      <Compile Include="Assets\Scripts\MainScene\CanvasManager.cs" />
