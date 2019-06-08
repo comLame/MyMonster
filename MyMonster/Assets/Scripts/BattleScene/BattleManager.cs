@@ -17,6 +17,8 @@ public class BattleManager : MonoBehaviour {
 	public SkillEffectData skillEffectData;
 	public TypeEffecetiveness typeEffectiveness;
 	//ここまで
+	public GameObject resultScreen; //結果画面
+	public GameObject containerBG; //背景のコンテナ
 	public GameObject fadeCanvas;
 	public GameObject myParty;
 	public GameObject enemyParty;
@@ -51,6 +53,7 @@ public class BattleManager : MonoBehaviour {
 	private float time_frame = 0.2f; //エフェクトの１枚ずつの表示時間
 	private float time_entranceAnimation = 2f; //入場アニメーションの時間
 	private float time_allyEntranceAnimation = 0.5f;
+	private float time_nextWaveAnimation = 3f; //次のウェーブにいく時のアニメーション
 	private int num_frame = 5; //１エフェクトのフレーム数
 	private float speed_attackAnimation = 1f; //攻撃アニメーションのスピード
 	private float diff_step = 0.2f; //ステップの距離
@@ -70,6 +73,8 @@ public class BattleManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//NextWaveAnimation();
+		//return;
 		CountWave();
 		InputMonsterList();
 		GetMyPartyData();
@@ -899,11 +904,38 @@ public class BattleManager : MonoBehaviour {
 		InitializeSlider(enemyPartyList);
 		SortMonsterOrder();
 
-		EnemyEntranceAnimation();
-		//バトル開始
-		StartCoroutine(DelayMethod(time_entranceAnimation,() => {
-			CheckNextAction();
+		NextWaveAnimation();
+
+		enemyParty.SetActive(false);
+		StartCoroutine(DelayMethod(time_nextWaveAnimation,() => {
+			enemyParty.SetActive(true);
+			EnemyEntranceAnimation();
+			//バトル開始
+			StartCoroutine(DelayMethod(time_entranceAnimation,() => {
+				CheckNextAction();
+			}));
 		}));
+	}
+
+	//次のWaveにいく時のアニメーション
+	private void NextWaveAnimation(){
+		GameObject bg1 = containerBG.transform.GetChild(0).gameObject;
+		GameObject bg2 = containerBG.transform.GetChild(1).gameObject;
+		Vector3 pos1 = bg1.GetComponent<RectTransform>().localPosition;
+		Vector3 pos2 = bg2.GetComponent<RectTransform>().localPosition;
+		float width = bg1.GetComponent<RectTransform>().sizeDelta.x;
+
+		iTween.MoveTo(bg1,iTween.Hash("position",new Vector3(pos1.x + width,pos1.y,pos1.z)
+			,"time",time_nextWaveAnimation,"islocal",true,"easetype",iTween.EaseType.linear));
+		iTween.MoveTo(bg2,iTween.Hash("position",new Vector3(pos2.x + width,pos2.y,pos2.z)
+			,"time",time_nextWaveAnimation,"islocal",true,"easetype",iTween.EaseType.linear));
+
+		//コールバック
+		StartCoroutine(DelayMethod(time_nextWaveAnimation + 0.1f,() => {
+			bg1.GetComponent<RectTransform>().localPosition = pos2;
+			bg1.transform.SetSiblingIndex(1);
+		}));
+
 	}
 
 	//ゲーム終了
@@ -912,6 +944,10 @@ public class BattleManager : MonoBehaviour {
 		bg_VOD.SetActive(true);
 		iTween.MoveFrom(bg_VOD,iTween.Hash("x",-10,"easytype",iTween.EaseType.easeInQuint,"time",0.8f,
 			"oncompletetarget",gameObject,"oncomplete","DisplayVOD"));
+
+		StartCoroutine(DelayMethod(3,() => {
+			resultScreen.SetActive(true);
+		}));
 	}
 
 	private void DisplayVOD(){
