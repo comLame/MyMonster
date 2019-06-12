@@ -4,3 +4,12 @@ MyMonster/Temp/StagingArea/Data/resources.assets.resS filter=lfs diff=lfs merge=
 MyMonster/Library/PlayerDataCache/iOS/Data/sharedassets0.assets.resS filter=lfs diff=lfs merge=lfs -text
 =======
 >>>>>>> d69e74254fd9ede8f1390f61dbfbc2894097d247
+MyMonster/Assets/GUI filter=lfs diff=lfs merge=lfs -text
+Kit filter=lfs diff=lfs merge=lfs -text
+The filter=lfs diff=lfs merge=lfs -text
+Stone/SpritesPSD/11_ShopGem.psd filter=lfs diff=lfs merge=lfs -text
+MyMonster/Assets/GUIKitTheStone/SpritesPSD/10_ShopCoin.psd filter=lfs diff=lfs merge=lfs -text
+MyMonster/Assets/GUIKitTheStone/SpritesPSD/11_ShopGem.psd filter=lfs diff=lfs merge=lfs -text
+MyMonster/Assets/GUIKitTheStone/SpritesPSD/09_Mission.psd filter=lfs diff=lfs merge=lfs -text
+MyMonster/Assets/GUIKitTheStone/SpritesPSD/13_Items.psd filter=lfs diff=lfs merge=lfs -text
+MyMonster/Assets/GUIKitTheStone/SpritesPSD/19_Components.psd filter=lfs diff=lfs merge=lfs -text
