@@ -88,6 +88,7 @@
      <Compile Include="Assets\Scripts\MainScene\MoveScreenManager.cs" />
      <Compile Include="Assets\Scripts\MainScene\SpotButton.cs" />
      <Compile Include="Assets\Scripts\MainScene\ToBattleScene.cs" />
+     <Compile Include="Assets\Scripts\MainScene\ToDeckSelectView.cs" />
      <Compile Include="Assets\Simple UI\Samples\IconPreview.cs" />
      <Compile Include="Assets\Terasurware\Classes\BaseStatsData.cs" />
      <Compile Include="Assets\Terasurware\Classes\EnemyPartyData.cs" />
