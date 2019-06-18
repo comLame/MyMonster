@@ -85,12 +85,16 @@ public class BattleManager : MonoBehaviour {
 		DebugMonsterOrderList();
 
 		//fade関係
-		FadeAnimation();
+		//FadeAnimation();
+		StartCoroutine(DelayMethod(1,() => {
+			EntranceAnimation();
+		}));
 	}
 
 	//wave数を数える
 	private void CountWave(){
-		totalWave = (int)enemyPartyData.sheets[0].list.Count/5;
+		//totalWave = (int)enemyPartyData.sheets[0].list.Count/5;
+		totalWave = 1;
 	}
 
 	private void FadeAnimation(){
@@ -946,7 +950,8 @@ public class BattleManager : MonoBehaviour {
 			"oncompletetarget",gameObject,"oncomplete","DisplayVOD"));
 
 		StartCoroutine(DelayMethod(3,() => {
-			resultScreen.SetActive(true);
+			//resultScreen.SetActive(true);
+			FadeManager.Instance.LoadScene ("ResultScene", 1.0f);
 		}));
 	}
 

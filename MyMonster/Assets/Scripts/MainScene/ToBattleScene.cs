@@ -12,7 +12,8 @@ public class ToBattleScene : MonoBehaviour {
 	private Fade fade; //fade
 
 	public void onClick(){
-		
+		FadeManager.Instance.LoadScene ("BattleScene", 2.0f);
+		/* 
 		//SceneManager.LoadScene("BattleScene");
 		fade = fadeCanvas.transform.GetChild(0).GetComponent<Fade>();
 		fade.FadeIn (time_fade, () =>
@@ -28,7 +29,7 @@ public class ToBattleScene : MonoBehaviour {
 				}));
 			}));
 		});
-		
+		*/
 		//FadeManager.Instance.LoadScene ("BattleScene", 2.0f);
 	}
 

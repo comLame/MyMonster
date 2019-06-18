@@ -24,21 +24,35 @@ public class MoveScreenManager : MonoBehaviour{
 		currentScreen = topScreen;
 	}
 
-	public void MoveScreen(GameObject screen,bool isTab = false,bool isTop = false){
+	public void MoveScreen(GameObject screen,GameObject hideScreen,bool isTab = false,bool isTop = false){
 		//遷移中は入力不可
-		if(isMoving)return;	
-		//遷移先が今と同じ場合は入力不可
-		if(currentScreen == screen)return;
-		//遷移開始
-		isMoving = true;
-		//コンポーネントのアタッチ
-		SetComponents(currentScreen);
-		SetComponents(screen);
-		//遷移実行
-		HiddenScreen(currentScreen);
-		DisplayScreen(screen);
-		//変数変更
-		currentScreen = screen;
+		if(isMoving)return;
+		
+		if(isTab){
+			//遷移先が今と同じ場合は入力不可
+			if(currentScreen == screen)return;
+			//遷移開始
+			isMoving = true;
+			//コンポーネントのアタッチ
+			SetComponents(currentScreen);
+			SetComponents(screen);
+			//遷移実行
+			HiddenScreen(currentScreen);
+			DisplayScreen(screen);
+			//変数変更
+			currentScreen = screen;
+		}else{
+			//タブ以外
+			//遷移開始
+			isMoving = true;
+			//コンポーネントのアタッチ
+			SetComponents(screen);
+			SetComponents(hideScreen);
+
+			//遷移実行
+			HiddenScreen(hideScreen);
+			DisplayScreen(screen);
+		}
 	}
 
 	private void HiddenScreen(GameObject screen){

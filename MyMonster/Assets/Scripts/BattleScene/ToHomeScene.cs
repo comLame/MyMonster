@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ToHomeScene : MonoBehaviour {
 
 	public void OnClick(){
-		SceneManager.LoadScene("MainScene");
+		//SceneManager.LoadScene("MainScene");
+		FadeManager.Instance.LoadScene ("MainScene", 1.0f);
 	}
 }
