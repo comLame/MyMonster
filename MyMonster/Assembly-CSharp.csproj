@@ -77,6 +77,11 @@
      <Compile Include="Assets\Scripts\BattleScene\ToHomeScene.cs" />
      <Compile Include="Assets\Scripts\BattleScene\TouchCommandButton.cs" />
      <Compile Include="Assets\Scripts\BattleScene\TouchMonster.cs" />
+     <Compile Include="Assets\Scripts\General\GameManager.cs" />
+     <Compile Include="Assets\Scripts\General\IconCreaterManager.cs" />
+     <Compile Include="Assets\Scripts\General\Monster.cs" />
+     <Compile Include="Assets\Scripts\General\SaveData.cs" />
+     <Compile Include="Assets\Scripts\General\TapEffect.cs" />
      <Compile Include="Assets\Scripts\MainScene\CanvasManager.cs" />
      <Compile Include="Assets\Scripts\MainScene\EasyMoveButton.cs" />
      <Compile Include="Assets\Scripts\MainScene\FooterManager.cs" />
@@ -86,12 +91,12 @@
      <Compile Include="Assets\Scripts\MainScene\MoveCategorize.cs" />
      <Compile Include="Assets\Scripts\MainScene\MoveScreenButtonManager.cs" />
      <Compile Include="Assets\Scripts\MainScene\MoveScreenManager.cs" />
+     <Compile Include="Assets\Scripts\MainScene\PartyEditScreenManager.cs" />
      <Compile Include="Assets\Scripts\MainScene\SpotButton.cs" />
      <Compile Include="Assets\Scripts\MainScene\ToBattleScene.cs" />
      <Compile Include="Assets\Scripts\MainScene\ToDeckSelectView.cs" />
      <Compile Include="Assets\Scripts\ResultScene\CountUpAnimation.cs" />
      <Compile Include="Assets\Scripts\ResultScene\ResultManager.cs" />
-     <Compile Include="Assets\Scripts\TapEffect.cs" />
      <Compile Include="Assets\Simple UI\Samples\IconPreview.cs" />
      <Compile Include="Assets\Terasurware\Classes\BaseStatsData.cs" />
      <Compile Include="Assets\Terasurware\Classes\EnemyPartyData.cs" />
