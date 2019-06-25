@@ -24,7 +24,16 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 
+		Party party = new Party();
+		party.monsters[0] = 1;
+		party.monsters[1] = 7;
+		party.monsters[2] = 5;
+		party.monsters[3] = 19;
+		party.monsters[4] = 21;
+		List<Party> partyList = new List<Party>(){party};
+
 		SaveData.SetList<Monster>("ownMonsters",ownMonsters);
+		SaveData.SetList<Party>("partyList",partyList);
 		SaveData.Save();
 	}
 
