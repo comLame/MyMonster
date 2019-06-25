@@ -80,6 +80,7 @@
      <Compile Include="Assets\Scripts\General\GameManager.cs" />
      <Compile Include="Assets\Scripts\General\IconCreaterManager.cs" />
      <Compile Include="Assets\Scripts\General\Monster.cs" />
+     <Compile Include="Assets\Scripts\General\Party.cs" />
      <Compile Include="Assets\Scripts\General\SaveData.cs" />
      <Compile Include="Assets\Scripts\General\TapEffect.cs" />
      <Compile Include="Assets\Scripts\MainScene\CanvasManager.cs" />

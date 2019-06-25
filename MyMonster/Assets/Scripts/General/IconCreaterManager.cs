@@ -13,6 +13,7 @@ public class IconCreaterManager : MonoBehaviour {
 	public GameObject Create(int No,string type,int level){
 		GameObject icon = (GameObject)Instantiate(iconPrefab);
 		GameObject frame = icon.gameObject;
+		GameObject monster = icon.transform.GetChild(0).gameObject;
 		GameObject typeIcon = icon.transform.GetChild(1).gameObject;
 		int typeNum = 0;
 		switch(type.ToString()){
@@ -32,6 +33,7 @@ public class IconCreaterManager : MonoBehaviour {
 			typeNum = 4;
 			break;
 		}
+		monster.GetComponent<Image>().sprite = Resources.Load<Sprite>("Img_Monster/" + No);
 		frame.GetComponent<Image>().sprite = frameList[typeNum];
 		typeIcon.GetComponent<Image>().sprite = typeIconList[typeNum];
 		icon.transform.GetChild(2).GetComponent<Text>().text = level.ToString();

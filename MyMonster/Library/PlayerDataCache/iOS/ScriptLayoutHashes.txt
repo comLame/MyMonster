@@ -98,6 +98,7 @@ e90403eeda069970e0b9de1533de13a6 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 2d58ca16854b99daea8c45e9c0f367b7 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 16da51d1b62ef6d4ee1849350434023b UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 4173096abaff05f62c2d862d051a2e06 Assembly-CSharp.dll:.IslandScreenManager
+1be94e7f56154c2e105e2a24466cfa73 Assembly-CSharp.dll:.IconCreaterManager
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.FadeSample
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.DestroyAtkFX
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.ToHomeScene
@@ -176,7 +177,7 @@ fc061f3ae8a876c0687e86378d4a447c UnityEngine.Networking.dll:UnityEngine.Networki
 7ca56e063bd071986fff4f513cc4f477 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 5d03aaed84af7f676501fe12c8c4e1dc Assembly-CSharp.dll:.CountUpAnimation
 72a8523b432c0a5317826b7a9e0a0e79 Unity.TextMeshPro.dll:TMPro.PackageResourceImporterWindow
-bba9dfb9b008545983e504640a0bc370 Assembly-CSharp.dll:.PartyEditScreenManager
+b640cc57a8a77f39844713418f694b02 Assembly-CSharp.dll:.PartyEditScreenManager
 e53cc67d84060d628c7f03fc725766d8 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 392c5b921098bd4c139d9146d0efa6d7 Unity.TextMeshPro.dll:TMPro.TMP_Settings
 ac8ae9e2f25181092768bc9e9ac86ee1 Assembly-CSharp.dll:.UIGradient
@@ -216,4 +217,3 @@ a7d4acaff3341781ab45c4bcb83128ad Assembly-CSharp.dll:.EnemyPartyData
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.SkillNameTextAnimation
 90d680680f0264a84a783debdd05f057 Assembly-CSharp.dll:.FooterManager
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.TouchMonster
-1be94e7f56154c2e105e2a24466cfa73 Assembly-CSharp.dll:.IconCreaterManager
