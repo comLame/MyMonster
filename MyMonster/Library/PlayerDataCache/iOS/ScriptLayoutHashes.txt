@@ -217,3 +217,4 @@ a7d4acaff3341781ab45c4bcb83128ad Assembly-CSharp.dll:.EnemyPartyData
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.SkillNameTextAnimation
 90d680680f0264a84a783debdd05f057 Assembly-CSharp.dll:.FooterManager
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.TouchMonster
+1aadbd6d0364d97dcf85a5d801737037 Assembly-CSharp.dll:.IconInformation
