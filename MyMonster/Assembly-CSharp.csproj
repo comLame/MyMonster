@@ -79,6 +79,7 @@
      <Compile Include="Assets\Scripts\BattleScene\TouchMonster.cs" />
      <Compile Include="Assets\Scripts\General\GameManager.cs" />
      <Compile Include="Assets\Scripts\General\IconCreaterManager.cs" />
+     <Compile Include="Assets\Scripts\General\IconInformation.cs" />
      <Compile Include="Assets\Scripts\General\Monster.cs" />
      <Compile Include="Assets\Scripts\General\Party.cs" />
      <Compile Include="Assets\Scripts\General\SaveData.cs" />
