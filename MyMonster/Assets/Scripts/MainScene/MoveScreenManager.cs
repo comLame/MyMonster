@@ -10,7 +10,7 @@ public class MoveScreenManager : MonoBehaviour{
 	private GameObject nowScreen;
 	private GameObject fadeinScreen;
 	private GameObject fadeoutScreen;
-	private float time_delay = 0.1f;
+	private float time_delay = 0.5f;
 	private float distance = 4.5f;
 	private int nowSceneNum = 0;
 	private bool isMoving = false;

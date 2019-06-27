@@ -16,8 +16,16 @@ public class MoveScreenButtonManager : MonoBehaviour {
 	private void Start(){
 		MoveScreenManager = GameObject.Find("MoveScreenManager").GetComponent<MoveScreenManager>();
 
-		var trigger = gameObject.AddComponent<EventTrigger>();
-        trigger.triggers = new List<EventTrigger.Entry>();
+		//オブジェクトにEventTriggerがない時
+		if(gameObject.GetComponent<EventTrigger>() == null){
+			gameObject.AddComponent<EventTrigger>();
+		}
+
+		var trigger = gameObject.GetComponent<EventTrigger>();
+		if(trigger.triggers == null){
+			//アクションが設定されていない場合は設定するアクションリストを作成
+			trigger.triggers = new List<EventTrigger.Entry>();
+		}
 
         // クリック時のイベントを設定してみる
         var entry = new EventTrigger.Entry();
