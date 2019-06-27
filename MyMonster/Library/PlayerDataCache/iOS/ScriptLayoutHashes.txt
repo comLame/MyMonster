@@ -205,10 +205,12 @@ aac9c55ae7ba4b95b852a7d9c191acd1 Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 17f46b7839a7f3b530945999b704eff4 Assembly-CSharp.dll:.EasyMoveButton
 b787ade9942a4ccb11f23b78aa766e50 Assembly-CSharp.dll:.SkillData
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+cb54518e7e955e1dd3dee27407c70d54 Assembly-CSharp.dll:.TrainingScreenManager
 95fbc0eeea2577ed7c226011a9f64917 Assembly-CSharp.dll:.ToBattleScene
 e3c0ac9e288d561f1b73913db0ddb578 Assembly-CSharp.dll:.LandingButton
 e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.SpotButton
+bdf2243f8e25bd6a36f5899f1c73f82a Assembly-CSharp.dll:.IconInformation
 2f9af06a78208a67db480e9bfed4a076 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 9318334b30e9f195f573b2ce00154b95 Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 b6eaf20495b88d4e7f714bd5efec065f Assembly-CSharp.dll:.ResultManager
@@ -217,4 +219,3 @@ a7d4acaff3341781ab45c4bcb83128ad Assembly-CSharp.dll:.EnemyPartyData
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.SkillNameTextAnimation
 90d680680f0264a84a783debdd05f057 Assembly-CSharp.dll:.FooterManager
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.TouchMonster
-1aadbd6d0364d97dcf85a5d801737037 Assembly-CSharp.dll:.IconInformation

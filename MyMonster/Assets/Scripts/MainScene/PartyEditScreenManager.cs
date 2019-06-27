@@ -19,7 +19,7 @@ public class PartyEditScreenManager : MonoBehaviour {
 	//private int maxPartyMonsterNum = 5; //パーティに編成できる最大の体数
 	private bool isMax = false;
 
-	private void Awake(){
+	private void OnEnable(){
 		GetOwnMonstersData();
 		GetPartyList();
 
@@ -173,16 +173,13 @@ public class PartyEditScreenManager : MonoBehaviour {
 		DisplayPartyMonster();
 		Check();
 	}
-	/* 
-	private GameObject IconCreate(int No,string type,int level){
-		//必要要素
-		/*
-			図鑑No、
-			属性、
-			レベル、
-		 
-		return iconCreaterManager.GetComponent<IconCreaterManager>().Create(No,type,level);
-}*/
+
+	//パーティを確定する
+	public void Confirm(){
+		partyList[0] = party;
+		SaveData.SetList<Party>("partyList",partyList);
+		SaveData.Save();
+	}
 
 	private void GetOwnMonstersData(){
 		ownMonsters = SaveData.GetList<Monster>("ownMonsters",ownMonsters);

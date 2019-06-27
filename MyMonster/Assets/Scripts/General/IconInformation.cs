@@ -6,4 +6,5 @@ public class IconInformation : MonoBehaviour {
 
 	public int uniqueId;
 	public bool isPartyMonster;
+	public Monster monsterInfo;
 }
