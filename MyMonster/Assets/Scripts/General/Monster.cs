@@ -11,4 +11,5 @@ public class Monster
 	public int uniqueID; //固有ID
 	public int level; //レベル
 	public int exp; //現在のレベルになってから獲得した経験値
+	public int[] skills = new int[4];
 }

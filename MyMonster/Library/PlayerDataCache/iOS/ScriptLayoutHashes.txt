@@ -160,7 +160,7 @@ bb738cbf2126bf3b968fe6378dcb603d Assembly-CSharp.dll:.UITextCornersGradient
 009c2cbba0cc3d9f92087ec454b6cba7 Assembly-CSharp.dll:.FadeImage
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.MoveScreenManager
 2da07980e63b027a52feec10b012689c Assembly-CSharp.dll:.UITextGradient
-f981396a3c28f0fb0a086ca6672d9e72 Assembly-CSharp.dll:.GameManager
+5217b19a49913a20982d65dc1c6fae3a Assembly-CSharp.dll:.GameManager
 201273fb4f889724fb090164b7d6c657 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 486cd95c82d8305219c352c06b776e1f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 0f27c39183b9eb95eba0a228bea28273 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -210,7 +210,7 @@ cb54518e7e955e1dd3dee27407c70d54 Assembly-CSharp.dll:.TrainingScreenManager
 e3c0ac9e288d561f1b73913db0ddb578 Assembly-CSharp.dll:.LandingButton
 e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.SpotButton
-bdf2243f8e25bd6a36f5899f1c73f82a Assembly-CSharp.dll:.IconInformation
+2d8d9a465cd3d415c4ffc2eefbc92460 Assembly-CSharp.dll:.IconInformation
 2f9af06a78208a67db480e9bfed4a076 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 9318334b30e9f195f573b2ce00154b95 Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 b6eaf20495b88d4e7f714bd5efec065f Assembly-CSharp.dll:.ResultManager
@@ -219,3 +219,4 @@ a7d4acaff3341781ab45c4bcb83128ad Assembly-CSharp.dll:.EnemyPartyData
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.SkillNameTextAnimation
 90d680680f0264a84a783debdd05f057 Assembly-CSharp.dll:.FooterManager
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.TouchMonster
+bd069f935a001c81c9759c68aa5a080f Assembly-CSharp.dll:.QuestSelectScreenManager
