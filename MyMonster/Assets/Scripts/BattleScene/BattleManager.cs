@@ -63,6 +63,10 @@ public class BattleManager : MonoBehaviour {
 	private List<GameObject> enemyPartyList = new List<GameObject>();
 	private Fade fade; //fadeオブジェクト
 
+	private List<Monster> ownMonsters = new List<Monster>();
+	private Party party = new Party();
+	private List<Party> partyList = new List<Party>();
+
 	enum Type {
 		Fire,
 		Water,
@@ -73,6 +77,7 @@ public class BattleManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		GetSaveData();
 		//NextWaveAnimation();
 		//return;
 		CountWave();
@@ -169,14 +174,31 @@ public class BattleManager : MonoBehaviour {
 
 	//マイパーティデータを読み込む
 	private void GetMyPartyData(){
-		int num_total = myPartyData.sheets[0].list.Count; //総数取得
+		//int num_total = myPartyData.sheets[0].list.Count; //総数取得
 		
-		for(int i=0;i<num_total;i++){
+		for(int i=0;i<5;i++){
 			GameObject monster = myPartyList[i];
-			int num_pb = myPartyData.sheets[0].list[i].No; //図鑑番号
-			GetStatus(monster,num_pb,50); //ステータス代入
+			//int num_pb = myPartyData.sheets[0].list[i].No; //図鑑番号
+			int uid = party.monsters[i];
+			Monster mons = GetMonsterFromUID(uid);
+			int num_pb = mons.No;
+			int level = mons.level;
+			GetStatus(monster,num_pb,level); //ステータス代入
 			GetSkill(monster,i);
 		}
+	}
+
+	private Monster GetMonsterFromUID(int uid){
+
+		int totalCount = ownMonsters.Count;
+		for(int i=0;i<totalCount;i++){
+			if(uid == ownMonsters[i].uniqueID){
+				return ownMonsters[i];
+			}
+		}
+
+		//一応
+		return new Monster();
 	}
 
 	//エネミーパーティデータを読み込む
@@ -187,7 +209,7 @@ public class BattleManager : MonoBehaviour {
 			GameObject monster = enemyPartyList[i];	
 			int listNum = i + ((nowWave - 1) * 5 );
 			int num_pb = enemyPartyData.sheets[0].list[listNum].No; //図鑑番号
-			GetStatus(monster,num_pb,50); 
+			GetStatus(monster,num_pb,10); 
 			GetSkill(monster,listNum,true);
 		}
 	}
@@ -200,10 +222,12 @@ public class BattleManager : MonoBehaviour {
 		int no_skill4;
 		if(!isEnemy){
 			//味方
-			no_skill1 = myPartyData.sheets[0].list[num].No_Skill1;
-			no_skill2 = myPartyData.sheets[0].list[num].No_Skill2;
-			no_skill3 = myPartyData.sheets[0].list[num].No_Skill3;
-			no_skill4 = myPartyData.sheets[0].list[num].No_Skill4;
+			int uid = party.monsters[num];
+			Monster mons = GetMonsterFromUID(uid);
+			no_skill1 = mons.skills[0];
+			no_skill2 = mons.skills[1];
+			no_skill3 = mons.skills[2];
+			no_skill4 = mons.skills[3];
 		}else{
 			//敵
 			no_skill1 = enemyPartyData.sheets[0].list[num].No_Skill1;
@@ -241,6 +265,9 @@ public class BattleManager : MonoBehaviour {
 		monster.GetComponent<CharacterStatus>().deathFlag = false;
 		//Debug.Log(GetActualValue(bs_hp,level,true) + " " + GetActualValue(bs_attack,level) + " "+ 
 		//	GetActualValue(bs_defense,level) + " "+ GetActualValue(bs_speed,level));
+
+		//モンスターのイラスト変更
+		monster.GetComponent<Image>().sprite = Resources.Load<Sprite>("Img_Monster/" + num_pictureBook);
 
 		//属性の色に変更
 		GameObject icon_type = monster.transform.GetChild(0).GetChild(3).gameObject;
@@ -1186,6 +1213,18 @@ public class BattleManager : MonoBehaviour {
 					= new Vector3(pos.x,pos.y-6,pos.z);
 			}
 		}
+	}
+
+	/*=====================================
+	 *
+	 * セーブデータ
+	 *
+	 ======================================*/
+
+	private void GetSaveData(){
+		ownMonsters = SaveData.GetList<Monster>("ownMonsters",ownMonsters);
+		partyList = SaveData.GetList<Party>("partyList",partyList);
+		party = partyList[0];
 	}
 
 	//ディレイメソッド

@@ -188,7 +188,6 @@ public class PartyEditScreenManager : MonoBehaviour {
 	private void GetPartyList(){
 		partyList = SaveData.GetList<Party>("partyList",partyList);
 		party = partyList[0];
-		Debug.Log(partyList);
 
 	}
 }

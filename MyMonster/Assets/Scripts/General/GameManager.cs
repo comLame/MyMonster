@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour {
 
 	private void Start(){
 		DataSet();
-		
 	}
 
 	private void DataSet(){
@@ -20,6 +19,9 @@ public class GameManager : MonoBehaviour {
 				mons.uniqueID = (j * 10) + i + 1;
 				mons.exp = Random.Range(0,51);
 				mons.level = Random.Range(5,31);
+				for(int k=0;k<4;k++){
+					mons.skills[k] = Random.Range(1,10);
+				}
 				ownMonsters.Add(mons);
 			}
 		}
