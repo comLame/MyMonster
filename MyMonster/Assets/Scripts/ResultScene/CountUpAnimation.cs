@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class CountUpAnimation : MonoBehaviour {
 
-	public int num;
+	//public int num;
 	public float time;
 
-	public void StartAnimation(){
+	public void StartAnimation(int num){
 		iTween.ValueTo(gameObject,iTween.Hash("from",0,"to",num,"time",time,
 			"onupdate","UpdateAnimation","onupdatetarget",gameObject));
 	}

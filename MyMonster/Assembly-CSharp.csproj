@@ -104,6 +104,7 @@
      <Compile Include="Assets\Simple UI\Samples\IconPreview.cs" />
      <Compile Include="Assets\Terasurware\Classes\BaseStatsData.cs" />
      <Compile Include="Assets\Terasurware\Classes\EnemyPartyData.cs" />
+     <Compile Include="Assets\Terasurware\Classes\ExpTypeData.cs" />
      <Compile Include="Assets\Terasurware\Classes\MyPartyData.cs" />
      <Compile Include="Assets\Terasurware\Classes\SkillData.cs" />
      <Compile Include="Assets\Terasurware\Classes\SkillEffectData.cs" />
