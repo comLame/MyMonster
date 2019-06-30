@@ -1,0 +1,1226 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e4c00fa661fc499397f1d5efd201c34, type: 3}
+  m_Name: ExpTypeData
+  m_EditorClassIdentifier: 
+  sheets:
+  - name: 60
+    list:
+    - Total: 0
+      BetweenLevels: 15
+    - Total: 15
+      BetweenLevels: 37
+    - Total: 52
+      BetweenLevels: 70
+    - Total: 122
+      BetweenLevels: 115
+    - Total: 237
+      BetweenLevels: 169
+    - Total: 406
+      BetweenLevels: 231
+    - Total: 637
+      BetweenLevels: 305
+    - Total: 942
+      BetweenLevels: 384
+    - Total: 1326
+      BetweenLevels: 474
+    - Total: 1800
+      BetweenLevels: 569
+    - Total: 2369
+      BetweenLevels: 672
+    - Total: 3041
+      BetweenLevels: 781
+    - Total: 3822
+      BetweenLevels: 897
+    - Total: 4719
+      BetweenLevels: 1018
+    - Total: 5737
+      BetweenLevels: 1144
+    - Total: 6881
+      BetweenLevels: 1274
+    - Total: 8155
+      BetweenLevels: 1409
+    - Total: 9564
+      BetweenLevels: 1547
+    - Total: 11111
+      BetweenLevels: 1689
+    - Total: 12800
+      BetweenLevels: 1832
+    - Total: 14632
+      BetweenLevels: 1978
+    - Total: 16610
+      BetweenLevels: 2127
+    - Total: 18737
+      BetweenLevels: 2275
+    - Total: 21012
+      BetweenLevels: 2425
+    - Total: 23437
+      BetweenLevels: 2575
+    - Total: 26012
+      BetweenLevels: 2725
+    - Total: 28737
+      BetweenLevels: 2873
+    - Total: 31610
+      BetweenLevels: 3022
+    - Total: 34632
+      BetweenLevels: 3168
+    - Total: 37800
+      BetweenLevels: 3311
+    - Total: 41111
+      BetweenLevels: 3453
+    - Total: 44564
+      BetweenLevels: 3591
+    - Total: 48155
+      BetweenLevels: 3726
+    - Total: 51881
+      BetweenLevels: 3856
+    - Total: 55737
+      BetweenLevels: 3982
+    - Total: 59719
+      BetweenLevels: 4103
+    - Total: 63822
+      BetweenLevels: 4219
+    - Total: 68041
+      BetweenLevels: 4328
+    - Total: 72369
+      BetweenLevels: 4431
+    - Total: 76800
+      BetweenLevels: 4526
+    - Total: 81326
+      BetweenLevels: 4616
+    - Total: 85942
+      BetweenLevels: 4695
+    - Total: 90637
+      BetweenLevels: 4769
+    - Total: 95406
+      BetweenLevels: 4831
+    - Total: 100237
+      BetweenLevels: 4885
+    - Total: 105122
+      BetweenLevels: 4930
+    - Total: 110052
+      BetweenLevels: 4963
+    - Total: 115015
+      BetweenLevels: 4986
+    - Total: 120001
+      BetweenLevels: 4999
+    - Total: 125000
+      BetweenLevels: 6324
+    - Total: 131324
+      BetweenLevels: 6471
+    - Total: 137795
+      BetweenLevels: 6615
+    - Total: 144410
+      BetweenLevels: 6755
+    - Total: 151165
+      BetweenLevels: 6891
+    - Total: 158056
+      BetweenLevels: 7023
+    - Total: 165079
+      BetweenLevels: 7150
+    - Total: 172229
+      BetweenLevels: 7274
+    - Total: 179503
+      BetweenLevels: 7391
+    - Total: 186894
+      BetweenLevels: 7506
+    - Total: 194400
+      BetweenLevels: 7613
+    - Total: 202013
+      BetweenLevels: 7715
+    - Total: 209728
+      BetweenLevels: 7812
+    - Total: 217540
+      BetweenLevels: 7903
+    - Total: 225443
+      BetweenLevels: 7988
+    - Total: 233431
+      BetweenLevels: 8065
+    - Total: 241496
+      BetweenLevels: 8137
+    - Total: 249633
+      BetweenLevels: 8201
+    - Total: 257834
+      BetweenLevels: 9572
+    - Total: 267406
+      BetweenLevels: 9052
+    - Total: 276458
+      BetweenLevels: 9870
+    - Total: 286328
+      BetweenLevels: 10030
+    - Total: 296358
+      BetweenLevels: 9409
+    - Total: 305767
+      BetweenLevels: 10307
+    - Total: 316074
+      BetweenLevels: 10457
+    - Total: 326531
+      BetweenLevels: 9724
+    - Total: 336255
+      BetweenLevels: 10710
+    - Total: 346965
+      BetweenLevels: 10847
+    - Total: 357812
+      BetweenLevels: 9995
+    - Total: 367807
+      BetweenLevels: 11073
+    - Total: 378880
+      BetweenLevels: 11197
+    - Total: 390077
+      BetweenLevels: 10216
+    - Total: 400293
+      BetweenLevels: 11393
+    - Total: 411686
+      BetweenLevels: 11504
+    - Total: 423190
+      BetweenLevels: 10382
+    - Total: 433572
+      BetweenLevels: 11667
+    - Total: 445239
+      BetweenLevels: 11762
+    - Total: 457001
+      BetweenLevels: 10488
+    - Total: 467489
+      BetweenLevels: 11889
+    - Total: 479378
+      BetweenLevels: 11968
+    - Total: 491346
+      BetweenLevels: 10532
+    - Total: 501878
+      BetweenLevels: 12056
+    - Total: 513934
+      BetweenLevels: 12115
+    - Total: 526049
+      BetweenLevels: 10508
+    - Total: 536557
+      BetweenLevels: 12163
+    - Total: 548720
+      BetweenLevels: 12202
+    - Total: 560922
+      BetweenLevels: 10411
+    - Total: 571333
+      BetweenLevels: 12206
+    - Total: 583539
+      BetweenLevels: 8343
+    - Total: 591882
+      BetweenLevels: 8118
+    - Total: 600000
+      BetweenLevels: 0
+  - name: 80
+    list:
+    - Total: 0
+      BetweenLevels: 6
+    - Total: 6
+      BetweenLevels: 15
+    - Total: 21
+      BetweenLevels: 30
+    - Total: 51
+      BetweenLevels: 49
+    - Total: 100
+      BetweenLevels: 72
+    - Total: 172
+      BetweenLevels: 102
+    - Total: 274
+      BetweenLevels: 135
+    - Total: 409
+      BetweenLevels: 174
+    - Total: 583
+      BetweenLevels: 217
+    - Total: 800
+      BetweenLevels: 264
+    - Total: 1064
+      BetweenLevels: 318
+    - Total: 1382
+      BetweenLevels: 375
+    - Total: 1757
+      BetweenLevels: 438
+    - Total: 2195
+      BetweenLevels: 505
+    - Total: 2700
+      BetweenLevels: 576
+    - Total: 3276
+      BetweenLevels: 654
+    - Total: 3930
+      BetweenLevels: 735
+    - Total: 4665
+      BetweenLevels: 822
+    - Total: 5487
+      BetweenLevels: 913
+    - Total: 6400
+      BetweenLevels: 1008
+    - Total: 7408
+      BetweenLevels: 1110
+    - Total: 8518
+      BetweenLevels: 1215
+    - Total: 9733
+      BetweenLevels: 1326
+    - Total: 11059
+      BetweenLevels: 1441
+    - Total: 12500
+      BetweenLevels: 1560
+    - Total: 14060
+      BetweenLevels: 1686
+    - Total: 15746
+      BetweenLevels: 1815
+    - Total: 17561
+      BetweenLevels: 1950
+    - Total: 19511
+      BetweenLevels: 2089
+    - Total: 21600
+      BetweenLevels: 2232
+    - Total: 23832
+      BetweenLevels: 2382
+    - Total: 26214
+      BetweenLevels: 2535
+    - Total: 28749
+      BetweenLevels: 2694
+    - Total: 31443
+      BetweenLevels: 2857
+    - Total: 34300
+      BetweenLevels: 3024
+    - Total: 37324
+      BetweenLevels: 3198
+    - Total: 40522
+      BetweenLevels: 3375
+    - Total: 43897
+      BetweenLevels: 3558
+    - Total: 47455
+      BetweenLevels: 3745
+    - Total: 51200
+      BetweenLevels: 3936
+    - Total: 55136
+      BetweenLevels: 4134
+    - Total: 59270
+      BetweenLevels: 4335
+    - Total: 63605
+      BetweenLevels: 4542
+    - Total: 68147
+      BetweenLevels: 4753
+    - Total: 72900
+      BetweenLevels: 4968
+    - Total: 77868
+      BetweenLevels: 5190
+    - Total: 83058
+      BetweenLevels: 5415
+    - Total: 88473
+      BetweenLevels: 5646
+    - Total: 94119
+      BetweenLevels: 5881
+    - Total: 100000
+      BetweenLevels: 6120
+    - Total: 106120
+      BetweenLevels: 6366
+    - Total: 112486
+      BetweenLevels: 6615
+    - Total: 119101
+      BetweenLevels: 6870
+    - Total: 125971
+      BetweenLevels: 7129
+    - Total: 133100
+      BetweenLevels: 7392
+    - Total: 140492
+      BetweenLevels: 7662
+    - Total: 148154
+      BetweenLevels: 7935
+    - Total: 156089
+      BetweenLevels: 8214
+    - Total: 164303
+      BetweenLevels: 8497
+    - Total: 172800
+      BetweenLevels: 8784
+    - Total: 181584
+      BetweenLevels: 9078
+    - Total: 190662
+      BetweenLevels: 9375
+    - Total: 200037
+      BetweenLevels: 9678
+    - Total: 209715
+      BetweenLevels: 9985
+    - Total: 219700
+      BetweenLevels: 10296
+    - Total: 229996
+      BetweenLevels: 10614
+    - Total: 240610
+      BetweenLevels: 10935
+    - Total: 251545
+      BetweenLevels: 11262
+    - Total: 262807
+      BetweenLevels: 11593
+    - Total: 274400
+      BetweenLevels: 11928
+    - Total: 286328
+      BetweenLevels: 12270
+    - Total: 298598
+      BetweenLevels: 12615
+    - Total: 311213
+      BetweenLevels: 12966
+    - Total: 324179
+      BetweenLevels: 13321
+    - Total: 337500
+      BetweenLevels: 13680
+    - Total: 351180
+      BetweenLevels: 14046
+    - Total: 365226
+      BetweenLevels: 14415
+    - Total: 379641
+      BetweenLevels: 14790
+    - Total: 394431
+      BetweenLevels: 15169
+    - Total: 409600
+      BetweenLevels: 15552
+    - Total: 425152
+      BetweenLevels: 15942
+    - Total: 441094
+      BetweenLevels: 16335
+    - Total: 457429
+      BetweenLevels: 16734
+    - Total: 474163
+      BetweenLevels: 17137
+    - Total: 491300
+      BetweenLevels: 17544
+    - Total: 508844
+      BetweenLevels: 17958
+    - Total: 526802
+      BetweenLevels: 18375
+    - Total: 545177
+      BetweenLevels: 18798
+    - Total: 563975
+      BetweenLevels: 19225
+    - Total: 583200
+      BetweenLevels: 19656
+    - Total: 602856
+      BetweenLevels: 20094
+    - Total: 622950
+      BetweenLevels: 20535
+    - Total: 643485
+      BetweenLevels: 20982
+    - Total: 664467
+      BetweenLevels: 21433
+    - Total: 685900
+      BetweenLevels: 21888
+    - Total: 707788
+      BetweenLevels: 22350
+    - Total: 730138
+      BetweenLevels: 22815
+    - Total: 752953
+      BetweenLevels: 23286
+    - Total: 776239
+      BetweenLevels: 23761
+    - Total: 800000
+      BetweenLevels: 0
+  - name: 100
+    list:
+    - Total: 0
+      BetweenLevels: 8
+    - Total: 8
+      BetweenLevels: 19
+    - Total: 27
+      BetweenLevels: 37
+    - Total: 64
+      BetweenLevels: 61
+    - Total: 125
+      BetweenLevels: 91
+    - Total: 216
+      BetweenLevels: 127
+    - Total: 343
+      BetweenLevels: 169
+    - Total: 512
+      BetweenLevels: 217
+    - Total: 729
+      BetweenLevels: 271
+    - Total: 1000
+      BetweenLevels: 331
+    - Total: 1331
+      BetweenLevels: 397
+    - Total: 1728
+      BetweenLevels: 469
+    - Total: 2197
+      BetweenLevels: 547
+    - Total: 2744
+      BetweenLevels: 631
+    - Total: 3375
+      BetweenLevels: 721
+    - Total: 4096
+      BetweenLevels: 817
+    - Total: 4913
+      BetweenLevels: 919
+    - Total: 5832
+      BetweenLevels: 1027
+    - Total: 6859
+      BetweenLevels: 1141
+    - Total: 8000
+      BetweenLevels: 1261
+    - Total: 9261
+      BetweenLevels: 1387
+    - Total: 10648
+      BetweenLevels: 1519
+    - Total: 12167
+      BetweenLevels: 1657
+    - Total: 13824
+      BetweenLevels: 1801
+    - Total: 15625
+      BetweenLevels: 1951
+    - Total: 17576
+      BetweenLevels: 2107
+    - Total: 19683
+      BetweenLevels: 2269
+    - Total: 21952
+      BetweenLevels: 2437
+    - Total: 24389
+      BetweenLevels: 2611
+    - Total: 27000
+      BetweenLevels: 2791
+    - Total: 29791
+      BetweenLevels: 2977
+    - Total: 32768
+      BetweenLevels: 3169
+    - Total: 35937
+      BetweenLevels: 3367
+    - Total: 39304
+      BetweenLevels: 3571
+    - Total: 42875
+      BetweenLevels: 3781
+    - Total: 46656
+      BetweenLevels: 3997
+    - Total: 50653
+      BetweenLevels: 4219
+    - Total: 54872
+      BetweenLevels: 4447
+    - Total: 59319
+      BetweenLevels: 4681
+    - Total: 64000
+      BetweenLevels: 4921
+    - Total: 68921
+      BetweenLevels: 5167
+    - Total: 74088
+      BetweenLevels: 5419
+    - Total: 79507
+      BetweenLevels: 5677
+    - Total: 85184
+      BetweenLevels: 5941
+    - Total: 91125
+      BetweenLevels: 6211
+    - Total: 97336
+      BetweenLevels: 6487
+    - Total: 103823
+      BetweenLevels: 6769
+    - Total: 110592
+      BetweenLevels: 7057
+    - Total: 117649
+      BetweenLevels: 7351
+    - Total: 125000
+      BetweenLevels: 7651
+    - Total: 132651
+      BetweenLevels: 7957
+    - Total: 140608
+      BetweenLevels: 8269
+    - Total: 148877
+      BetweenLevels: 8587
+    - Total: 157464
+      BetweenLevels: 8911
+    - Total: 166375
+      BetweenLevels: 9241
+    - Total: 175616
+      BetweenLevels: 9577
+    - Total: 185193
+      BetweenLevels: 9919
+    - Total: 195112
+      BetweenLevels: 10267
+    - Total: 205379
+      BetweenLevels: 10621
+    - Total: 216000
+      BetweenLevels: 10981
+    - Total: 226981
+      BetweenLevels: 11347
+    - Total: 238328
+      BetweenLevels: 11719
+    - Total: 250047
+      BetweenLevels: 12097
+    - Total: 262144
+      BetweenLevels: 12481
+    - Total: 274625
+      BetweenLevels: 12871
+    - Total: 287496
+      BetweenLevels: 13267
+    - Total: 300763
+      BetweenLevels: 13669
+    - Total: 314432
+      BetweenLevels: 14077
+    - Total: 328509
+      BetweenLevels: 14491
+    - Total: 343000
+      BetweenLevels: 14911
+    - Total: 357911
+      BetweenLevels: 15337
+    - Total: 373248
+      BetweenLevels: 15769
+    - Total: 389017
+      BetweenLevels: 16207
+    - Total: 405224
+      BetweenLevels: 16651
+    - Total: 421875
+      BetweenLevels: 17101
+    - Total: 438976
+      BetweenLevels: 17557
+    - Total: 456533
+      BetweenLevels: 18019
+    - Total: 474552
+      BetweenLevels: 18487
+    - Total: 493039
+      BetweenLevels: 18961
+    - Total: 512000
+      BetweenLevels: 19441
+    - Total: 531441
+      BetweenLevels: 19927
+    - Total: 551368
+      BetweenLevels: 20419
+    - Total: 571787
+      BetweenLevels: 20917
+    - Total: 592704
+      BetweenLevels: 21421
+    - Total: 614125
+      BetweenLevels: 21931
+    - Total: 636056
+      BetweenLevels: 22447
+    - Total: 658503
+      BetweenLevels: 22969
+    - Total: 681472
+      BetweenLevels: 23497
+    - Total: 704969
+      BetweenLevels: 24031
+    - Total: 729000
+      BetweenLevels: 24571
+    - Total: 753571
+      BetweenLevels: 25117
+    - Total: 778688
+      BetweenLevels: 25669
+    - Total: 804357
+      BetweenLevels: 26227
+    - Total: 830584
+      BetweenLevels: 26791
+    - Total: 857375
+      BetweenLevels: 27361
+    - Total: 884736
+      BetweenLevels: 27937
+    - Total: 912673
+      BetweenLevels: 28519
+    - Total: 941192
+      BetweenLevels: 29107
+    - Total: 970299
+      BetweenLevels: 29701
+    - Total: 1000000
+      BetweenLevels: 0
+  - name: 105
+    list:
+    - Total: 0
+      BetweenLevels: 9
+    - Total: 9
+      BetweenLevels: 48
+    - Total: 57
+      BetweenLevels: 39
+    - Total: 96
+      BetweenLevels: 39
+    - Total: 135
+      BetweenLevels: 44
+    - Total: 179
+      BetweenLevels: 57
+    - Total: 236
+      BetweenLevels: 78
+    - Total: 314
+      BetweenLevels: 105
+    - Total: 419
+      BetweenLevels: 141
+    - Total: 560
+      BetweenLevels: 182
+    - Total: 742
+      BetweenLevels: 231
+    - Total: 973
+      BetweenLevels: 288
+    - Total: 1261
+      BetweenLevels: 351
+    - Total: 1612
+      BetweenLevels: 423
+    - Total: 2035
+      BetweenLevels: 500
+    - Total: 2535
+      BetweenLevels: 585
+    - Total: 3120
+      BetweenLevels: 678
+    - Total: 3798
+      BetweenLevels: 777
+    - Total: 4575
+      BetweenLevels: 885
+    - Total: 5460
+      BetweenLevels: 998
+    - Total: 6458
+      BetweenLevels: 1119
+    - Total: 7577
+      BetweenLevels: 1248
+    - Total: 8825
+      BetweenLevels: 1383
+    - Total: 10208
+      BetweenLevels: 1527
+    - Total: 11735
+      BetweenLevels: 1676
+    - Total: 13411
+      BetweenLevels: 1833
+    - Total: 15244
+      BetweenLevels: 1998
+    - Total: 17242
+      BetweenLevels: 2169
+    - Total: 19411
+      BetweenLevels: 2349
+    - Total: 21760
+      BetweenLevels: 2534
+    - Total: 24294
+      BetweenLevels: 2727
+    - Total: 27021
+      BetweenLevels: 2928
+    - Total: 29949
+      BetweenLevels: 3135
+    - Total: 33084
+      BetweenLevels: 3351
+    - Total: 36435
+      BetweenLevels: 3572
+    - Total: 40007
+      BetweenLevels: 3801
+    - Total: 43808
+      BetweenLevels: 4038
+    - Total: 47846
+      BetweenLevels: 4281
+    - Total: 52127
+      BetweenLevels: 4533
+    - Total: 56660
+      BetweenLevels: 4790
+    - Total: 61450
+      BetweenLevels: 5055
+    - Total: 66505
+      BetweenLevels: 5328
+    - Total: 71833
+      BetweenLevels: 5607
+    - Total: 77440
+      BetweenLevels: 5895
+    - Total: 83335
+      BetweenLevels: 6188
+    - Total: 89523
+      BetweenLevels: 6489
+    - Total: 96012
+      BetweenLevels: 6798
+    - Total: 102810
+      BetweenLevels: 7113
+    - Total: 109923
+      BetweenLevels: 7437
+    - Total: 117360
+      BetweenLevels: 7766
+    - Total: 125126
+      BetweenLevels: 8103
+    - Total: 133229
+      BetweenLevels: 8448
+    - Total: 141677
+      BetweenLevels: 8799
+    - Total: 150476
+      BetweenLevels: 9159
+    - Total: 159635
+      BetweenLevels: 9524
+    - Total: 169159
+      BetweenLevels: 9897
+    - Total: 179056
+      BetweenLevels: 10278
+    - Total: 189334
+      BetweenLevels: 10665
+    - Total: 199999
+      BetweenLevels: 11061
+    - Total: 211060
+      BetweenLevels: 11462
+    - Total: 222522
+      BetweenLevels: 11871
+    - Total: 234393
+      BetweenLevels: 12288
+    - Total: 246681
+      BetweenLevels: 12711
+    - Total: 259392
+      BetweenLevels: 13143
+    - Total: 272535
+      BetweenLevels: 13580
+    - Total: 286115
+      BetweenLevels: 14025
+    - Total: 300140
+      BetweenLevels: 14478
+    - Total: 314618
+      BetweenLevels: 14937
+    - Total: 329555
+      BetweenLevels: 15405
+    - Total: 344960
+      BetweenLevels: 15878
+    - Total: 360838
+      BetweenLevels: 16359
+    - Total: 377197
+      BetweenLevels: 16848
+    - Total: 394045
+      BetweenLevels: 17343
+    - Total: 411388
+      BetweenLevels: 17847
+    - Total: 429235
+      BetweenLevels: 18356
+    - Total: 447591
+      BetweenLevels: 18873
+    - Total: 466464
+      BetweenLevels: 19398
+    - Total: 485862
+      BetweenLevels: 19929
+    - Total: 505791
+      BetweenLevels: 20469
+    - Total: 526260
+      BetweenLevels: 21014
+    - Total: 547274
+      BetweenLevels: 21567
+    - Total: 568841
+      BetweenLevels: 22128
+    - Total: 590969
+      BetweenLevels: 22695
+    - Total: 613664
+      BetweenLevels: 23271
+    - Total: 636935
+      BetweenLevels: 23852
+    - Total: 660787
+      BetweenLevels: 24441
+    - Total: 685228
+      BetweenLevels: 25038
+    - Total: 710266
+      BetweenLevels: 25641
+    - Total: 735907
+      BetweenLevels: 26253
+    - Total: 762160
+      BetweenLevels: 26870
+    - Total: 789030
+      BetweenLevels: 27495
+    - Total: 816525
+      BetweenLevels: 28128
+    - Total: 844653
+      BetweenLevels: 28767
+    - Total: 873420
+      BetweenLevels: 29415
+    - Total: 902835
+      BetweenLevels: 30068
+    - Total: 932903
+      BetweenLevels: 30729
+    - Total: 963632
+      BetweenLevels: 31398
+    - Total: 995030
+      BetweenLevels: 32073
+    - Total: 1027103
+      BetweenLevels: 32757
+    - Total: 1059860
+      BetweenLevels: 0
+  - name: 125
+    list:
+    - Total: 0
+      BetweenLevels: 10
+    - Total: 10
+      BetweenLevels: 23
+    - Total: 33
+      BetweenLevels: 47
+    - Total: 80
+      BetweenLevels: 76
+    - Total: 156
+      BetweenLevels: 114
+    - Total: 270
+      BetweenLevels: 158
+    - Total: 428
+      BetweenLevels: 212
+    - Total: 640
+      BetweenLevels: 271
+    - Total: 911
+      BetweenLevels: 339
+    - Total: 1250
+      BetweenLevels: 413
+    - Total: 1663
+      BetweenLevels: 497
+    - Total: 2160
+      BetweenLevels: 586
+    - Total: 2746
+      BetweenLevels: 684
+    - Total: 3430
+      BetweenLevels: 788
+    - Total: 4218
+      BetweenLevels: 902
+    - Total: 5120
+      BetweenLevels: 1021
+    - Total: 6141
+      BetweenLevels: 1149
+    - Total: 7290
+      BetweenLevels: 1283
+    - Total: 8573
+      BetweenLevels: 1427
+    - Total: 10000
+      BetweenLevels: 1576
+    - Total: 11576
+      BetweenLevels: 1734
+    - Total: 13310
+      BetweenLevels: 1898
+    - Total: 15208
+      BetweenLevels: 2072
+    - Total: 17280
+      BetweenLevels: 2251
+    - Total: 19531
+      BetweenLevels: 2439
+    - Total: 21970
+      BetweenLevels: 2633
+    - Total: 24603
+      BetweenLevels: 2837
+    - Total: 27440
+      BetweenLevels: 3046
+    - Total: 30486
+      BetweenLevels: 3264
+    - Total: 33750
+      BetweenLevels: 3488
+    - Total: 37238
+      BetweenLevels: 3722
+    - Total: 40960
+      BetweenLevels: 3961
+    - Total: 44921
+      BetweenLevels: 4209
+    - Total: 49130
+      BetweenLevels: 4463
+    - Total: 53593
+      BetweenLevels: 4727
+    - Total: 58320
+      BetweenLevels: 4996
+    - Total: 63316
+      BetweenLevels: 5274
+    - Total: 68590
+      BetweenLevels: 5558
+    - Total: 74148
+      BetweenLevels: 5852
+    - Total: 80000
+      BetweenLevels: 6151
+    - Total: 86151
+      BetweenLevels: 6459
+    - Total: 92610
+      BetweenLevels: 6773
+    - Total: 99383
+      BetweenLevels: 7097
+    - Total: 106480
+      BetweenLevels: 7426
+    - Total: 113906
+      BetweenLevels: 7764
+    - Total: 121670
+      BetweenLevels: 8108
+    - Total: 129778
+      BetweenLevels: 8462
+    - Total: 138240
+      BetweenLevels: 8821
+    - Total: 147061
+      BetweenLevels: 9189
+    - Total: 156250
+      BetweenLevels: 9563
+    - Total: 165813
+      BetweenLevels: 9947
+    - Total: 175760
+      BetweenLevels: 10336
+    - Total: 186096
+      BetweenLevels: 10734
+    - Total: 196830
+      BetweenLevels: 11138
+    - Total: 207968
+      BetweenLevels: 11552
+    - Total: 219520
+      BetweenLevels: 11971
+    - Total: 231491
+      BetweenLevels: 12399
+    - Total: 243890
+      BetweenLevels: 12833
+    - Total: 256723
+      BetweenLevels: 13277
+    - Total: 270000
+      BetweenLevels: 13726
+    - Total: 283726
+      BetweenLevels: 14184
+    - Total: 297910
+      BetweenLevels: 14648
+    - Total: 312558
+      BetweenLevels: 15122
+    - Total: 327680
+      BetweenLevels: 15601
+    - Total: 343281
+      BetweenLevels: 16089
+    - Total: 359370
+      BetweenLevels: 16583
+    - Total: 375953
+      BetweenLevels: 17087
+    - Total: 393040
+      BetweenLevels: 17596
+    - Total: 410636
+      BetweenLevels: 18114
+    - Total: 428750
+      BetweenLevels: 18638
+    - Total: 447388
+      BetweenLevels: 19172
+    - Total: 466560
+      BetweenLevels: 19711
+    - Total: 486271
+      BetweenLevels: 20259
+    - Total: 506530
+      BetweenLevels: 20813
+    - Total: 527343
+      BetweenLevels: 21377
+    - Total: 548720
+      BetweenLevels: 21946
+    - Total: 570666
+      BetweenLevels: 22524
+    - Total: 593190
+      BetweenLevels: 23108
+    - Total: 616298
+      BetweenLevels: 23702
+    - Total: 640000
+      BetweenLevels: 24301
+    - Total: 664301
+      BetweenLevels: 24909
+    - Total: 689210
+      BetweenLevels: 25523
+    - Total: 714733
+      BetweenLevels: 26147
+    - Total: 740880
+      BetweenLevels: 26776
+    - Total: 767656
+      BetweenLevels: 27414
+    - Total: 795070
+      BetweenLevels: 28058
+    - Total: 823128
+      BetweenLevels: 28712
+    - Total: 851840
+      BetweenLevels: 29371
+    - Total: 881211
+      BetweenLevels: 30039
+    - Total: 911250
+      BetweenLevels: 30713
+    - Total: 941963
+      BetweenLevels: 31397
+    - Total: 973360
+      BetweenLevels: 32086
+    - Total: 1005446
+      BetweenLevels: 32784
+    - Total: 1038230
+      BetweenLevels: 33488
+    - Total: 1071718
+      BetweenLevels: 34202
+    - Total: 1105920
+      BetweenLevels: 34921
+    - Total: 1140841
+      BetweenLevels: 35649
+    - Total: 1176490
+      BetweenLevels: 36383
+    - Total: 1212873
+      BetweenLevels: 37127
+    - Total: 1250000
+      BetweenLevels: 0
+  - name: 164
+    list:
+    - Total: 0
+      BetweenLevels: 4
+    - Total: 4
+      BetweenLevels: 9
+    - Total: 13
+      BetweenLevels: 19
+    - Total: 32
+      BetweenLevels: 33
+    - Total: 65
+      BetweenLevels: 47
+    - Total: 112
+      BetweenLevels: 66
+    - Total: 178
+      BetweenLevels: 98
+    - Total: 276
+      BetweenLevels: 117
+    - Total: 393
+      BetweenLevels: 147
+    - Total: 540
+      BetweenLevels: 205
+    - Total: 745
+      BetweenLevels: 222
+    - Total: 967
+      BetweenLevels: 263
+    - Total: 1230
+      BetweenLevels: 361
+    - Total: 1591
+      BetweenLevels: 366
+    - Total: 1957
+      BetweenLevels: 500
+    - Total: 2457
+      BetweenLevels: 589
+    - Total: 3046
+      BetweenLevels: 686
+    - Total: 3732
+      BetweenLevels: 794
+    - Total: 4526
+      BetweenLevels: 914
+    - Total: 5440
+      BetweenLevels: 1042
+    - Total: 6482
+      BetweenLevels: 1184
+    - Total: 7666
+      BetweenLevels: 1337
+    - Total: 9003
+      BetweenLevels: 1503
+    - Total: 10506
+      BetweenLevels: 1681
+    - Total: 12187
+      BetweenLevels: 1873
+    - Total: 14060
+      BetweenLevels: 2080
+    - Total: 16140
+      BetweenLevels: 2299
+    - Total: 18439
+      BetweenLevels: 2535
+    - Total: 20974
+      BetweenLevels: 2786
+    - Total: 23760
+      BetweenLevels: 3051
+    - Total: 26811
+      BetweenLevels: 3335
+    - Total: 30146
+      BetweenLevels: 3634
+    - Total: 33780
+      BetweenLevels: 3951
+    - Total: 37731
+      BetweenLevels: 4286
+    - Total: 42017
+      BetweenLevels: 4639
+    - Total: 46656
+      BetweenLevels: 3997
+    - Total: 50653
+      BetweenLevels: 5316
+    - Total: 55969
+      BetweenLevels: 4536
+    - Total: 60505
+      BetweenLevels: 6055
+    - Total: 66560
+      BetweenLevels: 5117
+    - Total: 71677
+      BetweenLevels: 6856
+    - Total: 78533
+      BetweenLevels: 5744
+    - Total: 84277
+      BetweenLevels: 7721
+    - Total: 91998
+      BetweenLevels: 6417
+    - Total: 98415
+      BetweenLevels: 8654
+    - Total: 107069
+      BetweenLevels: 7136
+    - Total: 114205
+      BetweenLevels: 9658
+    - Total: 123863
+      BetweenLevels: 7903
+    - Total: 131766
+      BetweenLevels: 10734
+    - Total: 142500
+      BetweenLevels: 8722
+    - Total: 151222
+      BetweenLevels: 11883
+    - Total: 163105
+      BetweenLevels: 9592
+    - Total: 172697
+      BetweenLevels: 13110
+    - Total: 185807
+      BetweenLevels: 10515
+    - Total: 196322
+      BetweenLevels: 14417
+    - Total: 210739
+      BetweenLevels: 11492
+    - Total: 222231
+      BetweenLevels: 15805
+    - Total: 238036
+      BetweenLevels: 12526
+    - Total: 250562
+      BetweenLevels: 17278
+    - Total: 267840
+      BetweenLevels: 13616
+    - Total: 281456
+      BetweenLevels: 18837
+    - Total: 300293
+      BetweenLevels: 14766
+    - Total: 315059
+      BetweenLevels: 20485
+    - Total: 335544
+      BetweenLevels: 15976
+    - Total: 351520
+      BetweenLevels: 22224
+    - Total: 373744
+      BetweenLevels: 17247
+    - Total: 390991
+      BetweenLevels: 24059
+    - Total: 415050
+      BetweenLevels: 18581
+    - Total: 433631
+      BetweenLevels: 25989
+    - Total: 459620
+      BetweenLevels: 19980
+    - Total: 479600
+      BetweenLevels: 28017
+    - Total: 507617
+      BetweenLevels: 21446
+    - Total: 529063
+      BetweenLevels: 30146
+    - Total: 559209
+      BetweenLevels: 22978
+    - Total: 582187
+      BetweenLevels: 32379
+    - Total: 614566
+      BetweenLevels: 24580
+    - Total: 639146
+      BetweenLevels: 34717
+    - Total: 673863
+      BetweenLevels: 26252
+    - Total: 700115
+      BetweenLevels: 37165
+    - Total: 737280
+      BetweenLevels: 27995
+    - Total: 765275
+      BetweenLevels: 39722
+    - Total: 804997
+      BetweenLevels: 29812
+    - Total: 834809
+      BetweenLevels: 42392
+    - Total: 877201
+      BetweenLevels: 31704
+    - Total: 908905
+      BetweenLevels: 45179
+    - Total: 954084
+      BetweenLevels: 33670
+    - Total: 987754
+      BetweenLevels: 48083
+    - Total: 1035837
+      BetweenLevels: 35715
+    - Total: 1071552
+      BetweenLevels: 51108
+    - Total: 1122660
+      BetweenLevels: 37839
+    - Total: 1160499
+      BetweenLevels: 54254
+    - Total: 1214753
+      BetweenLevels: 40043
+    - Total: 1254796
+      BetweenLevels: 57526
+    - Total: 1312322
+      BetweenLevels: 42330
+    - Total: 1354652
+      BetweenLevels: 60925
+    - Total: 1415577
+      BetweenLevels: 44699
+    - Total: 1460276
+      BetweenLevels: 64455
+    - Total: 1524731
+      BetweenLevels: 47153
+    - Total: 1571884
+      BetweenLevels: 68116
+    - Total: 1640000
+      BetweenLevels: 0
