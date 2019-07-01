@@ -100,8 +100,8 @@
      <Compile Include="Assets\Scripts\MainScene\ToDeckSelectView.cs" />
      <Compile Include="Assets\Scripts\MainScene\TrainingScreenManager.cs" />
      <Compile Include="Assets\Scripts\ResultScene\CountUpAnimation.cs" />
+     <Compile Include="Assets\Scripts\ResultScene\LevelUpSliderAnimation.cs" />
      <Compile Include="Assets\Scripts\ResultScene\ResultManager.cs" />
-     <Compile Include="Assets\Simple UI\Samples\IconPreview.cs" />
      <Compile Include="Assets\Terasurware\Classes\BaseStatsData.cs" />
      <Compile Include="Assets\Terasurware\Classes\EnemyPartyData.cs" />
      <Compile Include="Assets\Terasurware\Classes\ExpTypeData.cs" />
@@ -121,7 +121,6 @@
      <None Include="Assets\Fade\Materials\UI-Fade-Cutout.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-     <None Include="Assets\Simple UI\Fonts\OFL.txt" />
      <None Include="Assets\Fade\Materials\UI-Mask.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
