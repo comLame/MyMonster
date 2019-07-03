@@ -20,14 +20,23 @@ public class TrainingScreenManager : MonoBehaviour {
 	public GameObject txt_attack;
 	public GameObject txt_defense;
 	public GameObject txt_speed;
+	public GameObject containerMonsterInfo;
+	public GameObject containerSkill;
+	public GameObject btn_monsterInfo;
+	public GameObject btn_skill;
+	public GameObject btn_evolution;
 
 	private List<Monster> ownMonsters = new List<Monster>();
 	private Party party = new Party();
 	private List<Party> partyList = new List<Party>();
+	private float xPos_selected;
+	private float xPos_unSelected;
 
 	private GameObject targetMonsterObj;
 	
 	private void OnEnable(){
+		xPos_selected = btn_monsterInfo.GetComponent<RectTransform>().localPosition.x;
+		xPos_unSelected = btn_skill.GetComponent<RectTransform>().localPosition.x;
 
 		GetOwnMonstersData();
 		//GetPartyList();
@@ -35,6 +44,12 @@ public class TrainingScreenManager : MonoBehaviour {
 		DisplayBoxMonster();
 		DisplayTargetMonster();
 
+	}
+
+	private void OnDisable(){
+		for(int i=0;i<containerBox.transform.childCount;i++){
+			Destroy(containerBox.transform.GetChild(i).gameObject);
+		}
 	}
 
 	private Monster GetMonsterFromUID(int uid){
@@ -118,6 +133,64 @@ public class TrainingScreenManager : MonoBehaviour {
 			}
 			
 		}
+	}
+
+	public void ChangeView(string view){
+		if(view == "info"){
+			DisplayMonsterInfoView();
+		}else if(view == "skill"){
+			DisplaySkillView();
+		}
+	}
+
+	private void DisplayMonsterInfoView(){
+		containerMonsterInfo.SetActive(true);
+		containerSkill.SetActive(false);
+
+		//ボタン
+		btn_monsterInfo.GetComponent<RectTransform>().localPosition = new Vector3(
+			xPos_selected,
+			btn_monsterInfo.GetComponent<RectTransform>().localPosition.y,
+			btn_monsterInfo.GetComponent<RectTransform>().localPosition.z
+		);
+		btn_skill.GetComponent<RectTransform>().localPosition = new Vector3(
+			xPos_unSelected,
+			btn_skill.GetComponent<RectTransform>().localPosition.y,
+			btn_skill.GetComponent<RectTransform>().localPosition.z
+		);
+		btn_evolution.GetComponent<RectTransform>().localPosition = new Vector3(
+			xPos_unSelected,
+			btn_evolution.GetComponent<RectTransform>().localPosition.y,
+			btn_evolution.GetComponent<RectTransform>().localPosition.z
+		);
+		btn_monsterInfo.transform.GetChild(2).gameObject.SetActive(false);
+		btn_skill.transform.GetChild(2).gameObject.SetActive(true);
+		btn_evolution.transform.GetChild(2).gameObject.SetActive(true);
+	}
+
+	private void DisplaySkillView(){
+		containerMonsterInfo.SetActive(false);
+		containerSkill.SetActive(true);
+
+		//ボタン
+		btn_monsterInfo.GetComponent<RectTransform>().localPosition = new Vector3(
+			xPos_unSelected,
+			btn_monsterInfo.GetComponent<RectTransform>().localPosition.y,
+			btn_monsterInfo.GetComponent<RectTransform>().localPosition.z
+		);
+		btn_skill.GetComponent<RectTransform>().localPosition = new Vector3(
+			xPos_selected,
+			btn_skill.GetComponent<RectTransform>().localPosition.y,
+			btn_skill.GetComponent<RectTransform>().localPosition.z
+		);
+		btn_evolution.GetComponent<RectTransform>().localPosition = new Vector3(
+			xPos_unSelected,
+			btn_evolution.GetComponent<RectTransform>().localPosition.y,
+			btn_evolution.GetComponent<RectTransform>().localPosition.z
+		);
+		btn_monsterInfo.transform.GetChild(2).gameObject.SetActive(true);
+		btn_skill.transform.GetChild(2).gameObject.SetActive(false);
+		btn_evolution.transform.GetChild(2).gameObject.SetActive(true);
 	}
 
 	private void OnClickIcon(GameObject monsObj){
