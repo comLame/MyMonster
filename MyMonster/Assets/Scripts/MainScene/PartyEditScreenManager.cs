@@ -26,22 +26,29 @@ public class PartyEditScreenManager : MonoBehaviour {
 		DisplayBoxMonster();
 		DisplayPartyMonster();
 
-		Check();
+		//Check();
 		
+	}
+
+	private void OnDisable(){
+		for(int i=0;i<container.transform.childCount;i++){
+			Debug.Log(i + ":destroy");
+			Destroy(container.transform.GetChild(i).gameObject);
+		}
 	}
 
 	//色々なチェック
 	private void Check(){
-		Debug.Log("["+party.monsters[0]+","+party.monsters[1]+","+party.monsters[2]+","
-		+party.monsters[3]+","+party.monsters[4]+"]");
+		//Debug.Log("["+party.monsters[0]+","+party.monsters[1]+","+party.monsters[2]+","
+		//+party.monsters[3]+","+party.monsters[4]+"]");
 		//編成体数がマックスかどうか
 		//0があればtrue
 		if(Array.IndexOf(party.monsters,0) == -1)isMax = true;
 		else isMax = false;
 ;
 		//全モンスターに対して処理を行う
-		int allMonsterNum = ownMonsters.Count;
-		for(int i=0;i<allMonsterNum + 1;i++){
+		int allMonsterNum = container.transform.childCount;
+		for(int i=0;i<allMonsterNum;i++){
 			GameObject monsObj = container.transform.GetChild(i).gameObject;
 			GameObject img_black = monsObj.transform.GetChild(2).gameObject;
 			int uniqueID = monsObj.GetComponent<IconInformation>().uniqueId;
@@ -50,10 +57,12 @@ public class PartyEditScreenManager : MonoBehaviour {
 			int index = Array.IndexOf(party.monsters, uniqueID);
 			GameObject txt_state = monsObj.transform.GetChild(4).gameObject;
 			if(index != -1){
+				Debug.Log(i+":編成中");
 				//編成中
 				txt_state.SetActive(true);
 				img_black.SetActive(true);
 			}else{
+				Debug.Log(i+":Box");
 				txt_state.SetActive(false);
 				img_black.SetActive(false);
 			}
@@ -151,6 +160,8 @@ public class PartyEditScreenManager : MonoBehaviour {
 			}
 			
 		}
+
+		Check();
 	}
 
 	private void OnClickIcon(GameObject obj){

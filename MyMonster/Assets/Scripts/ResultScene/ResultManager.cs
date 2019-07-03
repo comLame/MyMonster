@@ -6,12 +6,17 @@ using System;
 
 public class ResultManager : MonoBehaviour {
 
+    public SkillData skillData;
+    public BaseStatsData baseStatsData;
+    public LearnSkillData learnSkillData;
     public ExpTypeData expTypeData;
     public GameObject txtGold;
     public GameObject txtExp;
     public GameObject containerMonster;
+    public GameObject containerLearnSkill;
 
     private float time_levelupSliderAnimation = 0.5f;
+    private float time_displayLearnSkill = 1f;
     private string strFlag = "initial";
     private int gold = 3461;
     private int exp =  700;
@@ -117,18 +122,52 @@ public class ResultManager : MonoBehaviour {
         }else if(flag == 2){
             //levelupあり
             slider.GetComponent<LevelUpSliderAnimation>().StartAnimation(nowExp,betweenExp,time_levelupSliderAnimation);
-            
-            StartCoroutine(DelayMethod(time_levelupSliderAnimation + 0.1f,() => {
-                LevelUp(mons,container);
-                if(gap == 0){
-                    //ちょうどレベルアップしたら次のモンスター
-                    SaveExpData(mons);
-                    LevelupProcess(num + 1,exp);
-                }else{
-                    //それ以外はもう一回同じモンスター
-                    LevelupProcess(num,-1 * gap);
+            int level = mons.level + 1;
+            int skillNum = 0;
+            for(int i=0;i<learnSkillData.sheets[mons.No-1].list.Count;i++){
+                if(level == learnSkillData.sheets[mons.No-1].list[i].Level){
+                    //技を覚える
+                    skillNum = learnSkillData.sheets[mons.No-1].list[i].SkillNum;
                 }
-            }));
+            }
+            if(skillNum == 0){
+                //技覚えない
+                StartCoroutine(DelayMethod(time_levelupSliderAnimation + 0.1f,() => {
+                    LevelUp(mons,container);
+                    if(gap == 0){
+                        //ちょうどレベルアップしたら次のモンスター
+                        SaveExpData(mons);
+                        LevelupProcess(num + 1,exp);
+                    }else{
+                        //それ以外はもう一回同じモンスター
+                        LevelupProcess(num,-1 * gap);
+                    }
+                }));
+            }else{
+                //技覚える
+                StartCoroutine(DelayMethod(time_levelupSliderAnimation + 0.1f,() => {
+                    //技覚えテキストの表示
+                    string nameMonster = baseStatsData.sheets[0].list[mons.No-1].Name;
+                    string nameSkill = skillData.sheets[0].list[skillNum-1].Name;
+                    GameObject txt_nameMonster = containerLearnSkill.transform.GetChild(0).GetChild(0).gameObject;
+                    GameObject txt_nameSkill = containerLearnSkill.transform.GetChild(0).GetChild(1).gameObject;
+                    txt_nameMonster.GetComponent<Text>().text = nameMonster + "は あたらしく";
+                    txt_nameSkill.GetComponent<Text>().text = nameSkill + " をおぼえた！";
+                    containerLearnSkill.SetActive(true);
+                }));
+                StartCoroutine(DelayMethod(time_levelupSliderAnimation + time_displayLearnSkill + 0.1f,() => {
+                    containerLearnSkill.SetActive(false);
+                    LevelUp(mons,container);
+                    if(gap == 0){
+                        //ちょうどレベルアップしたら次のモンスター
+                        SaveExpData(mons);
+                        LevelupProcess(num + 1,exp);
+                    }else{
+                        //それ以外はもう一回同じモンスター
+                        LevelupProcess(num,-1 * gap);
+                    }
+                }));
+            }
         }
     }
 

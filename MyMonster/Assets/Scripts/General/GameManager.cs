@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 
+		Debug.Log("要素数:"+ownMonsters.Count);
+
 		Party party = new Party();
 		party.monsters[0] = 1;
 		party.monsters[1] = 2;
@@ -44,16 +46,5 @@ public class GameManager : MonoBehaviour {
 		SaveData.SetList<Monster>("ownMonsters",ownMonsters);
 		SaveData.SetList<Party>("partyList",partyList);
 		SaveData.Save();
-	}
-
-	private void Update(){
-		if (Input.GetKeyDown(KeyCode.Space)) {
-			//セーブデータの取得
-			List<Monster> getOwnMonsters = SaveData.GetList<Monster>("ownMonsters",new List<Monster>());
-			int test = SaveData.GetInt("test",0);
-			Debug.Log(JsonUtility.ToJson(getOwnMonsters[1]));
-			//Debug.Log(test);
-
-        }
 	}
 }

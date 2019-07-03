@@ -56,6 +56,7 @@
      <Compile Include="Assets\Terasurware\Classes\Editor\BaseStatsData_importer.cs" />
      <Compile Include="Assets\Terasurware\Classes\Editor\EnemyPartyData_importer.cs" />
      <Compile Include="Assets\Terasurware\Classes\Editor\ExpTypeData_importer.cs" />
+     <Compile Include="Assets\Terasurware\Classes\Editor\LearnSkillData_importer.cs" />
      <Compile Include="Assets\Terasurware\Classes\Editor\MyPartyData_importer.cs" />
      <Compile Include="Assets\Terasurware\Classes\Editor\SkillData_importer.cs" />
      <Compile Include="Assets\Terasurware\Classes\Editor\SkillEffectData_importer.cs" />
