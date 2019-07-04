@@ -12,7 +12,8 @@ public class TrainingScreenManager : MonoBehaviour {
 	public GameObject containerBox;
 	public GameObject iconCreaterManager;
 	public BaseStatsData baseStatsData;
-
+	public SkillData skillData;
+	public GameObject skillEditScreen;
 	public GameObject monsterspriteObj;
 	public GameObject txt_name;
 	public GameObject txt_level;
@@ -42,7 +43,7 @@ public class TrainingScreenManager : MonoBehaviour {
 		//GetPartyList();
 
 		DisplayBoxMonster();
-		DisplayTargetMonster();
+		ChangeViewInfo();
 
 	}
 
@@ -64,8 +65,80 @@ public class TrainingScreenManager : MonoBehaviour {
 		return new Monster();
 	}
 
-	private void DisplayTargetMonster(){
-		//int uid = targetMonsterObj.GetComponent<IconInformation>().uniqueId;
+	//表示内容を変更する
+	private void ChangeViewInfo(){
+		ChangeInfoMonsInfoView();
+		ChangeInfoSkillView(0);
+	}
+
+	//n:1~4
+	private void ChangeInfoSkillView(int n){
+		//変数宣言
+		Monster monsterInfo = targetMonsterObj.GetComponent<IconInformation>().monsterInfo;
+		int[] skills = monsterInfo.skills;
+
+		for(int i=0;i<4;i++){
+			int skillNum = skills[i];
+			if(skillNum == 0)continue;
+			string name = skillData.sheets[0].list[skills[i]-1].Name;
+			string explain = skillData.sheets[0].list[skills[i]-1].Explain;
+			string type = skillData.sheets[0].list[skills[i]-1].Type;
+			GameObject containerSkillInfo = containerSkill.transform.GetChild(0).gameObject;
+			GameObject containerSkillBtn = containerSkill.transform.GetChild(1).gameObject;
+			GameObject skillBtn = containerSkillBtn.transform.GetChild(i).gameObject;
+			GameObject skillBtnImage = skillBtn.transform.GetChild(1).gameObject;
+			GameObject skillBtnFrame = skillBtn.transform.GetChild(0).gameObject;
+			GameObject skillTxt = skillBtn.transform.GetChild(2).gameObject;
+
+			skillBtnImage.GetComponent<Image>().color = GetTypeColor(type);
+			skillBtnFrame.SetActive(false);
+			skillTxt.GetComponent<Text>().text = name;
+
+			if(i == n){
+				//選択中の技だったら
+				GameObject txt_selectedSkillName = containerSkillInfo.transform.GetChild(0).gameObject;
+				GameObject txt_selectedSkillExplain = containerSkillInfo.transform.GetChild(1).gameObject;
+
+				txt_selectedSkillName.GetComponent<Text>().text = name;
+				txt_selectedSkillExplain.GetComponent<Text>().text = explain;
+
+				skillBtnFrame.SetActive(true);
+			}
+
+		}
+	}
+
+	public void OnClickSkillBtn(int num){
+		ChangeInfoSkillView(num);
+	}
+
+	public void OnClickSkillEditBtn(){
+		skillEditScreen.GetComponent<SkillEditScreenManager>().mons 
+			= targetMonsterObj.GetComponent<IconInformation>().monsterInfo;
+		skillEditScreen.GetComponent<SkillEditScreenManager>().Display();
+	}
+
+	//属性カラー取得
+	private Color GetTypeColor(string type){
+		switch(type){
+		case "Normal":
+			return new Color(0.736f,0.736f,0.736f);
+		case "Fire":
+			return new Color(0.925f,0.280f,0.214f);
+		case "Water":
+			return new Color(0.212f,0.368f,0.925f);
+		case "Grass":
+			return new Color(0.338f,0.868f,0.168f);
+		case "Lightning":
+			return new Color(0.900f,0.915f,0.324f);
+		case "Darkness":
+			return new Color(0.858f,0.150f,0.722f);
+		default:
+			return new Color(0.736f,0.736f,0.736f);
+		}
+	}
+
+	private void ChangeInfoMonsInfoView(){
 		//変数宣言
 		Monster monsterInfo = targetMonsterObj.GetComponent<IconInformation>().monsterInfo;
 		int No = monsterInfo.No;
@@ -199,7 +272,7 @@ public class TrainingScreenManager : MonoBehaviour {
 		targetMonsterObj = monsObj;
 		//新しいターゲットフレームを表示
 		targetMonsterObj.transform.parent.GetChild(0).gameObject.SetActive(true);
-		DisplayTargetMonster();
+		ChangeViewInfo();
 	}
 
 	//パーティを確定する

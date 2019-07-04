@@ -95,6 +95,7 @@
      <Compile Include="Assets\Scripts\MainScene\MoveScreenManager.cs" />
      <Compile Include="Assets\Scripts\MainScene\PartyEditScreenManager.cs" />
      <Compile Include="Assets\Scripts\MainScene\QuestSelectScreenManager.cs" />
+     <Compile Include="Assets\Scripts\MainScene\SkillEditScreenManager.cs" />
      <Compile Include="Assets\Scripts\MainScene\SpotButton.cs" />
      <Compile Include="Assets\Scripts\MainScene\ToBattleScene.cs" />
      <Compile Include="Assets\Scripts\MainScene\ToDeckSelectView.cs" />

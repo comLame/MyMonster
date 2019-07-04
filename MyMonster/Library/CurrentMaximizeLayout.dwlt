@@ -19,10 +19,10 @@ MonoBehaviour:
     y: 30
     width: 1246
     height: 705
-  m_MinSize: {x: 909, y: 321}
-  m_MaxSize: {x: 22006, y: 10021}
+  m_MinSize: {x: 915, y: 342}
+  m_MaxSize: {x: 22010, y: 10021}
   vertical: 1
-  controlID: 5113
+  controlID: 107
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -94,7 +94,7 @@ MonoBehaviour:
       width: 1521.5017
       height: 1218
     m_MinimalGUI: 1
-  m_defaultScale: 0.2504105
+  m_defaultScale: 2
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
   m_LastWindowPixelSize: {x: 762, y: 644}
@@ -124,10 +124,10 @@ MonoBehaviour:
     y: 0
     width: 1246
     height: 705
-  m_MinSize: {x: 909, y: 321}
-  m_MaxSize: {x: 22006, y: 10021}
+  m_MinSize: {x: 915, y: 342}
+  m_MaxSize: {x: 22010, y: 10021}
   vertical: 0
-  controlID: 5114
+  controlID: 108
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -148,10 +148,10 @@ MonoBehaviour:
     y: 0
     width: 383
     height: 705
-  m_MinSize: {x: 200, y: 321}
-  m_MaxSize: {x: 4002, y: 8021}
+  m_MinSize: {x: 202, y: 342}
+  m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 5115
+  controlID: 109
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -211,9 +211,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.1099946, y: -1.7955184, z: 0.087739594}
+    m_Target: {x: 0.7857177, y: -0.8443721, z: 0.044126354}
     speed: 2
-    m_Value: {x: -1.1099946, y: -1.7955184, z: 0.087739594}
+    m_Value: {x: 0.7857177, y: -0.8443721, z: 0.044126354}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -245,9 +245,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 2.8598526
+    m_Target: 7.264313
     speed: 2
-    m_Value: 2.8598526
+    m_Value: 7.264313
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -394,8 +394,8 @@ MonoBehaviour:
     y: 0
     width: 237
     height: 705
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -427,10 +427,10 @@ MonoBehaviour:
     height: 684
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 9e2a0000
-    m_LastClickedID: 0
-    m_ExpandedIDs: aad0fdff6232feff18f3ffffe4fbffff000000002a4400003244000068440000e4440000ec44000066460000a6460000
+    scrollPos: {x: 0, y: 133}
+    m_SelectedIDs: 46400000
+    m_LastClickedID: 16454
+    m_ExpandedIDs: e4fbffff00000000cc310000f63100009a3200002c380000a63a0000083b0000323b0000443e0000be3f000046400000ee4100002042000048430000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -515,20 +515,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/ExcelData
+    - Assets/Prefabs/MainScene
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/ExcelData
+  - Assets/Prefabs/MainScene
   m_LastFoldersGridSize: 16
   m_LastProjectPath: /Volumes/KESU/Document/GitHub/MyMonster/MyMonster
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 72300000
-    m_LastClickedID: 12402
-    m_ExpandedIDs: 00000000962a0000422d00005e30000066430000684300006a430000
+    m_SelectedIDs: f6300000
+    m_LastClickedID: 12534
+    m_ExpandedIDs: 000000009c2a0000542b0000542d00007c3000004e4600005046000052460000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -556,7 +556,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000962a0000422d00005e30000066430000684300006a430000
+    m_ExpandedIDs: 000000009c2a0000542b0000542d00007c3000004e4600005046000052460000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -581,21 +581,21 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 9e2a0000
-    m_LastClickedInstanceID: 10910
+    m_SelectedInstanceIDs: 46400000
+    m_LastClickedInstanceID: 16454
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: dc2c0000484c0000d63b0000000000008c3f0000283c00004835000036350000163200005e3a0000ae440000ea360000d42a00009a430000323a0000be42000038470000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: LearnSkillData
-      m_OriginalName: LearnSkillData
+      m_Name: TrainingScreenManager
+      m_OriginalName: TrainingScreenManager
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 21074
+      m_UserData: 10736
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
