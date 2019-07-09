@@ -5,6 +5,7 @@ using System.Linq;
 
 public class GameManager : MonoBehaviour {
 
+	public LearnSkillData learnSkillData;
 	public List<Monster> ownMonsters = new List<Monster>();
 
 	private void Start(){
@@ -17,8 +18,15 @@ public class GameManager : MonoBehaviour {
 		mons.uniqueID = uid;
 		//mons.exp = 100;
 		mons.level = 10;
-		for(int k=0;k<4;k++){
-			mons.skills[k] = Random.Range(1,10);
+		//技決定
+		int num = 0;
+		for(int i=0;i<learnSkillData.sheets[No-1].list.Count;i++){
+			int learnLevel = learnSkillData.sheets[No-1].list[i].Level;
+			if(learnLevel<=mons.level){
+				//覚えることができる技だった時
+				if(num<4)mons.skills[num] = learnSkillData.sheets[No-1].list[i].SkillNum;
+				num++;
+			}
 		}
 		mons.totalExp = 1800; //総経験値
 		mons.betweenLevelExp = 0; //レベルアップしてから獲得した経験値

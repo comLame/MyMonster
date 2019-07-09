@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class SkillEditScreenManager : MonoBehaviour {
 
+	//
 	public SkillData skillData;
 	public LearnSkillData learnSkillData;
 	public BaseStatsData baseStatsData;
@@ -21,13 +23,15 @@ public class SkillEditScreenManager : MonoBehaviour {
 	public GameObject containerSkillBtn;
 	public GameObject skillBtnPrefab;
 
+	private int nowSkillBtnNum = -1;
+	private int nowNewSkillBtnNum = -1;
 
 	public void Display(){
 		//モンスター情報の表示
 		//変数宣言
 		int No = mons.No;
 		BaseStatsData.Param baseStats = baseStatsData.sheets[0].list[No-1];
-		Sprite monsterSprite = Resources.Load<Sprite>("Img_Monster/" + No);;
+		Sprite monsterSprite = Resources.Load<Sprite>("Img_Monster/" + No);
 		string name = baseStats.Name;
 		int level = mons.level;
 		int hp = baseStats.Hp;
@@ -42,6 +46,7 @@ public class SkillEditScreenManager : MonoBehaviour {
 		txt_Attack.GetComponent<Text>().text = attack.ToString();
 		txt_Defense.GetComponent<Text>().text = defense.ToString();
 		txt_Speed.GetComponent<Text>().text = speed.ToString();
+
 		//おぼえているスキルの表示
 		for(int i=0;i<4;i++){
 			int skillNum = mons.skills[i];
@@ -49,16 +54,28 @@ public class SkillEditScreenManager : MonoBehaviour {
 			GameObject skillBtnImage = skillBtn.transform.GetChild(1).gameObject;
 			GameObject skillBtnFrame = skillBtn.transform.GetChild(0).gameObject;
 			GameObject skillTxt = skillBtn.transform.GetChild(2).gameObject;
-			string type = skillData.sheets[0].list[skillNum-1].Type;
-			string skillName = skillData.sheets[0].list[skillNum-1].Name;
-			string explain = skillData.sheets[0].list[skillNum-1].Explain;
 
-			skillBtnImage.GetComponent<Image>().color = GetTypeColor(type);
-			skillTxt.GetComponent<Text>().text = skillName;
+			if(skillNum == 0){
+				//スキルなしの場合
+				skillBtnImage.GetComponent<Image>().color = new Color(0.5f,0.5f,0.5f);
+				skillTxt.GetComponent<Text>().text = "スキルなし";
+			}else{
+				string type = skillData.sheets[0].list[skillNum-1].Type;
+				string skillName = skillData.sheets[0].list[skillNum-1].Name;
+				string explain = skillData.sheets[0].list[skillNum-1].Explain;
+
+				skillBtnImage.GetComponent<Image>().color = GetTypeColor(type);
+				skillTxt.GetComponent<Text>().text = skillName;
+			}
 
 		}
 
-		//スキルの表示
+		//新しいスキルの表示
+		//一旦前のやつを削除
+		for(int i=0;i<containerSkillBtn.transform.childCount;i++){
+			Destroy(containerSkillBtn.transform.GetChild(i).gameObject);
+		}
+		//表示
 		int totalCount = learnSkillData.sheets[No-1].list.Count;
 		for(int i=0;i<totalCount;i++){
 			int skillNum = learnSkillData.sheets[No-1].list[i].SkillNum;
@@ -81,7 +98,59 @@ public class SkillEditScreenManager : MonoBehaviour {
 			txt_skillName.GetComponent<Text>().text = skillName;
 			if(learnLevel > level)black.SetActive(true);
 
+			//オブジェクトにEventTriggerがない時
+			if(skillBtn.GetComponent<EventTrigger>() == null){
+				skillBtn.AddComponent<EventTrigger>();
+			}
+
+			var trigger = skillBtn.GetComponent<EventTrigger>();
+			if(trigger.triggers == null){
+				//アクションが設定されていない場合は設定するアクションリストを作成
+				trigger.triggers = new List<EventTrigger.Entry>();
+			}
+
+			// クリック時のイベントを設定してみる
+			var entry = new EventTrigger.Entry();
+			entry.eventID = EventTriggerType.PointerClick; // 他のイベントを設定したい場合はここを変える
+			entry.callback.AddListener( (x) => { 
+				OnClickNewSkill(i,skillNum);
+			});
+			trigger.triggers.Add(entry);
+
 		}
+	}
+
+	public void OnClickSkill(int num){
+		if(nowNewSkillBtnNum != -1){
+			//新しいスキルを選択中ならスキル交換
+
+		}else if(nowSkillBtnNum == num){
+			//選択中のボタンをクリックしたら選択解除
+			for(int i=0;i<4;i++){
+				GameObject skillBtn = containerSkill.transform.GetChild(i).gameObject;
+				GameObject skillBtnFrame = skillBtn.transform.GetChild(0).gameObject;
+				skillBtnFrame.SetActive(false);
+			}
+			nowSkillBtnNum = -1;
+		}else{
+			//違うスキルボタンをクリック
+			for(int i=0;i<4;i++){
+				GameObject skillBtn = containerSkill.transform.GetChild(i).gameObject;
+				GameObject skillBtnFrame = skillBtn.transform.GetChild(0).gameObject;
+				skillBtnFrame.SetActive(false);
+				if(i==num)skillBtnFrame.SetActive(true);
+			}
+			nowSkillBtnNum = num;
+		}
+	}
+
+	public void OnClickNewSkill(int skillBtnNum,int skillNum){
+		GameObject btn = containerSkillBtn.transform.GetChild(skillBtnNum).gameObject;
+		GameObject frame = btn.transform.GetChild(0).gameObject;
+		//もしブラックがかかってたら受け付けない
+		if(frame.activeSelf)return;
+		Debug.Log(skillBtnNum);
+
 	}
 
 	//属性カラー取得

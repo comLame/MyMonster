@@ -79,10 +79,6 @@ public class TrainingScreenManager : MonoBehaviour {
 
 		for(int i=0;i<4;i++){
 			int skillNum = skills[i];
-			if(skillNum == 0)continue;
-			string name = skillData.sheets[0].list[skills[i]-1].Name;
-			string explain = skillData.sheets[0].list[skills[i]-1].Explain;
-			string type = skillData.sheets[0].list[skills[i]-1].Type;
 			GameObject containerSkillInfo = containerSkill.transform.GetChild(0).gameObject;
 			GameObject containerSkillBtn = containerSkill.transform.GetChild(1).gameObject;
 			GameObject skillBtn = containerSkillBtn.transform.GetChild(i).gameObject;
@@ -90,19 +86,40 @@ public class TrainingScreenManager : MonoBehaviour {
 			GameObject skillBtnFrame = skillBtn.transform.GetChild(0).gameObject;
 			GameObject skillTxt = skillBtn.transform.GetChild(2).gameObject;
 
-			skillBtnImage.GetComponent<Image>().color = GetTypeColor(type);
-			skillBtnFrame.SetActive(false);
-			skillTxt.GetComponent<Text>().text = name;
+			if(skillNum == 0){
+				skillBtnImage.GetComponent<Image>().color = new Color(0.5f,0.5f,0.5f);
+				skillBtnFrame.SetActive(false);
+				skillTxt.GetComponent<Text>().text = "スキルなし";
 
-			if(i == n){
-				//選択中の技だったら
-				GameObject txt_selectedSkillName = containerSkillInfo.transform.GetChild(0).gameObject;
-				GameObject txt_selectedSkillExplain = containerSkillInfo.transform.GetChild(1).gameObject;
+				if(i == n){
+					//選択中の技だったら
+					GameObject txt_selectedSkillName = containerSkillInfo.transform.GetChild(0).gameObject;
+					GameObject txt_selectedSkillExplain = containerSkillInfo.transform.GetChild(1).gameObject;
 
-				txt_selectedSkillName.GetComponent<Text>().text = name;
-				txt_selectedSkillExplain.GetComponent<Text>().text = explain;
+					txt_selectedSkillName.GetComponent<Text>().text = "スキルなし";
+					txt_selectedSkillExplain.GetComponent<Text>().text = "";
 
-				skillBtnFrame.SetActive(true);
+					skillBtnFrame.SetActive(true);
+				}
+			}else{
+				string name = skillData.sheets[0].list[skills[i]-1].Name;
+				string explain = skillData.sheets[0].list[skills[i]-1].Explain;
+				string type = skillData.sheets[0].list[skills[i]-1].Type;
+
+				skillBtnImage.GetComponent<Image>().color = GetTypeColor(type);
+				skillBtnFrame.SetActive(false);
+				skillTxt.GetComponent<Text>().text = name;
+
+				if(i == n){
+					//選択中の技だったら
+					GameObject txt_selectedSkillName = containerSkillInfo.transform.GetChild(0).gameObject;
+					GameObject txt_selectedSkillExplain = containerSkillInfo.transform.GetChild(1).gameObject;
+
+					txt_selectedSkillName.GetComponent<Text>().text = name;
+					txt_selectedSkillExplain.GetComponent<Text>().text = explain;
+
+					skillBtnFrame.SetActive(true);
+				}
 			}
 
 		}
