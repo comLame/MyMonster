@@ -25,8 +25,19 @@ public class SkillEditScreenManager : MonoBehaviour {
 
 	private int nowSkillBtnNum = -1;
 	private int nowNewSkillBtnNum = -1;
+	private int nowNewSkillNum = -1;
+	private GameObject nowSkillBtn = null;
+	private List<Monster> ownMonsters = new List<Monster>();
+
+	private void OnEnable(){
+		ownMonsters = SaveData.GetList<Monster>("ownMonsters",ownMonsters);
+	}
 
 	public void Display(){
+		//初期化
+		nowSkillBtnNum = -1;
+		nowNewSkillBtnNum = -1;
+
 		//モンスター情報の表示
 		//変数宣言
 		int No = mons.No;
@@ -55,6 +66,7 @@ public class SkillEditScreenManager : MonoBehaviour {
 			GameObject skillBtnFrame = skillBtn.transform.GetChild(0).gameObject;
 			GameObject skillTxt = skillBtn.transform.GetChild(2).gameObject;
 
+			skillBtnFrame.SetActive(false);
 			if(skillNum == 0){
 				//スキルなしの場合
 				skillBtnImage.GetComponent<Image>().color = new Color(0.5f,0.5f,0.5f);
@@ -113,7 +125,7 @@ public class SkillEditScreenManager : MonoBehaviour {
 			var entry = new EventTrigger.Entry();
 			entry.eventID = EventTriggerType.PointerClick; // 他のイベントを設定したい場合はここを変える
 			entry.callback.AddListener( (x) => { 
-				OnClickNewSkill(i,skillNum);
+				OnClickNewSkill(skillBtn,skillNum);
 			});
 			trigger.triggers.Add(entry);
 
@@ -123,7 +135,7 @@ public class SkillEditScreenManager : MonoBehaviour {
 	public void OnClickSkill(int num){
 		if(nowNewSkillBtnNum != -1){
 			//新しいスキルを選択中ならスキル交換
-
+			ChangeSkill(num,nowNewSkillNum);
 		}else if(nowSkillBtnNum == num){
 			//選択中のボタンをクリックしたら選択解除
 			for(int i=0;i<4;i++){
@@ -144,13 +156,52 @@ public class SkillEditScreenManager : MonoBehaviour {
 		}
 	}
 
-	public void OnClickNewSkill(int skillBtnNum,int skillNum){
-		GameObject btn = containerSkillBtn.transform.GetChild(skillBtnNum).gameObject;
+	public void OnClickNewSkill(GameObject btn,int skillNum){
 		GameObject frame = btn.transform.GetChild(0).gameObject;
+		GameObject black = btn.transform.GetChild(4).gameObject;
 		//もしブラックがかかってたら受け付けない
-		if(frame.activeSelf)return;
-		Debug.Log(skillBtnNum);
+		if(black.activeSelf)return;
 
+		int siblingIndex = btn.transform.GetSiblingIndex();
+		if(nowSkillBtnNum != -1){
+			//スキル選択中なら交換
+			ChangeSkill(nowSkillBtnNum,skillNum);
+		}else if(nowNewSkillBtnNum == siblingIndex){
+			//選択中のスキルなら非選択状態に
+			frame.SetActive(false);
+			nowNewSkillBtnNum = -1;
+		}else{
+			//違うスキルボタンならそれを選択状態に
+			if(nowNewSkillBtnNum != -1){
+				//他に選択しているやつがある
+				nowSkillBtn.transform.GetChild(0).gameObject.SetActive(false);
+			}
+			frame.SetActive(true);
+			nowNewSkillBtnNum = siblingIndex;
+			nowSkillBtn = btn;
+			nowNewSkillNum = skillNum;
+		}
+
+	}
+
+	//skillBtnIndex:所持してるスキルの何番目のスキルか, newSkillNum:あたらしく覚えるスキルのskillNum
+	private void ChangeSkill(int skillBtnIndex,int newSkillNum){
+		//スキルを変更
+		mons.skills[skillBtnIndex] = newSkillNum;
+		Display();
+	}
+
+	//確定
+	public void OnClickConfirmBtn(){
+		int uid = mons.uniqueID;
+		for(int i=0;i<ownMonsters.Count;i++){
+			if(ownMonsters[i].uniqueID == uid){
+				ownMonsters.RemoveAt(i);
+                ownMonsters.Insert(i,mons);
+			}
+		}
+		SaveData.SetList<Monster>("ownMonsters",ownMonsters);
+		SaveData.Save();
 	}
 
 	//属性カラー取得
