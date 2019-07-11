@@ -24,10 +24,12 @@ public class ResultManager : MonoBehaviour {
     private List<Monster> ownMonsters = new List<Monster>();
 	private Party party = new Party();
 	private List<Party> partyList = new List<Party>();
+    private List<int> storyProgress = new List<int>();
+    private List<int> nowStoryQuest = new List<int>();
 
     private void Start(){
 
-        GetMonsterData();
+        GetData();
         DisplayMonster();
         //GetExpData();
         
@@ -39,10 +41,14 @@ public class ResultManager : MonoBehaviour {
         //SaveExpData();
     }
 
-    private void GetMonsterData(){
+    private void GetData(){
         ownMonsters = SaveData.GetList<Monster>("ownMonsters",ownMonsters);
         partyList = SaveData.GetList<Party>("partyList",partyList);
 		party = partyList[0];
+
+        storyProgress = SaveData.GetList<int>("storyProgress",storyProgress);
+        nowStoryQuest = SaveData.GetList<int>("nowStoryQuest",nowStoryQuest);
+
     }
 
     private Monster GetMonsterFromUID(int uid){
@@ -111,8 +117,7 @@ public class ResultManager : MonoBehaviour {
                 SaveExpData(mons);
                 if(num == 4){
                     //レベルアップ終了
-                    SaveData.SetList<Monster>("ownMonsters",ownMonsters);
-		            SaveData.Save();
+                    SaveWholeData();
                     strFlag = "canMove";
                     Debug.Log("終了");
                     return;
@@ -211,6 +216,20 @@ public class ResultManager : MonoBehaviour {
                 ownMonsters.Insert(i,mons);
             }
         }
+    }
+
+    private void SaveWholeData(){
+
+        //ストーリー進捗チェック
+        if(storyProgress[0]==nowStoryQuest[0]&storyProgress[1]==nowStoryQuest[1]){
+            //現時点の最高ストーリーと現在のクリアステージが等しい場合、最高ステージの更新
+            storyProgress[1] = storyProgress[1]+1;
+            Debug.Log("更新後のストーリー番号:" + storyProgress[0]+"-"+storyProgress[1]);
+            SaveData.SetList<int>("storyProgress",storyProgress);
+        }
+
+        SaveData.SetList<Monster>("ownMonsters",ownMonsters);
+		SaveData.Save();
     }
 
     public void OnClick(){
