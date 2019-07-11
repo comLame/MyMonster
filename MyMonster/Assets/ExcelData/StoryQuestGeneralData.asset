@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdc00bbea5fac4b15ad7f8815594b566, type: 3}
+  m_Name: StoryQuestGeneralData
+  m_EditorClassIdentifier: 
+  sheets:
+  - name: "\u30A2\u30D5\u5CF6"
+    list:
+    - Name: "\u5927\u5192\u967A\u306E\u306F\u3058\u307E\u308A"
+      Gold: 100
+      Exp: 100
+      Category: Battle
+    - Name: "\u5192\u967A\u5BB6\u3068\u306E\u51FA\u4F1A\u3044"
+      Gold: 120
+      Exp: 0
+      Category: Story
+    - Name: "\u6751\u306F\u305A\u308C\u306E\u8349\u539F"
+      Gold: 130
+      Exp: 120
+      Category: Battle
+    - Name: "\u512A\u3057\u3044\u98A8\u306E\u5439\u304F\u8FB2\u9053"
+      Gold: 140
+      Exp: 140
+      Category: Battle
+    - Name: "\u68EE\u3078\u7D9A\u304F\u5C0F\u9053"
+      Gold: 150
+      Exp: 160
+      Category: Battle
+    - Name: "\u8FF7\u3044\u8FBC\u3093\u3060\u68EE\u306E\u4E2D\u3067"
+      Gold: 160
+      Exp: 0
+      Category: Story
+    - Name: "\u8584\u6697\u3044\u6A39\u6D77\u306E\u5965\u3078"
+      Gold: 170
+      Exp: 180
+      Category: Battle
+    - Name: "\u9759\u304B\u306A\u308B\u68EE\u306E\u6DF1\u90E8"
+      Gold: 180
+      Exp: 200
+      Category: Battle
+    - Name: "\u30A2\u30B9\u30C8\u30E9\u907A\u8DE1\u306B\u7720\u308B\u306A\u305E"
+      Gold: 190
+      Exp: 220
+      Category: Battle
+    - Name: "\u6FC0\u95D8\u306E\u679C\u3066\u306B"
+      Gold: 200
+      Exp: 0
+      Category: Story

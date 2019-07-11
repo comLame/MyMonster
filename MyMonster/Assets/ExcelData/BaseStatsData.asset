@@ -15,28 +15,28 @@ MonoBehaviour:
   - name: BaseStatsData
     list:
     - No: 1
-      Name: "\u30EC\u30C3\u30C9\u30C9\u30E9\u30B4\u30F3"
+      Name: "\u30D2\u30B3\u30B7\u30D0"
       Type: Fire
       Hp: 78
       Attack: 109
       Defense: 85
       Speed: 100
     - No: 2
-      Name: "\u30D6\u30EB\u30FC\u30C9\u30E9\u30B4\u30F3"
+      Name: "\u30C9\u30EB\u30F3"
       Type: Water
       Hp: 79
       Attack: 85
       Defense: 105
       Speed: 78
     - No: 3
-      Name: "\u30B0\u30EA\u30FC\u30F3\u30C9\u30E9\u30B4\u30F3"
+      Name: "\u30D0\u30F3\u30D7\u30FC"
       Type: Grass
       Hp: 80
       Attack: 100
       Defense: 100
       Speed: 80
     - No: 4
-      Name: "\u30B1\u30EB\u30D9\u30ED\u30B9"
+      Name: "\u30C8\u30EA\u30C3\u30D4\u30FC"
       Type: Fire
       Hp: 75
       Attack: 90

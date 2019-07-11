@@ -51,8 +51,13 @@ public class GameManager : MonoBehaviour {
 		party.monsters[4] = 5;
 		List<Party> partyList = new List<Party>(){party};
 
+		List<int> storyProgress = new List<int>(); //次挑戦するステージ番号を保存
+		storyProgress.Add(1);
+		storyProgress.Add(1);
+
 		SaveData.SetList<Monster>("ownMonsters",ownMonsters);
 		SaveData.SetList<Party>("partyList",partyList);
+		SaveData.SetList<int>("storyProgress",storyProgress);
 		SaveData.Save();
 	}
 }
