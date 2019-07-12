@@ -77,6 +77,7 @@
      <Compile Include="Assets\Scripts\BattleScene\ToHomeScene.cs" />
      <Compile Include="Assets\Scripts\BattleScene\TouchCommandButton.cs" />
      <Compile Include="Assets\Scripts\BattleScene\TouchMonster.cs" />
+     <Compile Include="Assets\Scripts\ConversationScene\SelifInformation.cs" />
      <Compile Include="Assets\Scripts\ConversationScene\TextController.cs" />
      <Compile Include="Assets\Scripts\General\GameManager.cs" />
      <Compile Include="Assets\Scripts\General\IconCreaterManager.cs" />
