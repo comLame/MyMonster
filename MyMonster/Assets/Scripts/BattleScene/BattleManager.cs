@@ -12,6 +12,7 @@ public class BattleManager : MonoBehaviour {
 	//エクセルデータ関係
 	public BaseStatsData baseStatsData;
 	public EnemyPartyData enemyPartyData;
+	public StoryQuestGeneralData storyQuestGeneralData;
 	public Island01EnemyData island01EnemyData;
 	public MyPartyData myPartyData;
 	public SkillData skillData;
@@ -68,6 +69,8 @@ public class BattleManager : MonoBehaviour {
 	private Party party = new Party();
 	private List<Party> partyList = new List<Party>();
 	private List<int> nowStoryQuest = new List<int>();
+	private int islandNum; //島番号
+	private int battleQuestNum; //バトルクエストのなんばんめか
 
 	enum Type {
 		Fire,
@@ -101,7 +104,7 @@ public class BattleManager : MonoBehaviour {
 	//wave数を数える
 	private void CountWave(){
 		
-		totalWave = (int)island01EnemyData.sheets[nowStoryQuest[1]-1].list.Count/5;
+		totalWave = (int)island01EnemyData.sheets[battleQuestNum-1].list.Count/5;
 		//totalWave = 1;
 	}
 
@@ -211,8 +214,8 @@ public class BattleManager : MonoBehaviour {
 		for(int i=0;i<5;i++){
 			GameObject monster = enemyPartyList[i];	
 			int listNum = i + ((nowWave - 1) * 5 );
-			int num_pb = island01EnemyData.sheets[nowStoryQuest[1]-1].list[listNum].No; //図鑑番号
-			GetStatus(monster,num_pb,10); 
+			int num_pb = island01EnemyData.sheets[battleQuestNum-1].list[listNum].No; //図鑑番号
+			GetStatus(monster,num_pb,island01EnemyData.sheets[battleQuestNum-1].list[listNum].Lv); 
 			GetSkill(monster,listNum,true);
 		}
 	}
@@ -233,10 +236,10 @@ public class BattleManager : MonoBehaviour {
 			no_skill4 = mons.skills[3];
 		}else{
 			//敵
-			no_skill1 = island01EnemyData.sheets[nowStoryQuest[1]-1].list[num].No_Skill1;
-			no_skill2 = island01EnemyData.sheets[nowStoryQuest[1]-1].list[num].No_Skill2;
-			no_skill3 = island01EnemyData.sheets[nowStoryQuest[1]-1].list[num].No_Skill3;
-			no_skill4 = island01EnemyData.sheets[nowStoryQuest[1]-1].list[num].No_Skill4;
+			no_skill1 = island01EnemyData.sheets[battleQuestNum-1].list[num].No_Skill1;
+			no_skill2 = island01EnemyData.sheets[battleQuestNum-1].list[num].No_Skill2;
+			no_skill3 = island01EnemyData.sheets[battleQuestNum-1].list[num].No_Skill3;
+			no_skill4 = island01EnemyData.sheets[battleQuestNum-1].list[num].No_Skill4;
 		}
 
 		monster.GetComponent<CharacterStatus>().skills[0] = no_skill1;
@@ -1230,7 +1233,14 @@ public class BattleManager : MonoBehaviour {
 		party = partyList[0];
 
 		nowStoryQuest = SaveData.GetList<int>("nowStoryQuest",nowStoryQuest);
-		Debug.Log("storynum: " + nowStoryQuest[0]+"-"+nowStoryQuest[1]);
+		islandNum = nowStoryQuest[0];
+		battleQuestNum = 0;
+		for(int i=0;i<nowStoryQuest[1];i++){
+			if(storyQuestGeneralData.sheets[islandNum-1].list[i].Category == "Battle"){
+				battleQuestNum++;
+			}
+		}
+		Debug.Log("battleQuestNum : " + battleQuestNum);
 	}
 
 	//ディレイメソッド

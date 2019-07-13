@@ -15,6 +15,7 @@ public class QuestSelectScreenManager : MonoBehaviour {
 	public GameObject stageSelectScreen;
 	public GameObject partySelectScreen;
 	public GameObject stageButtonPrefab;
+	public GameObject stageButtonPrefab_conversation;
 
 	private List<Monster> ownMonsters = new List<Monster>();
 	private Party party = new Party();
@@ -47,14 +48,20 @@ public class QuestSelectScreenManager : MonoBehaviour {
 		}
 
 		for(int i=0;i<stageNum;i++){
-			GameObject stageBtn = (GameObject)Instantiate(stageButtonPrefab);
+			GameObject stageBtn;
+			if(storyQuestGeneralData.sheets[0].list[i].Category == "Battle"){
+				stageBtn = (GameObject)Instantiate(stageButtonPrefab);
+				stageBtn.GetComponent<MoveScreenButtonManager>().transitionDestinationScreen = partySelectScreen;
+				stageBtn.GetComponent<MoveScreenButtonManager>().hideScreen = stageSelectScreen;
+			}else{
+				stageBtn = (GameObject)Instantiate(stageButtonPrefab_conversation);
+			}
 			GameObject txt_number = stageBtn.transform.GetChild(0).gameObject;
 			GameObject txt_name = stageBtn.transform.GetChild(1).gameObject;
 
 			stageBtn.transform.SetParent(containerStageButton.transform);
 			stageBtn.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
-			stageBtn.GetComponent<MoveScreenButtonManager>().transitionDestinationScreen = partySelectScreen;
-			stageBtn.GetComponent<MoveScreenButtonManager>().hideScreen = stageSelectScreen;
+			
 
 			txt_number.GetComponent<Text>().text = islandNum.ToString() + "-" + (i+1).ToString();
 
@@ -77,7 +84,11 @@ public class QuestSelectScreenManager : MonoBehaviour {
 			var entry = new EventTrigger.Entry();
 			entry.eventID = EventTriggerType.PointerClick; // 他のイベントを設定したい場合はここを変える
 			entry.callback.AddListener( (x) => { 
-				DisplayParty(islandNum,nowStageNum,stageName);
+				if(storyQuestGeneralData.sheets[0].list[nowStageNum-1].Category == "Battle"){
+					DisplayParty(islandNum,nowStageNum,stageName);
+				}else{
+					ToConversationScene(islandNum,nowStageNum);
+				}
 			});
 			trigger.triggers.Add(entry);
 
@@ -121,6 +132,16 @@ public class QuestSelectScreenManager : MonoBehaviour {
 		SaveData.Save();
 
 		FadeManager.Instance.LoadScene ("BattleScene", 1.0f);
+	}
+
+	private void ToConversationScene(int island,int stage){
+		//出撃しようとしているクエスト情報
+		nowStoryQuest.Add(island);
+		nowStoryQuest.Add(stage);
+		SaveData.SetList<int>("nowStoryQuest",nowStoryQuest);
+		SaveData.Save();
+
+		FadeManager.Instance.LoadScene ("ConversationScene", 1.0f);
 	}
 
 	private Monster GetMonsterFromUID(int uid){

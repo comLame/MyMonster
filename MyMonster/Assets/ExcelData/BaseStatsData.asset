@@ -37,7 +37,7 @@ MonoBehaviour:
       Speed: 80
     - No: 4
       Name: "\u30C8\u30EA\u30C3\u30D4\u30FC"
-      Type: Fire
+      Type: Darkness
       Hp: 75
       Attack: 90
       Defense: 50

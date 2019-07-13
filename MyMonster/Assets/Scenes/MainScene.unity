@@ -25163,6 +25163,8 @@ MonoBehaviour:
   partySelectScreen: {fileID: 10443542}
   stageButtonPrefab: {fileID: 1002541319940454, guid: f460f0f3fe91648029e6512f9f4b8e33,
     type: 2}
+  stageButtonPrefab_conversation: {fileID: 1760314723623938, guid: e718ffd574c7e4ba29eac9e8d1aaafe3,
+    type: 2}
 --- !u!1 &1315327879
 GameObject:
   m_ObjectHideFlags: 0
@@ -31085,7 +31087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0000016215391}
+  m_AnchoredPosition: {x: 0, y: 0.000028894157}
   m_SizeDelta: {x: 0, y: 256.03}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1582999326
