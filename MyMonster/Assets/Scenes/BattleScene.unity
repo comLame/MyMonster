@@ -8126,6 +8126,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseStatsData: {fileID: 11400000, guid: 4fbbc6ebd43e74610985949b969f1eb6, type: 2}
   enemyPartyData: {fileID: 11400000, guid: 924a2b82de02a4c8a820b6e6fdc1a979, type: 2}
+  storyQuestGeneralData: {fileID: 11400000, guid: d1e60fec7020f48649275f1bdf7e1e68,
+    type: 2}
   island01EnemyData: {fileID: 11400000, guid: 82f0a7cac9e2e42dd9a50860f1ad97ac, type: 2}
   myPartyData: {fileID: 11400000, guid: d636f2a35cc484c12874bf49ff7302bc, type: 2}
   skillData: {fileID: 11400000, guid: 54af38109becb437b89ef75b6aa3ef48, type: 2}

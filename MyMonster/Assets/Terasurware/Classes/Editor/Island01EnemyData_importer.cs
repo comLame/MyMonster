@@ -8,9 +8,9 @@ using NPOI.XSSF.UserModel;
 using NPOI.SS.UserModel;
 
 public class Island01EnemyData_importer : AssetPostprocessor {
-	private static readonly string filePath = "Assets/ExcelData/Island01EnemyData.xls";
+	private static readonly string filePath = "Assets/ExcelData/Island01EnemyData.xlsx";
 	private static readonly string exportPath = "Assets/ExcelData/Island01EnemyData.asset";
-	private static readonly string[] sheetNames = { "Sheet1","Sheet11","Sheet12","Sheet13","Sheet14","Sheet15","Sheet16","Sheet17","Sheet18","Sheet19", };
+	private static readonly string[] sheetNames = { "Sheet1","Sheet2","Sheet3","Sheet4","Sheet5","Sheet6","Sheet7", };
 	
 	static void OnPostprocessAllAssets (string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
 	{
