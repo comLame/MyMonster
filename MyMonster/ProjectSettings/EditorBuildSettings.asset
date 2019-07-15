@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ConversationScene.unity
     guid: b8322712595d44309930f1024035a0c8
+  - enabled: 1
+    path: Assets/Scenes/EvolutionScene.unity
+    guid: 05777b6e4092d44e8885549c87641aeb
   m_configObjects: {}

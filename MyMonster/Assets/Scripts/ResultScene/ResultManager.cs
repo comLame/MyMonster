@@ -10,22 +10,27 @@ public class ResultManager : MonoBehaviour {
     public BaseStatsData baseStatsData;
     public LearnSkillData learnSkillData;
     public ExpTypeData expTypeData;
+    public EvolutionData evolutionData;
     public GameObject txtGold;
     public GameObject txtExp;
     public GameObject containerMonster;
     public GameObject containerLearnSkill;
+    public GameObject img_vod; //勝敗画像
+    public Sprite[] sprites_vod = new Sprite[2];
 
     private float time_levelupSliderAnimation = 0.5f;
     private float time_displayLearnSkill = 1f;
     private string strFlag = "initial";
     private int gold = 3461;
-    private int exp =  700;
+    private int exp =  1500;
 
     private List<Monster> ownMonsters = new List<Monster>();
 	private Party party = new Party();
 	private List<Party> partyList = new List<Party>();
     private List<int> storyProgress = new List<int>();
     private List<int> nowStoryQuest = new List<int>();
+    private int vod; //勝敗
+    private List<int> evolutionMonsterList = new List<int>();
 
     private void Start(){
 
@@ -36,7 +41,17 @@ public class ResultManager : MonoBehaviour {
         txtGold.GetComponent<Text>().text = gold.ToString();
         txtExp.GetComponent<Text>().text = exp.ToString();
 
-        LevelupProcess(0,exp);
+        if(vod==1){
+            //勝利
+            LevelupProcess(0,exp);
+            img_vod.GetComponent<Image>().sprite = sprites_vod[0];
+        }else{
+            //敗北
+            img_vod.GetComponent<Image>().sprite = sprites_vod[1];
+            SaveWholeData();
+            strFlag = "canMove";
+        }
+       
 
         //SaveExpData();
     }
@@ -48,6 +63,8 @@ public class ResultManager : MonoBehaviour {
 
         storyProgress = SaveData.GetList<int>("storyProgress",storyProgress);
         nowStoryQuest = SaveData.GetList<int>("nowStoryQuest",nowStoryQuest);
+
+        vod = SaveData.GetInt(SaveDataKeys.vod,vod);
 
     }
 
@@ -187,6 +204,13 @@ public class ResultManager : MonoBehaviour {
         mons.betweenLevelExp = 0;
         mons.level = mons.level + 1;
         txtLevel.GetComponent<Text>().text = mons.level.ToString();
+
+        //進化するかどうか確認
+        if(evolutionData.sheets[mons.No-1].list.Count >= 2){
+            if(mons.level >= evolutionData.sheets[mons.No-1].list[1].Lv){
+                evolutionMonsterList.Add(mons.uniqueID); //追加
+            }
+        }
     }
 
     private int GetExpType(int expType){
@@ -221,7 +245,7 @@ public class ResultManager : MonoBehaviour {
     private void SaveWholeData(){
 
         //ストーリー進捗チェック
-        if(storyProgress[0]==nowStoryQuest[0]&storyProgress[1]==nowStoryQuest[1]){
+        if(storyProgress[0]==nowStoryQuest[0]&storyProgress[1]==nowStoryQuest[1]&&vod==1){
             //現時点の最高ストーリーと現在のクリアステージが等しい場合、最高ステージの更新
             storyProgress[1] = storyProgress[1]+1;
             Debug.Log("更新後のストーリー番号:" + storyProgress[0]+"-"+storyProgress[1]);
@@ -244,7 +268,15 @@ public class ResultManager : MonoBehaviour {
             strFlag = "animationDone";
         }else if(strFlag == "canMove"){
             //画面遷移
-            FadeManager.Instance.LoadScene ("MainScene", 1.0f);
+            if(evolutionMonsterList.Count >= 1){
+                SaveData.SetList<int>(SaveDataKeys.evolutionMonsterList,evolutionMonsterList);
+                SaveData.SetInt(SaveDataKeys.evolutionMonsterIndex,1);
+                SaveData.Save();
+
+                FadeManager.Instance.LoadScene ("EvolutionScene", 1.0f);
+            }else{
+                FadeManager.Instance.LoadScene ("MainScene", 1.0f);
+            }
         }
     }
 

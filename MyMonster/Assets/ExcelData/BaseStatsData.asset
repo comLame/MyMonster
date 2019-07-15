@@ -17,42 +17,42 @@ MonoBehaviour:
     - No: 1
       Name: "\u30D2\u30B3\u30B7\u30D0"
       Type: Fire
-      Hp: 78
-      Attack: 109
-      Defense: 85
-      Speed: 100
+      Hp: 39
+      Attack: 60
+      Defense: 50
+      Speed: 65
     - No: 2
       Name: "\u30C9\u30EB\u30F3"
+      Type: Water
+      Hp: 44
+      Attack: 50
+      Defense: 65
+      Speed: 43
+    - No: 3
+      Name: "\u30D0\u30F3\u30D7\u30FC"
+      Type: Grass
+      Hp: 45
+      Attack: 65
+      Defense: 65
+      Speed: 45
+    - No: 4
+      Name: "\u30C8\u30EA\u30C3\u30D4\u30FC"
+      Type: Darkness
+      Hp: 40
+      Attack: 45
+      Defense: 35
+      Speed: 56
+    - No: 5
+      Name: "\u30C9\u30EB\u30EB\u30F3"
+      Type: Water
+      Hp: 59
+      Attack: 65
+      Defense: 80
+      Speed: 58
+    - No: 6
+      Name: "\u30D5\u30A3\u30EB\u30C9\u30EB\u30F3"
       Type: Water
       Hp: 79
       Attack: 85
       Defense: 105
       Speed: 78
-    - No: 3
-      Name: "\u30D0\u30F3\u30D7\u30FC"
-      Type: Grass
-      Hp: 80
-      Attack: 100
-      Defense: 100
-      Speed: 80
-    - No: 4
-      Name: "\u30C8\u30EA\u30C3\u30D4\u30FC"
-      Type: Darkness
-      Hp: 75
-      Attack: 90
-      Defense: 50
-      Speed: 95
-    - No: 5
-      Name: "\u30A6\u30A3\u30C3\u30C1"
-      Type: Water
-      Hp: 60
-      Attack: 60
-      Defense: 60
-      Speed: 105
-    - No: 6
-      Name: "\u30B4\u30D6\u30EA\u30F3"
-      Type: Grass
-      Hp: 105
-      Attack: 65
-      Defense: 75
-      Speed: 50

@@ -1249,10 +1249,15 @@ MonoBehaviour:
   baseStatsData: {fileID: 11400000, guid: 4fbbc6ebd43e74610985949b969f1eb6, type: 2}
   learnSkillData: {fileID: 11400000, guid: 5163a02d283184273ba7845c85f27b5a, type: 2}
   expTypeData: {fileID: 11400000, guid: 0e82e77438a29438f8f81d89a34eae25, type: 2}
+  evolutionData: {fileID: 11400000, guid: 0dd94bab276124a5da3e579018051389, type: 2}
   txtGold: {fileID: 1740221376}
   txtExp: {fileID: 1722633371}
   containerMonster: {fileID: 134868189}
   containerLearnSkill: {fileID: 747344001}
+  img_vod: {fileID: 720669382}
+  sprites_vod:
+  - {fileID: 21300000, guid: ba1825917e27f4c34a4ea0cfeff769ce, type: 3}
+  - {fileID: 21300000, guid: 983c4a194ff004a66a94650125e88c67, type: 3}
 --- !u!114 &223347128
 MonoBehaviour:
   m_ObjectHideFlags: 0
