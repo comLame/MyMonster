@@ -10,7 +10,7 @@ using NPOI.SS.UserModel;
 public class LearnSkillData_importer : AssetPostprocessor {
 	private static readonly string filePath = "Assets/ExcelData/LearnSkillData.xls";
 	private static readonly string exportPath = "Assets/ExcelData/LearnSkillData.asset";
-	private static readonly string[] sheetNames = { "ヒコシバ","ドルン","バンプー","トリッピー", };
+	private static readonly string[] sheetNames = { "ヒコシバ","ドルン","バンプー","トリッピー","ドルルン", };
 	
 	static void OnPostprocessAllAssets (string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
 	{

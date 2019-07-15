@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour {
 		mons.No = No;
 		mons.uniqueID = uid;
 		//mons.exp = 100;
-		mons.level = 10;
+		mons.level = 15;
 		//技決定
 		int num = 0;
 		for(int i=0;i<learnSkillData.sheets[No-1].list.Count;i++){

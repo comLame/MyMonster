@@ -80,12 +80,15 @@
      <Compile Include="Assets\Scripts\ConversationScene\CharacterAnimation.cs" />
      <Compile Include="Assets\Scripts\ConversationScene\ConversationManager.cs" />
      <Compile Include="Assets\Scripts\ConversationScene\SelifInformation.cs" />
+     <Compile Include="Assets\Scripts\EvolutionScene\ChangeScaleAnimation.cs" />
+     <Compile Include="Assets\Scripts\EvolutionScene\EvolutionSceneManager.cs" />
      <Compile Include="Assets\Scripts\General\GameManager.cs" />
      <Compile Include="Assets\Scripts\General\IconCreaterManager.cs" />
      <Compile Include="Assets\Scripts\General\IconInformation.cs" />
      <Compile Include="Assets\Scripts\General\Monster.cs" />
      <Compile Include="Assets\Scripts\General\Party.cs" />
      <Compile Include="Assets\Scripts\General\SaveData.cs" />
+     <Compile Include="Assets\Scripts\General\SaveDataKeys.cs" />
      <Compile Include="Assets\Scripts\General\TapEffect.cs" />
      <Compile Include="Assets\Scripts\MainScene\CanvasManager.cs" />
      <Compile Include="Assets\Scripts\MainScene\EasyMoveButton.cs" />
@@ -109,6 +112,7 @@
      <Compile Include="Assets\Scripts\ResultScene\ResultManager.cs" />
      <Compile Include="Assets\Terasurware\Classes\BaseStatsData.cs" />
      <Compile Include="Assets\Terasurware\Classes\EnemyPartyData.cs" />
+     <Compile Include="Assets\Terasurware\Classes\EvolutionData.cs" />
      <Compile Include="Assets\Terasurware\Classes\ExpTypeData.cs" />
      <Compile Include="Assets\Terasurware\Classes\Island01ConversationData.cs" />
      <Compile Include="Assets\Terasurware\Classes\Island01EnemyData.cs" />

@@ -981,6 +981,9 @@ public class BattleManager : MonoBehaviour {
 		bg_VOD.SetActive(true);
 		iTween.MoveFrom(bg_VOD,iTween.Hash("x",-10,"easytype",iTween.EaseType.easeInQuint,"time",0.8f,
 			"oncompletetarget",gameObject,"oncomplete","DisplayVOD"));
+		//勝敗情報を保存
+		SaveData.SetInt("vod",vod);
+		SaveData.Save();
 
 		StartCoroutine(DelayMethod(3,() => {
 			//resultScreen.SetActive(true);

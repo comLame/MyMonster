@@ -55,6 +55,7 @@
   <ItemGroup>
      <Compile Include="Assets\Terasurware\Classes\Editor\BaseStatsData_importer.cs" />
      <Compile Include="Assets\Terasurware\Classes\Editor\EnemyPartyData_importer.cs" />
+     <Compile Include="Assets\Terasurware\Classes\Editor\EvolutionData_importer.cs" />
      <Compile Include="Assets\Terasurware\Classes\Editor\ExpTypeData_importer.cs" />
      <Compile Include="Assets\Terasurware\Classes\Editor\Island01ConversationData_importer.cs" />
      <Compile Include="Assets\Terasurware\Classes\Editor\Island01EnemyData_importer.cs" />

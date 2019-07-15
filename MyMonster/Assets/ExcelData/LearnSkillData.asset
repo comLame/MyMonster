@@ -64,3 +64,21 @@ MonoBehaviour:
       SkillNum: 7
     - Level: 13
       SkillNum: 4
+  - name: "\u30C9\u30EB\u30EB\u30F3"
+    list:
+    - Level: 1
+      SkillNum: 3
+    - Level: 2
+      SkillNum: 6
+    - Level: 3
+      SkillNum: 7
+    - Level: 4
+      SkillNum: 8
+    - Level: 5
+      SkillNum: 2
+    - Level: 6
+      SkillNum: 9
+    - Level: 12
+      SkillNum: 4
+    - Level: 20
+      SkillNum: 5
