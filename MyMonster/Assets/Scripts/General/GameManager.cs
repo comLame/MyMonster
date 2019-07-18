@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour {
 		mons.No = No;
 		mons.uniqueID = uid;
 		//mons.exp = 100;
-		mons.level = 15;
+		mons.level = 10;
 		//技決定
 		int num = 0;
 		for(int i=0;i<learnSkillData.sheets[No-1].list.Count;i++){
@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour {
 		SaveData.SetList<Monster>("ownMonsters",ownMonsters);
 		SaveData.SetList<Party>("partyList",partyList);
 		SaveData.SetList<int>("storyProgress",storyProgress);
+		SaveData.SetInt(SaveDataKeys.uid,15);
 		SaveData.Save();
 	}
 }

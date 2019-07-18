@@ -77,6 +77,7 @@
      <Compile Include="Assets\Scripts\BattleScene\ToHomeScene.cs" />
      <Compile Include="Assets\Scripts\BattleScene\TouchCommandButton.cs" />
      <Compile Include="Assets\Scripts\BattleScene\TouchMonster.cs" />
+     <Compile Include="Assets\Scripts\CaptureScene\CaptureSceneManager.cs" />
      <Compile Include="Assets\Scripts\ConversationScene\CharacterAnimation.cs" />
      <Compile Include="Assets\Scripts\ConversationScene\ConversationManager.cs" />
      <Compile Include="Assets\Scripts\ConversationScene\SelifInformation.cs" />

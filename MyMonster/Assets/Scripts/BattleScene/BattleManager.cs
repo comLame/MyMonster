@@ -987,7 +987,12 @@ public class BattleManager : MonoBehaviour {
 
 		StartCoroutine(DelayMethod(3,() => {
 			//resultScreen.SetActive(true);
-			FadeManager.Instance.LoadScene ("ResultScene", 1.0f);
+			float fProbabilityRate = UnityEngine.Random.value * 100.0f;
+			if(fProbabilityRate < 100){
+				FadeManager.Instance.LoadScene ("CaptureScene", 1.0f);
+			}else{
+				FadeManager.Instance.LoadScene ("ResultScene", 1.0f);
+			}
 		}));
 	}
 
