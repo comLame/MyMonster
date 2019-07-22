@@ -6,14 +6,19 @@ using UnityEngine.EventSystems;
 
 public class MoveScreenManager : MonoBehaviour{
 	
-	private GameObject currentScreen;
-	private GameObject nowScreen;
+	public GameObject tabInitializeManager;
+
+	private GameObject nowScreen;//現在表示している画面
+	private GameObject nowTabScreen; //現在表示しているタブのトップ画面
 	private GameObject fadeinScreen;
 	private GameObject fadeoutScreen;
 	private float time_delay = 0.5f;
 	private float distance = 4.5f;
-	private int nowSceneNum = 0;
+	private int nowTabNum = 1; //現在表示している画面のタブ
+	private int nowScreenNum = 0; //現在遷移しようとしている画面の種類 0:タブのトップじゃない,数字（n）:左からn番目のタブのトップ画面
 	private bool isMoving = false;
+	private int moveComponentCount = 0; //動くものの数
+	private int moveComponentCounter = 0;
 
 	//time
 	private float time_animation = 0.4f;
@@ -21,30 +26,66 @@ public class MoveScreenManager : MonoBehaviour{
 	private void Start(){
 		GameObject canvasHome = GameObject.Find("CanvasHome");
 		GameObject topScreen = canvasHome.GetComponent<CanvasManager>().topScreen;
-		currentScreen = topScreen;
+		nowScreen = topScreen;
+		nowTabScreen = topScreen;
 	}
 
-	public void MoveScreen(GameObject screen,GameObject hideScreen,bool isTab = false,bool isTop = false){
+	public void MoveScreen(GameObject displayScreen,GameObject hideScreen,int tabNum){
 		//遷移中は入力不可
 		if(isMoving)return;
-		
+		nowScreenNum = tabNum;
+
+		if(tabNum != 0){
+			if(nowTabNum == tabNum){
+				//現在表示しているタブと同じタブボタンが押された
+				if(nowTabScreen == displayScreen){
+					//トップ画面の表示中にそのタブボタンを押しても画面遷移なし
+					return;
+				}else{
+					//同じタブ内の違う画面にいるのなら、トップ画面に遷移
+					Debug.Log("ここにきた");
+					hideScreen = nowScreen;
+				}
+			}else{
+				hideScreen = nowTabScreen;
+				nowTabScreen = displayScreen;
+			}
+			nowTabNum = tabNum;
+		}
+
+		//コンポーネントのアタッチ
+		SetComponents(hideScreen);
+		SetComponents(displayScreen);
+		//遷移実行
+		HiddenScreen(hideScreen);
+		DisplayScreen(displayScreen);
+		//変数変更
+		nowScreen = displayScreen;
+
+		/* 
 		if(isTab){
 			//遷移先が今と同じ場合は入力不可
-			if(currentScreen == screen)return;
+			if(nowScreen == screen)return;
 			//遷移開始
 			isMoving = true;
+			moveComponentCount = 0;
+			moveComponentCounter = 0;
 			//コンポーネントのアタッチ
-			SetComponents(currentScreen);
+			SetComponents(nowScreen);
 			SetComponents(screen);
 			//遷移実行
-			HiddenScreen(currentScreen);
+			HiddenScreen(nowScreen);
 			DisplayScreen(screen);
 			//変数変更
-			currentScreen = screen;
+			canInitialize = true;
+			currentScreen = nowScreen;
+			nowScreen = screen;
 		}else{
 			//タブ以外
 			//遷移開始
 			isMoving = true;
+			moveComponentCount = 0;
+			moveComponentCounter = 0;
 			//コンポーネントのアタッチ
 			SetComponents(screen);
 			SetComponents(hideScreen);
@@ -52,12 +93,21 @@ public class MoveScreenManager : MonoBehaviour{
 			//遷移実行
 			HiddenScreen(hideScreen);
 			DisplayScreen(screen);
+
+			//変数変更
+			//currentScreen = nowScreen;
+			//nowScreen = screen;
 		}
+		*/
 	}
 
 	private void HiddenScreen(GameObject screen){
 		List<GameObject> left = screen.GetComponent<MoveCategorize>().left;
 		List<GameObject> right = screen.GetComponent<MoveCategorize>().right;
+
+		//moveComponentCoutn
+		moveComponentCount += left.Count;
+		moveComponentCount += right.Count;
 
 		//FadeOut
 		fadeoutScreen = screen;
@@ -71,7 +121,7 @@ public class MoveScreenManager : MonoBehaviour{
 			Vector3 nowPos = obj.GetComponent<RectTransform>().localPosition;
 			iTween.MoveBy(obj,iTween.Hash("x",distance,"easetype",iTween.EaseType.easeOutSine,"time",time_animation/2));
 			iTween.MoveTo(obj,iTween.Hash("position",nowPos,"easetype",iTween.EaseType.easeInSine,"isLocal",true
-				,"time",time_animation/2,"delay",time_animation/2 ));
+				,"time",time_animation/2,"delay",time_animation/2,"oncomplete","CheckMoveFinish","oncompletetarget",gameObject ));
 		}
 		//left
 		for(int i=0;i<left.Count;i++){
@@ -80,13 +130,9 @@ public class MoveScreenManager : MonoBehaviour{
 			Vector3 nowPos = obj.GetComponent<RectTransform>().localPosition;
 			iTween.MoveBy(obj,iTween.Hash("x",-distance,"easetype",iTween.EaseType.easeOutSine,"time",time_animation/2));
 			iTween.MoveTo(obj,iTween.Hash("position",nowPos,"easetype",iTween.EaseType.easeInSine,"isLocal",true
-				,"time",time_animation/2,"delay",time_animation/2 ));
+				,"time",time_animation/2,"delay",time_animation/2,"oncomplete","CheckMoveFinish","oncompletetarget",gameObject ));
 		}
 
-		StartCoroutine(DelayMethod(time_animation + time_delay,()=> {
-			screen.SetActive(false);
-			isMoving = false;
-		}));
 	}
 
 	//表示の際の共通処理
@@ -97,6 +143,10 @@ public class MoveScreenManager : MonoBehaviour{
 
 		List<GameObject> left = screen.GetComponent<MoveCategorize>().left;
 		List<GameObject> right = screen.GetComponent<MoveCategorize>().right;
+
+		//moveComponentCoutn
+		moveComponentCount += left.Count;
+		moveComponentCount += right.Count;
 
 		//FadeIn
 		fadeinScreen = screen;
@@ -110,7 +160,7 @@ public class MoveScreenManager : MonoBehaviour{
 			Vector3 nowPos = obj.GetComponent<RectTransform>().localPosition;
 			iTween.MoveBy(obj,iTween.Hash("x",distance,"easetype",iTween.EaseType.easeOutSine,"time",time_animation/2));
 			iTween.MoveTo(obj,iTween.Hash("position",nowPos,"easetype",iTween.EaseType.easeInSine,"isLocal",true
-				,"time",time_animation/2,"delay",time_animation/2 ));
+				,"time",time_animation/2,"delay",time_animation/2,"oncomplete","CheckMoveFinish","oncompletetarget",gameObject ));
 		}
 		//left
 		for(int i=0;i<left.Count;i++){
@@ -119,7 +169,44 @@ public class MoveScreenManager : MonoBehaviour{
 			Vector3 nowPos = obj.GetComponent<RectTransform>().localPosition;
 			iTween.MoveBy(obj,iTween.Hash("x",-distance,"easetype",iTween.EaseType.easeOutSine,"time",time_animation/2));
 			iTween.MoveTo(obj,iTween.Hash("position",nowPos,"easetype",iTween.EaseType.easeInSine,"isLocal",true
-				,"time",time_animation/2,"delay",time_animation/2 ));
+				,"time",time_animation/2,"delay",time_animation/2,"oncomplete","CheckMoveFinish","oncompletetarget",gameObject ));
+		}
+	}
+
+	//タブを初期状態に戻す
+	private void InitializeTab(){
+		
+
+		switch(nowScreenNum){
+		case 0:
+			return;
+		case 1:
+			tabInitializeManager.GetComponent<TabInitializeManager>().MonsterTab();
+			break;
+		case 2:
+			tabInitializeManager.GetComponent<TabInitializeManager>().HomeTab();
+			break;
+		case 3:
+		case 4:
+		case 5:
+		default:
+			break;
+		}
+
+	}
+
+	//遷移アニメーションが終わったかどうか確認
+	private void CheckMoveFinish(){
+		moveComponentCounter++;
+		Debug.Log("moveComponentCount:" + moveComponentCount);
+		Debug.Log("moveComponentCounter:" + moveComponentCounter);
+		if(moveComponentCounter >= moveComponentCount){
+			//全コンポーネントのアニメーション終了
+			isMoving = false;
+			fadeoutScreen.SetActive(false);
+
+			//タブを初期状態に戻す
+			InitializeTab();
 		}
 	}
 
