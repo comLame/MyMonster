@@ -8,8 +8,7 @@ public class MoveScreenButtonManager : MonoBehaviour {
 	
 	[SerializeField] public GameObject transitionDestinationScreen; //遷移先の画面
 	public GameObject hideScreen; //消す
-	public bool isTab = false; //押したボタンがタブかどうか
-	public bool isTop = false; //遷移先がTopScreenかどうか
+	public int tabNum = 0; //0:タブじゃない ,数字（n）:左からn番目のタブボタン
 	
 	private MoveScreenManager MoveScreenManager;
 
@@ -31,7 +30,7 @@ public class MoveScreenButtonManager : MonoBehaviour {
         var entry = new EventTrigger.Entry();
         entry.eventID = EventTriggerType.PointerClick; // 他のイベントを設定したい場合はここを変える
         entry.callback.AddListener( (x) => { 
-			MoveScreenManager.MoveScreen(transitionDestinationScreen,hideScreen,isTab,isTop);
+			MoveScreenManager.MoveScreen(transitionDestinationScreen,hideScreen,tabNum);
 		});
         trigger.triggers.Add(entry);
 	}

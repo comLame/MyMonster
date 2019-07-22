@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: UI-Mask
   m_Shader: {fileID: 4800000, guid: 280cdeb878b556141b07c4b6f1023167, type: 3}
   m_ShaderKeywords: 
@@ -28,7 +29,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _ColorMask: 15
-    - _Range: 1
+    - _Range: 0
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilOp: 0
