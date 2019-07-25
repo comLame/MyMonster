@@ -8,6 +8,10 @@ public class TabInitializeManager : MonoBehaviour
     public GameObject home_tempView;
     public GameObject home_topScreen;
     public GameObject home_questSelectScreen;
+    public GameObject home_area;
+    public GameObject home_islandSelectView;
+    public GameObject home_stageSelectView;
+    public GameObject home_deckSelectView;
 
     //Monster
     public GameObject monster_topScreen;
@@ -30,6 +34,10 @@ public class TabInitializeManager : MonoBehaviour
         ChangeState(home_tempView,false);
         ChangeState(home_topScreen,true);
         ChangeState(home_questSelectScreen,false);
+        ChangeState(home_area,true);
+        ChangeState(home_islandSelectView,true);
+        ChangeState(home_stageSelectView,false);
+        ChangeState(home_deckSelectView,false);
     }
 
     //モンスタータブの初期化
