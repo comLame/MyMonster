@@ -37,6 +37,7 @@ public class BattleManager : MonoBehaviour {
 	public GameObject txt_healPrefab;
 	public GameObject txt_changePrefab;
 	public Material m_skillEffect;
+	public GameObject questNameView;
 
 	private int counter_checkNextAction = 0;
 	private int count_targetMonster = 0; //攻撃対象になるモンスターの数
@@ -46,6 +47,7 @@ public class BattleManager : MonoBehaviour {
 	private int actionCount = 0; //1だったら1体目の行動 10が終わったら次のターン
 	private int nowWave = 1; //今のWave数 1~
 	private int totalWave; //トータルのWave数 1~
+	private int num_frame = 5; //１エフェクトのフレーム数
 	private float time_break = 0.5f; //行動と行動の間のブレイク
 	private float time_stepFront = 0.12f; //前にちょこっと進む時間
 	private float time_stepBack = 0.12f; //後ろに戻る時間
@@ -56,10 +58,13 @@ public class BattleManager : MonoBehaviour {
 	private float time_entranceAnimation = 2f; //入場アニメーションの時間
 	private float time_allyEntranceAnimation = 0.5f;
 	private float time_nextWaveAnimation = 3f; //次のウェーブにいく時のアニメーション
-	private int num_frame = 5; //１エフェクトのフレーム数
+	private float time_questNameFadeIn = 0.5f; //クエストネームのフェイドイン時間
+	private float time_questNameStay = 1.5f; //クエストネームを表示する時間
+	private float time_questNameFadeOut = 0.5f; //クエストネームのフェイドアウト時間
 	private float speed_attackAnimation = 1f; //攻撃アニメーションのスピード
 	private float diff_step = 0.2f; //ステップの距離
 	private float zPos_attackEffect = -3f; //攻撃エフェクトのz座標
+	private string questName=""; //クエスト名
 	private List<GameObject> monsterOrderList = new List<GameObject>();
 	private List<GameObject> myPartyList = new List<GameObject>();
 	private List<GameObject> enemyPartyList = new List<GameObject>();
@@ -95,9 +100,19 @@ public class BattleManager : MonoBehaviour {
 		DebugMonsterOrderList();
 
 		//fade関係
-		//FadeAnimation();
-		StartCoroutine(DelayMethod(1,() => {
-			EntranceAnimation();
+		BattleStart();
+	}
+
+	private void BattleStart(){
+		StartCoroutine(DelayMethod(0.5f,() => {
+			questNameView.SetActive(true);
+			questNameView.transform.GetChild(1).gameObject.GetComponent<Text>().text = questName;
+			questNameView.GetComponent<QuestNameViewAnimation>().StartAnimation(
+				time_questNameFadeIn,time_questNameStay,time_questNameFadeOut
+			);
+			StartCoroutine(DelayMethod(time_questNameFadeIn+time_questNameStay,() => {
+				EntranceAnimation();
+			}));
 		}));
 	}
 
@@ -403,8 +418,8 @@ public class BattleManager : MonoBehaviour {
 			btn_command.transform.GetChild(0).gameObject.GetComponent<Text>().text = name_skill;
 			//色変更
 			Image img = btn_command.GetComponent<Image>();
-			img.color = GetTypeColor(type);
-
+			//img.color = GetTypeColor(type);
+			img.sprite = GetSkillBtn(type);
 		}
 	}
 
@@ -1198,6 +1213,26 @@ public class BattleManager : MonoBehaviour {
 			return new Color(0.736f,0.736f,0.736f);
 		}
 	}
+
+	//属性にあったスキルボタンの取得
+	private Sprite GetSkillBtn(string type){
+		switch(type){
+		case "Normal":
+			return Resources.Load<Sprite>("Img_SkillButton/" + 6);
+		case "Fire":
+			return Resources.Load<Sprite>("Img_SkillButton/" + 1);
+		case "Water":
+			return Resources.Load<Sprite>("Img_SkillButton/" + 2);
+		case "Grass":
+			return Resources.Load<Sprite>("Img_SkillButton/" + 3);
+		case "Lightning":
+			return Resources.Load<Sprite>("Img_SkillButton/" + 4);
+		case "Darkness":
+			return Resources.Load<Sprite>("Img_SkillButton/" + 5);
+		default:
+			return Resources.Load<Sprite>("Img_SkillButton/" + 6);
+		}
+	}
 	
 	//ターゲットマーカーの表示非表示
 	public void TouchMonster(GameObject monster){
@@ -1242,12 +1277,16 @@ public class BattleManager : MonoBehaviour {
 
 		nowStoryQuest = SaveData.GetList<int>("nowStoryQuest",nowStoryQuest);
 		islandNum = nowStoryQuest[0];
+		int questNum = nowStoryQuest[1];
 		battleQuestNum = 0;
-		for(int i=0;i<nowStoryQuest[1];i++){
+		for(int i=0;i<questNum;i++){
 			if(storyQuestGeneralData.sheets[islandNum-1].list[i].Category == "Battle"){
 				battleQuestNum++;
 			}
 		}
+
+		questName = storyQuestGeneralData.sheets[islandNum-1].list[questNum-1].Name;
+
 		Debug.Log("battleQuestNum : " + battleQuestNum);
 	}
 

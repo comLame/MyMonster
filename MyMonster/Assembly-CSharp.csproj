@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\BattleScene\DamageTextAnimation.cs" />
      <Compile Include="Assets\Scripts\BattleScene\DestroyAtkFX.cs" />
      <Compile Include="Assets\Scripts\BattleScene\MonsterAnimation.cs" />
+     <Compile Include="Assets\Scripts\BattleScene\QuestNameViewAnimation.cs" />
      <Compile Include="Assets\Scripts\BattleScene\SkillNameTextAnimation.cs" />
      <Compile Include="Assets\Scripts\BattleScene\SliderAnimation.cs" />
      <Compile Include="Assets\Scripts\BattleScene\ToHomeScene.cs" />
