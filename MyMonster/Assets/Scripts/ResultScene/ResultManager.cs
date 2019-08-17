@@ -41,16 +41,18 @@ public class ResultManager : MonoBehaviour {
         txtGold.GetComponent<Text>().text = gold.ToString();
         txtExp.GetComponent<Text>().text = exp.ToString();
 
-        if(vod==1){
-            //勝利
-            LevelupProcess(0,exp);
-            img_vod.GetComponent<Image>().sprite = sprites_vod[0];
-        }else{
-            //敗北
-            img_vod.GetComponent<Image>().sprite = sprites_vod[1];
-            SaveWholeData();
-            strFlag = "canMove";
-        }
+        StartCoroutine(DelayMethod(1,() => {
+            if(vod==1){
+                //勝利
+                LevelupProcess(0,exp);
+                img_vod.GetComponent<Image>().sprite = sprites_vod[0];
+            }else{
+                //敗北
+                img_vod.GetComponent<Image>().sprite = sprites_vod[1];
+                SaveWholeData();
+                strFlag = "canMove";
+            }
+        }));
        
 
         //SaveExpData();
