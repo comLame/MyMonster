@@ -60,24 +60,13 @@ public class SellScreenManager : MonoBehaviour {
 				}
 			}
 
-			//オブジェクトにEventTriggerがない時
-			if(icon.GetComponent<EventTrigger>() == null){
-				icon.AddComponent<EventTrigger>();
+			//オブジェクトにButtonInScrollViewがない時はアタッチしてあげる
+			if(icon.GetComponent<ButtonInScrollView>() == null){
+				icon.AddComponent<ButtonInScrollView>();
 			}
-
-			var trigger = icon.GetComponent<EventTrigger>();
-			if(trigger.triggers == null){
-				//アクションが設定されていない場合は設定するアクションリストを作成
-				trigger.triggers = new List<EventTrigger.Entry>();
-			}
-
-			// クリック時のイベントを設定してみる
-			var entry = new EventTrigger.Entry();
-			entry.eventID = EventTriggerType.PointerClick; // 他のイベントを設定したい場合はここを変える
-			entry.callback.AddListener( (x) => { 
+			icon.GetComponent<ButtonInScrollView>().onclick= () => {
 				OnClickIcon(icon,mons);
-			});
-			trigger.triggers.Add(entry);
+			};
 			
 		}
 	}

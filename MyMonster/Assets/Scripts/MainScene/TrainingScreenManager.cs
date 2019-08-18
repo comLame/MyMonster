@@ -200,27 +200,14 @@ public class TrainingScreenManager : MonoBehaviour {
 			icon.GetComponent<IconInformation>().monsterInfo = mons;
 			monsObj.transform.SetParent(containerBox.transform);
 			monsObj.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
-			/* 
-			if(i==0)targetMonsterObj = icon;
-			icon.transform.SetParent(containerBox.transform);
-			icon.GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
-			icon.GetComponent<IconInformation>().isPartyMonster = false;
-			icon.GetComponent<IconInformation>().monsterInfo = mons;
-			*/
-
-			//コンポーネントがついてなければアタッチ
-			if(icon.GetComponent<EventTrigger>() == null){
-				var trigger = icon.AddComponent<EventTrigger>();
-				trigger.triggers = new List<EventTrigger.Entry>();
-
-				// クリック時のイベントを設定してみる
-				var entry = new EventTrigger.Entry();
-				entry.eventID = EventTriggerType.PointerClick; // 他のイベントを設定したい場合はここを変える
-				entry.callback.AddListener( (x) => { 
-					OnClickIcon(icon);
-				});
-				trigger.triggers.Add(entry);
+			
+			//オブジェクトにButtonInScrollViewがない時はアタッチしてあげる
+			if(icon.GetComponent<ButtonInScrollView>() == null){
+				icon.AddComponent<ButtonInScrollView>();
 			}
+			icon.GetComponent<ButtonInScrollView>().onclick= () => {
+				OnClickIcon(icon);
+			};
 			
 		}
 	}

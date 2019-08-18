@@ -110,24 +110,13 @@ public class SkillEditScreenManager : MonoBehaviour {
 			txt_skillName.GetComponent<Text>().text = skillName;
 			if(learnLevel > level)black.SetActive(true);
 
-			//オブジェクトにEventTriggerがない時
-			if(skillBtn.GetComponent<EventTrigger>() == null){
-				skillBtn.AddComponent<EventTrigger>();
+			//オブジェクトにButtonInScrollViewがない時はアタッチしてあげる
+			if(skillBtn.GetComponent<ButtonInScrollView>() == null){
+				skillBtn.AddComponent<ButtonInScrollView>();
 			}
-
-			var trigger = skillBtn.GetComponent<EventTrigger>();
-			if(trigger.triggers == null){
-				//アクションが設定されていない場合は設定するアクションリストを作成
-				trigger.triggers = new List<EventTrigger.Entry>();
-			}
-
-			// クリック時のイベントを設定してみる
-			var entry = new EventTrigger.Entry();
-			entry.eventID = EventTriggerType.PointerClick; // 他のイベントを設定したい場合はここを変える
-			entry.callback.AddListener( (x) => { 
+			skillBtn.GetComponent<ButtonInScrollView>().onclick= () => {
 				OnClickNewSkill(skillBtn,skillNum);
-			});
-			trigger.triggers.Add(entry);
+			};
 
 		}
 	}

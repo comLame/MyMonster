@@ -68,29 +68,24 @@ public class QuestSelectScreenManager : MonoBehaviour {
 			String stageName = storyQuestGeneralData.sheets[islandNum-1].list[i].Name;
 			txt_name.GetComponent<Text>().text = stageName;
 
-			//オブジェクトにEventTriggerがない時
-			if(stageBtn.GetComponent<EventTrigger>() == null){
-				stageBtn.AddComponent<EventTrigger>();
-			}
-
-			var trigger = stageBtn.GetComponent<EventTrigger>();
-			if(trigger.triggers == null){
-				//アクションが設定されていない場合は設定するアクションリストを作成
-				trigger.triggers = new List<EventTrigger.Entry>();
+			//オブジェクトにButtonInScrollViewがない時はアタッチしてあげる
+			if(stageBtn.GetComponent<ButtonInScrollView>() == null){
+				stageBtn.AddComponent<ButtonInScrollView>();
 			}
 
 			int nowStageNum = i+1;
-			// クリック時のイベントを設定してみる
-			var entry = new EventTrigger.Entry();
-			entry.eventID = EventTriggerType.PointerClick; // 他のイベントを設定したい場合はここを変える
-			entry.callback.AddListener( (x) => { 
-				if(storyQuestGeneralData.sheets[0].list[nowStageNum-1].Category == "Battle"){
+			
+			if(storyQuestGeneralData.sheets[0].list[nowStageNum-1].Category == "Battle"){
+				
+				stageBtn.GetComponent<ButtonInScrollView>().onclick = () => {
 					DisplayParty(islandNum,nowStageNum,stageName);
-				}else{
+				};
+
+			}else{
+				stageBtn.GetComponent<ButtonInScrollView>().onclick = () => {
 					ToConversationScene(islandNum,nowStageNum);
-				}
-			});
-			trigger.triggers.Add(entry);
+				};
+			}
 
 		}
 
