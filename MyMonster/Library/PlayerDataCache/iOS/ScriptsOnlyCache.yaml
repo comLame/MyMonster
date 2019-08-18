@@ -169,19 +169,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10522}
     - Class: 114
-      Script: {instanceID: 10578}
+      Script: {instanceID: 10564}
     - Class: 114
-      Script: {instanceID: 10624}
+      Script: {instanceID: 10580}
     - Class: 114
-      Script: {instanceID: 10942}
+      Script: {instanceID: 10626}
     - Class: 114
-      Script: {instanceID: 10972}
+      Script: {instanceID: 10946}
     - Class: 114
-      Script: {instanceID: 11020}
+      Script: {instanceID: 10978}
     - Class: 114
-      Script: {instanceID: 11032}
+      Script: {instanceID: 11026}
     - Class: 114
-      Script: {instanceID: 51694}
+      Script: {instanceID: 11038}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -238,7 +238,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9564}
     - Class: 114
-      Script: {instanceID: 11026}
+      Script: {instanceID: 11032}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -297,7 +297,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10540}
     - Class: 114
-      Script: {instanceID: 10942}
+      Script: {instanceID: 10946}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -489,17 +489,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10532}
     - Class: 114
-      Script: {instanceID: 10624}
+      Script: {instanceID: 10626}
     - Class: 114
-      Script: {instanceID: 10708}
+      Script: {instanceID: 10712}
     - Class: 114
-      Script: {instanceID: 10818}
+      Script: {instanceID: 10822}
     - Class: 114
-      Script: {instanceID: 10834}
+      Script: {instanceID: 10838}
     - Class: 114
-      Script: {instanceID: 10916}
+      Script: {instanceID: 10920}
     - Class: 114
-      Script: {instanceID: 10942}
+      Script: {instanceID: 10946}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -580,9 +580,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10534}
     - Class: 114
-      Script: {instanceID: 10624}
+      Script: {instanceID: 10626}
     - Class: 114
-      Script: {instanceID: 10934}
+      Script: {instanceID: 10938}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1588,6 +1588,12 @@ ScriptsOnlyBuild:
     className: NetworkBehaviour
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: QuestNameViewAnimation
+  - hash:
+      serializedVersion: 2
       Hash: ee0cef6caaac8ae485bfa82f000f0f7b
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1622,6 +1628,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SkillData
+  - hash:
+      serializedVersion: 2
+      Hash: 88f78bd9804c5e3ac6c84e84168e1704
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UGuiLongPress
   - hash:
       serializedVersion: 2
       Hash: 1026b84f7e0652cd3b798d9d13eb689c
@@ -1708,6 +1720,12 @@ ScriptsOnlyBuild:
     className: StoryQuestGeneralData
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ButtonInScrollView
+  - hash:
+      serializedVersion: 2
       Hash: e0ee4b3d4e27318934cc940a969d3d96
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
@@ -1760,12 +1778,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TouchMonster
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: QuestNameViewAnimation
   platform: 9
   scenePathNames:
   - Assets/Scenes/MainScene.unity

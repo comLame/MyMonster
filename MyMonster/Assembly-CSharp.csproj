@@ -94,6 +94,7 @@
      <Compile Include="Assets\Scripts\General\SaveData.cs" />
      <Compile Include="Assets\Scripts\General\SaveDataKeys.cs" />
      <Compile Include="Assets\Scripts\General\TapEffect.cs" />
+     <Compile Include="Assets\Scripts\MainScene\ButtonInScrollView.cs" />
      <Compile Include="Assets\Scripts\MainScene\CanvasManager.cs" />
      <Compile Include="Assets\Scripts\MainScene\EasyMoveButton.cs" />
      <Compile Include="Assets\Scripts\MainScene\FooterManager.cs" />
@@ -112,6 +113,7 @@
      <Compile Include="Assets\Scripts\MainScene\ToBattleScene.cs" />
      <Compile Include="Assets\Scripts\MainScene\ToDeckSelectView.cs" />
      <Compile Include="Assets\Scripts\MainScene\TrainingScreenManager.cs" />
+     <Compile Include="Assets\Scripts\MainScene\UGuiLongPress.cs" />
      <Compile Include="Assets\Scripts\ResultScene\CountUpAnimation.cs" />
      <Compile Include="Assets\Scripts\ResultScene\LevelUpSliderAnimation.cs" />
      <Compile Include="Assets\Scripts\ResultScene\ResultManager.cs" />
